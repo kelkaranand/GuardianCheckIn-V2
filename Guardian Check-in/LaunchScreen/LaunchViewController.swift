@@ -22,6 +22,14 @@ class LaunchViewController : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        //Generate dummy Data
+//        CoreDataHelper.saveStudentData("Harry Potter", "1")
+//        CoreDataHelper.saveStudentData("Hermoine Granger", "2")
+//        CoreDataHelper.saveStudentData("Ron Weasley", "3")
+//        CoreDataHelper.saveStudentData("Draco Malfoy", "4")
+//        CoreDataHelper.saveStudentData("Ginny Weasley", "5")
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

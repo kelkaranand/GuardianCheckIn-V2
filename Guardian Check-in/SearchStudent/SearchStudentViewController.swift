@@ -31,6 +31,12 @@ class SearchStudentViewController: UIViewController {
         fetchDummyData()
         tableView.register(SearchStudentResultCell.self, forCellReuseIdentifier: "result")
         
+        //Tap on screen to dismiss keyboard
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+        
+        //Rotation gesture
         let rotate = UIRotationGestureRecognizer(target: self, action:     #selector(rotatedView(_:)))
         self.view.addGestureRecognizer(rotate)
         
@@ -68,7 +74,7 @@ extension SearchStudentViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "result", for: indexPath) as? SearchStudentResultCell {
-                cell.backgroundColor = .blue
+//                cell.backgroundColor = .blue
             cell.nameLabel.text = filteredTableData[indexPath.row]
             return cell
         }
