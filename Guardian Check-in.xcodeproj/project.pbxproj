@@ -1,0 +1,498 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14C3A396235F4E9E009A3830 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A395235F4E9E009A3830 /* AppDelegate.swift */; };
+		14C3A398235F4E9E009A3830 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A397235F4E9E009A3830 /* ViewController.swift */; };
+		14C3A39B235F4E9E009A3830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A399235F4E9E009A3830 /* Main.storyboard */; };
+		14C3A39E235F4E9E009A3830 /* Guardian_Check_in.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A39C235F4E9E009A3830 /* Guardian_Check_in.xcdatamodeld */; };
+		14C3A3A0235F4EA0009A3830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A39F235F4EA0009A3830 /* Assets.xcassets */; };
+		14C3A3A3235F4EA0009A3830 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3A1235F4EA0009A3830 /* LaunchScreen.storyboard */; };
+		14C3A3C6235F4EC4009A3830 /* AddGuardian.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3AB235F4EC3009A3830 /* AddGuardian.storyboard */; };
+		14C3A3C7235F4EC4009A3830 /* AddGuardianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3AC235F4EC3009A3830 /* AddGuardianViewController.swift */; };
+		14C3A3C8235F4EC4009A3830 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3AE235F4EC3009A3830 /* CoreDataHelper.swift */; };
+		14C3A3C9235F4EC4009A3830 /* InternetConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3AF235F4EC3009A3830 /* InternetConnectionTest.swift */; };
+		14C3A3CA235F4EC4009A3830 /* RestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3B0235F4EC3009A3830 /* RestHelper.swift */; };
+		14C3A3CB235F4EC4009A3830 /* StudentList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3B2235F4EC3009A3830 /* StudentList.storyboard */; };
+		14C3A3CC235F4EC4009A3830 /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3B3235F4EC3009A3830 /* StudentListViewController.swift */; };
+		14C3A3CD235F4EC4009A3830 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3B4235F4EC3009A3830 /* StudentTableViewCell.swift */; };
+		14C3A3CE235F4EC4009A3830 /* Setup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3B6235F4EC3009A3830 /* Setup.storyboard */; };
+		14C3A3CF235F4EC4009A3830 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3B7235F4EC3009A3830 /* SetupViewController.swift */; };
+		14C3A3D0235F4EC4009A3830 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3B9235F4EC3009A3830 /* Launch.storyboard */; };
+		14C3A3D1235F4EC4009A3830 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3BA235F4EC3009A3830 /* LaunchViewController.swift */; };
+		14C3A3D2235F4EC4009A3830 /* DeviceRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3BC235F4EC3009A3830 /* DeviceRegistration.storyboard */; };
+		14C3A3D3235F4EC4009A3830 /* RegistrationCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3BD235F4EC3009A3830 /* RegistrationCheckViewController.swift */; };
+		14C3A3D4235F4EC4009A3830 /* SearchStudent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3BF235F4EC3009A3830 /* SearchStudent.storyboard */; };
+		14C3A3D5235F4EC4009A3830 /* SearchStudentResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3C0235F4EC3009A3830 /* SearchStudentResultCell.swift */; };
+		14C3A3D6235F4EC4009A3830 /* SearchStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3C1235F4EC3009A3830 /* SearchStudentViewController.swift */; };
+		14C3A3D7235F4EC4009A3830 /* StudentGuardianCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3C3235F4EC4009A3830 /* StudentGuardianCollectionCell.swift */; };
+		14C3A3D9235F4EC4009A3830 /* StudentGuardianSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3C5235F4EC4009A3830 /* StudentGuardianSelectionViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		14C3A392235F4E9E009A3830 /* Guardian Check-in.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guardian Check-in.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14C3A395235F4E9E009A3830 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		14C3A397235F4E9E009A3830 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		14C3A39A235F4E9E009A3830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14C3A39D235F4E9E009A3830 /* Guardian_Check_in.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Guardian_Check_in.xcdatamodel; sourceTree = "<group>"; };
+		14C3A39F235F4EA0009A3830 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14C3A3A2235F4EA0009A3830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		14C3A3A4235F4EA0009A3830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14C3A3AB235F4EC3009A3830 /* AddGuardian.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddGuardian.storyboard; sourceTree = "<group>"; };
+		14C3A3AC235F4EC3009A3830 /* AddGuardianViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGuardianViewController.swift; sourceTree = "<group>"; };
+		14C3A3AE235F4EC3009A3830 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		14C3A3AF235F4EC3009A3830 /* InternetConnectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetConnectionTest.swift; sourceTree = "<group>"; };
+		14C3A3B0235F4EC3009A3830 /* RestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestHelper.swift; sourceTree = "<group>"; };
+		14C3A3B2235F4EC3009A3830 /* StudentList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StudentList.storyboard; sourceTree = "<group>"; };
+		14C3A3B3235F4EC3009A3830 /* StudentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
+		14C3A3B4235F4EC3009A3830 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
+		14C3A3B6235F4EC3009A3830 /* Setup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setup.storyboard; sourceTree = "<group>"; };
+		14C3A3B7235F4EC3009A3830 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		14C3A3B9235F4EC3009A3830 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
+		14C3A3BA235F4EC3009A3830 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		14C3A3BC235F4EC3009A3830 /* DeviceRegistration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DeviceRegistration.storyboard; sourceTree = "<group>"; };
+		14C3A3BD235F4EC3009A3830 /* RegistrationCheckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationCheckViewController.swift; sourceTree = "<group>"; };
+		14C3A3BF235F4EC3009A3830 /* SearchStudent.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchStudent.storyboard; sourceTree = "<group>"; };
+		14C3A3C0235F4EC3009A3830 /* SearchStudentResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchStudentResultCell.swift; sourceTree = "<group>"; };
+		14C3A3C1235F4EC3009A3830 /* SearchStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchStudentViewController.swift; sourceTree = "<group>"; };
+		14C3A3C3235F4EC4009A3830 /* StudentGuardianCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentGuardianCollectionCell.swift; sourceTree = "<group>"; };
+		14C3A3C5235F4EC4009A3830 /* StudentGuardianSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentGuardianSelectionViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14C3A38F235F4E9E009A3830 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14C3A389235F4E9E009A3830 = {
+			isa = PBXGroup;
+			children = (
+				14C3A394235F4E9E009A3830 /* Guardian Check-in */,
+				14C3A393235F4E9E009A3830 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		14C3A393235F4E9E009A3830 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14C3A392235F4E9E009A3830 /* Guardian Check-in.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14C3A394235F4E9E009A3830 /* Guardian Check-in */ = {
+			isa = PBXGroup;
+			children = (
+				14C3A3AA235F4EC3009A3830 /* AddNewGuardian */,
+				14C3A3BB235F4EC3009A3830 /* DeviceRegistration */,
+				14C3A3B8235F4EC3009A3830 /* LaunchScreen */,
+				14C3A3BE235F4EC3009A3830 /* SearchStudent */,
+				14C3A3B5235F4EC3009A3830 /* Setup */,
+				14C3A3B1235F4EC3009A3830 /* Student List */,
+				14C3A3C2235F4EC4009A3830 /* StudentGuardianSelection */,
+				14C3A3AD235F4EC3009A3830 /* Util */,
+				14C3A395235F4E9E009A3830 /* AppDelegate.swift */,
+				14C3A397235F4E9E009A3830 /* ViewController.swift */,
+				14C3A399235F4E9E009A3830 /* Main.storyboard */,
+				14C3A39F235F4EA0009A3830 /* Assets.xcassets */,
+				14C3A3A1235F4EA0009A3830 /* LaunchScreen.storyboard */,
+				14C3A3A4235F4EA0009A3830 /* Info.plist */,
+				14C3A39C235F4E9E009A3830 /* Guardian_Check_in.xcdatamodeld */,
+			);
+			path = "Guardian Check-in";
+			sourceTree = "<group>";
+		};
+		14C3A3AA235F4EC3009A3830 /* AddNewGuardian */ = {
+			isa = PBXGroup;
+			children = (
+				14C3A3AB235F4EC3009A3830 /* AddGuardian.storyboard */,
+				14C3A3AC235F4EC3009A3830 /* AddGuardianViewController.swift */,
+			);
+			path = AddNewGuardian;
+			sourceTree = "<group>";
+		};
+		14C3A3AD235F4EC3009A3830 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				14C3A3AE235F4EC3009A3830 /* CoreDataHelper.swift */,
+				14C3A3AF235F4EC3009A3830 /* InternetConnectionTest.swift */,
+				14C3A3B0235F4EC3009A3830 /* RestHelper.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		14C3A3B1235F4EC3009A3830 /* Student List */ = {
+			isa = PBXGroup;
+			children = (
+				14C3A3B2235F4EC3009A3830 /* StudentList.storyboard */,
+				14C3A3B3235F4EC3009A3830 /* StudentListViewController.swift */,
+				14C3A3B4235F4EC3009A3830 /* StudentTableViewCell.swift */,
+			);
+			path = "Student List";
+			sourceTree = "<group>";
+		};
+		14C3A3B5235F4EC3009A3830 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				14C3A3B6235F4EC3009A3830 /* Setup.storyboard */,
+				14C3A3B7235F4EC3009A3830 /* SetupViewController.swift */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
+		14C3A3B8235F4EC3009A3830 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				14C3A3B9235F4EC3009A3830 /* Launch.storyboard */,
+				14C3A3BA235F4EC3009A3830 /* LaunchViewController.swift */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		14C3A3BB235F4EC3009A3830 /* DeviceRegistration */ = {
+			isa = PBXGroup;
+			children = (
+				14C3A3BC235F4EC3009A3830 /* DeviceRegistration.storyboard */,
+				14C3A3BD235F4EC3009A3830 /* RegistrationCheckViewController.swift */,
+			);
+			path = DeviceRegistration;
+			sourceTree = "<group>";
+		};
+		14C3A3BE235F4EC3009A3830 /* SearchStudent */ = {
+			isa = PBXGroup;
+			children = (
+				14C3A3BF235F4EC3009A3830 /* SearchStudent.storyboard */,
+				14C3A3C0235F4EC3009A3830 /* SearchStudentResultCell.swift */,
+				14C3A3C1235F4EC3009A3830 /* SearchStudentViewController.swift */,
+			);
+			path = SearchStudent;
+			sourceTree = "<group>";
+		};
+		14C3A3C2235F4EC4009A3830 /* StudentGuardianSelection */ = {
+			isa = PBXGroup;
+			children = (
+				14C3A3C3235F4EC4009A3830 /* StudentGuardianCollectionCell.swift */,
+				14C3A3C5235F4EC4009A3830 /* StudentGuardianSelectionViewController.swift */,
+			);
+			path = StudentGuardianSelection;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14C3A391235F4E9E009A3830 /* Guardian Check-in */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14C3A3A7235F4EA0009A3830 /* Build configuration list for PBXNativeTarget "Guardian Check-in" */;
+			buildPhases = (
+				14C3A38E235F4E9E009A3830 /* Sources */,
+				14C3A38F235F4E9E009A3830 /* Frameworks */,
+				14C3A390235F4E9E009A3830 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Guardian Check-in";
+			productName = "Guardian Check-in";
+			productReference = 14C3A392235F4E9E009A3830 /* Guardian Check-in.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14C3A38A235F4E9E009A3830 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Anand Kelkar";
+				TargetAttributes = {
+					14C3A391235F4E9E009A3830 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 14C3A38D235F4E9E009A3830 /* Build configuration list for PBXProject "Guardian Check-in" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14C3A389235F4E9E009A3830;
+			productRefGroup = 14C3A393235F4E9E009A3830 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14C3A391235F4E9E009A3830 /* Guardian Check-in */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14C3A390235F4E9E009A3830 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14C3A3CE235F4EC4009A3830 /* Setup.storyboard in Resources */,
+				14C3A3CB235F4EC4009A3830 /* StudentList.storyboard in Resources */,
+				14C3A3A3235F4EA0009A3830 /* LaunchScreen.storyboard in Resources */,
+				14C3A3D4235F4EC4009A3830 /* SearchStudent.storyboard in Resources */,
+				14C3A3C6235F4EC4009A3830 /* AddGuardian.storyboard in Resources */,
+				14C3A3D0235F4EC4009A3830 /* Launch.storyboard in Resources */,
+				14C3A3A0235F4EA0009A3830 /* Assets.xcassets in Resources */,
+				14C3A39B235F4E9E009A3830 /* Main.storyboard in Resources */,
+				14C3A3D2235F4EC4009A3830 /* DeviceRegistration.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14C3A38E235F4E9E009A3830 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14C3A3D3235F4EC4009A3830 /* RegistrationCheckViewController.swift in Sources */,
+				14C3A3C8235F4EC4009A3830 /* CoreDataHelper.swift in Sources */,
+				14C3A39E235F4E9E009A3830 /* Guardian_Check_in.xcdatamodeld in Sources */,
+				14C3A3D5235F4EC4009A3830 /* SearchStudentResultCell.swift in Sources */,
+				14C3A3C9235F4EC4009A3830 /* InternetConnectionTest.swift in Sources */,
+				14C3A3D7235F4EC4009A3830 /* StudentGuardianCollectionCell.swift in Sources */,
+				14C3A3CA235F4EC4009A3830 /* RestHelper.swift in Sources */,
+				14C3A3CF235F4EC4009A3830 /* SetupViewController.swift in Sources */,
+				14C3A3CC235F4EC4009A3830 /* StudentListViewController.swift in Sources */,
+				14C3A3CD235F4EC4009A3830 /* StudentTableViewCell.swift in Sources */,
+				14C3A3C7235F4EC4009A3830 /* AddGuardianViewController.swift in Sources */,
+				14C3A3D6235F4EC4009A3830 /* SearchStudentViewController.swift in Sources */,
+				14C3A3D1235F4EC4009A3830 /* LaunchViewController.swift in Sources */,
+				14C3A398235F4E9E009A3830 /* ViewController.swift in Sources */,
+				14C3A3D9235F4EC4009A3830 /* StudentGuardianSelectionViewController.swift in Sources */,
+				14C3A396235F4E9E009A3830 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		14C3A399235F4E9E009A3830 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14C3A39A235F4E9E009A3830 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		14C3A3A1235F4EA0009A3830 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14C3A3A2235F4EA0009A3830 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14C3A3A5235F4EA0009A3830 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		14C3A3A6235F4EA0009A3830 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		14C3A3A8235F4EA0009A3830 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V9MNS6CX39;
+				INFOPLIST_FILE = "Guardian Check-in/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "AnandKelkar.Guardian-Check-in";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		14C3A3A9235F4EA0009A3830 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V9MNS6CX39;
+				INFOPLIST_FILE = "Guardian Check-in/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "AnandKelkar.Guardian-Check-in";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14C3A38D235F4E9E009A3830 /* Build configuration list for PBXProject "Guardian Check-in" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14C3A3A5235F4EA0009A3830 /* Debug */,
+				14C3A3A6235F4EA0009A3830 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14C3A3A7235F4EA0009A3830 /* Build configuration list for PBXNativeTarget "Guardian Check-in" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14C3A3A8235F4EA0009A3830 /* Debug */,
+				14C3A3A9235F4EA0009A3830 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		14C3A39C235F4E9E009A3830 /* Guardian_Check_in.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				14C3A39D235F4E9E009A3830 /* Guardian_Check_in.xcdatamodel */,
+			);
+			currentVersion = 14C3A39D235F4E9E009A3830 /* Guardian_Check_in.xcdatamodel */;
+			path = Guardian_Check_in.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 14C3A38A235F4E9E009A3830 /* Project object */;
+}
