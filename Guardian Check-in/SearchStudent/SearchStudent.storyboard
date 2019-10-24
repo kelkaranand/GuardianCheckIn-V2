@@ -13,7 +13,7 @@
         <!--Search Student View Controller-->
         <scene sceneID="L1d-wk-eBj">
             <objects>
-                <viewController storyboardIdentifier="searchStudentController" id="SyV-HG-GGP" customClass="SearchStudentViewController" customModule="GuardianApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchStudentController" id="SyV-HG-GGP" customClass="SearchStudentViewController" customModule="Guardian_Check_in" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j9X-Q8-wfQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
                                 <rect key="frame" x="41" y="503" width="324" height="309"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="result" id="Dqa-XA-O7W" customClass="SearchStudentResultCell" customModule="GuardianApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="result" id="Dqa-XA-O7W" customClass="SearchStudentResultCell" customModule="Guardian_Check_in" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="324" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dqa-XA-O7W" id="d8G-Od-dJA">
@@ -59,16 +59,44 @@
                                     <outlet property="delegate" destination="SyV-HG-GGP" id="Jkn-Os-CYY"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="YrD-kE-coS">
+                                <rect key="frame" x="41" y="309.5" width="332" height="331"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YrD-kE-coS" secondAttribute="height" multiplier="1:1" constant="1" id="2TQ-vb-zdg"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="commercial locksmith" translatesAutoresizingMaskIntoConstraints="NO" id="40u-iK-u1P">
+                                <rect key="frame" x="75.5" y="344" width="263" height="262"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="40u-iK-u1P" secondAttribute="height" multiplier="1:1" constant="1" id="izl-9z-1bg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFb-Ki-W52">
+                                <rect key="frame" x="103" y="690.5" width="208" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="YrD-kE-coS" firstAttribute="width" secondItem="j9X-Q8-wfQ" secondAttribute="width" multiplier="0.8" constant="1" id="6fe-Od-EZt"/>
+                            <constraint firstItem="40u-iK-u1P" firstAttribute="centerX" secondItem="mpP-2z-YFY" secondAttribute="centerX" id="9RY-pf-abE"/>
+                            <constraint firstItem="LFb-Ki-W52" firstAttribute="height" secondItem="j9X-Q8-wfQ" secondAttribute="height" multiplier="0.05" constant="1" id="Cjy-QF-PaZ"/>
+                            <constraint firstItem="40u-iK-u1P" firstAttribute="width" secondItem="YrD-kE-coS" secondAttribute="width" multiplier="0.79" constant="1" id="FXN-jc-ReX"/>
+                            <constraint firstItem="40u-iK-u1P" firstAttribute="centerY" secondItem="mpP-2z-YFY" secondAttribute="centerY" id="G7g-h5-iHR"/>
                             <constraint firstItem="mpP-2z-YFY" firstAttribute="bottom" secondItem="7bV-71-jIN" secondAttribute="bottom" constant="50" id="IeC-Ep-RGR"/>
                             <constraint firstItem="BvZ-r4-ZJc" firstAttribute="top" secondItem="5sP-eS-gCF" secondAttribute="bottom" constant="150" id="Q4v-Vf-9MH"/>
+                            <constraint firstItem="YrD-kE-coS" firstAttribute="centerY" secondItem="mpP-2z-YFY" secondAttribute="centerY" id="QOI-jt-pkI"/>
+                            <constraint firstItem="LFb-Ki-W52" firstAttribute="centerX" secondItem="mpP-2z-YFY" secondAttribute="centerX" id="RKt-bw-yIh"/>
+                            <constraint firstItem="YrD-kE-coS" firstAttribute="centerX" secondItem="mpP-2z-YFY" secondAttribute="centerX" id="Rcv-Pm-ee1"/>
                             <constraint firstItem="7bV-71-jIN" firstAttribute="trailing" secondItem="BvZ-r4-ZJc" secondAttribute="trailing" id="Sk3-ul-Ydh"/>
                             <constraint firstItem="BvZ-r4-ZJc" firstAttribute="leading" secondItem="mpP-2z-YFY" secondAttribute="leading" constant="41" id="aMF-xG-F0k"/>
                             <constraint firstItem="mpP-2z-YFY" firstAttribute="trailing" secondItem="BvZ-r4-ZJc" secondAttribute="trailing" constant="49" id="bO7-WW-pzd"/>
                             <constraint firstItem="7bV-71-jIN" firstAttribute="top" secondItem="BvZ-r4-ZJc" secondAttribute="bottom" id="dsk-xc-Mw2"/>
                             <constraint firstItem="7bV-71-jIN" firstAttribute="leading" secondItem="BvZ-r4-ZJc" secondAttribute="leading" id="kdr-3u-XdL"/>
+                            <constraint firstItem="LFb-Ki-W52" firstAttribute="top" secondItem="YrD-kE-coS" secondAttribute="bottom" constant="50" id="uUD-w4-ic9"/>
+                            <constraint firstItem="LFb-Ki-W52" firstAttribute="width" secondItem="j9X-Q8-wfQ" secondAttribute="width" multiplier="0.5" constant="1" id="xlo-lZ-ds1"/>
                             <constraint firstItem="5sP-eS-gCF" firstAttribute="trailing" secondItem="BvZ-r4-ZJc" secondAttribute="trailing" id="ypt-A3-6qP"/>
                             <constraint firstItem="BvZ-r4-ZJc" firstAttribute="centerY" secondItem="mpP-2z-YFY" secondAttribute="centerY" id="zFS-28-71G"/>
                             <constraint firstItem="5sP-eS-gCF" firstAttribute="leading" secondItem="BvZ-r4-ZJc" secondAttribute="leading" id="zab-Zw-fxQ"/>
@@ -78,8 +106,12 @@
                     <navigationItem key="navigationItem" id="p7x-fU-XPa"/>
                     <connections>
                         <outlet property="centerConstraint" destination="zFS-28-71G" id="tn4-D1-7HC"/>
+                        <outlet property="lockBack" destination="YrD-kE-coS" id="Dkp-6J-aUg"/>
+                        <outlet property="lockFront" destination="40u-iK-u1P" id="2OC-2J-Ccr"/>
+                        <outlet property="mainLabel" destination="5sP-eS-gCF" id="J7t-LE-ItF"/>
                         <outlet property="searchBar" destination="BvZ-r4-ZJc" id="SRy-An-bWh"/>
                         <outlet property="tableView" destination="7bV-71-jIN" id="G5j-rE-sla"/>
+                        <outlet property="verificationLabel" destination="LFb-Ki-W52" id="3hC-Qx-dmB"/>
                         <segue destination="lzo-ia-yI1" kind="show" identifier="showSetup" id="NTP-CB-rZ3"/>
                     </connections>
                 </viewController>
@@ -115,4 +147,8 @@
             <point key="canvasLocation" x="115.94202898550725" y="25.446428571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="commercial locksmith" width="400" height="400"/>
+        <image name="lock" width="700" height="719"/>
+    </resources>
 </document>

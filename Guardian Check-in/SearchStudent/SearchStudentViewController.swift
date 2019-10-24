@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import AudioToolbox
+import AVFoundation
 
 class SearchStudentViewController: UIViewController {
     
@@ -18,8 +20,16 @@ class SearchStudentViewController: UIViewController {
     var listOfNames = [String]()
     var searchActive = false
     var swipeCount = 0
+    @IBOutlet weak var lockBack: UIImageView!
+    @IBOutlet weak var lockFront: UIImageView!
+    @IBOutlet weak var mainLabel: UILabel!
+    var lastRotation:CGFloat = 0
+    var rotation:CGFloat = 0
+    var counter = 0
     
     @IBOutlet var centerConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var verificationLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
@@ -36,14 +46,72 @@ class SearchStudentViewController: UIViewController {
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
         
-        //Rotation gesture
-        let rotate = UIRotationGestureRecognizer(target: self, action:     #selector(rotatedView(_:)))
-        self.view.addGestureRecognizer(rotate)
+        //Hide Lock
+        lockFront.isHidden = true
+        lockBack.isHidden = true
+        verificationLabel.isHidden = true
         
+        //Longpress to show lock
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(showLock))
+        longPressGesture.minimumPressDuration = 5.0
+        self.view.addGestureRecognizer(longPressGesture)
+        
+        //Rotation gesture for the lock
+        let rotateLock = UIRotationGestureRecognizer(target: self, action: #selector(rotateLock(_:)))
+        self.view.addGestureRecognizer(rotateLock)
+    }
+ 
+    @objc func showLock() {
+        if(lockFront.isHidden){
+            toggleLockDisplay()
+            verificationLabel.isHidden = false
+        }
     }
     
-    @objc func rotatedView(_ sender: UIRotationGestureRecognizer) {
-        print(sender.rotation)
+    func toggleLockDisplay() {
+        if(lockFront.isHidden) {
+            lockFront.isHidden = false
+            lockBack.isHidden = false
+        }
+        else {
+            lockFront.isHidden = true
+            lockBack.isHidden = true
+        }
+    }
+    
+    @objc func rotateLock(_ sender: UIRotationGestureRecognizer) {
+        counter = counter + 1
+        if(sender.state == .began){
+            rotation = rotation + lastRotation
+        } else if(sender.state == .changed){
+            let newRotation = sender.rotation + rotation
+            self.lockFront.transform = CGAffineTransform(rotationAngle: newRotation)
+            if (counter > 10){
+                AudioServicesPlaySystemSoundWithCompletion(1157,nil)
+                counter = 0
+            }
+        } else if(sender.state == .ended) {
+            lastRotation = sender.rotation
+            verificationLabel.text = String(getLockValue(lockRotation: rotation+lastRotation))
+        }
+    }
+    
+    func rad2deg(_ number: Double) -> Double {
+        return number * 180 / .pi
+    }
+    
+    func getLockValue(lockRotation:CGFloat) -> Int {
+        var deg = rad2deg(Double(lockRotation))
+        deg = deg.truncatingRemainder(dividingBy: 360)
+        var integer = Int(deg/3.6)
+        print(integer)
+        if(integer < 0){
+            integer = integer * -1
+        }
+        else if(integer > 0) {
+            integer = 100 - integer
+        }
+        return integer
     }
     
     @objc func showSetup() {
