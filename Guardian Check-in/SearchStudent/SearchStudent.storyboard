@@ -106,7 +106,7 @@
                         <outlet property="searchBar" destination="BvZ-r4-ZJc" id="SRy-An-bWh"/>
                         <outlet property="tableView" destination="7bV-71-jIN" id="G5j-rE-sla"/>
                         <segue destination="lzo-ia-yI1" kind="show" identifier="showSetup" id="NTP-CB-rZ3"/>
-                        <segue destination="5iw-DO-9uk" kind="show" identifier="guardianSelection" id="6dN-u0-zZZ"/>
+                        <segue destination="5iw-DO-9uk" kind="show" identifier="guardianSelection" animates="NO" id="6dN-u0-zZZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5x-rK-MPn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

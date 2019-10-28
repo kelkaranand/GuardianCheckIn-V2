@@ -18,6 +18,7 @@ class SearchStudentViewController: UIViewController {
     var searchController: UISearchController?
 //    var filteredTableData = [String]()
 //    static var listOfNames = [String]()
+    var selectedStudent = StudentRecord()
     static var studentRecords = [StudentRecord]()
     var filteredStudentrecords = [StudentRecord]()
     var searchActive = false
@@ -71,7 +72,9 @@ extension SearchStudentViewController: UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "result", for: indexPath) as? SearchStudentResultCell {
 //                cell.backgroundColor = .blue
-            cell.nameLabel.text = filteredStudentrecords[indexPath.row].name
+            let fragFname = filteredStudentrecords[indexPath.row].fname
+            let fragLname = filteredStudentrecords[indexPath.row].lname
+            cell.nameLabel.text = fragFname + " " + fragLname
             return cell
         }
         
@@ -126,10 +129,18 @@ extension SearchStudentViewController: UISearchBarDelegate {
 //              tableView.reloadData()
         
         filteredStudentrecords = SearchStudentViewController.studentRecords.filter({( student : StudentRecord) -> Bool in
-            return (student.name.lowercased().contains(searchText.lowercased()))
+            let name = student.fname + " " + student.lname
+            return (name.lowercased().contains(searchText.lowercased()))
         })
         
         tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "guardianSelection" {
+            let dest = segue.destination as? StudentGuardianSelectionViewController
+            dest?.student = selectedStudent
+        }
     }
 
     
@@ -137,6 +148,7 @@ extension SearchStudentViewController: UISearchBarDelegate {
 
 extension SearchStudentViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedStudent = filteredStudentrecords[indexPath.row]
         UIView.animate(withDuration: 1, animations: {
             self.mainCard.center.y = self.mainCard.center.y + self.view.bounds.height
         }, completion: { finished in

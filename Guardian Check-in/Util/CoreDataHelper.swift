@@ -20,14 +20,15 @@ public class CoreDataHelper {
         return try! managedContext.count(for: fetchRequest)
     }
     
-    class func saveStudentData(_ name:String,_ id:String){
+    class func saveStudentData(_ fname:String,_ lname:String,_ id:String){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
         let managedContext = appDelegate.persistentContainer.viewContext
         let descrEntity = NSEntityDescription.entity(forEntityName: "Student", in: managedContext)!
         let obj = NSManagedObject(entity: descrEntity, insertInto: managedContext)
-        obj.setValue(name, forKey: "Name")
+        obj.setValue(fname, forKey: "fname")
+        obj.setValue(lname, forKey: "lname")
         obj.setValue(id, forKey: "id")
         
         do {
@@ -39,15 +40,15 @@ public class CoreDataHelper {
         }
     }
     
-    class func saveGuardianData(_ name:String,_ id:String,_ studentId:String,_ relation:String){
+    class func saveGuardianData(_ fname:String,_ lname:String,_ studentId:String,_ relation:String){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
         let managedContext = appDelegate.persistentContainer.viewContext
         let descrEntity = NSEntityDescription.entity(forEntityName: "Guardian", in: managedContext)!
         let obj = NSManagedObject(entity: descrEntity, insertInto: managedContext)
-        obj.setValue(name, forKey: "name")
-        obj.setValue(id, forKey: "id")
+        obj.setValue(fname, forKey: "fname")
+        obj.setValue(lname, forKey: "lname")
         obj.setValue(studentId, forKey: "studentId")
         obj.setValue(relation, forKey: "relation")
         

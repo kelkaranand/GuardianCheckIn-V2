@@ -1,5 +1,5 @@
 //
-//  Student.swift
+//  GuardianRecord.swift
 //  Guardian Check-in
 //
 //  Created by Anand Kelkar on 28/10/19.
@@ -8,22 +8,22 @@
 
 import Foundation
 
-class StudentRecord {
+class GuardianRecord {
     
     var fname:String
     var lname:String
-    var id:String
+    var relation:String
     
     init() {
         fname = ""
         lname = ""
-        id = ""
+        relation = ""
     }
     
-    init(_ fname:String, _ lname:String, _ id:String) {
+    init(_ fname:String, _ lname:String, _ relation:String) {
         self.fname = fname
         self.lname = lname
-        self.id = id
+        self.relation = relation
     }
     
 }

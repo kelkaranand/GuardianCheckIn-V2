@@ -31,6 +31,7 @@
 		14C3A3D9235F4EC4009A3830 /* StudentGuardianSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3C5235F4EC4009A3830 /* StudentGuardianSelectionViewController.swift */; };
 		14C3A3DB236507E4009A3830 /* StudentGuardianSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3DA236507E4009A3830 /* StudentGuardianSelection.storyboard */; };
 		14C3A3DD23673056009A3830 /* StudentRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3DC23673056009A3830 /* StudentRecord.swift */; };
+		14C3A3DF23675F75009A3830 /* GuardianRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3DE23675F75009A3830 /* GuardianRecord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		14C3A3C5235F4EC4009A3830 /* StudentGuardianSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentGuardianSelectionViewController.swift; sourceTree = "<group>"; };
 		14C3A3DA236507E4009A3830 /* StudentGuardianSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentGuardianSelection.storyboard; sourceTree = "<group>"; };
 		14C3A3DC23673056009A3830 /* StudentRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRecord.swift; sourceTree = "<group>"; };
+		14C3A3DE23675F75009A3830 /* GuardianRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianRecord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				14C3A3C3235F4EC4009A3830 /* StudentGuardianCollectionCell.swift */,
 				14C3A3C5235F4EC4009A3830 /* StudentGuardianSelectionViewController.swift */,
 				14C3A3DA236507E4009A3830 /* StudentGuardianSelection.storyboard */,
+				14C3A3DE23675F75009A3830 /* GuardianRecord.swift */,
 			);
 			path = StudentGuardianSelection;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				14C3A3DD23673056009A3830 /* StudentRecord.swift in Sources */,
 				14C3A3CA235F4EC4009A3830 /* RestHelper.swift in Sources */,
 				14C3A3CF235F4EC4009A3830 /* SetupViewController.swift in Sources */,
+				14C3A3DF23675F75009A3830 /* GuardianRecord.swift in Sources */,
 				14C3A3C7235F4EC4009A3830 /* AddGuardianViewController.swift in Sources */,
 				14C3A3D6235F4EC4009A3830 /* SearchStudentViewController.swift in Sources */,
 				14C3A3D1235F4EC4009A3830 /* LaunchViewController.swift in Sources */,

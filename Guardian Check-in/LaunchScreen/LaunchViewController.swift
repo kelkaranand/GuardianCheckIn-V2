@@ -24,19 +24,20 @@ class LaunchViewController : UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
         
 //        //Generate dummy Data
-//        CoreDataHelper.saveStudentData("Harry Potter", "1")
-//        CoreDataHelper.saveStudentData("Hermoine Granger", "2")
-//        CoreDataHelper.saveStudentData("Ron Weasley", "3")
-//        CoreDataHelper.saveStudentData("Draco Malfoy", "4")
-//        CoreDataHelper.saveStudentData("Ginny Weasley", "5")
+//        CoreDataHelper.saveStudentData("Harry", "Potter", "1")
+//        CoreDataHelper.saveStudentData("Hermoine", "Granger", "2")
+//        CoreDataHelper.saveStudentData("Ron", "Weasley", "3")
+//        CoreDataHelper.saveStudentData("Draco", "Malfoy", "4")
+//        CoreDataHelper.saveStudentData("Ginny", "Weasley", "5")
 //
-//        CoreDataHelper.saveGuardianData("James Potter", "1", "1", "Father")
-//        CoreDataHelper.saveGuardianData("Lilly Potter", "2", "1", "Mother")
+//        CoreDataHelper.saveGuardianData("James", "Potter", "1", "Father")
+//        CoreDataHelper.saveGuardianData("Lilly", "Potter", "1", "Mother")
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(animated)
+        //fetchData will be replaced by a api call that uses the student id to return guardians
         fetchData()
         generateLogo()
     }
@@ -139,7 +140,7 @@ class LaunchViewController : UIViewController {
             
             for student in students {
 //                SearchStudentViewController.listOfNames.append(student.name ?? "")
-                SearchStudentViewController.studentRecords.append(StudentRecord(student.name!, student.id!))
+                SearchStudentViewController.studentRecords.append(StudentRecord(student.fname!, student.lname!, student.id!))
             }
         }catch let err as NSError {
             print(err.debugDescription)
