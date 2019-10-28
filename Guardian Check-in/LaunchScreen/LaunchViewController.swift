@@ -23,17 +23,21 @@ class LaunchViewController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
         
-        //Generate dummy Data
+//        //Generate dummy Data
 //        CoreDataHelper.saveStudentData("Harry Potter", "1")
 //        CoreDataHelper.saveStudentData("Hermoine Granger", "2")
 //        CoreDataHelper.saveStudentData("Ron Weasley", "3")
 //        CoreDataHelper.saveStudentData("Draco Malfoy", "4")
 //        CoreDataHelper.saveStudentData("Ginny Weasley", "5")
+//
+//        CoreDataHelper.saveGuardianData("James Potter", "1", "1", "Father")
+//        CoreDataHelper.saveGuardianData("Lilly Potter", "2", "1", "Mother")
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(animated)
+        fetchData()
         generateLogo()
     }
     
@@ -70,34 +74,38 @@ class LaunchViewController : UIViewController {
             self.animatedView.alpha = 1.0
         }, completion: { finished in
             
-            //Read device data
-            let coreData = CoreDataHelper.retrieveData("Device_Info")
-            let data = coreData.first
-            
-            LaunchViewController.key = (data as AnyObject).value(forKey: "key") as? String
-            LaunchViewController.identifier = (data as AnyObject).value(forKey: "identifier") as? String
-            
-            if LaunchViewController.identifier == nil {
-                self.performSegue(withIdentifier: "CheckRegistration", sender: self)
-            }
+            UIView.animate(withDuration: 2.0, animations: {
+                self.animatedView.alpha = 0
+            }, completion: { finished in
+                //Read device data
+                let coreData = CoreDataHelper.retrieveData("Device_Info")
+                let data = coreData.first
                 
-            else if LaunchViewController.key == nil {
-                let responseKey = self.getRegKey(identifier: LaunchViewController.identifier!)
-                if responseKey == "Not Authorized" {
-                    let registrationAlert = UIAlertController(title: "Not Authorized", message: "Your device registration has not yet been approved. Please wait till device \""+LaunchViewController.identifier!+"\" is verified.", preferredStyle: .alert)
-                    registrationAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
-                    self.present(registrationAlert, animated: true)
+                LaunchViewController.key = (data as AnyObject).value(forKey: "key") as? String
+                LaunchViewController.identifier = (data as AnyObject).value(forKey: "identifier") as? String
+                
+                if LaunchViewController.identifier == nil {
+                    self.performSegue(withIdentifier: "CheckRegistration", sender: self)
+                }
+                    
+                else if LaunchViewController.key == nil {
+                    let responseKey = self.getRegKey(identifier: LaunchViewController.identifier!)
+                    if responseKey == "Not Authorized" {
+                        let registrationAlert = UIAlertController(title: "Not Authorized", message: "Your device registration has not yet been approved. Please wait till device \""+LaunchViewController.identifier!+"\" is verified.", preferredStyle: .alert)
+                        registrationAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
+                        self.present(registrationAlert, animated: true)
+                    }
+                    else {
+                        self.writeKey(key: responseKey)
+                        print("Wrote key "+responseKey)
+                        self.performSegue(withIdentifier: "ShowList", sender: self)
+                    }
                 }
                 else {
-                    self.writeKey(key: responseKey)
-                    print("Wrote key "+responseKey)
+                    //Move to Landing
                     self.performSegue(withIdentifier: "ShowList", sender: self)
                 }
-            }
-            else {
-                //Move to Setup
-                self.performSegue(withIdentifier: "ShowList", sender: self)
-            }
+            })
         })
         
         
@@ -121,6 +129,21 @@ class LaunchViewController : UIViewController {
         }
     }
     
-    
+    private func fetchData() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            let students = results as! [Student]
+            
+            for student in students {
+//                SearchStudentViewController.listOfNames.append(student.name ?? "")
+                SearchStudentViewController.studentRecords.append(StudentRecord(student.name!, student.id!))
+            }
+        }catch let err as NSError {
+            print(err.debugDescription)
+        }
+    }
     
 }

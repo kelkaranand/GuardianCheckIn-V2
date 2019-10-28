@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -23,11 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="jLx-sc-WQq">
-                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LJFF_Patterns-1" translatesAutoresizingMaskIntoConstraints="NO" id="jLx-sc-WQq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lyc-pv-C6j">
-                                <rect key="frame" x="37" y="143" width="301" height="401"/>
+                                <rect key="frame" x="37" y="133" width="301" height="401"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffT-Nq-b7D">
                                         <rect key="frame" x="75" y="0.0" width="151.5" height="41"/>
@@ -120,16 +119,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Lyc-pv-C6j" firstAttribute="centerX" secondItem="Yxy-gw-55U" secondAttribute="centerX" id="8Ln-3f-SI6"/>
+                            <constraint firstItem="Lyc-pv-C6j" firstAttribute="centerX" secondItem="oiH-RA-1pS" secondAttribute="centerX" id="8Ln-3f-SI6"/>
                             <constraint firstItem="jLx-sc-WQq" firstAttribute="height" secondItem="oiH-RA-1pS" secondAttribute="height" id="MAp-X4-D8r"/>
-                            <constraint firstItem="jLx-sc-WQq" firstAttribute="centerX" secondItem="Yxy-gw-55U" secondAttribute="centerX" id="MZo-Ff-ceX"/>
-                            <constraint firstItem="Lyc-pv-C6j" firstAttribute="centerY" secondItem="Yxy-gw-55U" secondAttribute="centerY" id="avr-Rz-3Bl"/>
+                            <constraint firstItem="jLx-sc-WQq" firstAttribute="centerX" secondItem="oiH-RA-1pS" secondAttribute="centerX" id="MZo-Ff-ceX"/>
+                            <constraint firstItem="Lyc-pv-C6j" firstAttribute="centerY" secondItem="oiH-RA-1pS" secondAttribute="centerY" id="avr-Rz-3Bl"/>
                             <constraint firstItem="Lyc-pv-C6j" firstAttribute="width" secondItem="oiH-RA-1pS" secondAttribute="width" multiplier="0.8" constant="1" id="bWy-D4-Vmx"/>
                             <constraint firstItem="jLx-sc-WQq" firstAttribute="width" secondItem="oiH-RA-1pS" secondAttribute="width" id="xWu-sM-ayX"/>
                             <constraint firstItem="Lyc-pv-C6j" firstAttribute="height" secondItem="oiH-RA-1pS" secondAttribute="height" multiplier="0.6" constant="1" id="z1c-GH-PI1"/>
-                            <constraint firstItem="jLx-sc-WQq" firstAttribute="centerY" secondItem="Yxy-gw-55U" secondAttribute="centerY" id="zsN-bw-Ny4"/>
+                            <constraint firstItem="jLx-sc-WQq" firstAttribute="centerY" secondItem="oiH-RA-1pS" secondAttribute="centerY" id="zsN-bw-Ny4"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Yxy-gw-55U"/>
                     </view>
                     <connections>
                         <outlet property="buttonView" destination="Zmw-WU-IGz" id="xBc-bW-xrd"/>
@@ -143,7 +141,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="3794" height="4669"/>
+        <image name="LJFF_Patterns-1" width="1898" height="2335"/>
         <image name="registerButton" width="520" height="209"/>
     </resources>
 </document>

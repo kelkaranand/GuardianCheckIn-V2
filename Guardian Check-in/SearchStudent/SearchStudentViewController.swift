@@ -16,27 +16,47 @@ class SearchStudentViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     var searchController: UISearchController?
-    var filteredTableData = [String]()
-    var listOfNames = [String]()
+//    var filteredTableData = [String]()
+//    static var listOfNames = [String]()
+    static var studentRecords = [StudentRecord]()
+    var filteredStudentrecords = [StudentRecord]()
     var searchActive = false
+    @IBOutlet weak var mainCard: UIView!
     
     @IBOutlet var centerConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var verificationLabel: UILabel!
+    
+    override func viewDidLayoutSubviews() {
+        mainCard.layer.cornerRadius = 10
+        mainCard.layer.shouldRasterize = false
+        mainCard.layer.borderWidth = 2
+        
+        mainCard.layer.shadowRadius = 10
+        mainCard.layer.shadowColor = UIColor.black.cgColor
+        mainCard.layer.shadowOpacity = 1
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
+        tableView.isHidden = true
+        UIView.animate(withDuration: 1) {
+            self.mainCard.center.y = self.mainCard.center.y - self.view.bounds.height
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchDummyData()
         tableView.register(SearchStudentResultCell.self, forCellReuseIdentifier: "result")
         
         //Tap on screen to dismiss keyboard
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
+        mainCard.backgroundColor = UIColor(white: 1.0, alpha: 1)
+        
+        //Setup starting position for card
+        mainCard.center.y = mainCard.center.y + self.view.bounds.height
     
     }
  
@@ -44,21 +64,6 @@ class SearchStudentViewController: UIViewController {
         
     }
     
-    private func fetchDummyData() {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
-
-        do {
-            let results = try context.fetch(fetchRequest)
-            let students = results as! [Student]
-
-            for student in students {
-                listOfNames.append(student.name ?? "")
-            }
-        }catch let err as NSError {
-            print(err.debugDescription)
-        }
-    }
 }
 
 extension SearchStudentViewController: UITableViewDataSource {
@@ -66,7 +71,7 @@ extension SearchStudentViewController: UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "result", for: indexPath) as? SearchStudentResultCell {
 //                cell.backgroundColor = .blue
-            cell.nameLabel.text = filteredTableData[indexPath.row]
+            cell.nameLabel.text = filteredStudentrecords[indexPath.row].name
             return cell
         }
         
@@ -76,7 +81,7 @@ extension SearchStudentViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.searchActive {
-            return filteredTableData.count
+            return filteredStudentrecords.count
         } else {
             return 0
         }
@@ -87,15 +92,16 @@ extension SearchStudentViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         print("started")
         searchActive = true
-        centerConstraint.constant = -100
-        //self.searchBar.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -100).isActive = true
+//        centerConstraint.constant = -100
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         print("done")
         searchActive = false
-        centerConstraint.constant = 0
-        //self.searchBar.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 100).isActive = true
+        if (searchBar.text?.isEmpty)! {
+            tableView.isHidden = true
+        }
+//        centerConstraint.constant = 0
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -103,14 +109,27 @@ extension SearchStudentViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-              filteredTableData.removeAll(keepingCapacity: false)
+        
+        if !searchText.isEmpty {
+            tableView.isHidden = false
+        }
+        else {
+            tableView.isHidden = true
+        }
+            filteredStudentrecords.removeAll(keepingCapacity: false)
               guard let text = searchBar.text else { return }
               let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", text)
         
-              guard let unwrappedListOfNames = listOfNames as? NSArray else { return }
-              let array = (unwrappedListOfNames).filtered(using: searchPredicate)
-              filteredTableData = array as! [String]
-              tableView.reloadData()
+//        guard let unwrappedListOfNames = SearchStudentViewController.listOfNames as? NSArray else { return }
+//              let array = (unwrappedListOfNames).filtered(using: searchPredicate)
+//              filteredTableData = array as! [String]
+//              tableView.reloadData()
+        
+        filteredStudentrecords = SearchStudentViewController.studentRecords.filter({( student : StudentRecord) -> Bool in
+            return (student.name.lowercased().contains(searchText.lowercased()))
+        })
+        
+        tableView.reloadData()
     }
 
     
@@ -118,9 +137,10 @@ extension SearchStudentViewController: UISearchBarDelegate {
 
 extension SearchStudentViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "StudentGuardianSelection", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "studentGuardianSelection")
-        controller.modalPresentationStyle = .fullScreen
-        self.navigationController?.pushViewController(controller, animated: true)
+        UIView.animate(withDuration: 1, animations: {
+            self.mainCard.center.y = self.mainCard.center.y + self.view.bounds.height
+        }, completion: { finished in
+            self.performSegue(withIdentifier: "guardianSelection", sender: self)
+        })
     }
 }

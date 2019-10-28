@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,9 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LJFF_Patterns-1" translatesAutoresizingMaskIntoConstraints="NO" id="Njp-K1-oVO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9D-Ke-3CY">
-                                <rect key="frame" x="93.5" y="249.5" width="188.5" height="188.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="93.5" y="239.5" width="188.5" height="188.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="n9D-Ke-3CY" secondAttribute="height" multiplier="1:1" id="GcA-cj-ktO"/>
                                 </constraints>
@@ -28,16 +30,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="n9D-Ke-3CY" firstAttribute="centerY" secondItem="Er4-qU-yhc" secondAttribute="centerY" id="4Ov-VZ-COP"/>
-                            <constraint firstItem="n9D-Ke-3CY" firstAttribute="centerX" secondItem="Er4-qU-yhc" secondAttribute="centerX" id="GIl-8j-7US"/>
+                            <constraint firstItem="n9D-Ke-3CY" firstAttribute="centerY" secondItem="5uA-Bs-tco" secondAttribute="centerY" id="4Ov-VZ-COP"/>
+                            <constraint firstItem="Njp-K1-oVO" firstAttribute="width" secondItem="5uA-Bs-tco" secondAttribute="width" id="7bS-jI-KDC"/>
+                            <constraint firstItem="n9D-Ke-3CY" firstAttribute="centerX" secondItem="5uA-Bs-tco" secondAttribute="centerX" id="GIl-8j-7US"/>
+                            <constraint firstItem="Njp-K1-oVO" firstAttribute="centerX" secondItem="5uA-Bs-tco" secondAttribute="centerX" id="d0W-C5-FWW"/>
                             <constraint firstItem="n9D-Ke-3CY" firstAttribute="width" secondItem="5uA-Bs-tco" secondAttribute="width" multiplier="0.5" constant="1" id="noR-9q-dDW"/>
+                            <constraint firstItem="Njp-K1-oVO" firstAttribute="height" secondItem="5uA-Bs-tco" secondAttribute="height" id="o3b-Xw-T4Q"/>
+                            <constraint firstItem="Njp-K1-oVO" firstAttribute="centerY" secondItem="5uA-Bs-tco" secondAttribute="centerY" id="uq5-a4-Mqp"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Er4-qU-yhc"/>
                     </view>
                     <connections>
                         <outlet property="animatedView" destination="n9D-Ke-3CY" id="qJy-Oi-aeS"/>
                         <segue destination="q16-Yv-f5b" kind="show" identifier="CheckRegistration" id="ShR-xd-uTC"/>
-                        <segue destination="nRb-UN-nbN" kind="show" identifier="ShowList" id="y6z-G1-g1d"/>
+                        <segue destination="nRb-UN-nbN" kind="showDetail" identifier="ShowList" animates="NO" id="y6z-G1-g1d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEl-Ua-iCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -61,4 +66,7 @@
             <point key="canvasLocation" x="502" y="505"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LJFF_Patterns-1" width="1898" height="2335"/>
+    </resources>
 </document>

@@ -39,6 +39,27 @@ public class CoreDataHelper {
         }
     }
     
+    class func saveGuardianData(_ name:String,_ id:String,_ studentId:String,_ relation:String){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let descrEntity = NSEntityDescription.entity(forEntityName: "Guardian", in: managedContext)!
+        let obj = NSManagedObject(entity: descrEntity, insertInto: managedContext)
+        obj.setValue(name, forKey: "name")
+        obj.setValue(id, forKey: "id")
+        obj.setValue(studentId, forKey: "studentId")
+        obj.setValue(relation, forKey: "relation")
+        
+        do {
+            try managedContext.save()
+            
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+            
+        }
+    }
+    
     class func addToCheckInTable( _ guests: Int, _ APS_ID: String, _ entityName: String){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return

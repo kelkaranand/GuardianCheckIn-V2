@@ -21,16 +21,24 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLT-u9-ytF">
                                 <rect key="frame" x="0.0" y="10" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LJFF_Patterns-1" translatesAutoresizingMaskIntoConstraints="NO" id="M6d-Aw-KX8">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LJFF_Patterns-1" translatesAutoresizingMaskIntoConstraints="NO" id="M6d-Aw-KX8">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSw-DE-I5D">
+                                        <rect key="frame" x="37" y="66" width="301" height="535"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="VSw-DE-I5D" firstAttribute="centerY" secondItem="jLT-u9-ytF" secondAttribute="centerY" id="7X0-Vg-LPz"/>
                                     <constraint firstItem="M6d-Aw-KX8" firstAttribute="height" secondItem="jLT-u9-ytF" secondAttribute="height" id="BDp-w2-Aw8"/>
+                                    <constraint firstItem="VSw-DE-I5D" firstAttribute="height" secondItem="jLT-u9-ytF" secondAttribute="height" multiplier="0.8" constant="1" id="HyC-pN-FhI"/>
+                                    <constraint firstItem="VSw-DE-I5D" firstAttribute="width" secondItem="jLT-u9-ytF" secondAttribute="width" multiplier="0.8" constant="1" id="MLX-05-Np8"/>
                                     <constraint firstItem="M6d-Aw-KX8" firstAttribute="centerY" secondItem="jLT-u9-ytF" secondAttribute="centerY" id="VDr-QG-46f"/>
                                     <constraint firstItem="M6d-Aw-KX8" firstAttribute="centerX" secondItem="jLT-u9-ytF" secondAttribute="centerX" id="inL-2I-qhz"/>
                                     <constraint firstItem="M6d-Aw-KX8" firstAttribute="width" secondItem="jLT-u9-ytF" secondAttribute="width" id="r1Y-Ci-wEl"/>
+                                    <constraint firstItem="VSw-DE-I5D" firstAttribute="centerX" secondItem="jLT-u9-ytF" secondAttribute="centerX" id="uj4-DZ-o9E"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SrS-bd-sG1">

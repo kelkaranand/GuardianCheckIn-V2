@@ -10,8 +10,9 @@ import UIKit
 
 class StudentGuardianSelectionViewController: UIViewController {
     
+    @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet var collectionView: UICollectionView!
+    var student:String?
     
     
     

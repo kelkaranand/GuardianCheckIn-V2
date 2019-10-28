@@ -28,10 +28,14 @@ class SetupViewController : UIViewController {
     var check2 = false
     var check3 = false
     
+    var lockFlag = true
+    
     override func viewDidLoad() {
         
         //Hide test label
         testLabel.isHidden = true
+        
+        lockFlag = true
         
         //Rotation gesture for the lock
         let rotateLock = UIRotationGestureRecognizer(target: self, action: #selector(rotateLock(_:)))
@@ -40,21 +44,23 @@ class SetupViewController : UIViewController {
     
     //Start - Lock rotation and value calculation
     @objc func rotateLock(_ sender: UIRotationGestureRecognizer) {
-        counter = counter + 1
-        if(sender.state == .began){
-            rotation = rotation + lastRotation
-        } else if(sender.state == .changed){
-            let newRotation = sender.rotation + rotation
-            self.lockFront.transform = CGAffineTransform(rotationAngle: newRotation)
-            if (counter > 10){
-                AudioServicesPlaySystemSoundWithCompletion(1157,nil)
-                counter = 0
+        if lockFlag {
+            counter = counter + 1
+            if(sender.state == .began){
+                rotation = rotation + lastRotation
+            } else if(sender.state == .changed){
+                let newRotation = sender.rotation + rotation
+                self.lockFront.transform = CGAffineTransform(rotationAngle: newRotation)
+                if (counter > 10){
+                    AudioServicesPlaySystemSoundWithCompletion(1157,nil)
+                    counter = 0
+                }
+            } else if(sender.state == .ended) {
+                lastRotation = sender.rotation
+                let dialValue = getLockValue(lockRotation: rotation+lastRotation)
+                testLabel.text = String(dialValue)
+                checkLock(dialValue)
             }
-        } else if(sender.state == .ended) {
-            lastRotation = sender.rotation
-            let dialValue = getLockValue(lockRotation: rotation+lastRotation)
-            testLabel.text = String(dialValue)
-            checkLock(dialValue)
         }
     }
     
@@ -114,7 +120,10 @@ class SetupViewController : UIViewController {
     }
     
     func openLock() {
-        UIView.transition(from: lockView, to: contentView, duration: 1.0, options: UIView.AnimationOptions.transitionFlipFromRight, completion: nil)
+        UIView.transition(from: lockView, to: contentView, duration: 1.0, options: UIView.AnimationOptions.transitionFlipFromRight, completion: { finished in
+            self.lockFlag = false
+        }
+        )
     }
     
     

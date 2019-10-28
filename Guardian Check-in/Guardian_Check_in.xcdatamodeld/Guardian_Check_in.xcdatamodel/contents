@@ -4,6 +4,12 @@
         <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Guardian" representedClassName="Guardian" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="relation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Student" representedClassName="Student" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -11,5 +17,6 @@
     <elements>
         <element name="Device_Info" positionX="-63" positionY="-18" width="128" height="75"/>
         <element name="Student" positionX="-54" positionY="-9" width="128" height="75"/>
+        <element name="Guardian" positionX="-36" positionY="18" width="128" height="105"/>
     </elements>
 </model>
