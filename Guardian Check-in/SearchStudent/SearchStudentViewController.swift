@@ -16,13 +16,16 @@ class SearchStudentViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     var searchController: UISearchController?
-//    var filteredTableData = [String]()
-//    static var listOfNames = [String]()
     var selectedStudent = StudentRecord()
     static var studentRecords = [StudentRecord]()
     var filteredStudentrecords = [StudentRecord]()
     var searchActive = false
     @IBOutlet weak var mainCard: UIView!
+    @IBOutlet weak var checkInCard: UIView!
+    @IBOutlet weak var checkInLabel: UILabel!
+    @IBOutlet weak var checkInButtonView: UIView!
+    @IBOutlet weak var superView: UIView!
+    var moved = false
     
     @IBOutlet var centerConstraint: NSLayoutConstraint!
     
@@ -30,25 +33,48 @@ class SearchStudentViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         mainCard.layer.cornerRadius = 10
         mainCard.layer.shouldRasterize = false
-        mainCard.layer.borderWidth = 2
+        mainCard.layer.borderWidth = 1
         
         mainCard.layer.shadowRadius = 10
         mainCard.layer.shadowColor = UIColor.black.cgColor
         mainCard.layer.shadowOpacity = 1
         
+        superView.layer.cornerRadius = 10
+        superView.layer.shouldRasterize = false
+        
+        checkInCard.layer.cornerRadius = 10
+        checkInCard.layer.shouldRasterize = false
+        checkInCard.layer.borderWidth = 1
+        
+        checkInCard.layer.shadowRadius = 10
+        checkInCard.layer.shadowColor = UIColor.black.cgColor
+        checkInCard.layer.shadowOpacity = 1
+        
+        checkInButtonView.layer.cornerRadius = 10
+        checkInButtonView.layer.shouldRasterize = false
+        checkInButtonView.layer.borderWidth = 2
+        checkInButtonView.backgroundColor = UIColor.lightGray
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
+        checkInLabel.text = "Welcome to the " + OptionSelectionViewController.location + ". Press the button below to check-in."
+        self.mainCard.alpha = 0
+        self.checkInCard.alpha = 1
+        self.view.alpha = 1
+        moved = false
         tableView.isHidden = true
-        UIView.animate(withDuration: 1) {
-            self.mainCard.center.y = self.mainCard.center.y - self.view.bounds.height
+        searchBar.text = nil
+        UIView.animate(withDuration: 0.5) {
+            self.superView.center.y = self.superView.center.y - self.view.bounds.height
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(SearchStudentResultCell.self, forCellReuseIdentifier: "result")
+        self.navigationController?.navigationBar.isHidden = true
         
         //Tap on screen to dismiss keyboard
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
@@ -58,11 +84,48 @@ class SearchStudentViewController: UIViewController {
         
         //Setup starting position for card
         mainCard.center.y = mainCard.center.y + self.view.bounds.height
+        
+        //Rotation gesture to show setup
+        let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(showSetup(_:)))
+        self.view.addGestureRecognizer(rotateGesture)
+        
+        //Tap gesture for check-in button
+        checkInCard.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkInPressed)))
     
     }
+    
+    @objc func checkInPressed() {
+        UIView.transition(with: checkInCard, duration: 0.5, options: [.transitionFlipFromRight, .showHideTransitionViews], animations: {
+            self.checkInCard.alpha = 0
+        }, completion: { finished in
+            
+        })
+        UIView.transition(with: mainCard, duration: 0.5, options: [.transitionFlipFromRight, .showHideTransitionViews], animations: {
+            self.mainCard.alpha = 1
+        }, completion: { finished in
+            
+        })
+    }
  
-    @objc func showSetup() {
-        
+    @objc func showSetup(_ sender: UIRotationGestureRecognizer) {
+        if rad2deg(Double(sender.rotation)) > 120 {
+            if !moved {
+                moved = true
+                moveToSetup()
+            }
+        }
+    }
+    
+    func moveToSetup(){
+        UIView.animate(withDuration: 0.5, animations: {
+            self.view.alpha = 0
+        }, completion: { finished in
+            self.performSegue(withIdentifier: "showSetup", sender: self)
+        })
+    }
+    
+    func rad2deg(_ number: Double) -> Double {
+        return number * 180 / .pi
     }
     
 }
@@ -123,11 +186,6 @@ extension SearchStudentViewController: UISearchBarDelegate {
               guard let text = searchBar.text else { return }
               let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", text)
         
-//        guard let unwrappedListOfNames = SearchStudentViewController.listOfNames as? NSArray else { return }
-//              let array = (unwrappedListOfNames).filtered(using: searchPredicate)
-//              filteredTableData = array as! [String]
-//              tableView.reloadData()
-        
         filteredStudentrecords = SearchStudentViewController.studentRecords.filter({( student : StudentRecord) -> Bool in
             let name = student.fname + " " + student.lname
             return (name.lowercased().contains(searchText.lowercased()))
@@ -138,8 +196,7 @@ extension SearchStudentViewController: UISearchBarDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "guardianSelection" {
-            let dest = segue.destination as? StudentGuardianSelectionViewController
-            dest?.student = selectedStudent
+            StudentGuardianSelectionViewController.student = selectedStudent
         }
     }
 
@@ -149,8 +206,8 @@ extension SearchStudentViewController: UISearchBarDelegate {
 extension SearchStudentViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedStudent = filteredStudentrecords[indexPath.row]
-        UIView.animate(withDuration: 1, animations: {
-            self.mainCard.center.y = self.mainCard.center.y + self.view.bounds.height
+        UIView.animate(withDuration: 0.5, animations: {
+            self.superView.center.x = self.superView.center.x - self.view.bounds.width
         }, completion: { finished in
             self.performSegue(withIdentifier: "guardianSelection", sender: self)
         })

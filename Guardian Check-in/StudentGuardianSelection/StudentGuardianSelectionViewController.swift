@@ -16,8 +16,10 @@ class StudentGuardianSelectionViewController: UIViewController {
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var addButtonView: UIView!
     
-    var student = StudentRecord()
+    static var student = StudentRecord()
     var guardianList = [GuardianRecord]()
+    
+    static var back = false
     
     override func viewDidLayoutSubviews() {
         super .viewDidLayoutSubviews()
@@ -32,31 +34,65 @@ class StudentGuardianSelectionViewController: UIViewController {
         addButtonView.layer.cornerRadius = 10
         addButtonView.layer.shouldRasterize = false
         addButtonView.layer.borderWidth = 2
+        addButtonView.backgroundColor = UIColor.lightGray
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(StudentGuardianCollectionCell.self, forCellWithReuseIdentifier: "selection")
+       
         //Setup starting position for card
-        cardView.center.y = cardView.center.y + self.view.bounds.height
+        cardView.center.x = cardView.center.x + self.view.bounds.width
+        
+        //Tap gesture recognizer for addButton
+        addButtonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addGuardian)))
+        
+        //Swipe right to go back
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(goBack))
+        rightSwipe.direction = .right
+        self.view.addGestureRecognizer(rightSwipe)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
-        studentNameLabel.text = student.fname + " " + student.lname
+        studentNameLabel.text = StudentGuardianSelectionViewController.student.fname + " " + StudentGuardianSelectionViewController.student.lname
         fetchGuardians()
-        UIView.animate(withDuration: 1) {
-            self.cardView.center.y = self.cardView.center.y - self.view.bounds.height
+        if (StudentGuardianSelectionViewController.back) {
+            UIView.animate(withDuration: 0.5) {
+                self.cardView.center.x = self.cardView.center.x + self.view.bounds.width
+            }
+            StudentGuardianSelectionViewController.back = false
         }
+        else {
+            UIView.animate(withDuration: 0.5) {
+                self.cardView.center.x = self.cardView.center.x - self.view.bounds.width
+            }
+        }
+    }
+    
+    @objc func goBack() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.cardView.center.x = self.cardView.center.x + self.view.bounds.width
+        }, completion: { finished in
+            self.navigationController?.popViewController(animated: false)
+        })
+    }
+    
+    @objc func addGuardian() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.cardView.center.x = self.cardView.center.x - self.view.bounds.width
+        }, completion : { finished in
+            self.performSegue(withIdentifier: "moveToAddGuardian", sender: self)
+        })
     }
     
     private func fetchGuardians() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Guardian")
-        fetchRequest.predicate = NSPredicate(format: "studentId = %@", student.id)
+        fetchRequest.predicate = NSPredicate(format: "studentId = %@", StudentGuardianSelectionViewController.student.id)
         do {
             let results = try context.fetch(fetchRequest)
-            var guardians = results as! [Guardian]
+            let guardians = results as! [Guardian]
             
             for guardian in guardians {
                 guardianList.append(GuardianRecord(guardian.fname!,guardian.lname!,guardian.relation!))
@@ -65,6 +101,23 @@ class StudentGuardianSelectionViewController: UIViewController {
             print(err.debugDescription)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "moveToAddGuardian"){
+            let dest = segue.destination as! AddGuardianViewController
+            dest.student = StudentGuardianSelectionViewController.student
+        }
+    }
+    
+    func moveToConfirmation(_ fname:String) {
+        OptionSelectionViewController.fname = fname
+        UIView.animate(withDuration: 0.5, animations: {
+           self.cardView.center.x = self.cardView.center.x - self.view.bounds.width
+        }, completion : { finished in
+            self.performSegue(withIdentifier: "moveToOptions", sender: self)
+        })
+    }
+    
 }
 
 extension StudentGuardianSelectionViewController: UICollectionViewDataSource {
@@ -72,7 +125,7 @@ extension StudentGuardianSelectionViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "selection", for: indexPath) as! StudentGuardianCollectionCell
-//        cell.backgroundColor = .red
+        
         cell.layer.cornerRadius = 10
         cell.layer.shouldRasterize = false
         cell.layer.borderWidth = 2
@@ -81,6 +134,7 @@ extension StudentGuardianSelectionViewController: UICollectionViewDataSource {
         let fragLname = guardianList[indexPath.row].lname
         cell.nameLabel.text = fragFname + " " + fragLname
         cell.relationshipLabel.text = guardianList[indexPath.row].relation
+        
         return cell
     }
     
@@ -110,5 +164,11 @@ extension StudentGuardianSelectionViewController: UICollectionViewDelegateFlowLa
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
+}
+
+extension StudentGuardianSelectionViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        moveToConfirmation(guardianList[indexPath.row].fname)
     }
 }

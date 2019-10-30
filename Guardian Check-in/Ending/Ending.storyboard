@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rWR-S0-9xy">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Ending View Controller-->
+        <scene sceneID="1PD-1R-V61">
+            <objects>
+                <viewController id="rWR-S0-9xy" customClass="EndingViewController" customModule="Guardian_Check_in" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MzL-2p-oVP">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LJFF_Patterns-1" translatesAutoresizingMaskIntoConstraints="NO" id="ego-0z-rMK">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYg-VN-DYO">
+                                <rect key="frame" x="76.5" y="102" width="615" height="820"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bkq-Nc-tY7">
+                                        <rect key="frame" x="91.5" y="204.5" width="432" height="411"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="bkq-Nc-tY7" firstAttribute="height" secondItem="IYg-VN-DYO" secondAttribute="height" multiplier="0.5" constant="1" id="Aas-eE-hU4"/>
+                                    <constraint firstItem="bkq-Nc-tY7" firstAttribute="centerX" secondItem="IYg-VN-DYO" secondAttribute="centerX" id="HVb-YJ-gwN"/>
+                                    <constraint firstItem="bkq-Nc-tY7" firstAttribute="centerY" secondItem="IYg-VN-DYO" secondAttribute="centerY" id="MPs-hq-1k5"/>
+                                    <constraint firstItem="bkq-Nc-tY7" firstAttribute="width" secondItem="IYg-VN-DYO" secondAttribute="width" multiplier="0.7" constant="1" id="xAs-TY-jkQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ego-0z-rMK" firstAttribute="height" secondItem="MzL-2p-oVP" secondAttribute="height" id="9aN-O4-EgU"/>
+                            <constraint firstItem="ego-0z-rMK" firstAttribute="width" secondItem="MzL-2p-oVP" secondAttribute="width" id="Cpm-oU-4Kf"/>
+                            <constraint firstItem="IYg-VN-DYO" firstAttribute="centerX" secondItem="MzL-2p-oVP" secondAttribute="centerX" id="MPI-hZ-EXV"/>
+                            <constraint firstItem="IYg-VN-DYO" firstAttribute="height" secondItem="MzL-2p-oVP" secondAttribute="height" multiplier="0.8" constant="1" id="Ttp-Mj-ZuL"/>
+                            <constraint firstItem="IYg-VN-DYO" firstAttribute="centerY" secondItem="MzL-2p-oVP" secondAttribute="centerY" id="Z4q-7L-N1M"/>
+                            <constraint firstItem="ego-0z-rMK" firstAttribute="centerY" secondItem="MzL-2p-oVP" secondAttribute="centerY" id="dzs-CO-4YK"/>
+                            <constraint firstItem="ego-0z-rMK" firstAttribute="centerX" secondItem="MzL-2p-oVP" secondAttribute="centerX" id="fNA-Hu-JPg"/>
+                            <constraint firstItem="IYg-VN-DYO" firstAttribute="width" secondItem="MzL-2p-oVP" secondAttribute="width" multiplier="0.8" constant="1" id="zyL-o3-x0A"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VWP-cc-sTl"/>
+                    </view>
+                    <connections>
+                        <outlet property="mainCardView" destination="IYg-VN-DYO" id="0cO-kH-6di"/>
+                        <outlet property="thankyouLabel" destination="bkq-Nc-tY7" id="Ffp-Wt-7XX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XJE-o3-0yw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LJFF_Patterns-1" width="1898" height="2335"/>
+    </resources>
+</document>

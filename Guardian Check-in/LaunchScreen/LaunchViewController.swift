@@ -32,6 +32,9 @@ class LaunchViewController : UIViewController {
 //
 //        CoreDataHelper.saveGuardianData("James", "Potter", "1", "Father")
 //        CoreDataHelper.saveGuardianData("Lilly", "Potter", "1", "Mother")
+//
+        OptionSelectionViewController.location = "Family Resource Center"
+        OptionSelectionViewController.options.append(contentsOf: ["Meet with Vik", "Meet with Kat","Meet with Community Legal Aid"])
         
     }
     

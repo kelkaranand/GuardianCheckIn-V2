@@ -19,6 +19,7 @@ class SetupViewController : UIViewController {
     @IBOutlet weak var light3: UIImageView!
     @IBOutlet weak var lockView: UIView!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var mainCardView: UIView!
     
     var lastRotation:CGFloat = 0
     var rotation:CGFloat = 0
@@ -40,6 +41,28 @@ class SetupViewController : UIViewController {
         //Rotation gesture for the lock
         let rotateLock = UIRotationGestureRecognizer(target: self, action: #selector(rotateLock(_:)))
         self.view.addGestureRecognizer(rotateLock)
+        
+        //Swipe right to go back
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(goBack))
+        rightSwipe.direction = .right
+        mainCardView.addGestureRecognizer(rightSwipe)
+        
+        //Swipe right to go back
+        let rightSwipeOnLockScreen = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeLock))
+        rightSwipeOnLockScreen.direction = .right
+        lockView.addGestureRecognizer(rightSwipeOnLockScreen)
+    }
+    
+    @objc func rightSwipeLock() {
+        self.navigationController?.popViewController(animated: false)
+    }
+    
+    @objc func goBack() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.mainCardView.center.x = self.mainCardView.center.x + self.view.bounds.width
+        }, completion: { finished in
+            self.navigationController?.popViewController(animated: false)
+        })
     }
     
     //Start - Lock rotation and value calculation

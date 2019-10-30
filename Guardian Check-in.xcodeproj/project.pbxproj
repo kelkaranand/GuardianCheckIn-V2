@@ -32,6 +32,11 @@
 		14C3A3DB236507E4009A3830 /* StudentGuardianSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3DA236507E4009A3830 /* StudentGuardianSelection.storyboard */; };
 		14C3A3DD23673056009A3830 /* StudentRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3DC23673056009A3830 /* StudentRecord.swift */; };
 		14C3A3DF23675F75009A3830 /* GuardianRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3DE23675F75009A3830 /* GuardianRecord.swift */; };
+		14C3A3E22367B3F5009A3830 /* OptionSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3E12367B3F5009A3830 /* OptionSelectionViewController.swift */; };
+		14C3A3E42367B406009A3830 /* OptionSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3E32367B406009A3830 /* OptionSelection.storyboard */; };
+		14C3A3E62367B7D1009A3830 /* OptionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3E52367B7D1009A3830 /* OptionCollectionCell.swift */; };
+		14C3A3E92367C756009A3830 /* EndingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3E82367C756009A3830 /* EndingViewController.swift */; };
+		14C3A3EB2367C761009A3830 /* Ending.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3EA2367C761009A3830 /* Ending.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +67,11 @@
 		14C3A3DA236507E4009A3830 /* StudentGuardianSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentGuardianSelection.storyboard; sourceTree = "<group>"; };
 		14C3A3DC23673056009A3830 /* StudentRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRecord.swift; sourceTree = "<group>"; };
 		14C3A3DE23675F75009A3830 /* GuardianRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianRecord.swift; sourceTree = "<group>"; };
+		14C3A3E12367B3F5009A3830 /* OptionSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectionViewController.swift; sourceTree = "<group>"; };
+		14C3A3E32367B406009A3830 /* OptionSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OptionSelection.storyboard; sourceTree = "<group>"; };
+		14C3A3E52367B7D1009A3830 /* OptionCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCollectionCell.swift; sourceTree = "<group>"; };
+		14C3A3E82367C756009A3830 /* EndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingViewController.swift; sourceTree = "<group>"; };
+		14C3A3EA2367C761009A3830 /* Ending.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ending.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +104,8 @@
 		14C3A394235F4E9E009A3830 /* Guardian Check-in */ = {
 			isa = PBXGroup;
 			children = (
+				14C3A3E72367C73A009A3830 /* Ending */,
+				14C3A3E02367B3D7009A3830 /* OptionSelection */,
 				14C3A3AA235F4EC3009A3830 /* AddNewGuardian */,
 				14C3A3BB235F4EC3009A3830 /* DeviceRegistration */,
 				14C3A3B8235F4EC3009A3830 /* LaunchScreen */,
@@ -180,6 +192,25 @@
 			path = StudentGuardianSelection;
 			sourceTree = "<group>";
 		};
+		14C3A3E02367B3D7009A3830 /* OptionSelection */ = {
+			isa = PBXGroup;
+			children = (
+				14C3A3E12367B3F5009A3830 /* OptionSelectionViewController.swift */,
+				14C3A3E32367B406009A3830 /* OptionSelection.storyboard */,
+				14C3A3E52367B7D1009A3830 /* OptionCollectionCell.swift */,
+			);
+			path = OptionSelection;
+			sourceTree = "<group>";
+		};
+		14C3A3E72367C73A009A3830 /* Ending */ = {
+			isa = PBXGroup;
+			children = (
+				14C3A3E82367C756009A3830 /* EndingViewController.swift */,
+				14C3A3EA2367C761009A3830 /* Ending.storyboard */,
+			);
+			path = Ending;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -244,8 +275,10 @@
 				14C3A3D4235F4EC4009A3830 /* SearchStudent.storyboard in Resources */,
 				14C3A3C6235F4EC4009A3830 /* AddGuardian.storyboard in Resources */,
 				14C3A3D0235F4EC4009A3830 /* Launch.storyboard in Resources */,
+				14C3A3EB2367C761009A3830 /* Ending.storyboard in Resources */,
 				14C3A3A0235F4EA0009A3830 /* Assets.xcassets in Resources */,
 				14C3A39B235F4E9E009A3830 /* Main.storyboard in Resources */,
+				14C3A3E42367B406009A3830 /* OptionSelection.storyboard in Resources */,
 				14C3A3D2235F4EC4009A3830 /* DeviceRegistration.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +300,9 @@
 				14C3A3CA235F4EC4009A3830 /* RestHelper.swift in Sources */,
 				14C3A3CF235F4EC4009A3830 /* SetupViewController.swift in Sources */,
 				14C3A3DF23675F75009A3830 /* GuardianRecord.swift in Sources */,
+				14C3A3E62367B7D1009A3830 /* OptionCollectionCell.swift in Sources */,
+				14C3A3E22367B3F5009A3830 /* OptionSelectionViewController.swift in Sources */,
+				14C3A3E92367C756009A3830 /* EndingViewController.swift in Sources */,
 				14C3A3C7235F4EC4009A3830 /* AddGuardianViewController.swift in Sources */,
 				14C3A3D6235F4EC4009A3830 /* SearchStudentViewController.swift in Sources */,
 				14C3A3D1235F4EC4009A3830 /* LaunchViewController.swift in Sources */,
