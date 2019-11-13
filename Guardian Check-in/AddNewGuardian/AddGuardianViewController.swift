@@ -54,6 +54,9 @@ class AddGuardianViewController: UIViewController, UIPickerViewDelegate, UIPicke
         rightSwipe.direction = .right
         self.view.addGestureRecognizer(rightSwipe)
         
+        //Tap on add button
+        addButtonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addGuardian)))
+        
         relationPicker.dataSource = self
         relationPicker.delegate = self
     }
@@ -86,6 +89,17 @@ class AddGuardianViewController: UIViewController, UIPickerViewDelegate, UIPicke
         return relationList[row]
     }
     
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label = UILabel()
+        if let v = view {
+            label = v as! UILabel
+        }
+        label.font = UIFont (name: "Chalkboard SE", size: 20)
+        label.text =  relationList[row]
+        label.textAlignment = .center
+        return label
+    }
+    
     @objc func goBack() {
         UIView.animate(withDuration: 0.5, animations: {
             self.mainCardView.center.x = self.mainCardView.center.x + self.view.bounds.width
@@ -93,6 +107,24 @@ class AddGuardianViewController: UIViewController, UIPickerViewDelegate, UIPicke
             StudentGuardianSelectionViewController.back = true
             self.navigationController?.popViewController(animated: false)
         })
+    }
+    
+    @objc func addGuardian() {
+        if((self.fnameTextbox.text?.isEmpty)! || (self.lnameTextbox.text?.isEmpty)! || (self.phoneTextbox.text?.isEmpty)!) {
+            print("Validation error")
+        }
+        else {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.mainCardView.center.x = self.mainCardView.center.x - self.view.bounds.width
+            }, completion : { finished in
+                ConfirmationViewController.sname = self.studentLabel.text
+                ConfirmationViewController.fname = self.fnameTextbox.text
+                ConfirmationViewController.lname = self.lnameTextbox.text
+                ConfirmationViewController.phone = self.phoneTextbox.text
+                ConfirmationViewController.relation = self.relationList[self.relationPicker.selectedRow(inComponent: 0)]
+                self.performSegue(withIdentifier: "confirm", sender: self)
+            })
+        }
     }
     
 }

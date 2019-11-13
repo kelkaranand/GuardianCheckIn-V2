@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14B63E00237B3A5600F3EEF4 /* Confirmation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B63DFF237B3A5600F3EEF4 /* Confirmation.storyboard */; };
+		14B63E02237B3A6600F3EEF4 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B63E01237B3A6600F3EEF4 /* ConfirmationViewController.swift */; };
 		14C3A396235F4E9E009A3830 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A395235F4E9E009A3830 /* AppDelegate.swift */; };
 		14C3A398235F4E9E009A3830 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A397235F4E9E009A3830 /* ViewController.swift */; };
 		14C3A39B235F4E9E009A3830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A399235F4E9E009A3830 /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14B63DFF237B3A5600F3EEF4 /* Confirmation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Confirmation.storyboard; sourceTree = "<group>"; };
+		14B63E01237B3A6600F3EEF4 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		14C3A392235F4E9E009A3830 /* Guardian Check-in.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guardian Check-in.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C3A395235F4E9E009A3830 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C3A397235F4E9E009A3830 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14B63DFE237B3A4300F3EEF4 /* Confirmation */ = {
+			isa = PBXGroup;
+			children = (
+				14B63DFF237B3A5600F3EEF4 /* Confirmation.storyboard */,
+				14B63E01237B3A6600F3EEF4 /* ConfirmationViewController.swift */,
+			);
+			path = Confirmation;
+			sourceTree = "<group>";
+		};
 		14C3A389235F4E9E009A3830 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +117,7 @@
 		14C3A394235F4E9E009A3830 /* Guardian Check-in */ = {
 			isa = PBXGroup;
 			children = (
+				14B63DFE237B3A4300F3EEF4 /* Confirmation */,
 				14C3A3E72367C73A009A3830 /* Ending */,
 				14C3A3E02367B3D7009A3830 /* OptionSelection */,
 				14C3A3AA235F4EC3009A3830 /* AddNewGuardian */,
@@ -272,6 +286,7 @@
 				14C3A3DB236507E4009A3830 /* StudentGuardianSelection.storyboard in Resources */,
 				14C3A3CE235F4EC4009A3830 /* Setup.storyboard in Resources */,
 				14C3A3A3235F4EA0009A3830 /* LaunchScreen.storyboard in Resources */,
+				14B63E00237B3A5600F3EEF4 /* Confirmation.storyboard in Resources */,
 				14C3A3D4235F4EC4009A3830 /* SearchStudent.storyboard in Resources */,
 				14C3A3C6235F4EC4009A3830 /* AddGuardian.storyboard in Resources */,
 				14C3A3D0235F4EC4009A3830 /* Launch.storyboard in Resources */,
@@ -304,6 +319,7 @@
 				14C3A3E22367B3F5009A3830 /* OptionSelectionViewController.swift in Sources */,
 				14C3A3E92367C756009A3830 /* EndingViewController.swift in Sources */,
 				14C3A3C7235F4EC4009A3830 /* AddGuardianViewController.swift in Sources */,
+				14B63E02237B3A6600F3EEF4 /* ConfirmationViewController.swift in Sources */,
 				14C3A3D6235F4EC4009A3830 /* SearchStudentViewController.swift in Sources */,
 				14C3A3D1235F4EC4009A3830 /* LaunchViewController.swift in Sources */,
 				14C3A398235F4E9E009A3830 /* ViewController.swift in Sources */,

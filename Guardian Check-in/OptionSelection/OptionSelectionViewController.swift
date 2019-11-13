@@ -15,9 +15,9 @@ class OptionSelectionViewController : UIViewController {
     @IBOutlet weak var heyLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    static var location:String = ""
-    static var options = [String]()
+    var options = [String]()
     static var fname:String = ""
+    static var comingFromConfirmation = false
     
     override func viewDidLayoutSubviews() {
         super .viewDidLayoutSubviews()
@@ -44,19 +44,24 @@ class OptionSelectionViewController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         heyLabel.text = "Hey " + OptionSelectionViewController.fname + "!"
-        locationLabel.text = "Welcome to the " + OptionSelectionViewController.location + ". Please select your reason for visiting."
+        locationLabel.text = "Welcome to the " + CoreDataHelper.locationName + ". Please select your reason for visiting."
         UIView.animate(withDuration: 0.5) {
             self.mainCardView.center.x = self.mainCardView.center.x - self.view.bounds.width
+        }
+        for temp in CoreDataHelper.locationOptions.split(separator: ",") {
+            options.append(String(temp))
         }
     }
     
     @objc func goBack() {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.mainCardView.center.x = self.mainCardView.center.x + self.view.bounds.width
-        }, completion: { finished in
-            StudentGuardianSelectionViewController.back = true
-            self.navigationController?.popViewController(animated: false)
-        })
+        if !OptionSelectionViewController.comingFromConfirmation {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.mainCardView.center.x = self.mainCardView.center.x + self.view.bounds.width
+            }, completion: { finished in
+                StudentGuardianSelectionViewController.back = true
+                self.navigationController?.popViewController(animated: false)
+            })
+        }
     }
     
 }
@@ -72,7 +77,7 @@ extension OptionSelectionViewController: UICollectionViewDataSource {
         cell.layer.borderWidth = 2
         cell.backgroundColor = UIColor.lightGray
         
-        cell.textLabel.text = OptionSelectionViewController.options[indexPath.row]
+        cell.textLabel.text = options[indexPath.row]
         
         return cell
     }
@@ -82,7 +87,7 @@ extension OptionSelectionViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return OptionSelectionViewController.options.count
+        return options.count
     }
     
 }

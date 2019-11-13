@@ -15,6 +15,7 @@ class StudentGuardianSelectionViewController: UIViewController {
     @IBOutlet weak var studentNameLabel: UILabel!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var addButtonView: UIView!
+    @IBOutlet weak var shadowView: UIView!
     
     static var student = StudentRecord()
     var guardianList = [GuardianRecord]()
@@ -27,9 +28,13 @@ class StudentGuardianSelectionViewController: UIViewController {
         cardView.layer.shouldRasterize = false
         cardView.layer.borderWidth = 1
         
-        cardView.layer.shadowRadius = 10
-        cardView.layer.shadowColor = UIColor.black.cgColor
-        cardView.layer.shadowOpacity = 1
+        shadowView.layer.cornerRadius = 10
+        shadowView.layer.shouldRasterize = false
+        shadowView.layer.borderWidth = 1
+        
+        shadowView.layer.shadowRadius = 10
+        shadowView.layer.shadowColor = UIColor.black.cgColor
+        shadowView.layer.shadowOpacity = 1
         
         addButtonView.layer.cornerRadius = 10
         addButtonView.layer.shouldRasterize = false
@@ -42,6 +47,7 @@ class StudentGuardianSelectionViewController: UIViewController {
        
         //Setup starting position for card
         cardView.center.x = cardView.center.x + self.view.bounds.width
+        shadowView.center.x = shadowView.center.x + self.view.bounds.width
         
         //Tap gesture recognizer for addButton
         addButtonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addGuardian)))
@@ -60,12 +66,14 @@ class StudentGuardianSelectionViewController: UIViewController {
         if (StudentGuardianSelectionViewController.back) {
             UIView.animate(withDuration: 0.5) {
                 self.cardView.center.x = self.cardView.center.x + self.view.bounds.width
+                self.shadowView.center.x = self.shadowView.center.x + self.view.bounds.width
             }
             StudentGuardianSelectionViewController.back = false
         }
         else {
             UIView.animate(withDuration: 0.5) {
                 self.cardView.center.x = self.cardView.center.x - self.view.bounds.width
+                self.shadowView.center.x = self.shadowView.center.x - self.view.bounds.width
             }
         }
     }
@@ -73,6 +81,7 @@ class StudentGuardianSelectionViewController: UIViewController {
     @objc func goBack() {
         UIView.animate(withDuration: 0.5, animations: {
             self.cardView.center.x = self.cardView.center.x + self.view.bounds.width
+            self.shadowView.center.x = self.shadowView.center.x + self.view.bounds.width
         }, completion: { finished in
             self.navigationController?.popViewController(animated: false)
         })
@@ -81,6 +90,7 @@ class StudentGuardianSelectionViewController: UIViewController {
     @objc func addGuardian() {
         UIView.animate(withDuration: 0.5, animations: {
             self.cardView.center.x = self.cardView.center.x - self.view.bounds.width
+            self.shadowView.center.x = self.shadowView.center.x - self.view.bounds.width
         }, completion : { finished in
             self.performSegue(withIdentifier: "moveToAddGuardian", sender: self)
         })
@@ -111,8 +121,10 @@ class StudentGuardianSelectionViewController: UIViewController {
     
     func moveToConfirmation(_ fname:String) {
         OptionSelectionViewController.fname = fname
+        OptionSelectionViewController.comingFromConfirmation = false
         UIView.animate(withDuration: 0.5, animations: {
            self.cardView.center.x = self.cardView.center.x - self.view.bounds.width
+            self.shadowView.center.x = self.shadowView.center.x - self.view.bounds.width
         }, completion : { finished in
             self.performSegue(withIdentifier: "moveToOptions", sender: self)
         })

@@ -12,6 +12,13 @@ import UIKit
 
 public class CoreDataHelper {
     
+    static var allLocations = [String]()
+    static var allOptions = [String]()
+    static var allGuardianFlags = [Bool]()
+    static var locationName = ""
+    static var locationOptions = ""
+    static var locationGuardianFlag = true
+    
     class func countOfEntity(_ entityName: String) -> Int {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return 0 }
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -51,6 +58,26 @@ public class CoreDataHelper {
         obj.setValue(lname, forKey: "lname")
         obj.setValue(studentId, forKey: "studentId")
         obj.setValue(relation, forKey: "relation")
+        
+        do {
+            try managedContext.save()
+            
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+            
+        }
+    }
+    
+    class func saveLocationData(_ name:String,_ options:String,_ guardianCheck:Bool){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let descrEntity = NSEntityDescription.entity(forEntityName: "Location", in: managedContext)!
+        let obj = NSManagedObject(entity: descrEntity, insertInto: managedContext)
+        obj.setValue(name, forKey: "name")
+        obj.setValue(options, forKey: "options")
+        obj.setValue(guardianCheck, forKey: "guardianCheck")
         
         do {
             try managedContext.save()

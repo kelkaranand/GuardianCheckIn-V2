@@ -13,6 +13,7 @@ import CoreData
 class LaunchViewController : UIViewController {
     
     @IBOutlet var animatedView: UIView!
+    @IBOutlet weak var backgroundView: UIImageView!
     
     let imagelayer=CALayer()
     
@@ -33,8 +34,10 @@ class LaunchViewController : UIViewController {
 //        CoreDataHelper.saveGuardianData("James", "Potter", "1", "Father")
 //        CoreDataHelper.saveGuardianData("Lilly", "Potter", "1", "Mother")
 //
-        OptionSelectionViewController.location = "Family Resource Center"
-        OptionSelectionViewController.options.append(contentsOf: ["Meet with Vik", "Meet with Kat","Meet with Community Legal Aid"])
+//        CoreDataHelper.saveLocationData("Happy Happy Market", "Food,Clothing,Toiletries/Sundries", true)
+//        CoreDataHelper.saveLocationData("I Promise Too", "GED Class,ESOL Class,Math Bootcamp,Chase Mentoring/Event", true)
+//        CoreDataHelper.saveLocationData("Family Resource Center", "Meet with Vik,Meet with Kat,Meet with Community Legal Aid", true)
+//        CoreDataHelper.saveLocationData("Loads Of Love", "", false)
         
     }
     
@@ -73,6 +76,7 @@ class LaunchViewController : UIViewController {
         imagelayer.isHidden = false
         imagelayer.masksToBounds = false
         animatedView.alpha = 0.0
+        backgroundView.alpha = 0.0
         
         UIView.animate(withDuration: 2.0, animations: {
             self.animatedView.alpha = 1.0
@@ -80,6 +84,7 @@ class LaunchViewController : UIViewController {
             
             UIView.animate(withDuration: 2.0, animations: {
                 self.animatedView.alpha = 0
+                self.backgroundView.alpha = 1.0
             }, completion: { finished in
                 //Read device data
                 let coreData = CoreDataHelper.retrieveData("Device_Info")
@@ -135,6 +140,7 @@ class LaunchViewController : UIViewController {
     
     private func fetchData() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        //Student data from coredata
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
         
         do {
@@ -142,8 +148,58 @@ class LaunchViewController : UIViewController {
             let students = results as! [Student]
             
             for student in students {
-//                SearchStudentViewController.listOfNames.append(student.name ?? "")
                 SearchStudentViewController.studentRecords.append(StudentRecord(student.fname!, student.lname!, student.id!))
+            }
+        }catch let err as NSError {
+            print(err.debugDescription)
+        }
+        //Locations data from coredata
+        let locationsFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Location")
+        
+        do {
+            let results = try context.fetch(locationsFetchRequest)
+            let locations = results as! [AnyObject]
+            
+            for location in locations {
+                CoreDataHelper.allLocations.append(location.value(forKey: "name") as! String)
+                CoreDataHelper.allOptions.append(location.value(forKey: "options") as! String)
+                CoreDataHelper.allGuardianFlags.append(location.value(forKey: "guardianCheck") as! Bool)
+            }
+            
+        }catch let err as NSError {
+            print(err.debugDescription)
+        }
+        //Setup location from coredata
+        let setupLocationFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Setup_Info")
+        
+        do {
+            let results = try context.fetch(setupLocationFetchRequest)
+            if(results.count>0){
+                let setupLocation = results[0] as AnyObject
+                let temp = setupLocation.value(forKey: "location") as! String
+            
+                if temp != nil {
+                    CoreDataHelper.locationName = temp
+                    CoreDataHelper.locationGuardianFlag = setupLocation.value(forKey: "guardianCheckin") as! Bool
+                    CoreDataHelper.locationOptions = setupLocation.value(forKey: "options") as! String
+                }
+            }
+            //If setup info entry is not created, create a dummy one
+            else {
+                guard let appDelegate = UIApplication.shared.delegate as?AppDelegate else {
+                    return
+                }
+                let managedContext = appDelegate.persistentContainer.viewContext
+                let descrEntity = NSEntityDescription.entity(forEntityName: "Setup_Info", in: managedContext)!
+                let obj = NSManagedObject(entity: descrEntity, insertInto: managedContext)
+                obj.setValue("", forKey: "location")
+                obj.setValue("", forKey: "options")
+                obj.setValue(false, forKey: "guardianCheckin")
+                do {
+                    try managedContext.save()
+                } catch let error as NSError {
+                    print("Could not save. \(error), \(error.userInfo)")
+                }
             }
         }catch let err as NSError {
             print(err.debugDescription)

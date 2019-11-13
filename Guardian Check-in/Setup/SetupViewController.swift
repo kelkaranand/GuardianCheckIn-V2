@@ -9,8 +9,10 @@
 import Foundation
 import UIKit
 import AudioToolbox
+import CoreData
 
-class SetupViewController : UIViewController {
+class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
     @IBOutlet weak var lockBack: UIImageView!
     @IBOutlet weak var lockFront: UIImageView!
     @IBOutlet weak var testLabel: UILabel!
@@ -20,6 +22,13 @@ class SetupViewController : UIViewController {
     @IBOutlet weak var lockView: UIView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var mainCardView: UIView!
+    @IBOutlet weak var setLocationButton: UIView!
+    @IBOutlet weak var locationPicker: UIPickerView!
+    @IBOutlet weak var lockStatusImage: UIImageView!
+    @IBOutlet weak var superSecretMessage: UILabel!
+    @IBOutlet weak var separatorView: UIView!
+    @IBOutlet weak var downloadDataButton: UIView!
+    @IBOutlet weak var shadowView: UIView!
     
     var lastRotation:CGFloat = 0
     var rotation:CGFloat = 0
@@ -31,12 +40,42 @@ class SetupViewController : UIViewController {
     
     var lockFlag = true
     
+    var lockStatus = true
+    
+    override func viewDidLayoutSubviews() {
+        super .viewDidLayoutSubviews()
+        mainCardView.layer.cornerRadius = 10
+        mainCardView.layer.shouldRasterize = false
+        mainCardView.layer.borderWidth = 1
+        
+        separatorView.layer.shouldRasterize = false
+        separatorView.layer.borderWidth = 1
+        
+        downloadDataButton.layer.cornerRadius = 10
+        downloadDataButton.layer.shouldRasterize = false
+        downloadDataButton.layer.borderWidth = 1
+        
+        setLocationButton.layer.cornerRadius = 10
+        setLocationButton.layer.shouldRasterize = false
+        setLocationButton.layer.borderWidth = 1
+        
+        shadowView.layer.cornerRadius = 10
+        shadowView.layer.shouldRasterize = false
+        shadowView.layer.borderWidth = 1
+        
+        shadowView.layer.shadowRadius = 10
+        shadowView.layer.shadowColor = UIColor.black.cgColor
+        shadowView.layer.shadowOpacity = 1
+        
+    }
+    
     override func viewDidLoad() {
+        super .viewDidLoad()
+        self.locationPicker.delegate = self
+        self.locationPicker.dataSource = self
         
         //Hide test label
         testLabel.isHidden = true
-        
-        lockFlag = true
         
         //Rotation gesture for the lock
         let rotateLock = UIRotationGestureRecognizer(target: self, action: #selector(rotateLock(_:)))
@@ -51,6 +90,134 @@ class SetupViewController : UIViewController {
         let rightSwipeOnLockScreen = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeLock))
         rightSwipeOnLockScreen.direction = .right
         lockView.addGestureRecognizer(rightSwipeOnLockScreen)
+        
+        //Tap for set location button
+        setLocationButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setLocation)))
+        
+        //Tap to toggle lock status
+        lockStatusImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(lockStatusToggle)))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        readLockStatus()
+        if !lockStatus {
+            lockView.isHidden = true
+            lockFlag = false
+            lockStatusImage.image = UIImage(named: "unlocked")
+            superSecretMessage.text = "Super secret lock inactive"
+        }
+        else {
+            lockView.isHidden = false
+            lockFlag = true
+            lockStatusImage.image = UIImage(named: "locked")
+            superSecretMessage.text = "Super secret lock active"
+        }
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return CoreDataHelper.allLocations.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return CoreDataHelper.allLocations[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label = UILabel()
+        if let v = view {
+            label = v as! UILabel
+        }
+        label.font = UIFont (name: "Chalkboard SE", size: 20)
+        label.text =  CoreDataHelper.allLocations[row]
+        label.textAlignment = .center
+        return label
+    }
+    
+    @objc func setLocation(){
+        let selectedIndex = locationPicker.selectedRow(inComponent: 0)
+        CoreDataHelper.locationName = CoreDataHelper.allLocations[selectedIndex]
+        CoreDataHelper.locationGuardianFlag = CoreDataHelper.allGuardianFlags[selectedIndex]
+        CoreDataHelper.locationOptions = CoreDataHelper.allOptions[selectedIndex]
+        writeLocationToCoreData()
+        print("location set")
+    }
+    
+    func writeLocationToCoreData() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Setup_Info")
+        do {
+            let setupObj = try managedContext.fetch(fetchRequest)
+            let objectUpdate = setupObj.first as! NSManagedObject
+            objectUpdate.setValue(CoreDataHelper.locationName, forKey: "location")
+            objectUpdate.setValue(CoreDataHelper.locationOptions, forKey: "options")
+            objectUpdate.setValue(CoreDataHelper.locationGuardianFlag, forKey: "guardianCheckin")
+            do{
+                try managedContext.save()
+                print("Location Updated!")
+            }catch{
+                print(error)
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    func readLockStatus() {
+        let coreData = CoreDataHelper.retrieveData("Device_Info")
+        let data = coreData.first
+        let temp = (data as AnyObject).value(forKey: "lock") as? Bool
+        
+        if temp == nil || !temp! {
+            lockStatus = false
+        }
+        else {
+            lockStatus = true
+        }
+        
+    }
+    
+    @objc func lockStatusToggle() {
+        print("lock pressed")
+        if lockStatus {
+            lockStatusImage.image = UIImage(named: "unlocked")
+            superSecretMessage.text = "Super secret lock inactive"
+            lockFlag = false
+            saveLockStatus(false)
+        }
+        else {
+            lockStatusImage.image = UIImage(named: "locked")
+            superSecretMessage.text = "Super secret lock active"
+            lockFlag = true
+            saveLockStatus(true)
+        }
+    }
+    
+    func saveLockStatus(_ status:Bool) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Device_Info")
+        do {
+            let DeviceInfoObj = try managedContext.fetch(fetchRequest)
+            let objectUpdate = DeviceInfoObj[0] as! NSManagedObject
+            objectUpdate.setValue(status, forKey: "lock")
+            do{
+                try managedContext.save()
+                print("Lock Updated!")
+            }catch{
+                print(error)
+            }
+        } catch {
+            print(error)
+        }
+        
     }
     
     @objc func rightSwipeLock() {
@@ -59,6 +226,7 @@ class SetupViewController : UIViewController {
     
     @objc func goBack() {
         UIView.animate(withDuration: 0.5, animations: {
+            self.shadowView.center.x = self.shadowView.center.x + self.view.bounds.width
             self.mainCardView.center.x = self.mainCardView.center.x + self.view.bounds.width
         }, completion: { finished in
             self.navigationController?.popViewController(animated: false)

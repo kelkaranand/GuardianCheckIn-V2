@@ -204,6 +204,7 @@
                             <constraint firstItem="Wft-CQ-pqV" firstAttribute="centerY" secondItem="j9X-Q8-wfQ" secondAttribute="centerY" id="lXx-pl-xLa"/>
                             <constraint firstItem="q6c-o6-YEI" firstAttribute="centerX" secondItem="j9X-Q8-wfQ" secondAttribute="centerX" id="xKk-uB-pbP"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="5f5-dx-TgG"/>
                     </view>
                     <navigationItem key="navigationItem" id="p7x-fU-XPa"/>
                     <connections>
@@ -216,6 +217,7 @@
                         <outlet property="tableView" destination="7bV-71-jIN" id="G5j-rE-sla"/>
                         <segue destination="5iw-DO-9uk" kind="show" identifier="guardianSelection" animates="NO" id="6dN-u0-zZZ"/>
                         <segue destination="uFd-tb-K2j" kind="show" identifier="showSetup" animates="NO" id="KAt-ga-mbe"/>
+                        <segue destination="Iwe-iR-Pjc" kind="show" identifier="showEnd" animates="NO" id="FW7-bf-cPG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5x-rK-MPn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -229,6 +231,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Deh-iZ-Krg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1828" y="-125"/>
+        </scene>
+        <!--Ending-->
+        <scene sceneID="teW-10-Jvy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Ending" id="Iwe-iR-Pjc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MTc-oq-yBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1866" y="27"/>
         </scene>
         <!--StudentGuardianSelection-->
         <scene sceneID="3dT-b6-5dI">

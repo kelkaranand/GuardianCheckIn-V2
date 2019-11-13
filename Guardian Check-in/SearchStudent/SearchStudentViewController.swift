@@ -59,15 +59,20 @@ class SearchStudentViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
-        checkInLabel.text = "Welcome to the " + OptionSelectionViewController.location + ". Press the button below to check-in."
-        self.mainCard.alpha = 0
-        self.checkInCard.alpha = 1
-        self.view.alpha = 1
-        moved = false
-        tableView.isHidden = true
-        searchBar.text = nil
-        UIView.animate(withDuration: 0.5) {
-            self.superView.center.y = self.superView.center.y - self.view.bounds.height
+        if CoreDataHelper.locationName == "" {
+            self.performSegue(withIdentifier: "showSetup", sender: self)
+        }
+        else {
+            checkInLabel.text = "Welcome to the " + CoreDataHelper.locationName + ". Press the button below to check-in."
+            self.mainCard.alpha = 0
+            self.checkInCard.alpha = 1
+            self.view.alpha = 1
+            moved = false
+            tableView.isHidden = true
+            searchBar.text = nil
+            UIView.animate(withDuration: 0.5) {
+                self.superView.center.y = self.superView.center.y - self.view.bounds.height
+            }
         }
     }
     
@@ -86,11 +91,16 @@ class SearchStudentViewController: UIViewController {
         mainCard.center.y = mainCard.center.y + self.view.bounds.height
         
         //Rotation gesture to show setup
-        let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(showSetup(_:)))
-        self.view.addGestureRecognizer(rotateGesture)
+//        let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(showSetup(_:)))
+//        self.view.addGestureRecognizer(rotateGesture)
         
         //Tap gesture for check-in button
         checkInCard.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkInPressed)))
+        
+        //Swipe right to flip back card
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(flipBack))
+        rightSwipe.direction = .right
+        mainCard.addGestureRecognizer(rightSwipe)
     
     }
     
@@ -105,16 +115,31 @@ class SearchStudentViewController: UIViewController {
         }, completion: { finished in
             
         })
+        print("Check")
+    }
+    
+    @objc func flipBack() {
+        UIView.transition(with: mainCard, duration: 0.5, options: [.transitionFlipFromLeft, .showHideTransitionViews], animations: {
+            self.mainCard.alpha = 0
+        }, completion: { finished in
+            
+        })
+        UIView.transition(with: checkInCard, duration: 0.5, options: [.transitionFlipFromLeft, .showHideTransitionViews], animations: {
+            self.checkInCard.alpha = 1
+        }, completion: { finished in
+            
+        })
+        print("flip")
     }
  
-    @objc func showSetup(_ sender: UIRotationGestureRecognizer) {
-        if rad2deg(Double(sender.rotation)) > 120 {
-            if !moved {
-                moved = true
-                moveToSetup()
-            }
-        }
-    }
+//    @objc func showSetup(_ sender: UIRotationGestureRecognizer) {
+//        if rad2deg(Double(sender.rotation)) > 120 {
+//            if !moved {
+//                moved = true
+//                moveToSetup()
+//            }
+//        }
+//    }
     
     func moveToSetup(){
         UIView.animate(withDuration: 0.5, animations: {
@@ -182,6 +207,11 @@ extension SearchStudentViewController: UISearchBarDelegate {
         else {
             tableView.isHidden = true
         }
+        
+        if searchText == "Password" {
+            self.mainCard.endEditing(true)
+            moveToSetup()
+        }
             filteredStudentrecords.removeAll(keepingCapacity: false)
               guard let text = searchBar.text else { return }
               let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", text)
@@ -209,7 +239,12 @@ extension SearchStudentViewController: UITableViewDelegate {
         UIView.animate(withDuration: 0.5, animations: {
             self.superView.center.x = self.superView.center.x - self.view.bounds.width
         }, completion: { finished in
-            self.performSegue(withIdentifier: "guardianSelection", sender: self)
+            if CoreDataHelper.locationGuardianFlag {
+                self.performSegue(withIdentifier: "guardianSelection", sender: self)
+            }
+            else {
+                self.performSegue(withIdentifier: "showEnd", sender: self)
+            }
         })
     }
 }

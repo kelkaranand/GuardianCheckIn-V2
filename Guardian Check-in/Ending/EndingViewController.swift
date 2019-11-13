@@ -32,7 +32,7 @@ class EndingViewController : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
-        thankyouLabel.text = "Thank you for visiting the " + OptionSelectionViewController.location + "."
+        thankyouLabel.text = "Thank you for visiting the " + CoreDataHelper.locationName + "."
         UIView.animate(withDuration: 0.5, animations: {
             self.mainCardView.center.x = self.mainCardView.center.x - self.view.bounds.width
         }, completion: { finished in
