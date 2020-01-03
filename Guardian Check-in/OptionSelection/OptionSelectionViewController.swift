@@ -18,6 +18,7 @@ class OptionSelectionViewController : UIViewController {
     var options = [String]()
     static var fname:String = ""
     static var comingFromConfirmation = false
+    static var staffName: String?
     
     override func viewDidLayoutSubviews() {
         super .viewDidLayoutSubviews()

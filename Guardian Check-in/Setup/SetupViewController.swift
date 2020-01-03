@@ -30,6 +30,9 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var downloadDataButton: UIView!
     @IBOutlet weak var shadowView: UIView!
     
+    var key : String?
+    var identifier : String?
+    
     var lastRotation:CGFloat = 0
     var rotation:CGFloat = 0
     var counter = 0
@@ -73,6 +76,8 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
         super .viewDidLoad()
         self.locationPicker.delegate = self
         self.locationPicker.dataSource = self
+        self.key = LaunchViewController.key
+        self.identifier = LaunchViewController.identifier
         
         //Hide test label
         testLabel.isHidden = true
@@ -90,6 +95,9 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
         let rightSwipeOnLockScreen = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeLock))
         rightSwipeOnLockScreen.direction = .right
         lockView.addGestureRecognizer(rightSwipeOnLockScreen)
+        
+        //Tap for download data button
+        downloadDataButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(downloadData)))
         
         //Tap for set location button
         setLocationButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setLocation)))
@@ -137,6 +145,71 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
         label.textAlignment = .center
         return label
     }
+    
+    func checkInternetConnection() -> Bool {
+        let connection = InternetConnectionTest.isInternetAvailable()
+        if !connection {
+            let internetAlert = UIAlertController(title: "No internet connection", message: "Your device is not connected to the internet. Please make sure you are connected to the internet to perform this action.", preferredStyle: .alert)
+            internetAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
+            self.present(internetAlert, animated: true)
+        }
+        return connection
+    }
+    
+    @objc func downloadData(){
+        print("data downloaded")
+        
+        //Return if not connected to the internet
+        if !checkInternetConnection(){
+            print("internet!")
+            return
+        }
+        
+//        let downloadDataAlert = UIAlertController(title: "Warning", message: "You have not installed the SVProgressHUD pod. Would you like to continue", preferredStyle: .alert)
+//        downloadDataAlert.addAction(UIAlertAction(title: "No", style: .cancel))
+//        downloadDataAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
+//            action in
+            
+            DispatchQueue.global(qos: .background).async {
+                let url = URL(string:RestHelper.urls["Get_Students"]!)!
+                let locationsUrl = URL(string:RestHelper.urls["Get_Locations"]!)!
+                print(url)
+                let jsonString = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!])
+                print(jsonString)
+                let locationsString = RestHelper.makePost(locationsUrl, ["identifier": self.identifier!, "key": self.key!])
+                print(locationsString)
+                CoreDataHelper.deleteAllData(from: "Student")
+                let data = jsonString.data(using: .utf8)!
+                do {
+                    
+                    if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>]{
+                        
+                        for item in jsonArray {
+//                            let studentDataItem = StudentData(id: item["APS_Student_ID"], fname: item["FirstName"], lname: item["LastName"], checked: false , sname: item["School_Name"])
+//                            StudentListViewController.data.append(studentDataItem)
+//                            StudentListViewController.idmap.updateValue(StudentListViewController.data.count-1, forKey: studentDataItem.id!)
+                            CoreDataHelper.saveStudentData(item, "Student")
+                        }
+                        
+                        DispatchQueue.main.async {
+//                            SVProgressHUD.showSuccess(withStatus: "Downloaded Student Data!")
+//                            SVProgressHUD.dismiss(withDelay: .init(floatLiteral: 2))
+                        }
+                        
+                    } else {
+                        print("bad json")
+                    }
+                    
+                    } catch let error as NSError {
+                        print(error)
+                }
+            }
+//        }))
+        
+        
+    }
+    
+    
     
     @objc func setLocation(){
         let selectedIndex = locationPicker.selectedRow(inComponent: 0)

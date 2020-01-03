@@ -15,15 +15,14 @@ public class RestHelper {
     static let urls = [
         "Register_Device":host+"/device/register",
         "Get_Registration_Key":host+"/device",
-        "Get_Events":host+"/event",
-        "Get_Schools":host+"/schools",
         "Get_Students":host+"/students",
         "Attendance":host+"/event/attendance",
         "Create_Event":host+"/createEvent",
+        "Get_Locations":host+"/checkinLocations",
         "Get_Students_By_School":host+"/schools/" + schoolName] as Dictionary<String,String>
     
     //Method to make POST REST call
-    class func makePost(_ url:URL, _ params: Dictionary<String, String>) -> String {
+    class func makePost(_ url:URL, _ params: Dictionary<String,String>) -> String {
 
         var jsonData = NSData()
         do {
