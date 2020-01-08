@@ -16,9 +16,12 @@ class StudentGuardianSelectionViewController: UIViewController {
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var addButtonView: UIView!
     @IBOutlet weak var shadowView: UIView!
+    @IBOutlet weak var staffNameTextField: UITextField!
+    @IBOutlet weak var checkInWithStaffView: UILabel!
     
     static var student = StudentRecord()
     var guardianList = [GuardianRecord]()
+    var staffName : String?
     
     static var back = false
     
@@ -45,12 +48,16 @@ class StudentGuardianSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        //staffNameTextField.delegate = (self as! UITextFieldDelegate)
+        
         //Setup starting position for card
         cardView.center.x = cardView.center.x + self.view.bounds.width
         shadowView.center.x = shadowView.center.x + self.view.bounds.width
         
         //Tap gesture recognizer for addButton
         addButtonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addGuardian)))
+        
+        checkInWithStaffView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkInWithStaff)))
         
         //Swipe right to go back
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(goBack))
@@ -95,6 +102,27 @@ class StudentGuardianSelectionViewController: UIViewController {
             self.performSegue(withIdentifier: "moveToAddGuardian", sender: self)
         })
     }
+
+    @objc func checkInWithStaff() {
+        staffName = staffNameTextField.text
+        
+        // check if form is complete
+        if staffNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            
+            // create the alert that user has not completed form
+            let incompleteAlert = UIAlertController(title: "Incomplete!", message: "Please add the staff member's name", preferredStyle: UIAlertController.Style.alert)
+            // add the OK button
+            incompleteAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
+                return
+            }
+            ))
+            // show the alert
+            self.present(incompleteAlert, animated: true, completion: nil)
+        } else {
+            
+            self.performSegue(withIdentifier: "moveToOptions", sender: self)
+        }
+    }
     
     private func fetchGuardians() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -117,6 +145,16 @@ class StudentGuardianSelectionViewController: UIViewController {
             let dest = segue.destination as! AddGuardianViewController
             dest.student = StudentGuardianSelectionViewController.student
         }
+        
+//        if segue.identifier == "moveToOptions" {
+//            staffName = staffNameTextField.text!
+//
+//            let dest = segue.destination as? OptionSelectionViewController
+//            //destinaton.maps = sender as? [SkiMap]
+//            print("preparing segue")
+//            dest.staffName = StudentGuardianSelectionViewController.staffName
+//
+//        }
     }
     
     func moveToConfirmation(_ fname:String) {

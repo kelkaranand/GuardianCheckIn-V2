@@ -27,16 +27,36 @@ public class CoreDataHelper {
         return try! managedContext.count(for: fetchRequest)
     }
     
-    class func saveStudentData(_ fname:String,_ lname:String,_ id:String){
+//    class func saveStudentData(_ fname:String,_ lname:String,_ id:String){
+//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+//            return
+//        }
+//        let managedContext = appDelegate.persistentContainer.viewContext
+//        let descrEntity = NSEntityDescription.entity(forEntityName: "Student", in: managedContext)!
+//        let obj = NSManagedObject(entity: descrEntity, insertInto: managedContext)
+//        obj.setValue(fname, forKey: "fname")
+//        obj.setValue(lname, forKey: "lname")
+//        obj.setValue(id, forKey: "id")
+//
+//        do {
+//            try managedContext.save()
+//
+//        } catch let error as NSError {
+//            print("Could not save. \(error), \(error.userInfo)")
+//
+//        }
+//    }
+    
+    class func saveStudentData(_ jsonObj: [String:String], _ entityName: String){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
         let managedContext = appDelegate.persistentContainer.viewContext
-        let descrEntity = NSEntityDescription.entity(forEntityName: "Student", in: managedContext)!
+        let descrEntity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext)!
         let obj = NSManagedObject(entity: descrEntity, insertInto: managedContext)
-        obj.setValue(fname, forKey: "fname")
-        obj.setValue(lname, forKey: "lname")
-        obj.setValue(id, forKey: "id")
+        obj.setValue(jsonObj["FirstName"], forKey: "fname")
+        obj.setValue(jsonObj["APS_Student_ID"], forKey: "id")
+        obj.setValue(jsonObj["LastName"], forKey: "lname")
         
         do {
             try managedContext.save()
