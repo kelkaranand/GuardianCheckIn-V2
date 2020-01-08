@@ -189,12 +189,14 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
             lockStatusImage.image = UIImage(named: "unlocked")
             superSecretMessage.text = "Super secret lock inactive"
             lockFlag = false
+            lockStatus = false
             saveLockStatus(false)
         }
         else {
             lockStatusImage.image = UIImage(named: "locked")
             superSecretMessage.text = "Super secret lock active"
             lockFlag = true
+            lockStatus = true
             saveLockStatus(true)
         }
     }
