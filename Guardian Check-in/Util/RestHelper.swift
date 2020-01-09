@@ -19,7 +19,8 @@ public class RestHelper {
         "Attendance":host+"/event/attendance",
         "Create_Event":host+"/createEvent",
         "Get_Locations":host+"/checkinLocations",
-        "Get_Students_By_School":host+"/schools/" + schoolName] as Dictionary<String,String>
+        "Get_Students_By_School":host+"/schools/" + schoolName,
+        "Get_Family_Members":host+"/familyMembers/"] as Dictionary<String,String>
     
     //Method to make POST REST call
     class func makePost(_ url:URL, _ params: Dictionary<String,String>) -> String {

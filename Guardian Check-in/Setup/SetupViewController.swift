@@ -179,15 +179,13 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
                 let locationsString = RestHelper.makePost(locationsUrl, ["identifier": self.identifier!, "key": self.key!])
                 print(locationsString)
                 CoreDataHelper.deleteAllData(from: "Student")
+                SearchStudentViewController.studentRecords.removeAll()
                 let data = jsonString.data(using: .utf8)!
                 do {
                     
                     if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>]{
                         
                         for item in jsonArray {
-//                            let studentDataItem = StudentData(id: item["APS_Student_ID"], fname: item["FirstName"], lname: item["LastName"], checked: false , sname: item["School_Name"])
-//                            StudentListViewController.data.append(studentDataItem)
-//                            StudentListViewController.idmap.updateValue(StudentListViewController.data.count-1, forKey: studentDataItem.id!)
                             CoreDataHelper.saveStudentData(item, "Student")
                         }
                         

@@ -10,19 +10,19 @@ import Foundation
 
 class GuardianRecord {
     
-    var fname:String
-    var lname:String
+    var name:String
+    var id:String
     var relation:String
     
     init() {
-        fname = ""
-        lname = ""
+        name = ""
+        id = ""
         relation = ""
     }
     
-    init(_ fname:String, _ lname:String, _ relation:String) {
-        self.fname = fname
-        self.lname = lname
+    init(_ name:String, _ id:String, _ relation:String) {
+        self.name = name
+        self.id = id
         self.relation = relation
     }
     

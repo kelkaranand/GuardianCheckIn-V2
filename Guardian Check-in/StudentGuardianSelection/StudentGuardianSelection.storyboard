@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kjq-Vk-vkC">
-    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kjq-Vk-vkC">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -170,50 +172,6 @@
                                         <rect key="frame" x="0.0" y="621" width="615" height="21.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sQf-ae-0qR">
-                                        <rect key="frame" x="61.5" y="725.5" width="492" height="94.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staff member checking a student in?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5PP-MF-b1q">
-                                                <rect key="frame" x="0.0" y="0.0" width="492" height="47.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBh-r9-UIr">
-                                                <rect key="frame" x="0.0" y="47.5" width="492" height="47"/>
-                                                <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Staff Member Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kjD-OY-GXR">
-                                                        <rect key="frame" x="0.0" y="0.0" width="393.5" height="47"/>
-                                                        <accessibility key="accessibilityConfiguration" hint="Staff Member Name"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2C-oi-LWj">
-                                                        <rect key="frame" x="393.5" y="0.0" width="98.5" height="47"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check-In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ex-E0-wP9">
-                                                                <rect key="frame" x="0.0" y="0.0" width="98.5" height="47"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="9ex-E0-wP9" firstAttribute="height" secondItem="X2C-oi-LWj" secondAttribute="height" id="06D-F8-l74"/>
-                                                            <constraint firstItem="9ex-E0-wP9" firstAttribute="centerY" secondItem="X2C-oi-LWj" secondAttribute="centerY" id="AoR-RR-LYr"/>
-                                                            <constraint firstItem="9ex-E0-wP9" firstAttribute="width" secondItem="X2C-oi-LWj" secondAttribute="width" id="BQB-7k-Z1K"/>
-                                                            <constraint firstItem="9ex-E0-wP9" firstAttribute="centerX" secondItem="X2C-oi-LWj" secondAttribute="centerX" id="XON-Mt-UYW"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="X2C-oi-LWj" firstAttribute="width" secondItem="lBh-r9-UIr" secondAttribute="width" multiplier="0.2" id="GgS-R6-BrM"/>
-                                                    <constraint firstItem="kjD-OY-GXR" firstAttribute="width" secondItem="lBh-r9-UIr" secondAttribute="width" multiplier="0.8" id="LJB-O5-Tck"/>
-                                                </constraints>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -225,11 +183,9 @@
                                     <constraint firstItem="Xgc-m9-ghn" firstAttribute="top" secondItem="7lT-WG-nAs" secondAttribute="bottom" id="6ZY-RH-bnR"/>
                                     <constraint firstItem="7lT-WG-nAs" firstAttribute="height" secondItem="0Ta-xP-ORi" secondAttribute="height" multiplier="0.05" constant="1" id="A2C-f8-Xw1"/>
                                     <constraint firstItem="RhC-zY-oIH" firstAttribute="top" secondItem="7rF-Cz-EiW" secondAttribute="bottom" id="All-eE-bdL"/>
-                                    <constraint firstItem="sQf-ae-0qR" firstAttribute="centerX" secondItem="0Ta-xP-ORi" secondAttribute="centerX" id="COT-d9-O1U"/>
                                     <constraint firstItem="cb6-5H-yyk" firstAttribute="centerX" secondItem="0Ta-xP-ORi" secondAttribute="centerX" id="E6E-Dc-nrZ"/>
                                     <constraint firstItem="HIV-va-zIK" firstAttribute="centerX" secondItem="0Ta-xP-ORi" secondAttribute="centerX" id="FG4-H1-BA9"/>
                                     <constraint firstItem="HIV-va-zIK" firstAttribute="height" secondItem="0Ta-xP-ORi" secondAttribute="height" multiplier="0.025" constant="1" id="FPB-9d-gto"/>
-                                    <constraint firstItem="sQf-ae-0qR" firstAttribute="top" secondItem="cb6-5H-yyk" secondAttribute="bottom" id="FzH-P9-ogx"/>
                                     <constraint firstItem="041-RQ-Y9z" firstAttribute="height" secondItem="0Ta-xP-ORi" secondAttribute="height" multiplier="0.15" constant="1" id="JK6-aR-ogj"/>
                                     <constraint firstItem="RhC-zY-oIH" firstAttribute="width" secondItem="041-RQ-Y9z" secondAttribute="width" id="Kra-ss-Lcd"/>
                                     <constraint firstItem="0Ho-PM-uqw" firstAttribute="height" secondItem="7rF-Cz-EiW" secondAttribute="height" id="Kt3-xz-vdX"/>
@@ -241,12 +197,10 @@
                                     <constraint firstItem="7lT-WG-nAs" firstAttribute="top" secondItem="HIV-va-zIK" secondAttribute="bottom" id="TRD-lr-nR3"/>
                                     <constraint firstItem="7rF-Cz-EiW" firstAttribute="height" secondItem="0Ta-xP-ORi" secondAttribute="height" multiplier="0.05" constant="1" id="UOG-Lr-7SB"/>
                                     <constraint firstItem="0Ru-QP-Ipq" firstAttribute="height" secondItem="0Ta-xP-ORi" secondAttribute="height" multiplier="0.4" constant="1" id="VzB-8f-tbw"/>
-                                    <constraint firstItem="sQf-ae-0qR" firstAttribute="width" secondItem="0Ta-xP-ORi" secondAttribute="width" multiplier="0.8" id="Wrx-ga-zEj"/>
                                     <constraint firstItem="7rF-Cz-EiW" firstAttribute="width" secondItem="041-RQ-Y9z" secondAttribute="width" id="X5Y-Wz-UZ8"/>
                                     <constraint firstItem="041-RQ-Y9z" firstAttribute="centerX" secondItem="0Ta-xP-ORi" secondAttribute="centerX" id="aTF-HR-8TO"/>
                                     <constraint firstItem="Xgc-m9-ghn" firstAttribute="height" secondItem="HIV-va-zIK" secondAttribute="height" id="dRW-p2-zF9"/>
                                     <constraint firstItem="cb6-5H-yyk" firstAttribute="top" secondItem="Xgc-m9-ghn" secondAttribute="bottom" id="f5B-wu-U5Z"/>
-                                    <constraint firstAttribute="bottom" secondItem="sQf-ae-0qR" secondAttribute="bottom" id="fkU-0a-aD1"/>
                                     <constraint firstItem="7lT-WG-nAs" firstAttribute="centerX" secondItem="0Ta-xP-ORi" secondAttribute="centerX" id="j0Q-Vf-3zt"/>
                                     <constraint firstItem="Xgc-m9-ghn" firstAttribute="width" secondItem="HIV-va-zIK" secondAttribute="width" id="l7Y-he-TcT"/>
                                     <constraint firstItem="0Ru-QP-Ipq" firstAttribute="top" secondItem="0Ho-PM-uqw" secondAttribute="bottom" id="lVe-sS-TQf"/>
@@ -283,10 +237,8 @@
                     <connections>
                         <outlet property="addButtonView" destination="cb6-5H-yyk" id="zFu-ns-83J"/>
                         <outlet property="cardView" destination="0Ta-xP-ORi" id="twy-cs-Mbm"/>
-                        <outlet property="checkInWithStaffView" destination="9ex-E0-wP9" id="97K-lU-m8S"/>
                         <outlet property="collectionView" destination="0Ru-QP-Ipq" id="ad2-65-yzk"/>
                         <outlet property="shadowView" destination="PqF-XP-dij" id="7Vr-g2-QUG"/>
-                        <outlet property="staffNameTextField" destination="kjD-OY-GXR" id="Wrz-F0-SAr"/>
                         <outlet property="studentNameLabel" destination="avx-b6-i0I" id="swJ-qC-OqJ"/>
                         <segue destination="jaj-vu-YuE" kind="show" identifier="moveToOptions" animates="NO" id="NU1-vJ-47I"/>
                         <segue destination="RmB-R9-9Jw" kind="show" identifier="moveToAddGuardian" animates="NO" id="Ipy-or-ciV"/>
