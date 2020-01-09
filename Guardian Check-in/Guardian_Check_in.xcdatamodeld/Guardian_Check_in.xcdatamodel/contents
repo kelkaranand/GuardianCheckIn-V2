@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G8037" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Device_Info" representedClassName="Device_Info" syncable="YES" codeGenerationType="class">
-        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lock" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String"/>
+        <attribute name="key" optional="YES" attributeType="String"/>
+        <attribute name="lock" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
     <entity name="Guardian" representedClassName="Guardian" syncable="YES" codeGenerationType="class">
-        <attribute name="fname" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lname" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="relation" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="studentId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fname" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="lname" optional="YES" attributeType="String"/>
+        <attribute name="relation" optional="YES" attributeType="String"/>
+        <attribute name="studentId" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Location" representedClassName="Location" syncable="YES" codeGenerationType="class">
-        <attribute name="guardianCheck" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="options" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guardianCheck" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="options" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Setup_Info" representedClassName="Setup_Info" syncable="YES" codeGenerationType="class">
-        <attribute name="guardianCheckin" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="options" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guardianCheckin" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="location" optional="YES" attributeType="String"/>
+        <attribute name="options" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Student" representedClassName="Student" syncable="YES" codeGenerationType="class">
-        <attribute name="fname" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fname" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="lname" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Device_Info" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="Guardian" positionX="-36" positionY="18" width="128" height="120"/>
+        <element name="Location" positionX="-36" positionY="45" width="128" height="88"/>
         <element name="Setup_Info" positionX="-18" positionY="54" width="128" height="90"/>
         <element name="Student" positionX="-54" positionY="-9" width="128" height="90"/>
-        <element name="Location" positionX="-36" positionY="45" width="128" height="90"/>
     </elements>
 </model>

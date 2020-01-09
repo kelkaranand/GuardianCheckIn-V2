@@ -170,32 +170,49 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
 //        downloadDataAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
 //            action in
             
-            DispatchQueue.global(qos: .background).async {
-                let url = URL(string:RestHelper.urls["Get_Students"]!)!
-                let locationsUrl = URL(string:RestHelper.urls["Get_Locations"]!)!
-                print(url)
-                let jsonString = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!])
-                print(jsonString)
-                let locationsString = RestHelper.makePost(locationsUrl, ["identifier": self.identifier!, "key": self.key!])
-                print(locationsString)
-                CoreDataHelper.deleteAllData(from: "Student")
-                let data = jsonString.data(using: .utf8)!
-                do {
+        var locationsString = ""
+        
+        DispatchQueue.global(qos: .background).async {
+            let url = URL(string:RestHelper.urls["Get_Students"]!)!
+            let locationsUrl = URL(string:RestHelper.urls["Get_Locations"]!)!
+            print(url)
+            let jsonString = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!])
+            print(jsonString)
+            locationsString = RestHelper.makePost(locationsUrl, ["identifier": self.identifier!, "key": self.key!])
+            print(locationsString)
+            CoreDataHelper.deleteAllData(from: "Student")
+            CoreDataHelper.deleteAllData(from: "Location")
+            let data = jsonString.data(using: .utf8)!
+            
+            do {
+                if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>]{
                     
-                    if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>]{
+                    for item in jsonArray {
+                        CoreDataHelper.saveStudentData(item, "Student")
+                    }
+
+                } else {
+                    print("bad json")
+                }
+                
+                } catch let error as NSError {
+                    print(error)
+            }
+        }
+                let locationdata = locationsString.data(using: .utf8)!
+                do {
+                    if let jsonLocationArray = try JSONSerialization.jsonObject(with: locationdata, options : .allowFragments) as? [Dictionary<String,Any>]{
                         
-                        for item in jsonArray {
-//                            let studentDataItem = StudentData(id: item["APS_Student_ID"], fname: item["FirstName"], lname: item["LastName"], checked: false , sname: item["School_Name"])
-//                            StudentListViewController.data.append(studentDataItem)
-//                            StudentListViewController.idmap.updateValue(StudentListViewController.data.count-1, forKey: studentDataItem.id!)
-                            CoreDataHelper.saveStudentData(item, "Student")
+                        for item in jsonLocationArray {
+                            var locationName = item["name"] as! String
+                            var locationReason = item["reasons"] as! String
+                            var locationGuardCheck = item["guardianCheckIn"] as! Bool
+                            if locationName != nil && locationReason != nil {
+                                print("nil")
+                                CoreDataHelper.saveLocationData(item["name"] as! String, item["reasons"] as! String, item["guardianCheckIn"] as! Bool)
+                            }
                         }
-                        
-                        DispatchQueue.main.async {
-//                            SVProgressHUD.showSuccess(withStatus: "Downloaded Student Data!")
-//                            SVProgressHUD.dismiss(withDelay: .init(floatLiteral: 2))
-                        }
-                        
+
                     } else {
                         print("bad json")
                     }
@@ -203,7 +220,8 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
                     } catch let error as NSError {
                         print(error)
                 }
-            }
+                
+                
 //        }))
         
         
