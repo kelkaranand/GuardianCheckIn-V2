@@ -16,8 +16,6 @@ class StudentGuardianSelectionViewController: UIViewController {
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var addButtonView: UIView!
     @IBOutlet weak var shadowView: UIView!
-    @IBOutlet weak var staffNameTextField: UITextField!
-    @IBOutlet weak var checkInWithStaffView: UILabel!
     
     static var student = StudentRecord()
     var guardianList = [GuardianRecord]()
@@ -45,10 +43,9 @@ class StudentGuardianSelectionViewController: UIViewController {
         addButtonView.backgroundColor = UIColor.lightGray
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        //staffNameTextField.delegate = (self as! UITextFieldDelegate)
         
         //Setup starting position for card
         cardView.center.x = cardView.center.x + self.view.bounds.width
@@ -56,8 +53,6 @@ class StudentGuardianSelectionViewController: UIViewController {
         
         //Tap gesture recognizer for addButton
         addButtonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addGuardian)))
-        
-        checkInWithStaffView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkInWithStaff)))
         
         //Swipe right to go back
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(goBack))
@@ -68,8 +63,8 @@ class StudentGuardianSelectionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
-        studentNameLabel.text = StudentGuardianSelectionViewController.student.fname + " " + StudentGuardianSelectionViewController.student.lname
         fetchGuardians()
+        studentNameLabel.text = StudentGuardianSelectionViewController.student.fname + " " + StudentGuardianSelectionViewController.student.lname
         if (StudentGuardianSelectionViewController.back) {
             UIView.animate(withDuration: 0.5) {
                 self.cardView.center.x = self.cardView.center.x + self.view.bounds.width
@@ -103,41 +98,29 @@ class StudentGuardianSelectionViewController: UIViewController {
         })
     }
 
-    @objc func checkInWithStaff() {
-        staffName = staffNameTextField.text
-        
-        // check if form is complete
-        if staffNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            
-            // create the alert that user has not completed form
-            let incompleteAlert = UIAlertController(title: "Incomplete!", message: "Please add the staff member's name", preferredStyle: UIAlertController.Style.alert)
-            // add the OK button
-            incompleteAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
-                return
-            }
-            ))
-            // show the alert
-            self.present(incompleteAlert, animated: true, completion: nil)
-        } else {
-            
-            self.performSegue(withIdentifier: "moveToOptions", sender: self)
-        }
-    }
     
     private func fetchGuardians() {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Guardian")
-        fetchRequest.predicate = NSPredicate(format: "studentId = %@", StudentGuardianSelectionViewController.student.id)
+        let url = URL(string:RestHelper.urls["Get_Family_Members"]!+StudentGuardianSelectionViewController.student.id)!
+        print(url)
+        let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!])
+        print(jsonString)
+        let data = jsonString.data(using: .utf8)!
         do {
-            let results = try context.fetch(fetchRequest)
-            let guardians = results as! [Guardian]
-            
-            for guardian in guardians {
-                guardianList.append(GuardianRecord(guardian.fname!,guardian.lname!,guardian.relation!))
-            }
-        }catch let err as NSError {
-            print(err.debugDescription)
+                
+            if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>]{
+                    
+                for item in jsonArray {
+                    self.guardianList.append(GuardianRecord(item["Name"]!, item["Id"]!, item["Relationship"]!))
+                }
+                    
+                } else {
+                    print("bad json")
+                }
+                
+        } catch let error as NSError {
+                print(error)
         }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -145,16 +128,6 @@ class StudentGuardianSelectionViewController: UIViewController {
             let dest = segue.destination as! AddGuardianViewController
             dest.student = StudentGuardianSelectionViewController.student
         }
-        
-//        if segue.identifier == "moveToOptions" {
-//            staffName = staffNameTextField.text!
-//
-//            let dest = segue.destination as? OptionSelectionViewController
-//            //destinaton.maps = sender as? [SkiMap]
-//            print("preparing segue")
-//            dest.staffName = StudentGuardianSelectionViewController.staffName
-//
-//        }
     }
     
     func moveToConfirmation(_ fname:String) {
@@ -180,9 +153,7 @@ extension StudentGuardianSelectionViewController: UICollectionViewDataSource {
         cell.layer.shouldRasterize = false
         cell.layer.borderWidth = 2
         
-        let fragFname = guardianList[indexPath.row].fname
-        let fragLname = guardianList[indexPath.row].lname
-        cell.nameLabel.text = fragFname + " " + fragLname
+        cell.nameLabel.text = guardianList[indexPath.row].name
         cell.relationshipLabel.text = guardianList[indexPath.row].relation
         
         return cell
@@ -219,6 +190,6 @@ extension StudentGuardianSelectionViewController: UICollectionViewDelegateFlowLa
 
 extension StudentGuardianSelectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        moveToConfirmation(guardianList[indexPath.row].fname)
+        moveToConfirmation(guardianList[indexPath.row].name)
     }
 }
