@@ -158,12 +158,10 @@ class LaunchViewController : UIViewController {
         
         do {
             let results = try context.fetch(locationsFetchRequest)
-            let locations = results as! [AnyObject]
+            let locations = results as! [Location]
             
             for location in locations {
-                CoreDataHelper.allLocations.append(location.value(forKey: "name") as! String)
-                CoreDataHelper.allOptions.append(location.value(forKey: "options") as! String)
-                CoreDataHelper.allGuardianFlags.append(location.value(forKey: "guardianCheck") as! Bool)
+                SetupViewController.locations.append(LocationRecord(location.name!, location.options!, location.guardianCheck))
             }
             
         }catch let err as NSError {
@@ -177,14 +175,14 @@ class LaunchViewController : UIViewController {
             if(results.count>0){
                 let setupLocation = results[0] as AnyObject
                 let temp = setupLocation.value(forKey: "location") as! String
-            
+                
                 if temp != nil {
                     CoreDataHelper.locationName = temp
                     CoreDataHelper.locationGuardianFlag = setupLocation.value(forKey: "guardianCheckin") as! Bool
                     CoreDataHelper.locationOptions = setupLocation.value(forKey: "options") as! String
                 }
             }
-            //If setup info entry is not created, create a dummy one
+                //If setup info entry is not created, create a dummy one
             else {
                 guard let appDelegate = UIApplication.shared.delegate as?AppDelegate else {
                     return

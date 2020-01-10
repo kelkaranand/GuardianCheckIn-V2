@@ -45,6 +45,8 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
     
     var lockStatus = true
     
+    static var locations = [LocationRecord]()
+    
     override func viewDidLayoutSubviews() {
         super .viewDidLayoutSubviews()
         mainCardView.layer.cornerRadius = 10
@@ -128,11 +130,11 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return CoreDataHelper.allLocations.count
+        return SetupViewController.locations.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return CoreDataHelper.allLocations[row]
+        return SetupViewController.locations[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -141,7 +143,7 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
             label = v as! UILabel
         }
         label.font = UIFont (name: "Chalkboard SE", size: 20)
-        label.text =  CoreDataHelper.allLocations[row]
+        label.text =  SetupViewController.locations[row].name
         label.textAlignment = .center
         return label
     }
@@ -157,88 +159,59 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     @objc func downloadData(){
-        print("data downloaded")
-        
         //Return if not connected to the internet
         if !checkInternetConnection(){
             print("internet!")
             return
         }
-        
-//        let downloadDataAlert = UIAlertController(title: "Warning", message: "You have not installed the SVProgressHUD pod. Would you like to continue", preferredStyle: .alert)
-//        downloadDataAlert.addAction(UIAlertAction(title: "No", style: .cancel))
-//        downloadDataAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
-//            action in
-            
-        var locationsString = ""
-        
-        DispatchQueue.global(qos: .background).async {
-            let url = URL(string:RestHelper.urls["Get_Students"]!)!
-            let locationsUrl = URL(string:RestHelper.urls["Get_Locations"]!)!
-            print(url)
-            let jsonString = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!])
-            print(jsonString)
-            locationsString = RestHelper.makePost(locationsUrl, ["identifier": self.identifier!, "key": self.key!])
-            print(locationsString)
-            CoreDataHelper.deleteAllData(from: "Student")
-            CoreDataHelper.deleteAllData(from: "Location")
-            let data = jsonString.data(using: .utf8)!
-            
-            do {
-                if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>]{
-                    
-                    for item in jsonArray {
-                        CoreDataHelper.saveStudentData(item, "Student")
-                    }
-
-                } else {
-                    print("bad json")
+        let url = URL(string:RestHelper.urls["Get_Students"]!)!
+        let locationsUrl = URL(string:RestHelper.urls["Get_Locations"]!)!
+        print(url)
+        let jsonString = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!])
+        print(jsonString)
+        let locationsString = RestHelper.makePost(locationsUrl, ["identifier": self.identifier!, "key": self.key!])
+        print(locationsString)
+        CoreDataHelper.deleteAllData(from: "Student")
+        SearchStudentViewController.studentRecords.removeAll()
+        CoreDataHelper.deleteAllData(from: "Location")
+        SetupViewController.locations.removeAll()
+        //Storing Student data in core data
+        let data = jsonString.data(using: .utf8)!
+        do {
+            if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>]{
+                for item in jsonArray {
+                    CoreDataHelper.saveStudentData(item, "Student")
+                    SearchStudentViewController.studentRecords.append(StudentRecord(item["FirstName"]!, item["LastName"]!, item["APS_Student_ID"]!))
                 }
-                
-                } catch let error as NSError {
-                    print(error)
+            } else {
+                print("bad json")
             }
+        } catch let error as NSError {
+            print(error)
         }
-                let locationdata = locationsString.data(using: .utf8)!
-                do {
-                    if let jsonLocationArray = try JSONSerialization.jsonObject(with: locationdata, options : .allowFragments) as? [Dictionary<String,Any>]{
-                        
-                        for item in jsonLocationArray {
-                            var locationName = item["name"] as! String
-                            var locationReason = item["reasons"] as! String
-                            var locationGuardCheck = item["guardianCheckIn"] as! Bool
-                            if locationName != nil && locationReason != nil {
-                                print("nil")
-                                CoreDataHelper.saveLocationData(item["name"] as! String, item["reasons"] as! String, item["guardianCheckIn"] as! Bool)
-                            }
-                        }
-
-                    } else {
-                        print("bad json")
-                    }
-                    
-                    } catch let error as NSError {
-                        print(error)
+        //Storing location data in core data
+        let locationdata = locationsString.data(using: .utf8)!
+        do {
+            if let jsonLocationArray = try JSONSerialization.jsonObject(with: locationdata, options : .allowFragments) as? [Dictionary<String,Any>]{
+                for item in jsonLocationArray {
+                    CoreDataHelper.saveLocationData(item["name"] as! String, item["reasons"] as! String, item["guardianCheckIn"] as! Bool)
+                    SetupViewController.locations.append(LocationRecord(item["name"] as! String, item["reasons"] as! String, item["guardianCheckIn"] as! Bool))
                 }
-                
-                
-//        }))
+            } else {
+                print("bad json")
+            }
+        } catch let error as NSError {
+            print(error)
+        }
         
-        
+        self.view.layoutIfNeeded()
     }
     
     
     
     @objc func setLocation(){
         let selectedIndex = locationPicker.selectedRow(inComponent: 0)
-        CoreDataHelper.locationName = CoreDataHelper.allLocations[selectedIndex]
-        CoreDataHelper.locationGuardianFlag = CoreDataHelper.allGuardianFlags[selectedIndex]
-        CoreDataHelper.locationOptions = CoreDataHelper.allOptions[selectedIndex]
-        writeLocationToCoreData()
-        print("location set")
-    }
-    
-    func writeLocationToCoreData() {
+        
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         
@@ -246,9 +219,9 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
         do {
             let setupObj = try managedContext.fetch(fetchRequest)
             let objectUpdate = setupObj.first as! NSManagedObject
-            objectUpdate.setValue(CoreDataHelper.locationName, forKey: "location")
-            objectUpdate.setValue(CoreDataHelper.locationOptions, forKey: "options")
-            objectUpdate.setValue(CoreDataHelper.locationGuardianFlag, forKey: "guardianCheckin")
+            objectUpdate.setValue(SetupViewController.locations[selectedIndex].name, forKey: "location")
+            objectUpdate.setValue(SetupViewController.locations[selectedIndex].options, forKey: "options")
+            objectUpdate.setValue(SetupViewController.locations[selectedIndex].guardianCheck, forKey: "guardianCheckin")
             do{
                 try managedContext.save()
                 print("Location Updated!")
@@ -258,7 +231,25 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
         } catch {
             print(error)
         }
+        CoreDataHelper.locationName = SetupViewController.locations[selectedIndex].name
+        
+        print("location set")
     }
+    
+    @objc func rightSwipeLock() {
+        self.navigationController?.popViewController(animated: false)
+    }
+    
+    @objc func goBack() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.shadowView.center.x = self.shadowView.center.x + self.view.bounds.width
+            self.mainCardView.center.x = self.mainCardView.center.x + self.view.bounds.width
+        }, completion: { finished in
+            self.navigationController?.popViewController(animated: false)
+        })
+    }
+    
+    //-------------------------------------------------- Lock related code ----------------------------------------------------
     
     func readLockStatus() {
         let coreData = CoreDataHelper.retrieveData("Device_Info")
@@ -310,20 +301,6 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
         } catch {
             print(error)
         }
-        
-    }
-    
-    @objc func rightSwipeLock() {
-        self.navigationController?.popViewController(animated: false)
-    }
-    
-    @objc func goBack() {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.shadowView.center.x = self.shadowView.center.x + self.view.bounds.width
-            self.mainCardView.center.x = self.mainCardView.center.x + self.view.bounds.width
-        }, completion: { finished in
-            self.navigationController?.popViewController(animated: false)
-        })
     }
     
     //Start - Lock rotation and value calculation
