@@ -28,6 +28,7 @@ class SearchStudentViewController: UIViewController {
     @IBOutlet weak var logoImage: UIImageView!
     var moved = false
     var easterEgg = false
+    var displayGifs = ["https://media0.giphy.com/media/Y506ebOM2Zd4llHv43/source.gif","https://media1.giphy.com/media/WpxeQuE1hfvLow9Ir3/source.gif","https://media2.giphy.com/media/PijGh7gmB7oc5cf4z9/source.gif","https://media2.giphy.com/media/ZZTC9RP7cVYqw5MnXW/giphy.gif"]
     
     
     override func viewDidLayoutSubviews() {
@@ -107,23 +108,30 @@ class SearchStudentViewController: UIViewController {
     }
     
     @objc func showLebron() {
-        if(!easterEgg)
+        if(InternetConnectionTest.isInternetAvailable())
         {
-            easterEgg = true
-            UIView.transition(with: logoImage, duration: 0.5, options: [.transitionFlipFromLeft, .showHideTransitionViews], animations: {
-                self.logoImage.alpha = 0
-            }, completion: { finished in
-                self.logoImage.image = UIImage.gifImageWithURL("https://media0.giphy.com/media/Y506ebOM2Zd4llHv43/source.gif")
-                self.logoImage.alpha = 1
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                    UIView.animate(withDuration: 0.5, animations: {
-                        self.logoImage.alpha = 0
-                    }, completion: { finished in
-                        self.logoImage.image = UIImage.init(named: "LJFF_logo")
-                        self.logoImage.alpha = 1
-                    })
-                }
-            })
+            if(!easterEgg)
+            {
+                easterEgg = true
+                let randomInt = Int.random(in: 0..<4)
+                UIView.transition(with: logoImage, duration: 0.5, options: [.transitionFlipFromLeft, .showHideTransitionViews], animations: {
+                    self.logoImage.alpha = 0
+                }, completion: { finished in
+                    self.logoImage.image = UIImage.gifImageWithURL(self.displayGifs[randomInt])
+                    self.logoImage.alpha = 1
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.logoImage.alpha = 0
+                        }, completion: { finished in
+                            self.logoImage.image = UIImage.init(named: "LJFF_logo")
+                            UIView.animate(withDuration: 0.5, animations: {
+                                self.logoImage.alpha = 1
+                            })
+                            self.easterEgg = false
+                        })
+                    }
+                })
+            }
         }
     }
     
