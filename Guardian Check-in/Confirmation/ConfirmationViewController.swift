@@ -24,6 +24,7 @@ class ConfirmationViewController : UIViewController {
     static var lname:String?
     static var phone:String?
     static var relation:String?
+    static var id:String?
     
     override func viewDidLayoutSubviews() {
         super .viewDidLayoutSubviews()
@@ -90,8 +91,19 @@ class ConfirmationViewController : UIViewController {
         }, completion: { finished in
             OptionSelectionViewController.fname = self.fnameLabel.text!
             OptionSelectionViewController.comingFromConfirmation = true
+            
             self.performSegue(withIdentifier: "showOptions", sender: self)
         })
+    }
+    
+    private func addGuardian() {
+        let url = URL(string:RestHelper.urls["Add_Family_Member"]!)!
+        print(url)
+        let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!, "firstName":fnameLabel.text!, "lastName":lnameLabel.text!, "phoneNum":phoneLabel.text!, "relation":relationLabel.text!, "apsId":ConfirmationViewController.id!])
+        print(jsonString)
+        let data = jsonString.data(using: .utf8)!
+        print(data)
+        
     }
     
     

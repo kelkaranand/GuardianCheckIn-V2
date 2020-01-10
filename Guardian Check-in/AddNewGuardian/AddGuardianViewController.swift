@@ -122,6 +122,7 @@ class AddGuardianViewController: UIViewController, UIPickerViewDelegate, UIPicke
                 ConfirmationViewController.lname = self.lnameTextbox.text
                 ConfirmationViewController.phone = self.phoneTextbox.text
                 ConfirmationViewController.relation = self.relationList[self.relationPicker.selectedRow(inComponent: 0)]
+                ConfirmationViewController.id = self.student.id
                 self.performSegue(withIdentifier: "confirm", sender: self)
             })
         }
