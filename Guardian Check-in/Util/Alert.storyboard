@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Alert View Controller-->
+        <scene sceneID="BEw-1I-W3w">
+            <objects>
+                <viewController storyboardIdentifier="alert" id="7zw-Ct-Uxl" customClass="AlertViewController" customModule="Guardian_Check_in" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qeC-lb-4aw">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AmX-cG-oDq">
+                                <rect key="frame" x="210.5" y="368" width="347" height="308"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="success" translatesAutoresizingMaskIntoConstraints="NO" id="cQR-ca-jHv">
+                                        <rect key="frame" x="126.5" y="15" width="94" height="93.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="cQR-ca-jHv" secondAttribute="height" multiplier="1:1" constant="1" id="olK-Gb-QiJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data downloaded sucessfully." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PGg-6F-0Iv">
+                                        <rect key="frame" x="34.5" y="128.5" width="278" height="93.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHT-yK-NKt">
+                                        <rect key="frame" x="34.5" y="277" width="278" height="62.5"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="OK">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="7zw-Ct-Uxl" eventType="touchUpInside" id="Jyp-kn-wt4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="PGg-6F-0Iv" firstAttribute="centerX" secondItem="AmX-cG-oDq" secondAttribute="centerX" id="2kY-an-3aa"/>
+                                    <constraint firstItem="cQR-ca-jHv" firstAttribute="top" secondItem="AmX-cG-oDq" secondAttribute="top" constant="15" id="63N-ru-6lz"/>
+                                    <constraint firstItem="ZHT-yK-NKt" firstAttribute="centerX" secondItem="AmX-cG-oDq" secondAttribute="centerX" id="70g-2j-9dY"/>
+                                    <constraint firstItem="cQR-ca-jHv" firstAttribute="centerX" secondItem="AmX-cG-oDq" secondAttribute="centerX" id="75K-to-6gN"/>
+                                    <constraint firstItem="ZHT-yK-NKt" firstAttribute="height" secondItem="AmX-cG-oDq" secondAttribute="height" multiplier="0.2" constant="1" id="KMo-46-Wz1"/>
+                                    <constraint firstItem="PGg-6F-0Iv" firstAttribute="width" secondItem="AmX-cG-oDq" secondAttribute="width" multiplier="0.8" constant="1" id="NLI-Bw-6jg"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZHT-yK-NKt" secondAttribute="centerY" id="OCT-P8-JFa"/>
+                                    <constraint firstItem="cQR-ca-jHv" firstAttribute="height" secondItem="AmX-cG-oDq" secondAttribute="height" multiplier="0.3" constant="1" id="QfL-5v-AbD"/>
+                                    <constraint firstItem="ZHT-yK-NKt" firstAttribute="width" secondItem="AmX-cG-oDq" secondAttribute="width" multiplier="0.8" constant="1" id="RRM-vZ-Pg3"/>
+                                    <constraint firstItem="PGg-6F-0Iv" firstAttribute="top" secondItem="cQR-ca-jHv" secondAttribute="bottom" constant="20" id="dCW-2v-ODG"/>
+                                    <constraint firstItem="PGg-6F-0Iv" firstAttribute="height" secondItem="AmX-cG-oDq" secondAttribute="height" multiplier="0.3" constant="1" id="rBm-hG-Ncq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AmX-cG-oDq" firstAttribute="centerX" secondItem="E0H-fE-tgo" secondAttribute="centerX" id="W9G-sY-6rj"/>
+                            <constraint firstItem="AmX-cG-oDq" firstAttribute="height" secondItem="qeC-lb-4aw" secondAttribute="height" multiplier="0.3" constant="1" id="bTg-RA-ESl"/>
+                            <constraint firstItem="AmX-cG-oDq" firstAttribute="centerY" secondItem="E0H-fE-tgo" secondAttribute="centerY" id="bqB-xO-bOv"/>
+                            <constraint firstItem="AmX-cG-oDq" firstAttribute="width" secondItem="qeC-lb-4aw" secondAttribute="width" multiplier="0.45" constant="1" id="gNh-wC-8Mh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="E0H-fE-tgo"/>
+                    </view>
+                    <connections>
+                        <outlet property="alertWindow" destination="AmX-cG-oDq" id="bgf-dg-PKS"/>
+                        <outlet property="button" destination="ZHT-yK-NKt" id="Zj8-Ew-r1I"/>
+                        <outlet property="image" destination="cQR-ca-jHv" id="Ybq-W0-37q"/>
+                        <outlet property="message" destination="PGg-6F-0Iv" id="JM5-3X-bVv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SqH-DG-UiF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-119" y="132"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="success" width="225" height="225"/>
+    </resources>
+</document>

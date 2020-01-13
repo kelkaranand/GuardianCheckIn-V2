@@ -86,24 +86,37 @@ class ConfirmationViewController : UIViewController {
     }
     
     @objc func done() {
+        let apiResponse = self.addGuardian()
+        if(apiResponse.localizedStandardContains("1000")){
+            StudentGuardianSelectionViewController.back = true
+            for controller in self.navigationController!.viewControllers as Array {
+                if controller.isKind(of: StudentGuardianSelectionViewController.self) {
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.mainCardView.center.x = self.mainCardView.center.x + self.view.bounds.width
+                    }, completion: { finished in
+                        self.navigationController!.popToViewController(controller, animated: false)
+                    })
+                    break
+                }
+            }
+            StudentGuardianSelectionViewController.recheckError = true
+            return
+        }
         UIView.animate(withDuration: 0.5, animations: {
             self.mainCardView.center.x = self.mainCardView.center.x - self.view.bounds.width
         }, completion: { finished in
             OptionSelectionViewController.fname = self.fnameLabel.text!
             OptionSelectionViewController.comingFromConfirmation = true
-            
             self.performSegue(withIdentifier: "showOptions", sender: self)
         })
     }
     
-    private func addGuardian() {
+    private func addGuardian() -> String {
+        print("In add guardian")
         let url = URL(string:RestHelper.urls["Add_Family_Member"]!)!
         print(url)
-        let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!, "firstName":fnameLabel.text!, "lastName":lnameLabel.text!, "phoneNum":phoneLabel.text!, "relation":relationLabel.text!, "apsId":ConfirmationViewController.id!])
-        print(jsonString)
-        let data = jsonString.data(using: .utf8)!
-        print(data)
-        
+        let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!, "firstName":fnameLabel.text!, "lastName":lnameLabel.text!, "phoneNum":phoneLabel.text!, "relation":relationLabel.text!, "apsID":ConfirmationViewController.id!])
+        return jsonString
     }
     
     

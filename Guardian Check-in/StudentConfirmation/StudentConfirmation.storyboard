@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rNK-Ot-P5I">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Student Confirmation View Controller-->
+        <scene sceneID="b76-9J-Ffd">
+            <objects>
+                <viewController id="rNK-Ot-P5I" customClass="StudentConfirmationViewController" customModule="Guardian_Check_in" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QbZ-pO-fZH">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LJFF_Patterns-1" translatesAutoresizingMaskIntoConstraints="NO" id="JMf-WP-q5M">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            </imageView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDS-xY-EYc">
+                                <rect key="frame" x="76.5" y="102" width="615" height="820"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wyw-yp-1tg">
+                                        <rect key="frame" x="-0.5" y="0.0" width="616" height="124"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you are a staff member helping check the student in, please enter your name below. Otherwise, leave the textbox empty." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NFR-0h-f24">
+                                        <rect key="frame" x="91.5" y="154" width="432" height="247"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Staff Member Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kFq-rR-fKD">
+                                        <rect key="frame" x="91.5" y="411" width="432" height="42"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvY-Wl-JLw">
+                                        <rect key="frame" x="91.5" y="493" width="432" height="42"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="rNK-Ot-P5I" eventType="touchUpInside" id="2JJ-gm-PwW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="pvY-Wl-JLw" firstAttribute="width" secondItem="kFq-rR-fKD" secondAttribute="width" id="5c8-Th-QbK"/>
+                                    <constraint firstItem="pvY-Wl-JLw" firstAttribute="height" secondItem="kFq-rR-fKD" secondAttribute="height" id="7V9-2d-Ybr"/>
+                                    <constraint firstItem="wyw-yp-1tg" firstAttribute="height" secondItem="lDS-xY-EYc" secondAttribute="height" multiplier="0.15" constant="1" id="AeQ-P5-KQt"/>
+                                    <constraint firstItem="pvY-Wl-JLw" firstAttribute="top" secondItem="kFq-rR-fKD" secondAttribute="bottom" constant="40" id="CMJ-YZ-S4d"/>
+                                    <constraint firstItem="pvY-Wl-JLw" firstAttribute="centerX" secondItem="lDS-xY-EYc" secondAttribute="centerX" id="DCW-b1-8U3"/>
+                                    <constraint firstItem="wyw-yp-1tg" firstAttribute="top" secondItem="lDS-xY-EYc" secondAttribute="top" id="PPZ-1L-N4J"/>
+                                    <constraint firstItem="kFq-rR-fKD" firstAttribute="top" secondItem="NFR-0h-f24" secondAttribute="bottom" constant="10" id="XHa-5m-zoC"/>
+                                    <constraint firstItem="kFq-rR-fKD" firstAttribute="centerX" secondItem="lDS-xY-EYc" secondAttribute="centerX" id="al6-ez-6og"/>
+                                    <constraint firstItem="NFR-0h-f24" firstAttribute="width" secondItem="lDS-xY-EYc" secondAttribute="width" multiplier="0.7" constant="1" id="d9y-id-BO0"/>
+                                    <constraint firstItem="kFq-rR-fKD" firstAttribute="width" secondItem="NFR-0h-f24" secondAttribute="width" id="eje-Jm-cgG"/>
+                                    <constraint firstItem="wyw-yp-1tg" firstAttribute="width" secondItem="lDS-xY-EYc" secondAttribute="width" constant="1" id="gHF-ZR-Mga"/>
+                                    <constraint firstItem="kFq-rR-fKD" firstAttribute="height" secondItem="lDS-xY-EYc" secondAttribute="height" multiplier="0.05" constant="1" id="jHi-Qq-zQe"/>
+                                    <constraint firstItem="NFR-0h-f24" firstAttribute="height" secondItem="lDS-xY-EYc" secondAttribute="height" multiplier="0.3" constant="1" id="m8F-ih-FCg"/>
+                                    <constraint firstItem="NFR-0h-f24" firstAttribute="top" secondItem="wyw-yp-1tg" secondAttribute="bottom" constant="30" id="uP2-fv-mxx"/>
+                                    <constraint firstItem="wyw-yp-1tg" firstAttribute="centerX" secondItem="lDS-xY-EYc" secondAttribute="centerX" id="uke-cv-foQ"/>
+                                    <constraint firstItem="NFR-0h-f24" firstAttribute="centerX" secondItem="lDS-xY-EYc" secondAttribute="centerX" id="yn2-0d-xjG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JMf-WP-q5M" firstAttribute="centerX" secondItem="QbZ-pO-fZH" secondAttribute="centerX" id="2ng-hs-Hlu"/>
+                            <constraint firstItem="lDS-xY-EYc" firstAttribute="centerX" secondItem="QbZ-pO-fZH" secondAttribute="centerX" id="4xj-B9-6b7"/>
+                            <constraint firstItem="lDS-xY-EYc" firstAttribute="centerY" secondItem="QbZ-pO-fZH" secondAttribute="centerY" id="Bsh-Vg-jd1"/>
+                            <constraint firstItem="lDS-xY-EYc" firstAttribute="width" secondItem="QbZ-pO-fZH" secondAttribute="width" multiplier="0.8" constant="1" id="LNK-gQ-esC"/>
+                            <constraint firstItem="lDS-xY-EYc" firstAttribute="height" secondItem="QbZ-pO-fZH" secondAttribute="height" multiplier="0.8" constant="1" id="LZY-kw-9NV"/>
+                            <constraint firstItem="JMf-WP-q5M" firstAttribute="height" secondItem="QbZ-pO-fZH" secondAttribute="height" id="Zld-g8-aLc"/>
+                            <constraint firstItem="JMf-WP-q5M" firstAttribute="centerY" secondItem="QbZ-pO-fZH" secondAttribute="centerY" id="fVQ-fK-qaP"/>
+                            <constraint firstItem="JMf-WP-q5M" firstAttribute="width" secondItem="QbZ-pO-fZH" secondAttribute="width" id="h15-B4-4Rq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cardView" destination="lDS-xY-EYc" id="DaZ-zB-CNF"/>
+                        <outlet property="doneButton" destination="pvY-Wl-JLw" id="7m0-GB-QS8"/>
+                        <outlet property="staffMemberTextBox" destination="kFq-rR-fKD" id="lhF-wk-FgG"/>
+                        <outlet property="studentLabel" destination="wyw-yp-1tg" id="aFw-Tj-D5L"/>
+                        <segue destination="JHS-aC-KUy" kind="show" identifier="showOptions" animates="NO" id="5hz-LL-YSM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jnr-lz-NeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-519" y="133"/>
+        </scene>
+        <!--OptionSelection-->
+        <scene sceneID="Fo6-lg-o8b">
+            <objects>
+                <viewControllerPlaceholder storyboardName="OptionSelection" id="JHS-aC-KUy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dup-vx-tFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="156" y="132"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LJFF_Patterns-1" width="1898" height="2335"/>
+    </resources>
+</document>

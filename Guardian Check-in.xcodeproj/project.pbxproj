@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		14B63E00237B3A5600F3EEF4 /* Confirmation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B63DFF237B3A5600F3EEF4 /* Confirmation.storyboard */; };
 		14B63E02237B3A6600F3EEF4 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B63E01237B3A6600F3EEF4 /* ConfirmationViewController.swift */; };
+		14C10E7823C8BEC600D26219 /* LocationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C10E7723C8BEC600D26219 /* LocationRecord.swift */; };
+		14C10E7A23CBD13200D26219 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C10E7923CBD13200D26219 /* Alert.storyboard */; };
+		14C10E8023CBD4ED00D26219 /* lj3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14C10E7C23CBD4EC00D26219 /* lj3.gif */; };
+		14C10E8123CBD4ED00D26219 /* lj1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14C10E7D23CBD4EC00D26219 /* lj1.gif */; };
+		14C10E8223CBD4ED00D26219 /* lj2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14C10E7E23CBD4ED00D26219 /* lj2.gif */; };
+		14C10E8323CBD4ED00D26219 /* lj4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14C10E7F23CBD4ED00D26219 /* lj4.gif */; };
+		14C10E8523CBD64100D26219 /* GifExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C10E8423CBD64100D26219 /* GifExtensions.swift */; };
+		14C10E8723CBDC3100D26219 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C10E8623CBDC3100D26219 /* AlertViewController.swift */; };
+		14C10E8E23CBEB2700D26219 /* StudentConfirmation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C10E8D23CBEB2700D26219 /* StudentConfirmation.storyboard */; };
+		14C10E9023CBED3400D26219 /* StudentConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C10E8F23CBED3400D26219 /* StudentConfirmationViewController.swift */; };
 		14C3A396235F4E9E009A3830 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A395235F4E9E009A3830 /* AppDelegate.swift */; };
 		14C3A398235F4E9E009A3830 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A397235F4E9E009A3830 /* ViewController.swift */; };
 		14C3A39B235F4E9E009A3830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A399235F4E9E009A3830 /* Main.storyboard */; };
@@ -44,6 +54,16 @@
 /* Begin PBXFileReference section */
 		14B63DFF237B3A5600F3EEF4 /* Confirmation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Confirmation.storyboard; sourceTree = "<group>"; };
 		14B63E01237B3A6600F3EEF4 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
+		14C10E7723C8BEC600D26219 /* LocationRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRecord.swift; sourceTree = "<group>"; };
+		14C10E7923CBD13200D26219 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
+		14C10E7C23CBD4EC00D26219 /* lj3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lj3.gif; sourceTree = "<group>"; };
+		14C10E7D23CBD4EC00D26219 /* lj1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lj1.gif; sourceTree = "<group>"; };
+		14C10E7E23CBD4ED00D26219 /* lj2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lj2.gif; sourceTree = "<group>"; };
+		14C10E7F23CBD4ED00D26219 /* lj4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lj4.gif; sourceTree = "<group>"; };
+		14C10E8423CBD64100D26219 /* GifExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifExtensions.swift; sourceTree = "<group>"; };
+		14C10E8623CBDC3100D26219 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		14C10E8D23CBEB2700D26219 /* StudentConfirmation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentConfirmation.storyboard; sourceTree = "<group>"; };
+		14C10E8F23CBED3400D26219 /* StudentConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentConfirmationViewController.swift; sourceTree = "<group>"; };
 		14C3A392235F4E9E009A3830 /* Guardian Check-in.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guardian Check-in.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C3A395235F4E9E009A3830 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C3A397235F4E9E009A3830 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +118,26 @@
 			path = Confirmation;
 			sourceTree = "<group>";
 		};
+		14C10E7B23CBD4E000D26219 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				14C10E7D23CBD4EC00D26219 /* lj1.gif */,
+				14C10E7E23CBD4ED00D26219 /* lj2.gif */,
+				14C10E7C23CBD4EC00D26219 /* lj3.gif */,
+				14C10E7F23CBD4ED00D26219 /* lj4.gif */,
+			);
+			path = Gifs;
+			sourceTree = "<group>";
+		};
+		14C10E8C23CBEB0F00D26219 /* StudentConfirmation */ = {
+			isa = PBXGroup;
+			children = (
+				14C10E8D23CBEB2700D26219 /* StudentConfirmation.storyboard */,
+				14C10E8F23CBED3400D26219 /* StudentConfirmationViewController.swift */,
+			);
+			path = StudentConfirmation;
+			sourceTree = "<group>";
+		};
 		14C3A389235F4E9E009A3830 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +157,8 @@
 		14C3A394235F4E9E009A3830 /* Guardian Check-in */ = {
 			isa = PBXGroup;
 			children = (
+				14C10E8C23CBEB0F00D26219 /* StudentConfirmation */,
+				14C10E7B23CBD4E000D26219 /* Gifs */,
 				14B63DFE237B3A4300F3EEF4 /* Confirmation */,
 				14C3A3E72367C73A009A3830 /* Ending */,
 				14C3A3E02367B3D7009A3830 /* OptionSelection */,
@@ -153,6 +195,9 @@
 				14C3A3AE235F4EC3009A3830 /* CoreDataHelper.swift */,
 				14C3A3AF235F4EC3009A3830 /* InternetConnectionTest.swift */,
 				14C3A3B0235F4EC3009A3830 /* RestHelper.swift */,
+				14C10E7923CBD13200D26219 /* Alert.storyboard */,
+				14C10E8423CBD64100D26219 /* GifExtensions.swift */,
+				14C10E8623CBDC3100D26219 /* AlertViewController.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -162,6 +207,7 @@
 			children = (
 				14C3A3B6235F4EC3009A3830 /* Setup.storyboard */,
 				14C3A3B7235F4EC3009A3830 /* SetupViewController.swift */,
+				14C10E7723C8BEC600D26219 /* LocationRecord.swift */,
 			);
 			path = Setup;
 			sourceTree = "<group>";
@@ -283,11 +329,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14C10E8123CBD4ED00D26219 /* lj1.gif in Resources */,
+				14C10E8323CBD4ED00D26219 /* lj4.gif in Resources */,
 				14C3A3DB236507E4009A3830 /* StudentGuardianSelection.storyboard in Resources */,
 				14C3A3CE235F4EC4009A3830 /* Setup.storyboard in Resources */,
+				14C10E8223CBD4ED00D26219 /* lj2.gif in Resources */,
 				14C3A3A3235F4EA0009A3830 /* LaunchScreen.storyboard in Resources */,
 				14B63E00237B3A5600F3EEF4 /* Confirmation.storyboard in Resources */,
 				14C3A3D4235F4EC4009A3830 /* SearchStudent.storyboard in Resources */,
+				14C10E7A23CBD13200D26219 /* Alert.storyboard in Resources */,
+				14C10E8E23CBEB2700D26219 /* StudentConfirmation.storyboard in Resources */,
+				14C10E8023CBD4ED00D26219 /* lj3.gif in Resources */,
 				14C3A3C6235F4EC4009A3830 /* AddGuardian.storyboard in Resources */,
 				14C3A3D0235F4EC4009A3830 /* Launch.storyboard in Resources */,
 				14C3A3EB2367C761009A3830 /* Ending.storyboard in Resources */,
@@ -307,17 +359,21 @@
 			files = (
 				14C3A3D3235F4EC4009A3830 /* RegistrationCheckViewController.swift in Sources */,
 				14C3A3C8235F4EC4009A3830 /* CoreDataHelper.swift in Sources */,
+				14C10E8523CBD64100D26219 /* GifExtensions.swift in Sources */,
 				14C3A39E235F4E9E009A3830 /* Guardian_Check_in.xcdatamodeld in Sources */,
 				14C3A3D5235F4EC4009A3830 /* SearchStudentResultCell.swift in Sources */,
 				14C3A3C9235F4EC4009A3830 /* InternetConnectionTest.swift in Sources */,
 				14C3A3D7235F4EC4009A3830 /* StudentGuardianCollectionCell.swift in Sources */,
 				14C3A3DD23673056009A3830 /* StudentRecord.swift in Sources */,
 				14C3A3CA235F4EC4009A3830 /* RestHelper.swift in Sources */,
+				14C10E9023CBED3400D26219 /* StudentConfirmationViewController.swift in Sources */,
 				14C3A3CF235F4EC4009A3830 /* SetupViewController.swift in Sources */,
 				14C3A3DF23675F75009A3830 /* GuardianRecord.swift in Sources */,
+				14C10E8723CBDC3100D26219 /* AlertViewController.swift in Sources */,
 				14C3A3E62367B7D1009A3830 /* OptionCollectionCell.swift in Sources */,
 				14C3A3E22367B3F5009A3830 /* OptionSelectionViewController.swift in Sources */,
 				14C3A3E92367C756009A3830 /* EndingViewController.swift in Sources */,
+				14C10E7823C8BEC600D26219 /* LocationRecord.swift in Sources */,
 				14C3A3C7235F4EC4009A3830 /* AddGuardianViewController.swift in Sources */,
 				14B63E02237B3A6600F3EEF4 /* ConfirmationViewController.swift in Sources */,
 				14C3A3D6235F4EC4009A3830 /* SearchStudentViewController.swift in Sources */,

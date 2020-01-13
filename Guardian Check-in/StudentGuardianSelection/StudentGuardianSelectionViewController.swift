@@ -22,6 +22,7 @@ class StudentGuardianSelectionViewController: UIViewController {
     var staffName : String?
     
     static var back = false
+    static var recheckError = false
     
     override func viewDidLayoutSubviews() {
         super .viewDidLayoutSubviews()
@@ -78,6 +79,16 @@ class StudentGuardianSelectionViewController: UIViewController {
                 self.shadowView.center.x = self.shadowView.center.x - self.view.bounds.width
             }
         }
+        if StudentGuardianSelectionViewController.recheckError {
+            StudentGuardianSelectionViewController.recheckError = false
+            AlertViewController.msg = "A family member record with these details already exists. Please check the list of family members associated with the student again."
+            AlertViewController.img = "error"
+            let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+            let myAlert = storyboard.instantiateViewController(withIdentifier: "alert")
+            myAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            myAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+            self.present(myAlert, animated: true, completion: nil)
+        }
     }
     
     @objc func goBack() {
@@ -103,7 +114,6 @@ class StudentGuardianSelectionViewController: UIViewController {
         let url = URL(string:RestHelper.urls["Get_Family_Members"]!+StudentGuardianSelectionViewController.student.id)!
         print(url)
         let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!])
-        print(jsonString)
         let data = jsonString.data(using: .utf8)!
         do {
                 
@@ -190,6 +200,7 @@ extension StudentGuardianSelectionViewController: UICollectionViewDelegateFlowLa
 
 extension StudentGuardianSelectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        OptionSelectionViewController.familyMemberId = guardianList[indexPath.row].id
         moveToConfirmation(guardianList[indexPath.row].name)
     }
 }

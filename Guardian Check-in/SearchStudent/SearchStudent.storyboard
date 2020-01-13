@@ -218,7 +218,7 @@
                         <outlet property="tableView" destination="7bV-71-jIN" id="G5j-rE-sla"/>
                         <segue destination="5iw-DO-9uk" kind="show" identifier="guardianSelection" animates="NO" id="6dN-u0-zZZ"/>
                         <segue destination="uFd-tb-K2j" kind="show" identifier="showSetup" animates="NO" id="KAt-ga-mbe"/>
-                        <segue destination="Iwe-iR-Pjc" kind="show" identifier="showEnd" animates="NO" id="FW7-bf-cPG"/>
+                        <segue destination="iji-Gi-7PV" kind="show" identifier="showStudentConfirmation" animates="NO" id="PDC-hQ-4vU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5x-rK-MPn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -233,14 +233,6 @@
             </objects>
             <point key="canvasLocation" x="1828" y="-125"/>
         </scene>
-        <!--Ending-->
-        <scene sceneID="teW-10-Jvy">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Ending" id="Iwe-iR-Pjc" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MTc-oq-yBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1866" y="27"/>
-        </scene>
         <!--StudentGuardianSelection-->
         <scene sceneID="3dT-b6-5dI">
             <objects>
@@ -248,6 +240,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZT9-H9-fEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1879" y="155"/>
+        </scene>
+        <!--StudentConfirmation-->
+        <scene sceneID="eVR-4a-Kt3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StudentConfirmation" id="iji-Gi-7PV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WIz-pm-YkQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1833" y="259"/>
         </scene>
     </scenes>
     <resources>

@@ -18,6 +18,7 @@ public class CoreDataHelper {
     static var locationName = ""
     static var locationOptions = ""
     static var locationGuardianFlag = true
+    static var selectedStudentApi = ""
     
     class func countOfEntity(_ entityName: String) -> Int {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return 0 }

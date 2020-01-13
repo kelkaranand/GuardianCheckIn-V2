@@ -123,6 +123,11 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
             lockStatusImage.image = UIImage(named: "locked")
             superSecretMessage.text = "Super secret lock active"
         }
+        for i in 0...SetupViewController.locations.count-1 {
+            if SetupViewController.locations[i].name == CoreDataHelper.locationName {
+                locationPicker.selectRow(i, inComponent: 0, animated: true)
+            }
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -168,9 +173,8 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
         let locationsUrl = URL(string:RestHelper.urls["Get_Locations"]!)!
         print(url)
         let jsonString = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!])
-        print(jsonString)
+        print(locationsUrl)
         let locationsString = RestHelper.makePost(locationsUrl, ["identifier": self.identifier!, "key": self.key!])
-        print(locationsString)
         CoreDataHelper.deleteAllData(from: "Student")
         SearchStudentViewController.studentRecords.removeAll()
         CoreDataHelper.deleteAllData(from: "Location")
@@ -205,6 +209,14 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
         }
         
         self.view.layoutIfNeeded()
+        
+        AlertViewController.msg = "Student and Location data downloaded successfully."
+        AlertViewController.img = "success"
+        let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+        let myAlert = storyboard.instantiateViewController(withIdentifier: "alert")
+        myAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        myAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(myAlert, animated: true, completion: nil)
     }
     
     
@@ -232,8 +244,18 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
             print(error)
         }
         CoreDataHelper.locationName = SetupViewController.locations[selectedIndex].name
+        CoreDataHelper.locationOptions = SetupViewController.locations[selectedIndex].options
+        CoreDataHelper.locationGuardianFlag = SetupViewController.locations[selectedIndex].guardianCheck
         
         print("location set")
+        
+        AlertViewController.msg = "Location has been set to "+CoreDataHelper.locationName
+        AlertViewController.img = "success"
+        let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+        let myAlert = storyboard.instantiateViewController(withIdentifier: "alert")
+        myAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        myAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(myAlert, animated: true, completion: nil)
     }
     
     @objc func rightSwipeLock() {

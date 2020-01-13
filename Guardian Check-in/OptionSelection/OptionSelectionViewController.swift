@@ -19,6 +19,9 @@ class OptionSelectionViewController : UIViewController {
     static var fname:String = ""
     static var comingFromConfirmation = false
     static var staffName: String?
+    static var familyMemberId = ""
+    static var studentAPSId = ""
+    static var studentCheckIn = false
     
     override func viewDidLayoutSubviews() {
         super .viewDidLayoutSubviews()
@@ -117,7 +120,39 @@ extension OptionSelectionViewController: UICollectionViewDelegate {
         UIView.animate(withDuration: 0.5, animations: {
             self.mainCardView.center.x = self.mainCardView.center.x - self.view.bounds.width
         }, completion: { finished in
-            self.performSegue(withIdentifier: "showEnding", sender: self)
+            let url = URL(string:RestHelper.urls["CheckIn"]!)!
+            print(url)
+            if OptionSelectionViewController.studentCheckIn {
+                OptionSelectionViewController.studentCheckIn = false
+                let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!, "checkinLocation":CoreDataHelper.locationName, "checkinReason":self.options[indexPath.row], "apsStudentId":OptionSelectionViewController.studentAPSId, "staffMemberName":OptionSelectionViewController.staffName!])
+                if jsonString.localizedStandardContains("successfully") {
+                    self.performSegue(withIdentifier: "showEnding", sender: self)
+                }
+                else {
+                    AlertViewController.msg = "There was an error when trying to complete the check-in. Please try again."
+                    AlertViewController.img = "error"
+                    let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+                    let myAlert = storyboard.instantiateViewController(withIdentifier: "alert")
+                    myAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+                    myAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+                    self.present(myAlert, animated: true, completion: nil)
+                }
+            }
+            else {
+                let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!, "checkinLocation":CoreDataHelper.locationName, "checkinReason":self.options[indexPath.row], "familyMemberId":OptionSelectionViewController.familyMemberId])
+                if jsonString.localizedStandardContains("successfully") {
+                    self.performSegue(withIdentifier: "showEnding", sender: self)
+                }
+                else {
+                    AlertViewController.msg = "There was an error when trying to complete the check-in. Please try again."
+                    AlertViewController.img = "error"
+                    let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+                    let myAlert = storyboard.instantiateViewController(withIdentifier: "alert")
+                    myAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+                    myAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+                    self.present(myAlert, animated: true, completion: nil)
+                }
+            }
         })
     }
 }

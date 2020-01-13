@@ -28,7 +28,7 @@ class SearchStudentViewController: UIViewController {
     @IBOutlet weak var logoImage: UIImageView!
     var moved = false
     var easterEgg = false
-    var displayGifs = ["https://media0.giphy.com/media/Y506ebOM2Zd4llHv43/source.gif","https://media1.giphy.com/media/WpxeQuE1hfvLow9Ir3/source.gif","https://media2.giphy.com/media/PijGh7gmB7oc5cf4z9/source.gif","https://media2.giphy.com/media/ZZTC9RP7cVYqw5MnXW/giphy.gif"]
+    var displayGifs = ["lj1","lj2","lj3","lj4"]
     
     
     override func viewDidLayoutSubviews() {
@@ -117,7 +117,7 @@ class SearchStudentViewController: UIViewController {
                 UIView.transition(with: logoImage, duration: 0.5, options: [.transitionFlipFromLeft, .showHideTransitionViews], animations: {
                     self.logoImage.alpha = 0
                 }, completion: { finished in
-                    self.logoImage.image = UIImage.gifImageWithURL(self.displayGifs[randomInt])
+                    self.logoImage.image = UIImage.gifImageWithName(self.displayGifs[randomInt])
                     self.logoImage.alpha = 1
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                         UIView.animate(withDuration: 0.5, animations: {
@@ -206,7 +206,6 @@ extension SearchStudentViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         print("started")
         searchActive = true
-//        centerConstraint.constant = -100
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
@@ -215,7 +214,6 @@ extension SearchStudentViewController: UISearchBarDelegate {
         if (searchBar.text?.isEmpty)! {
             tableView.isHidden = true
         }
-//        centerConstraint.constant = 0
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -259,6 +257,7 @@ extension SearchStudentViewController: UISearchBarDelegate {
 extension SearchStudentViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedStudent = filteredStudentrecords[indexPath.row]
+        OptionSelectionViewController.studentAPSId = selectedStudent.id
         UIView.animate(withDuration: 0.5, animations: {
             self.superView.center.x = self.superView.center.x - self.view.bounds.width
         }, completion: { finished in
@@ -266,179 +265,10 @@ extension SearchStudentViewController: UITableViewDelegate {
                 self.performSegue(withIdentifier: "guardianSelection", sender: self)
             }
             else {
-                self.performSegue(withIdentifier: "showEnd", sender: self)
+                StudentConfirmationViewController.back = false
+                self.performSegue(withIdentifier: "showStudentConfirmation", sender: self)
             }
         })
     }
 }
 
-//Do not touch anything below this line!!!
-
-fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-    switch (lhs, rhs) {
-    case let (l?, r?):
-        return l < r
-    case (nil, _?):
-        return true
-    default:
-        return false
-    }
-}
-
-extension UIImage {
-    
-    public class func gifImageWithData(_ data: Data) -> UIImage? {
-        guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
-            print("image doesn't exist")
-            return nil
-        }
-        
-        return UIImage.animatedImageWithSource(source)
-    }
-    
-    public class func gifImageWithURL(_ gifUrl:String) -> UIImage? {
-        guard let bundleURL:URL = URL(string: gifUrl)
-            else {
-                print("image named \"\(gifUrl)\" doesn't exist")
-                return nil
-        }
-        guard let imageData = try? Data(contentsOf: bundleURL) else {
-            print("image named \"\(gifUrl)\" into NSData")
-            return nil
-        }
-        
-        return gifImageWithData(imageData)
-    }
-    
-    public class func gifImageWithName(_ name: String) -> UIImage? {
-        guard let bundleURL = Bundle.main
-            .url(forResource: name, withExtension: "gif") else {
-                print("SwiftGif: This image named \"\(name)\" does not exist")
-                return nil
-        }
-        guard let imageData = try? Data(contentsOf: bundleURL) else {
-            print("SwiftGif: Cannot turn image named \"\(name)\" into NSData")
-            return nil
-        }
-        
-        return gifImageWithData(imageData)
-    }
-    
-    class func delayForImageAtIndex(_ index: Int, source: CGImageSource!) -> Double {
-//        var delay = 0.05
-        
-        let cfProperties = CGImageSourceCopyPropertiesAtIndex(source, index, nil)
-        let gifProperties: CFDictionary = unsafeBitCast(
-            CFDictionaryGetValue(cfProperties,
-                                 Unmanaged.passUnretained(kCGImagePropertyGIFDictionary).toOpaque()),
-            to: CFDictionary.self)
-        
-        var delayObject: AnyObject = unsafeBitCast(
-            CFDictionaryGetValue(gifProperties,
-                                 Unmanaged.passUnretained(kCGImagePropertyGIFUnclampedDelayTime).toOpaque()),
-            to: AnyObject.self)
-        if delayObject.doubleValue == 0 {
-            delayObject = unsafeBitCast(CFDictionaryGetValue(gifProperties,
-                                                             Unmanaged.passUnretained(kCGImagePropertyGIFDelayTime).toOpaque()), to: AnyObject.self)
-        }
-        
-        var delay = delayObject as! Double
-        
-//        if delay < 0.1 {
-//            delay = 0.1
-//        }
-        
-        return delay
-    }
-    
-    class func gcdForPair(_ a: Int?, _ b: Int?) -> Int {
-        var a = a
-        var b = b
-        if b == nil || a == nil {
-            if b != nil {
-                return b!
-            } else if a != nil {
-                return a!
-            } else {
-                return 0
-            }
-        }
-        
-        if a < b {
-            let c = a
-            a = b
-            b = c
-        }
-        
-        var rest: Int
-        while true {
-            rest = a! % b!
-            
-            if rest == 0 {
-                return b!
-            } else {
-                a = b
-                b = rest
-            }
-        }
-    }
-    
-    class func gcdForArray(_ array: Array<Int>) -> Int {
-        if array.isEmpty {
-            return 1
-        }
-        
-        var gcd = array[0]
-        
-        for val in array {
-            gcd = UIImage.gcdForPair(val, gcd)
-        }
-        
-        return gcd
-    }
-    
-    class func animatedImageWithSource(_ source: CGImageSource) -> UIImage? {
-        let count = CGImageSourceGetCount(source)
-        var images = [CGImage]()
-        var delays = [Int]()
-        
-        for i in 0..<count {
-            if let image = CGImageSourceCreateImageAtIndex(source, i, nil) {
-                images.append(image)
-            }
-            
-            let delaySeconds = UIImage.delayForImageAtIndex(Int(i),
-                                                            source: source)
-            delays.append(Int(delaySeconds * 1000.0)) // Seconds to ms
-        }
-        
-        let duration: Int = {
-            var sum = 0
-            
-            for val: Int in delays {
-                sum += val
-            }
-            
-            return sum
-        }()
-        
-        let gcd = gcdForArray(delays)
-        var frames = [UIImage]()
-        
-        var frame: UIImage
-        var frameCount: Int
-        for i in 0..<count {
-            frame = UIImage(cgImage: images[Int(i)])
-            frameCount = Int(delays[Int(i)] / gcd)
-            
-            for _ in 0..<frameCount {
-                frames.append(frame)
-            }
-        }
-        
-        let animation = UIImage.animatedImage(with: frames,
-                                              duration: Double(duration) / 1000.0)
-        
-        return animation
-    }
-}
