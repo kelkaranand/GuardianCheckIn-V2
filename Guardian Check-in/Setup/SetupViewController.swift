@@ -123,9 +123,11 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
             lockStatusImage.image = UIImage(named: "locked")
             superSecretMessage.text = "Super secret lock active"
         }
-        for i in 0...SetupViewController.locations.count-1 {
-            if SetupViewController.locations[i].name == CoreDataHelper.locationName {
-                locationPicker.selectRow(i, inComponent: 0, animated: true)
+        if(SetupViewController.locations.count>0) {
+            for i in 0...SetupViewController.locations.count-1 {
+                if SetupViewController.locations[i].name == CoreDataHelper.locationName {
+                    locationPicker.selectRow(i, inComponent: 0, animated: true)
+                }
             }
         }
     }
