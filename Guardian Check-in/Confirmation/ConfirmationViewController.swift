@@ -105,7 +105,7 @@ class ConfirmationViewController : UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.mainCardView.center.x = self.mainCardView.center.x - self.view.bounds.width
         }, completion: { finished in
-            OptionSelectionViewController.fname = self.fnameLabel.text!
+            OptionSelectionViewController.fname = self.fnameLabel.text! + " " + self.lnameLabel.text!
             OptionSelectionViewController.comingFromConfirmation = true
             self.performSegue(withIdentifier: "showOptions", sender: self)
         })

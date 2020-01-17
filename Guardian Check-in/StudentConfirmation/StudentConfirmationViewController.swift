@@ -57,7 +57,7 @@ class StudentConfirmationViewController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         if (!StudentConfirmationViewController.back) {
-            StudentConfirmationViewController.back = true
+//            StudentConfirmationViewController.back = true
             UIView.animate(withDuration: 0.5) {
                 self.cardView.center.x = self.cardView.center.x - self.view.bounds.width
             }
@@ -68,6 +68,7 @@ class StudentConfirmationViewController : UIViewController {
             }
             StudentConfirmationViewController.back = false
         }
+        studentLabel.text = OptionSelectionViewController.fname
     }
     
     @objc func goBack() {

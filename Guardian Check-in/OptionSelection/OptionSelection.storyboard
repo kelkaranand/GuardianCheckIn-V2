@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4co-Kc-83V">
-    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4co-Kc-83V">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,42 +15,42 @@
             <objects>
                 <viewController id="4co-Kc-83V" customClass="OptionSelectionViewController" customModule="Guardian_Check_in" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CQc-tC-1lQ">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LJFF_Patterns-1" translatesAutoresizingMaskIntoConstraints="NO" id="cPr-bG-Aw9">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LJFF_Patterns-2" translatesAutoresizingMaskIntoConstraints="NO" id="fdt-uq-ZXL">
+                                <rect key="frame" x="0.0" y="10" width="1024" height="768"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7K-2T-nIH">
-                                <rect key="frame" x="76.5" y="102" width="615" height="820"/>
+                                <rect key="frame" x="102" y="76.5" width="820" height="615"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Isr-3J-a6S">
-                                        <rect key="frame" x="153" y="0.0" width="309" height="42"/>
+                                        <rect key="frame" x="204.5" y="0.0" width="411" height="31.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey Label!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mHE-OA-gI4">
-                                        <rect key="frame" x="122.5" y="42" width="370" height="83"/>
+                                        <rect key="frame" x="163.5" y="31.5" width="493" height="62.5"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qg2-Pl-2cg">
-                                        <rect key="frame" x="153" y="125" width="309" height="42"/>
+                                        <rect key="frame" x="204.5" y="94" width="411" height="32"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zES-9w-XeX">
-                                        <rect key="frame" x="61" y="167" width="493" height="124"/>
+                                        <rect key="frame" x="81.5" y="126" width="657" height="93"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVA-O1-tMb">
-                                        <rect key="frame" x="153" y="291" width="309" height="42"/>
+                                        <rect key="frame" x="204.5" y="219" width="411" height="32"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-Gr-kni">
-                                        <rect key="frame" x="61" y="333" width="493" height="411"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="81.5" y="251" width="657" height="308.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gHC-3M-BJh">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -66,7 +68,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mfs-CM-ScL">
                                                             <rect key="frame" x="2" y="2" width="46" height="46"/>
                                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -88,7 +90,7 @@
                                         </connections>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="mHE-OA-gI4" firstAttribute="centerX" secondItem="H7K-2T-nIH" secondAttribute="centerX" id="0WJ-1e-bCq"/>
                                     <constraint firstItem="zES-9w-XeX" firstAttribute="width" secondItem="H7K-2T-nIH" secondAttribute="width" multiplier="0.8" constant="1" id="1Gl-Xt-jPM"/>
@@ -117,16 +119,16 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="H7K-2T-nIH" firstAttribute="centerX" secondItem="CQc-tC-1lQ" secondAttribute="centerX" id="5ax-Cf-isz"/>
+                            <constraint firstItem="fdt-uq-ZXL" firstAttribute="height" secondItem="CQc-tC-1lQ" secondAttribute="height" id="BE5-Y4-NnJ"/>
                             <constraint firstItem="H7K-2T-nIH" firstAttribute="height" secondItem="CQc-tC-1lQ" secondAttribute="height" multiplier="0.8" constant="1" id="Iqd-O5-yVy"/>
+                            <constraint firstItem="fdt-uq-ZXL" firstAttribute="width" secondItem="CQc-tC-1lQ" secondAttribute="width" id="MVg-cQ-Q2N"/>
                             <constraint firstItem="H7K-2T-nIH" firstAttribute="width" secondItem="CQc-tC-1lQ" secondAttribute="width" multiplier="0.8" constant="1" id="b2b-5z-2Hn"/>
-                            <constraint firstItem="cPr-bG-Aw9" firstAttribute="centerX" secondItem="CQc-tC-1lQ" secondAttribute="centerX" id="eCa-DC-48x"/>
-                            <constraint firstItem="cPr-bG-Aw9" firstAttribute="width" secondItem="CQc-tC-1lQ" secondAttribute="width" id="iKt-Vh-GRZ"/>
-                            <constraint firstItem="cPr-bG-Aw9" firstAttribute="height" secondItem="CQc-tC-1lQ" secondAttribute="height" id="kjU-T6-Ey2"/>
-                            <constraint firstItem="cPr-bG-Aw9" firstAttribute="centerY" secondItem="CQc-tC-1lQ" secondAttribute="centerY" id="pvc-he-v7U"/>
+                            <constraint firstItem="fdt-uq-ZXL" firstAttribute="centerY" secondItem="t2X-li-DyK" secondAttribute="centerY" id="oP5-Kx-9kz"/>
                             <constraint firstItem="H7K-2T-nIH" firstAttribute="centerY" secondItem="CQc-tC-1lQ" secondAttribute="centerY" id="tEy-ob-DhO"/>
+                            <constraint firstItem="fdt-uq-ZXL" firstAttribute="centerX" secondItem="t2X-li-DyK" secondAttribute="centerX" id="tNO-uj-sl4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="t2X-li-DyK"/>
                     </view>
@@ -152,6 +154,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LJFF_Patterns-1" width="1898" height="2335"/>
+        <image name="LJFF_Patterns-2" width="1898" height="2335"/>
     </resources>
 </document>

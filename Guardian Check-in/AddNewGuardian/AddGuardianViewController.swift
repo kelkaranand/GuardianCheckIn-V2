@@ -59,6 +59,10 @@ class AddGuardianViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         relationPicker.dataSource = self
         relationPicker.delegate = self
+        
+        //Code to move view with keyboard
+        NotificationCenter.default.addObserver(self, selector: #selector(RegistrationCheckViewController.keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(RegistrationCheckViewController.keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,7 +101,24 @@ class AddGuardianViewController: UIViewController, UIPickerViewDelegate, UIPicke
         label.font = UIFont (name: "Chalkboard SE", size: 20)
         label.text =  relationList[row]
         label.textAlignment = .center
+        label.textColor = UIColor.white
         return label
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height/1.7
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if ((notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y = 0
+            }
+        }
     }
     
     @objc func goBack() {

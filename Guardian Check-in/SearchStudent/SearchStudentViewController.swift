@@ -83,11 +83,14 @@ class SearchStudentViewController: UIViewController {
         tableView.register(SearchStudentResultCell.self, forCellReuseIdentifier: "result")
         self.navigationController?.navigationBar.isHidden = true
         
+        //Code to move view with keyboard
+        NotificationCenter.default.addObserver(self, selector: #selector(RegistrationCheckViewController.keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(RegistrationCheckViewController.keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
+        
         //Tap on screen to dismiss keyboard
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
-        mainCard.backgroundColor = UIColor(white: 1.0, alpha: 1)
         
         //Setup starting position for card
         mainCard.center.y = mainCard.center.y + self.view.bounds.height
@@ -107,31 +110,44 @@ class SearchStudentViewController: UIViewController {
     
     }
     
-    @objc func showLebron() {
-        if(InternetConnectionTest.isInternetAvailable())
-        {
-            if(!easterEgg)
-            {
-                easterEgg = true
-                let randomInt = Int.random(in: 0..<4)
-                UIView.transition(with: logoImage, duration: 0.5, options: [.transitionFlipFromLeft, .showHideTransitionViews], animations: {
-                    self.logoImage.alpha = 0
-                }, completion: { finished in
-                    self.logoImage.image = UIImage.gifImageWithName(self.displayGifs[randomInt])
-                    self.logoImage.alpha = 1
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                        UIView.animate(withDuration: 0.5, animations: {
-                            self.logoImage.alpha = 0
-                        }, completion: { finished in
-                            self.logoImage.image = UIImage.init(named: "LJFF_logo")
-                            UIView.animate(withDuration: 0.5, animations: {
-                                self.logoImage.alpha = 1
-                            })
-                            self.easterEgg = false
-                        })
-                    }
-                })
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height/2
             }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if ((notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y = 0
+            }
+        }
+    }
+    
+    @objc func showLebron() {
+        if(!easterEgg)
+        {
+            easterEgg = true
+            let randomInt = Int.random(in: 0..<4)
+            UIView.transition(with: logoImage, duration: 0.5, options: [.transitionFlipFromLeft, .showHideTransitionViews], animations: {
+                self.logoImage.alpha = 0
+            }, completion: { finished in
+                self.logoImage.image = UIImage.gifImageWithName(self.displayGifs[randomInt])
+                self.logoImage.alpha = 1
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.logoImage.alpha = 0
+                    }, completion: { finished in
+                        self.logoImage.image = UIImage.init(named: "ips_varsity_k")
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.logoImage.alpha = 1
+                        })
+                        self.easterEgg = false
+                    })
+                }
+            })
         }
     }
     
@@ -186,6 +202,8 @@ extension SearchStudentViewController: UITableViewDataSource {
             let fragFname = filteredStudentrecords[indexPath.row].fname
             let fragLname = filteredStudentrecords[indexPath.row].lname
             cell.nameLabel.text = fragFname + " " + fragLname
+            cell.backgroundColor = UIColor.clear
+            cell.nameLabel.textColor = UIColor.white
             return cell
         }
         
@@ -266,6 +284,7 @@ extension SearchStudentViewController: UITableViewDelegate {
             }
             else {
                 StudentConfirmationViewController.back = false
+                OptionSelectionViewController.fname = self.selectedStudent.fname + " " + self.selectedStudent.lname
                 self.performSegue(withIdentifier: "showStudentConfirmation", sender: self)
             }
         })

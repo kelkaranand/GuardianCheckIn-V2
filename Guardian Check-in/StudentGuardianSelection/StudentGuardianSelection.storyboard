@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kjq-Vk-vkC">
-    <device id="ipad9_7" orientation="portrait">
+    <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,30 +15,30 @@
             <objects>
                 <viewController id="Kjq-Vk-vkC" customClass="StudentGuardianSelectionViewController" customModule="Guardian_Check_in" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vxe-x4-d1w">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LJFF_Patterns-1" translatesAutoresizingMaskIntoConstraints="NO" id="UKb-WJ-RDe">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LJFF_Patterns-2" translatesAutoresizingMaskIntoConstraints="NO" id="ds6-qk-v5Y">
+                                <rect key="frame" x="0.0" y="10" width="1024" height="768"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PqF-XP-dij">
-                                <rect key="frame" x="76.5" y="102" width="615" height="820"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="102" y="76.5" width="820" height="615"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ta-xP-ORi">
-                                <rect key="frame" x="76.5" y="102" width="615" height="820"/>
+                                <rect key="frame" x="102" y="76.5" width="820" height="615"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="041-RQ-Y9z">
-                                        <rect key="frame" x="-0.5" y="0.0" width="616" height="124"/>
+                                        <rect key="frame" x="-0.5" y="0.0" width="821" height="93"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avx-b6-i0I">
-                                                <rect key="frame" x="0.0" y="0.0" width="616" height="124"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="821" height="93"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="avx-b6-i0I" firstAttribute="centerX" secondItem="041-RQ-Y9z" secondAttribute="centerX" id="098-CJ-r6j"/>
                                             <constraint firstItem="avx-b6-i0I" firstAttribute="width" secondItem="041-RQ-Y9z" secondAttribute="width" id="JNC-cf-1cn"/>
@@ -47,20 +47,20 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rF-Cz-EiW">
-                                        <rect key="frame" x="-0.5" y="124" width="616" height="42"/>
+                                        <rect key="frame" x="-0.5" y="93" width="821" height="32"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RhC-zY-oIH">
-                                        <rect key="frame" x="-0.5" y="166" width="616" height="20.5"/>
+                                        <rect key="frame" x="-0.5" y="125" width="821" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Guardian" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l1Y-2o-hwA">
-                                                <rect key="frame" x="0.0" y="0.0" width="616" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="821" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="l1Y-2o-hwA" firstAttribute="width" secondItem="RhC-zY-oIH" secondAttribute="width" id="0b6-5I-0Z0"/>
                                             <constraint firstItem="l1Y-2o-hwA" firstAttribute="centerX" secondItem="RhC-zY-oIH" secondAttribute="centerX" id="PfQ-Ii-PbX"/>
@@ -69,12 +69,12 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ho-PM-uqw">
-                                        <rect key="frame" x="-0.5" y="186.5" width="616" height="42"/>
+                                        <rect key="frame" x="-0.5" y="145.5" width="821" height="31.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0Ru-QP-Ipq">
-                                        <rect key="frame" x="30" y="228.5" width="555" height="329"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="40.5" y="177" width="739" height="247.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GFB-S4-4s4">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -91,22 +91,22 @@
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3n1-pK-i9T">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="6"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ehf-cu-gcu">
                                                             <rect key="frame" x="2" y="6" width="46" height="16"/>
                                                             <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="20"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Khh-rc-eZB">
                                                             <rect key="frame" x="0.0" y="22" width="50" height="6"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oEB-QH-nrd">
                                                             <rect key="frame" x="2" y="28" width="46" height="16"/>
                                                             <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="20"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -141,20 +141,20 @@
                                         </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HIV-va-zIK">
-                                        <rect key="frame" x="0.0" y="557.5" width="615" height="21.5"/>
+                                        <rect key="frame" x="0.0" y="424.5" width="820" height="16"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cannot find your name? Click the button below to add a new guardian record." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7lT-WG-nAs">
-                                        <rect key="frame" x="61" y="579" width="493" height="42"/>
+                                        <rect key="frame" x="81.5" y="440.5" width="657" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cb6-5H-yyk">
-                                        <rect key="frame" x="153" y="642.5" width="309" height="83"/>
+                                        <rect key="frame" x="204.5" y="489" width="411" height="62.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new guardian" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ReC-UM-Fxg">
-                                                <rect key="frame" x="15" y="3.5" width="279" height="76"/>
+                                                <rect key="frame" x="20" y="2.5" width="371" height="57.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -169,11 +169,11 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xgc-m9-ghn">
-                                        <rect key="frame" x="0.0" y="621" width="615" height="21.5"/>
+                                        <rect key="frame" x="0.0" y="472.5" width="820" height="16.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="7rF-Cz-EiW" firstAttribute="centerX" secondItem="0Ta-xP-ORi" secondAttribute="centerX" id="1CV-xu-O7M"/>
                                     <constraint firstItem="cb6-5H-yyk" firstAttribute="height" secondItem="0Ta-xP-ORi" secondAttribute="height" multiplier="0.1" constant="1" id="3E8-kl-EG5"/>
@@ -217,20 +217,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ds6-qk-v5Y" firstAttribute="centerX" secondItem="0Im-vB-5jb" secondAttribute="centerX" id="41c-az-E8g"/>
                             <constraint firstItem="PqF-XP-dij" firstAttribute="centerY" secondItem="0Ta-xP-ORi" secondAttribute="centerY" id="Cyg-sT-0pj"/>
                             <constraint firstItem="0Ta-xP-ORi" firstAttribute="centerY" secondItem="vxe-x4-d1w" secondAttribute="centerY" id="Ff8-cf-sH4"/>
                             <constraint firstItem="PqF-XP-dij" firstAttribute="height" secondItem="0Ta-xP-ORi" secondAttribute="height" id="Fvi-li-xhU"/>
-                            <constraint firstItem="UKb-WJ-RDe" firstAttribute="centerY" secondItem="vxe-x4-d1w" secondAttribute="centerY" id="Kt6-Fk-RSd"/>
                             <constraint firstItem="0Ta-xP-ORi" firstAttribute="height" secondItem="vxe-x4-d1w" secondAttribute="height" multiplier="0.8" constant="1" id="On6-Uu-lTP"/>
                             <constraint firstItem="0Ta-xP-ORi" firstAttribute="width" secondItem="vxe-x4-d1w" secondAttribute="width" multiplier="0.8" constant="1" id="Rzb-X1-oZg"/>
-                            <constraint firstItem="UKb-WJ-RDe" firstAttribute="height" secondItem="vxe-x4-d1w" secondAttribute="height" id="V9Z-9g-XH3"/>
                             <constraint firstItem="PqF-XP-dij" firstAttribute="width" secondItem="0Ta-xP-ORi" secondAttribute="width" id="bZW-kP-ZDw"/>
-                            <constraint firstItem="UKb-WJ-RDe" firstAttribute="centerX" secondItem="vxe-x4-d1w" secondAttribute="centerX" id="dMZ-Dy-N93"/>
+                            <constraint firstItem="ds6-qk-v5Y" firstAttribute="centerY" secondItem="0Im-vB-5jb" secondAttribute="centerY" id="buy-nU-2PZ"/>
+                            <constraint firstItem="ds6-qk-v5Y" firstAttribute="width" secondItem="vxe-x4-d1w" secondAttribute="width" id="ccv-dJ-J4m"/>
                             <constraint firstItem="0Ta-xP-ORi" firstAttribute="centerX" secondItem="vxe-x4-d1w" secondAttribute="centerX" id="k2B-HD-Qps"/>
+                            <constraint firstItem="ds6-qk-v5Y" firstAttribute="height" secondItem="vxe-x4-d1w" secondAttribute="height" id="lJ8-NW-SLI"/>
                             <constraint firstItem="PqF-XP-dij" firstAttribute="centerX" secondItem="0Ta-xP-ORi" secondAttribute="centerX" id="pBh-Td-rpx"/>
-                            <constraint firstItem="UKb-WJ-RDe" firstAttribute="width" secondItem="vxe-x4-d1w" secondAttribute="width" id="ynl-iF-bMm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Im-vB-5jb"/>
                     </view>
@@ -266,6 +266,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LJFF_Patterns-1" width="1898" height="2335"/>
+        <image name="LJFF_Patterns-2" width="1898" height="2335"/>
     </resources>
 </document>

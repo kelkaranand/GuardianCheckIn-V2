@@ -52,9 +52,11 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
         mainCardView.layer.cornerRadius = 10
         mainCardView.layer.shouldRasterize = false
         mainCardView.layer.borderWidth = 1
+        mainCardView.layer.borderColor = UIColor.white.cgColor
         
         separatorView.layer.shouldRasterize = false
         separatorView.layer.borderWidth = 1
+        separatorView.layer.borderColor = UIColor.white.cgColor
         
         downloadDataButton.layer.cornerRadius = 10
         downloadDataButton.layer.shouldRasterize = false
@@ -63,14 +65,6 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
         setLocationButton.layer.cornerRadius = 10
         setLocationButton.layer.shouldRasterize = false
         setLocationButton.layer.borderWidth = 1
-        
-        shadowView.layer.cornerRadius = 10
-        shadowView.layer.shouldRasterize = false
-        shadowView.layer.borderWidth = 1
-        
-        shadowView.layer.shadowRadius = 10
-        shadowView.layer.shadowColor = UIColor.black.cgColor
-        shadowView.layer.shadowOpacity = 1
         
     }
     
@@ -114,13 +108,13 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
         if !lockStatus {
             lockView.isHidden = true
             lockFlag = false
-            lockStatusImage.image = UIImage(named: "unlocked")
+            lockStatusImage.image = UIImage(named: "unlocked_white")
             superSecretMessage.text = "Super secret lock inactive"
         }
         else {
             lockView.isHidden = false
             lockFlag = true
-            lockStatusImage.image = UIImage(named: "locked")
+            lockStatusImage.image = UIImage(named: "locked_white")
             superSecretMessage.text = "Super secret lock active"
         }
         if(SetupViewController.locations.count>0) {
@@ -151,6 +145,7 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
         }
         label.font = UIFont (name: "Chalkboard SE", size: 20)
         label.text =  SetupViewController.locations[row].name
+        label.textColor = UIColor.white
         label.textAlignment = .center
         return label
     }
@@ -292,14 +287,14 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
     @objc func lockStatusToggle() {
         print("lock pressed")
         if lockStatus {
-            lockStatusImage.image = UIImage(named: "unlocked")
+            lockStatusImage.image = UIImage(named: "unlocked_white")
             superSecretMessage.text = "Super secret lock inactive"
             lockFlag = false
             lockStatus = false
             saveLockStatus(false)
         }
         else {
-            lockStatusImage.image = UIImage(named: "locked")
+            lockStatusImage.image = UIImage(named: "locked_white")
             superSecretMessage.text = "Super secret lock active"
             lockFlag = true
             lockStatus = true

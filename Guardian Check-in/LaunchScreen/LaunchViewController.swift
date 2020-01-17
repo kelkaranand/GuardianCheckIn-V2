@@ -13,7 +13,6 @@ import CoreData
 class LaunchViewController : UIViewController {
     
     @IBOutlet var animatedView: UIView!
-    @IBOutlet weak var backgroundView: UIImageView!
     
     let imagelayer=CALayer()
     
@@ -23,22 +22,6 @@ class LaunchViewController : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
-        
-//        //Generate dummy Data
-//        CoreDataHelper.saveStudentData("Harry", "Potter", "1")
-//        CoreDataHelper.saveStudentData("Hermoine", "Granger", "2")
-//        CoreDataHelper.saveStudentData("Ron", "Weasley", "3")
-//        CoreDataHelper.saveStudentData("Draco", "Malfoy", "4")
-//        CoreDataHelper.saveStudentData("Ginny", "Weasley", "5")
-//
-//        CoreDataHelper.saveGuardianData("James", "Potter", "1", "Father")
-//        CoreDataHelper.saveGuardianData("Lilly", "Potter", "1", "Mother")
-//
-//        CoreDataHelper.saveLocationData("Happy Happy Market", "Food,Clothing,Toiletries/Sundries", true)
-//        CoreDataHelper.saveLocationData("I Promise Too", "GED Class,ESOL Class,Math Bootcamp,Chase Mentoring/Event", true)
-//        CoreDataHelper.saveLocationData("Family Resource Center", "Meet with Vik,Meet with Kat,Meet with Community Legal Aid", true)
-//        CoreDataHelper.saveLocationData("Loads Of Love", "", false)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -67,7 +50,7 @@ class LaunchViewController : UIViewController {
     {
         imagelayer.frame=animatedView.bounds
         animatedView.layer.addSublayer(imagelayer)
-        imagelayer.contents = UIImage(named: "LJFF_logo")?.cgImage
+        imagelayer.contents = UIImage(named: "LJFF_LOGO_W")?.cgImage
         imagelayer.contentsGravity = CALayerContentsGravity.resizeAspect
         imagelayer.backgroundColor=UIColor.black.cgColor
         imagelayer.shadowOpacity = 0.7
@@ -76,7 +59,6 @@ class LaunchViewController : UIViewController {
         imagelayer.isHidden = false
         imagelayer.masksToBounds = false
         animatedView.alpha = 0.0
-        backgroundView.alpha = 0.0
         
         UIView.animate(withDuration: 2.0, animations: {
             self.animatedView.alpha = 1.0
@@ -84,7 +66,6 @@ class LaunchViewController : UIViewController {
             
             UIView.animate(withDuration: 2.0, animations: {
                 self.animatedView.alpha = 0
-                self.backgroundView.alpha = 1.0
             }, completion: { finished in
                 //Read device data
                 let coreData = CoreDataHelper.retrieveData("Device_Info")

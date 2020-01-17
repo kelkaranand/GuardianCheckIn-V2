@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rWR-S0-9xy">
-    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rWR-S0-9xy">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,23 +15,23 @@
             <objects>
                 <viewController id="rWR-S0-9xy" customClass="EndingViewController" customModule="Guardian_Check_in" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MzL-2p-oVP">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LJFF_Patterns-1" translatesAutoresizingMaskIntoConstraints="NO" id="ego-0z-rMK">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LJFF_Patterns-2" translatesAutoresizingMaskIntoConstraints="NO" id="qKY-P8-t4V">
+                                <rect key="frame" x="0.0" y="10" width="1024" height="768"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYg-VN-DYO">
-                                <rect key="frame" x="76.5" y="102" width="615" height="820"/>
+                                <rect key="frame" x="102" y="76.5" width="820" height="615"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bkq-Nc-tY7">
-                                        <rect key="frame" x="91.5" y="204.5" width="432" height="411"/>
+                                        <rect key="frame" x="122.5" y="153" width="575" height="309"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="bkq-Nc-tY7" firstAttribute="height" secondItem="IYg-VN-DYO" secondAttribute="height" multiplier="0.5" constant="1" id="Aas-eE-hU4"/>
                                     <constraint firstItem="bkq-Nc-tY7" firstAttribute="centerX" secondItem="IYg-VN-DYO" secondAttribute="centerX" id="HVb-YJ-gwN"/>
@@ -38,15 +40,15 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ego-0z-rMK" firstAttribute="height" secondItem="MzL-2p-oVP" secondAttribute="height" id="9aN-O4-EgU"/>
-                            <constraint firstItem="ego-0z-rMK" firstAttribute="width" secondItem="MzL-2p-oVP" secondAttribute="width" id="Cpm-oU-4Kf"/>
+                            <constraint firstItem="qKY-P8-t4V" firstAttribute="height" secondItem="MzL-2p-oVP" secondAttribute="height" id="00b-Aa-2gl"/>
+                            <constraint firstItem="qKY-P8-t4V" firstAttribute="centerX" secondItem="VWP-cc-sTl" secondAttribute="centerX" id="8Jk-RW-2xo"/>
                             <constraint firstItem="IYg-VN-DYO" firstAttribute="centerX" secondItem="MzL-2p-oVP" secondAttribute="centerX" id="MPI-hZ-EXV"/>
                             <constraint firstItem="IYg-VN-DYO" firstAttribute="height" secondItem="MzL-2p-oVP" secondAttribute="height" multiplier="0.8" constant="1" id="Ttp-Mj-ZuL"/>
                             <constraint firstItem="IYg-VN-DYO" firstAttribute="centerY" secondItem="MzL-2p-oVP" secondAttribute="centerY" id="Z4q-7L-N1M"/>
-                            <constraint firstItem="ego-0z-rMK" firstAttribute="centerY" secondItem="MzL-2p-oVP" secondAttribute="centerY" id="dzs-CO-4YK"/>
-                            <constraint firstItem="ego-0z-rMK" firstAttribute="centerX" secondItem="MzL-2p-oVP" secondAttribute="centerX" id="fNA-Hu-JPg"/>
+                            <constraint firstItem="qKY-P8-t4V" firstAttribute="width" secondItem="MzL-2p-oVP" secondAttribute="width" id="e7T-3F-PKS"/>
+                            <constraint firstItem="qKY-P8-t4V" firstAttribute="centerY" secondItem="VWP-cc-sTl" secondAttribute="centerY" id="jHa-R6-Ih4"/>
                             <constraint firstItem="IYg-VN-DYO" firstAttribute="width" secondItem="MzL-2p-oVP" secondAttribute="width" multiplier="0.8" constant="1" id="zyL-o3-x0A"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VWP-cc-sTl"/>
@@ -62,6 +64,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LJFF_Patterns-1" width="1898" height="2335"/>
+        <image name="LJFF_Patterns-2" width="1898" height="2335"/>
     </resources>
 </document>

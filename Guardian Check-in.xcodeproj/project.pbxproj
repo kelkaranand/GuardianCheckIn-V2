@@ -11,10 +11,6 @@
 		14B63E02237B3A6600F3EEF4 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B63E01237B3A6600F3EEF4 /* ConfirmationViewController.swift */; };
 		14C10E7823C8BEC600D26219 /* LocationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C10E7723C8BEC600D26219 /* LocationRecord.swift */; };
 		14C10E7A23CBD13200D26219 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C10E7923CBD13200D26219 /* Alert.storyboard */; };
-		14C10E8023CBD4ED00D26219 /* lj3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14C10E7C23CBD4EC00D26219 /* lj3.gif */; };
-		14C10E8123CBD4ED00D26219 /* lj1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14C10E7D23CBD4EC00D26219 /* lj1.gif */; };
-		14C10E8223CBD4ED00D26219 /* lj2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14C10E7E23CBD4ED00D26219 /* lj2.gif */; };
-		14C10E8323CBD4ED00D26219 /* lj4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14C10E7F23CBD4ED00D26219 /* lj4.gif */; };
 		14C10E8523CBD64100D26219 /* GifExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C10E8423CBD64100D26219 /* GifExtensions.swift */; };
 		14C10E8723CBDC3100D26219 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C10E8623CBDC3100D26219 /* AlertViewController.swift */; };
 		14C10E8E23CBEB2700D26219 /* StudentConfirmation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C10E8D23CBEB2700D26219 /* StudentConfirmation.storyboard */; };
@@ -49,6 +45,10 @@
 		14C3A3E62367B7D1009A3830 /* OptionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3E52367B7D1009A3830 /* OptionCollectionCell.swift */; };
 		14C3A3E92367C756009A3830 /* EndingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3E82367C756009A3830 /* EndingViewController.swift */; };
 		14C3A3EB2367C761009A3830 /* Ending.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3EA2367C761009A3830 /* Ending.storyboard */; };
+		14E059DA23D201B900EE6B4A /* lj3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14E059D623D201B800EE6B4A /* lj3.gif */; };
+		14E059DB23D201B900EE6B4A /* lj4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14E059D723D201B900EE6B4A /* lj4.gif */; };
+		14E059DC23D201B900EE6B4A /* lj2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14E059D823D201B900EE6B4A /* lj2.gif */; };
+		14E059DD23D201B900EE6B4A /* lj1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14E059D923D201B900EE6B4A /* lj1.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,10 +56,6 @@
 		14B63E01237B3A6600F3EEF4 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		14C10E7723C8BEC600D26219 /* LocationRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRecord.swift; sourceTree = "<group>"; };
 		14C10E7923CBD13200D26219 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
-		14C10E7C23CBD4EC00D26219 /* lj3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lj3.gif; sourceTree = "<group>"; };
-		14C10E7D23CBD4EC00D26219 /* lj1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lj1.gif; sourceTree = "<group>"; };
-		14C10E7E23CBD4ED00D26219 /* lj2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lj2.gif; sourceTree = "<group>"; };
-		14C10E7F23CBD4ED00D26219 /* lj4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lj4.gif; sourceTree = "<group>"; };
 		14C10E8423CBD64100D26219 /* GifExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifExtensions.swift; sourceTree = "<group>"; };
 		14C10E8623CBDC3100D26219 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		14C10E8D23CBEB2700D26219 /* StudentConfirmation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentConfirmation.storyboard; sourceTree = "<group>"; };
@@ -96,6 +92,10 @@
 		14C3A3E52367B7D1009A3830 /* OptionCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCollectionCell.swift; sourceTree = "<group>"; };
 		14C3A3E82367C756009A3830 /* EndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingViewController.swift; sourceTree = "<group>"; };
 		14C3A3EA2367C761009A3830 /* Ending.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ending.storyboard; sourceTree = "<group>"; };
+		14E059D623D201B800EE6B4A /* lj3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lj3.gif; sourceTree = "<group>"; };
+		14E059D723D201B900EE6B4A /* lj4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lj4.gif; sourceTree = "<group>"; };
+		14E059D823D201B900EE6B4A /* lj2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lj2.gif; sourceTree = "<group>"; };
+		14E059D923D201B900EE6B4A /* lj1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lj1.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,10 +121,10 @@
 		14C10E7B23CBD4E000D26219 /* Gifs */ = {
 			isa = PBXGroup;
 			children = (
-				14C10E7D23CBD4EC00D26219 /* lj1.gif */,
-				14C10E7E23CBD4ED00D26219 /* lj2.gif */,
-				14C10E7C23CBD4EC00D26219 /* lj3.gif */,
-				14C10E7F23CBD4ED00D26219 /* lj4.gif */,
+				14E059D923D201B900EE6B4A /* lj1.gif */,
+				14E059D823D201B900EE6B4A /* lj2.gif */,
+				14E059D623D201B800EE6B4A /* lj3.gif */,
+				14E059D723D201B900EE6B4A /* lj4.gif */,
 			);
 			path = Gifs;
 			sourceTree = "<group>";
@@ -329,17 +329,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14C10E8123CBD4ED00D26219 /* lj1.gif in Resources */,
-				14C10E8323CBD4ED00D26219 /* lj4.gif in Resources */,
+				14E059DD23D201B900EE6B4A /* lj1.gif in Resources */,
 				14C3A3DB236507E4009A3830 /* StudentGuardianSelection.storyboard in Resources */,
 				14C3A3CE235F4EC4009A3830 /* Setup.storyboard in Resources */,
-				14C10E8223CBD4ED00D26219 /* lj2.gif in Resources */,
 				14C3A3A3235F4EA0009A3830 /* LaunchScreen.storyboard in Resources */,
+				14E059DA23D201B900EE6B4A /* lj3.gif in Resources */,
+				14E059DC23D201B900EE6B4A /* lj2.gif in Resources */,
 				14B63E00237B3A5600F3EEF4 /* Confirmation.storyboard in Resources */,
+				14E059DB23D201B900EE6B4A /* lj4.gif in Resources */,
 				14C3A3D4235F4EC4009A3830 /* SearchStudent.storyboard in Resources */,
 				14C10E7A23CBD13200D26219 /* Alert.storyboard in Resources */,
 				14C10E8E23CBEB2700D26219 /* StudentConfirmation.storyboard in Resources */,
-				14C10E8023CBD4ED00D26219 /* lj3.gif in Resources */,
 				14C3A3C6235F4EC4009A3830 /* AddGuardian.storyboard in Resources */,
 				14C3A3D0235F4EC4009A3830 /* Launch.storyboard in Resources */,
 				14C3A3EB2367C761009A3830 /* Ending.storyboard in Resources */,

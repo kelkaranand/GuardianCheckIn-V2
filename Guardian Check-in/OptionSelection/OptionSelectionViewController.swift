@@ -47,7 +47,13 @@ class OptionSelectionViewController : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
-        heyLabel.text = "Hey " + OptionSelectionViewController.fname + "!"
+        if (OptionSelectionViewController.staffName == "" || OptionSelectionViewController.staffName == nil) {
+            heyLabel.text = "Hey " + OptionSelectionViewController.fname + "!"
+        }
+        else {
+            heyLabel.text = "Hey " + OptionSelectionViewController.staffName! + "!"
+        }
+        
         locationLabel.text = "Welcome to the " + CoreDataHelper.locationName + ". Please select your reason for visiting."
         UIView.animate(withDuration: 0.5) {
             self.mainCardView.center.x = self.mainCardView.center.x - self.view.bounds.width
@@ -63,6 +69,7 @@ class OptionSelectionViewController : UIViewController {
                 self.mainCardView.center.x = self.mainCardView.center.x + self.view.bounds.width
             }, completion: { finished in
                 StudentGuardianSelectionViewController.back = true
+                StudentConfirmationViewController.back = true
                 self.navigationController?.popViewController(animated: false)
             })
         }
@@ -79,7 +86,8 @@ extension OptionSelectionViewController: UICollectionViewDataSource {
         cell.layer.cornerRadius = 10
         cell.layer.shouldRasterize = false
         cell.layer.borderWidth = 2
-        cell.backgroundColor = UIColor.lightGray
+        cell.backgroundColor = UIColor.clear
+        cell.layer.borderColor = UIColor.white.cgColor
         
         cell.textLabel.text = options[indexPath.row]
         

@@ -142,6 +142,7 @@ class StudentGuardianSelectionViewController: UIViewController {
     
     func moveToConfirmation(_ fname:String) {
         OptionSelectionViewController.fname = fname
+        OptionSelectionViewController.staffName = ""
         OptionSelectionViewController.comingFromConfirmation = false
         UIView.animate(withDuration: 0.5, animations: {
            self.cardView.center.x = self.cardView.center.x - self.view.bounds.width
@@ -162,6 +163,7 @@ extension StudentGuardianSelectionViewController: UICollectionViewDataSource {
         cell.layer.cornerRadius = 10
         cell.layer.shouldRasterize = false
         cell.layer.borderWidth = 2
+        cell.layer.borderColor = UIColor.white.cgColor
         
         cell.nameLabel.text = guardianList[indexPath.row].name
         cell.relationshipLabel.text = guardianList[indexPath.row].relation
