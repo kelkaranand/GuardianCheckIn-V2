@@ -60,7 +60,7 @@
 		14C10E8623CBDC3100D26219 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		14C10E8D23CBEB2700D26219 /* StudentConfirmation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentConfirmation.storyboard; sourceTree = "<group>"; };
 		14C10E8F23CBED3400D26219 /* StudentConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentConfirmationViewController.swift; sourceTree = "<group>"; };
-		14C3A392235F4E9E009A3830 /* Guardian Check-in.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guardian Check-in.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14C3A392235F4E9E009A3830 /* Guardian Check-inV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guardian Check-inV2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C3A395235F4E9E009A3830 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C3A397235F4E9E009A3830 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		14C3A39A235F4E9E009A3830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 		14C3A393235F4E9E009A3830 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				14C3A392235F4E9E009A3830 /* Guardian Check-in.app */,
+				14C3A392235F4E9E009A3830 /* Guardian Check-inV2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -288,7 +288,7 @@
 			);
 			name = "Guardian Check-in";
 			productName = "Guardian Check-in";
-			productReference = 14C3A392235F4E9E009A3830 /* Guardian Check-in.app */;
+			productReference = 14C3A392235F4E9E009A3830 /* Guardian Check-inV2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -534,7 +534,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "AnandKelkar.Guardian-Check-in";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Guardian Check-inV2";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -552,7 +552,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "AnandKelkar.Guardian-Check-in";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Guardian Check-inV2";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
