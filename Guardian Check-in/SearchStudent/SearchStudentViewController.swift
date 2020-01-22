@@ -64,7 +64,7 @@ class SearchStudentViewController: UIViewController {
             self.performSegue(withIdentifier: "showSetup", sender: self)
         }
         else {
-            checkInLabel.text = "Welcome to the " + CoreDataHelper.locationName + ". Press the button below to check-in."
+            checkInLabel.text = "Welcome to the " + CoreDataHelper.locationName + ".\nPress the button below to check-in."
             self.mainCard.alpha = 0
             self.checkInCard.alpha = 1
             self.view.alpha = 1
