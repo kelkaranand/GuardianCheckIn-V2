@@ -533,7 +533,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "AnandKelkar.Guardian-Check-in";
+				PRODUCT_BUNDLE_IDENTIFIER = "AnandKelkar.Guardian-Check-in-v2";
 				PRODUCT_NAME = "Guardian Check-inV2";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -551,7 +551,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "AnandKelkar.Guardian-Check-in";
+				PRODUCT_BUNDLE_IDENTIFIER = "AnandKelkar.Guardian-Check-in-v2";
 				PRODUCT_NAME = "Guardian Check-inV2";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
