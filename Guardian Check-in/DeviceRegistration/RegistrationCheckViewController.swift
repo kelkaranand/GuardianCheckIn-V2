@@ -42,18 +42,9 @@ class RegistrationCheckViewController : UIViewController {
         cardView.layer.cornerRadius = 10
         cardView.layer.borderWidth = 1
         cardView.layer.shouldRasterize = false
-        cardView.layer.shadowColor = UIColor.black.cgColor
-        cardView.layer.shadowOpacity = 1
-        cardView.layer.shadowOffset = CGSize.zero
-        cardView.layer.shadowRadius = 10
-        cardView.layer.shadowPath = UIBezierPath(rect: cardView.bounds).cgPath
         
         button.layer.cornerRadius = 10
         button.layer.borderWidth = 1
-        button.layer.shadowOpacity = 1
-        button.layer.shadowOffset = CGSize.zero
-        button.layer.shadowRadius = 10
-        button.layer.shadowPath = UIBezierPath(rect: cardView.bounds).cgPath
         
         
     }
