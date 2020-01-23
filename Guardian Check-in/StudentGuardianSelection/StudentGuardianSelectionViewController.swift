@@ -12,6 +12,9 @@ import CoreData
 class StudentGuardianSelectionViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var scrollDownImage: UIImageView!
+    @IBOutlet weak var noGuardiansView: UIView!
+    @IBOutlet weak var scrollDownText: UILabel!
     @IBOutlet weak var studentNameLabel: UILabel!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var addButtonView: UIView!
@@ -60,11 +63,28 @@ class StudentGuardianSelectionViewController: UIViewController {
         rightSwipe.direction = .right
         self.view.addGestureRecognizer(rightSwipe)
         
+        scrollDownImage.image = UIImage.gifImageWithName("whitedown")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         fetchGuardians()
+        if (guardianList.count > 4) {
+            scrollDownImage.isHidden = false
+            scrollDownText.isHidden = false
+            noGuardiansView.isHidden = true
+        }
+        else if (guardianList.count == 0) {
+            scrollDownImage.isHidden = true
+            scrollDownText.isHidden = true
+            noGuardiansView.isHidden = false
+        }
+        else {
+            scrollDownImage.isHidden = true
+            scrollDownText.isHidden = true
+            noGuardiansView.isHidden = true
+        }
         studentNameLabel.text = StudentGuardianSelectionViewController.student.fname + " " + StudentGuardianSelectionViewController.student.lname
         if (StudentGuardianSelectionViewController.back) {
             UIView.animate(withDuration: 0.5) {
