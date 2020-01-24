@@ -14,12 +14,14 @@ import AVFoundation
 class SearchStudentViewController: UIViewController {
     
     @IBOutlet var searchBar: UISearchBar!
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     var searchController: UISearchController?
     var selectedStudent = StudentRecord()
     static var studentRecords = [StudentRecord]()
     var filteredStudentrecords = [StudentRecord]()
     var searchActive = false
+    @IBOutlet weak var scrollDownImage: UIImageView!
+    @IBOutlet weak var scrollDownText: UILabel!
     @IBOutlet weak var mainCard: UIView!
     @IBOutlet weak var checkInCard: UIView!
     @IBOutlet weak var checkInLabel: UILabel!
@@ -32,13 +34,6 @@ class SearchStudentViewController: UIViewController {
     
     
     override func viewDidLayoutSubviews() {
-        mainCard.layer.cornerRadius = 10
-        mainCard.layer.shouldRasterize = false
-        mainCard.layer.borderWidth = 1
-        
-        mainCard.layer.shadowRadius = 10
-        mainCard.layer.shadowColor = UIColor.black.cgColor
-        mainCard.layer.shadowOpacity = 1
         
         superView.layer.cornerRadius = 10
         superView.layer.shouldRasterize = false
@@ -60,6 +55,12 @@ class SearchStudentViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
+        searchBar.text = ""
+        filteredStudentrecords = []
+        collectionView.reloadData()
+        scrollDownImage.isHidden = true
+        scrollDownText.isHidden = true
+        scrollDownImage.image = UIImage.gifImageWithName("whitedown")
         if CoreDataHelper.locationName == "" {
             self.performSegue(withIdentifier: "showSetup", sender: self)
         }
@@ -69,7 +70,6 @@ class SearchStudentViewController: UIViewController {
             self.checkInCard.alpha = 1
             self.view.alpha = 1
             moved = false
-            tableView.isHidden = true
             searchBar.text = nil
             UIView.animate(withDuration: 0.5) {
                 self.superView.center.y = self.superView.center.y - self.view.bounds.height
@@ -80,7 +80,6 @@ class SearchStudentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(SearchStudentResultCell.self, forCellReuseIdentifier: "result")
         self.navigationController?.navigationBar.isHidden = true
         
         //Code to move view with keyboard
@@ -113,7 +112,7 @@ class SearchStudentViewController: UIViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= keyboardSize.height/2
+                self.view.frame.origin.y -= self.view.frame.height/2 - 30
             }
         }
     }
@@ -194,31 +193,7 @@ class SearchStudentViewController: UIViewController {
     
 }
 
-extension SearchStudentViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "result", for: indexPath) as? SearchStudentResultCell {
 
-            let fragFname = filteredStudentrecords[indexPath.row].fname
-            let fragLname = filteredStudentrecords[indexPath.row].lname
-            cell.nameLabel.text = fragFname + " " + fragLname
-            cell.backgroundColor = UIColor.clear
-            cell.nameLabel.textColor = UIColor.white
-            return cell
-        }
-        
-        return UITableViewCell()
-
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.searchActive {
-            return filteredStudentrecords.count
-        } else {
-            return 0
-        }
-    }
-}
 
 extension SearchStudentViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -229,9 +204,6 @@ extension SearchStudentViewController: UISearchBarDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         print("done")
         searchActive = false
-        if (searchBar.text?.isEmpty)! {
-            tableView.isHidden = true
-        }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -239,13 +211,6 @@ extension SearchStudentViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        if !searchText.isEmpty {
-            tableView.isHidden = false
-        }
-        else {
-            tableView.isHidden = true
-        }
         
         if searchText == "Password" {
             self.mainCard.endEditing(true)
@@ -260,7 +225,15 @@ extension SearchStudentViewController: UISearchBarDelegate {
             return (name.lowercased().contains(searchText.lowercased()))
         })
         
-        tableView.reloadData()
+        collectionView.reloadData()
+        if filteredStudentrecords.count > 5 {
+            scrollDownImage.isHidden = false
+            scrollDownText.isHidden = false
+        }
+        else {
+            scrollDownImage.isHidden = true
+            scrollDownText.isHidden = true
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -272,8 +245,57 @@ extension SearchStudentViewController: UISearchBarDelegate {
     
 }
 
-extension SearchStudentViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension SearchStudentViewController: UICollectionViewDataSource {
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "searchCell", for: indexPath) as! SearchStudentCollectionCell
+        
+        cell.layer.cornerRadius = 10
+        cell.layer.shouldRasterize = false
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.white.cgColor
+        
+        let fragFname = filteredStudentrecords[indexPath.row].fname
+        let fragLname = filteredStudentrecords[indexPath.row].lname
+        cell.nameLabel.text = fragFname + " " + fragLname
+        cell.backgroundColor = UIColor.clear
+        cell.nameLabel.textColor = UIColor.white
+        
+        return cell
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return filteredStudentrecords.count
+    }
+    
+}
+
+extension SearchStudentViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let padding = 20
+        return CGSize(width: (self.collectionView.frame.width) - 20, height: (self.collectionView.frame.height / 4) - 20)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+    }
+}
+
+extension SearchStudentViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedStudent = filteredStudentrecords[indexPath.row]
         OptionSelectionViewController.studentAPSId = selectedStudent.id
         UIView.animate(withDuration: 0.5, animations: {
