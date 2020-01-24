@@ -226,7 +226,7 @@ extension SearchStudentViewController: UISearchBarDelegate {
         })
         
         collectionView.reloadData()
-        if filteredStudentrecords.count > 5 {
+        if filteredStudentrecords.count > 4 {
             scrollDownImage.isHidden = false
             scrollDownText.isHidden = false
         }
@@ -277,8 +277,7 @@ extension SearchStudentViewController: UICollectionViewDataSource {
 
 extension SearchStudentViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let padding = 20
-        return CGSize(width: (self.collectionView.frame.width) - 20, height: (self.collectionView.frame.height / 4) - 20)
+        return CGSize(width: (self.collectionView.frame.width) - 20, height: (self.collectionView.frame.height / 3.5) - 20)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
