@@ -53,7 +53,7 @@
                                                 </connections>
                                             </searchBar>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fnv-lN-Apm">
-                                                <rect key="frame" x="163.5" y="339" width="493" height="247"/>
+                                                <rect key="frame" x="81.5" y="339" width="657" height="247"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YlL-qm-eWf">
                                                     <size key="itemSize" width="50" height="50"/>
@@ -124,7 +124,7 @@
                                             <constraint firstItem="BvZ-r4-ZJc" firstAttribute="width" secondItem="bWm-jl-MXY" secondAttribute="width" multiplier="0.8" constant="1" id="2hz-lF-Xt5"/>
                                             <constraint firstItem="hj9-cy-cRz" firstAttribute="height" secondItem="bWm-jl-MXY" secondAttribute="height" multiplier="0.1" constant="1" id="37f-Ql-hRS"/>
                                             <constraint firstItem="BvZ-r4-ZJc" firstAttribute="height" secondItem="bWm-jl-MXY" secondAttribute="height" multiplier="0.1" constant="1" id="4Xt-gT-30S"/>
-                                            <constraint firstItem="Fnv-lN-Apm" firstAttribute="width" secondItem="bWm-jl-MXY" secondAttribute="width" multiplier="0.6" constant="1" id="9Ap-ON-1H3"/>
+                                            <constraint firstItem="Fnv-lN-Apm" firstAttribute="width" secondItem="bWm-jl-MXY" secondAttribute="width" multiplier="0.8" constant="1" id="9Ap-ON-1H3"/>
                                             <constraint firstItem="Fnv-lN-Apm" firstAttribute="top" secondItem="BvZ-r4-ZJc" secondAttribute="bottom" id="Al5-fr-Npd"/>
                                             <constraint firstItem="hj9-cy-cRz" firstAttribute="centerX" secondItem="bWm-jl-MXY" secondAttribute="centerX" id="MwY-cl-a8h"/>
                                             <constraint firstItem="BvZ-r4-ZJc" firstAttribute="centerY" secondItem="bWm-jl-MXY" secondAttribute="centerY" id="c7B-Cf-Jv8"/>

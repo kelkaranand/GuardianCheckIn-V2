@@ -277,7 +277,7 @@ extension SearchStudentViewController: UICollectionViewDataSource {
 
 extension SearchStudentViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (self.collectionView.frame.width) - 20, height: (self.collectionView.frame.height / 3.5) - 20)
+        return CGSize(width: (self.collectionView.frame.width) - 20, height: (self.collectionView.frame.height / 3.75) - 20)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
