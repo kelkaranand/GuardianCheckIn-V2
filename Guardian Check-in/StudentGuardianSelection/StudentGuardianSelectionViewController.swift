@@ -69,7 +69,9 @@ class StudentGuardianSelectionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
-        fetchGuardians()
+        if !StudentGuardianSelectionViewController.back {
+            fetchGuardians()
+        }
         if (guardianList.count > 4) {
             scrollDownImage.isHidden = false
             scrollDownText.isHidden = false
@@ -155,7 +157,7 @@ class StudentGuardianSelectionViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "moveToAddGuardian"){
-            let dest = segue.destination as! AddGuardianViewController
+            let dest = segue.destination as! GetFNameViewController
             dest.student = StudentGuardianSelectionViewController.student
         }
     }

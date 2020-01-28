@@ -52,9 +52,9 @@ class ConfirmationViewController : UIViewController {
         mainCardView.center.x = mainCardView.center.x + self.view.bounds.width
         
         //Swipe right to go back
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(goBack))
-        rightSwipe.direction = .right
-        self.view.addGestureRecognizer(rightSwipe)
+//        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(goBack))
+//        rightSwipe.direction = .right
+//        self.view.addGestureRecognizer(rightSwipe)
         
         //Tap on edit button
         editButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goBack)))
@@ -80,8 +80,13 @@ class ConfirmationViewController : UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.mainCardView.center.x = self.mainCardView.center.x + self.view.bounds.width
         }, completion: { finished in
-            AddGuardianViewController.back = true
-            self.navigationController?.popViewController(animated: false)
+            GetFNameViewController.back = true
+            for controller in self.navigationController!.viewControllers as Array {
+                if controller.isKind(of: GetFNameViewController.self) {
+                    self.navigationController!.popToViewController(controller, animated: false)
+                    break
+                }
+            }
         })
     }
     
