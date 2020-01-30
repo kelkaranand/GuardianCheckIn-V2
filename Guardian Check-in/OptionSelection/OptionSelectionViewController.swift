@@ -91,6 +91,8 @@ extension OptionSelectionViewController: UICollectionViewDataSource {
         
         cell.textLabel.text = options[indexPath.row]
         
+        cell.addGestureRecognizer(CustomTapGestureRecognizer())
+        
         return cell
     }
     

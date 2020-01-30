@@ -69,7 +69,9 @@ class StudentGuardianSelectionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
-        fetchGuardians()
+        if !StudentGuardianSelectionViewController.back {
+            fetchGuardians()
+        }
         if (guardianList.count > 4) {
             scrollDownImage.isHidden = false
             scrollDownText.isHidden = false
@@ -187,6 +189,7 @@ extension StudentGuardianSelectionViewController: UICollectionViewDataSource {
         
         cell.nameLabel.text = guardianList[indexPath.row].name
         cell.relationshipLabel.text = guardianList[indexPath.row].relation
+        cell.addGestureRecognizer(CustomTapGestureRecognizer())
         
         return cell
     }

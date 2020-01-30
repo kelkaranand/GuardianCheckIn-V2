@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140EEA5D23E352C500F3FAE6 /* GothamSSm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 140EEA5A23E352C500F3FAE6 /* GothamSSm-Medium.otf */; };
+		140EEA5E23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 140EEA5B23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf */; };
+		140EEA5F23E352C500F3FAE6 /* GothamSSm-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 140EEA5C23E352C500F3FAE6 /* GothamSSm-BookItalic.otf */; };
+		140EEA6723E35B4F00F3FAE6 /* AddGuardianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EEA6623E35B4F00F3FAE6 /* AddGuardianViewController.swift */; };
 		14625B4223DA1C0700017A65 /* whitedown.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14625B4123DA1C0600017A65 /* whitedown.gif */; };
+		14625B4423DA40CB00017A65 /* SearchStudentCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14625B4323DA40CB00017A65 /* SearchStudentCollectionCell.swift */; };
+		14625B4D23DFD65E00017A65 /* GothamSSm-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14625B4C23DFD2EA00017A65 /* GothamSSm-Book.ttf */; };
+		14625B4E23DFD66100017A65 /* GothamSSm-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14625B4B23DFD2EA00017A65 /* GothamSSm-Black.otf */; };
+		14625B5023E0816900017A65 /* CustomTapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14625B4F23E0816900017A65 /* CustomTapGestureRecognizer.swift */; };
 		14B63E00237B3A5600F3EEF4 /* Confirmation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B63DFF237B3A5600F3EEF4 /* Confirmation.storyboard */; };
 		14B63E02237B3A6600F3EEF4 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B63E01237B3A6600F3EEF4 /* ConfirmationViewController.swift */; };
 		14C10E7823C8BEC600D26219 /* LocationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C10E7723C8BEC600D26219 /* LocationRecord.swift */; };
@@ -23,7 +31,6 @@
 		14C3A3A0235F4EA0009A3830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A39F235F4EA0009A3830 /* Assets.xcassets */; };
 		14C3A3A3235F4EA0009A3830 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3A1235F4EA0009A3830 /* LaunchScreen.storyboard */; };
 		14C3A3C6235F4EC4009A3830 /* AddGuardian.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3AB235F4EC3009A3830 /* AddGuardian.storyboard */; };
-		14C3A3C7235F4EC4009A3830 /* AddGuardianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3AC235F4EC3009A3830 /* AddGuardianViewController.swift */; };
 		14C3A3C8235F4EC4009A3830 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3AE235F4EC3009A3830 /* CoreDataHelper.swift */; };
 		14C3A3C9235F4EC4009A3830 /* InternetConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3AF235F4EC3009A3830 /* InternetConnectionTest.swift */; };
 		14C3A3CA235F4EC4009A3830 /* RestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3B0235F4EC3009A3830 /* RestHelper.swift */; };
@@ -34,7 +41,6 @@
 		14C3A3D2235F4EC4009A3830 /* DeviceRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3BC235F4EC3009A3830 /* DeviceRegistration.storyboard */; };
 		14C3A3D3235F4EC4009A3830 /* RegistrationCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3BD235F4EC3009A3830 /* RegistrationCheckViewController.swift */; };
 		14C3A3D4235F4EC4009A3830 /* SearchStudent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3BF235F4EC3009A3830 /* SearchStudent.storyboard */; };
-		14C3A3D5235F4EC4009A3830 /* SearchStudentResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3C0235F4EC3009A3830 /* SearchStudentResultCell.swift */; };
 		14C3A3D6235F4EC4009A3830 /* SearchStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3C1235F4EC3009A3830 /* SearchStudentViewController.swift */; };
 		14C3A3D7235F4EC4009A3830 /* StudentGuardianCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3C3235F4EC4009A3830 /* StudentGuardianCollectionCell.swift */; };
 		14C3A3D9235F4EC4009A3830 /* StudentGuardianSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3C5235F4EC4009A3830 /* StudentGuardianSelectionViewController.swift */; };
@@ -53,7 +59,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		140EEA5A23E352C500F3FAE6 /* GothamSSm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-Medium.otf"; sourceTree = "<group>"; };
+		140EEA5B23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-MediumItalic.otf"; sourceTree = "<group>"; };
+		140EEA5C23E352C500F3FAE6 /* GothamSSm-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-BookItalic.otf"; sourceTree = "<group>"; };
+		140EEA6623E35B4F00F3FAE6 /* AddGuardianViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGuardianViewController.swift; sourceTree = "<group>"; };
 		14625B4123DA1C0600017A65 /* whitedown.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = whitedown.gif; sourceTree = "<group>"; };
+		14625B4323DA40CB00017A65 /* SearchStudentCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStudentCollectionCell.swift; sourceTree = "<group>"; };
+		14625B4B23DFD2EA00017A65 /* GothamSSm-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-Black.otf"; sourceTree = "<group>"; };
+		14625B4C23DFD2EA00017A65 /* GothamSSm-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-Book.ttf"; sourceTree = "<group>"; };
+		14625B4F23E0816900017A65 /* CustomTapGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapGestureRecognizer.swift; sourceTree = "<group>"; };
 		14B63DFF237B3A5600F3EEF4 /* Confirmation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Confirmation.storyboard; sourceTree = "<group>"; };
 		14B63E01237B3A6600F3EEF4 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		14C10E7723C8BEC600D26219 /* LocationRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRecord.swift; sourceTree = "<group>"; };
@@ -71,7 +85,6 @@
 		14C3A3A2235F4EA0009A3830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14C3A3A4235F4EA0009A3830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14C3A3AB235F4EC3009A3830 /* AddGuardian.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddGuardian.storyboard; sourceTree = "<group>"; };
-		14C3A3AC235F4EC3009A3830 /* AddGuardianViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGuardianViewController.swift; sourceTree = "<group>"; };
 		14C3A3AE235F4EC3009A3830 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		14C3A3AF235F4EC3009A3830 /* InternetConnectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetConnectionTest.swift; sourceTree = "<group>"; };
 		14C3A3B0235F4EC3009A3830 /* RestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestHelper.swift; sourceTree = "<group>"; };
@@ -82,7 +95,6 @@
 		14C3A3BC235F4EC3009A3830 /* DeviceRegistration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DeviceRegistration.storyboard; sourceTree = "<group>"; };
 		14C3A3BD235F4EC3009A3830 /* RegistrationCheckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationCheckViewController.swift; sourceTree = "<group>"; };
 		14C3A3BF235F4EC3009A3830 /* SearchStudent.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchStudent.storyboard; sourceTree = "<group>"; };
-		14C3A3C0235F4EC3009A3830 /* SearchStudentResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchStudentResultCell.swift; sourceTree = "<group>"; };
 		14C3A3C1235F4EC3009A3830 /* SearchStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchStudentViewController.swift; sourceTree = "<group>"; };
 		14C3A3C3235F4EC4009A3830 /* StudentGuardianCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentGuardianCollectionCell.swift; sourceTree = "<group>"; };
 		14C3A3C5235F4EC4009A3830 /* StudentGuardianSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentGuardianSelectionViewController.swift; sourceTree = "<group>"; };
@@ -187,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				14C3A3AB235F4EC3009A3830 /* AddGuardian.storyboard */,
-				14C3A3AC235F4EC3009A3830 /* AddGuardianViewController.swift */,
+				140EEA6623E35B4F00F3FAE6 /* AddGuardianViewController.swift */,
 			);
 			path = AddNewGuardian;
 			sourceTree = "<group>";
@@ -195,12 +207,18 @@
 		14C3A3AD235F4EC3009A3830 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				140EEA5C23E352C500F3FAE6 /* GothamSSm-BookItalic.otf */,
+				140EEA5A23E352C500F3FAE6 /* GothamSSm-Medium.otf */,
+				140EEA5B23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf */,
+				14625B4B23DFD2EA00017A65 /* GothamSSm-Black.otf */,
+				14625B4C23DFD2EA00017A65 /* GothamSSm-Book.ttf */,
 				14C3A3AE235F4EC3009A3830 /* CoreDataHelper.swift */,
 				14C3A3AF235F4EC3009A3830 /* InternetConnectionTest.swift */,
 				14C3A3B0235F4EC3009A3830 /* RestHelper.swift */,
 				14C10E7923CBD13200D26219 /* Alert.storyboard */,
 				14C10E8423CBD64100D26219 /* GifExtensions.swift */,
 				14C10E8623CBDC3100D26219 /* AlertViewController.swift */,
+				14625B4F23E0816900017A65 /* CustomTapGestureRecognizer.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -237,9 +255,9 @@
 			isa = PBXGroup;
 			children = (
 				14C3A3BF235F4EC3009A3830 /* SearchStudent.storyboard */,
-				14C3A3C0235F4EC3009A3830 /* SearchStudentResultCell.swift */,
 				14C3A3C1235F4EC3009A3830 /* SearchStudentViewController.swift */,
 				14C3A3DC23673056009A3830 /* StudentRecord.swift */,
+				14625B4323DA40CB00017A65 /* SearchStudentCollectionCell.swift */,
 			);
 			path = SearchStudent;
 			sourceTree = "<group>";
@@ -336,20 +354,25 @@
 				14C3A3DB236507E4009A3830 /* StudentGuardianSelection.storyboard in Resources */,
 				14625B4223DA1C0700017A65 /* whitedown.gif in Resources */,
 				14C3A3CE235F4EC4009A3830 /* Setup.storyboard in Resources */,
+				140EEA5D23E352C500F3FAE6 /* GothamSSm-Medium.otf in Resources */,
 				14C3A3A3235F4EA0009A3830 /* LaunchScreen.storyboard in Resources */,
 				14E059DA23D201B900EE6B4A /* lj3.gif in Resources */,
 				14E059DC23D201B900EE6B4A /* lj2.gif in Resources */,
+				140EEA5F23E352C500F3FAE6 /* GothamSSm-BookItalic.otf in Resources */,
 				14B63E00237B3A5600F3EEF4 /* Confirmation.storyboard in Resources */,
 				14E059DB23D201B900EE6B4A /* lj4.gif in Resources */,
 				14C3A3D4235F4EC4009A3830 /* SearchStudent.storyboard in Resources */,
 				14C10E7A23CBD13200D26219 /* Alert.storyboard in Resources */,
 				14C10E8E23CBEB2700D26219 /* StudentConfirmation.storyboard in Resources */,
 				14C3A3C6235F4EC4009A3830 /* AddGuardian.storyboard in Resources */,
+				14625B4E23DFD66100017A65 /* GothamSSm-Black.otf in Resources */,
 				14C3A3D0235F4EC4009A3830 /* Launch.storyboard in Resources */,
 				14C3A3EB2367C761009A3830 /* Ending.storyboard in Resources */,
 				14C3A3A0235F4EA0009A3830 /* Assets.xcassets in Resources */,
 				14C3A39B235F4E9E009A3830 /* Main.storyboard in Resources */,
+				14625B4D23DFD65E00017A65 /* GothamSSm-Book.ttf in Resources */,
 				14C3A3E42367B406009A3830 /* OptionSelection.storyboard in Resources */,
+				140EEA5E23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf in Resources */,
 				14C3A3D2235F4EC4009A3830 /* DeviceRegistration.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,26 +388,27 @@
 				14C3A3C8235F4EC4009A3830 /* CoreDataHelper.swift in Sources */,
 				14C10E8523CBD64100D26219 /* GifExtensions.swift in Sources */,
 				14C3A39E235F4E9E009A3830 /* Guardian_Check_in.xcdatamodeld in Sources */,
-				14C3A3D5235F4EC4009A3830 /* SearchStudentResultCell.swift in Sources */,
 				14C3A3C9235F4EC4009A3830 /* InternetConnectionTest.swift in Sources */,
+				140EEA6723E35B4F00F3FAE6 /* AddGuardianViewController.swift in Sources */,
 				14C3A3D7235F4EC4009A3830 /* StudentGuardianCollectionCell.swift in Sources */,
 				14C3A3DD23673056009A3830 /* StudentRecord.swift in Sources */,
 				14C3A3CA235F4EC4009A3830 /* RestHelper.swift in Sources */,
 				14C10E9023CBED3400D26219 /* StudentConfirmationViewController.swift in Sources */,
 				14C3A3CF235F4EC4009A3830 /* SetupViewController.swift in Sources */,
 				14C3A3DF23675F75009A3830 /* GuardianRecord.swift in Sources */,
+				14625B5023E0816900017A65 /* CustomTapGestureRecognizer.swift in Sources */,
 				14C10E8723CBDC3100D26219 /* AlertViewController.swift in Sources */,
 				14C3A3E62367B7D1009A3830 /* OptionCollectionCell.swift in Sources */,
 				14C3A3E22367B3F5009A3830 /* OptionSelectionViewController.swift in Sources */,
 				14C3A3E92367C756009A3830 /* EndingViewController.swift in Sources */,
 				14C10E7823C8BEC600D26219 /* LocationRecord.swift in Sources */,
-				14C3A3C7235F4EC4009A3830 /* AddGuardianViewController.swift in Sources */,
 				14B63E02237B3A6600F3EEF4 /* ConfirmationViewController.swift in Sources */,
 				14C3A3D6235F4EC4009A3830 /* SearchStudentViewController.swift in Sources */,
 				14C3A3D1235F4EC4009A3830 /* LaunchViewController.swift in Sources */,
 				14C3A398235F4E9E009A3830 /* ViewController.swift in Sources */,
 				14C3A3D9235F4EC4009A3830 /* StudentGuardianSelectionViewController.swift in Sources */,
 				14C3A396235F4E9E009A3830 /* AppDelegate.swift in Sources */,
+				14625B4423DA40CB00017A65 /* SearchStudentCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

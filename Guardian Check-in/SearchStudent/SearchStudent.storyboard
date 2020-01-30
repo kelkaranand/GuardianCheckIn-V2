@@ -9,6 +9,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GothamSSm-Black.otf">
+            <string>GothamSSm-Black</string>
+        </array>
+        <array key="GothamSSm-Book.ttf">
+            <string>GothamSSm-Book</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="VZe-jt-lTA">
@@ -43,67 +51,96 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWm-jl-MXY">
                                         <rect key="frame" x="0.0" y="0.0" width="820" height="615"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Student Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5sP-eS-gCF">
-                                                <rect key="frame" x="122.5" y="193.5" width="575" height="62.5"/>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="24"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </label>
-                                            <searchBar contentMode="redraw" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BvZ-r4-ZJc">
+                                            <searchBar contentMode="redraw" placeholder="Enter Student Name" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BvZ-r4-ZJc">
                                                 <rect key="frame" x="81.5" y="276" width="657" height="63"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" textContentType="name"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert" returnKeyType="done" textContentType="name"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="SyV-HG-GGP" id="PBX-H9-ugY"/>
                                                 </connections>
                                             </searchBar>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7bV-71-jIN">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fnv-lN-Apm">
                                                 <rect key="frame" x="81.5" y="339" width="657" height="247"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="result" id="Dqa-XA-O7W" customClass="SearchStudentResultCell" customModule="Guardian_Check_inV2" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="657" height="44"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dqa-XA-O7W" id="d8G-Od-dJA">
-                                                            <rect key="frame" x="0.0" y="0.0" width="657" height="43.5"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YlL-qm-eWf">
+                                                    <size key="itemSize" width="50" height="50"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="searchCell" id="KWK-kV-RJS" customClass="SearchStudentCollectionCell" customModule="Guardian_Check_inV2" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eE2-H1-Uhd">
-                                                                    <rect key="frame" x="141" y="11" width="42" height="21"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PSD-9r-GhX">
+                                                                    <rect key="frame" x="2" y="9.5" width="46" height="31"/>
+                                                                    <fontDescription key="fontDescription" name="GothamSSm-Book" family="Gotham SSm" pointSize="18"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </tableViewCellContentView>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </tableViewCell>
-                                                </prototypes>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstItem="PSD-9r-GhX" firstAttribute="width" secondItem="KWK-kV-RJS" secondAttribute="width" multiplier="0.9" constant="1" id="MKw-by-MFr"/>
+                                                            <constraint firstItem="PSD-9r-GhX" firstAttribute="height" secondItem="KWK-kV-RJS" secondAttribute="height" multiplier="0.6" constant="1" id="jpl-eD-ABK"/>
+                                                            <constraint firstItem="PSD-9r-GhX" firstAttribute="centerX" secondItem="KWK-kV-RJS" secondAttribute="centerX" id="qc1-0Y-cQ3"/>
+                                                            <constraint firstItem="PSD-9r-GhX" firstAttribute="centerY" secondItem="KWK-kV-RJS" secondAttribute="centerY" id="vRt-kT-cgn"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="nameLabel" destination="PSD-9r-GhX" id="ToF-fv-OR9"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
                                                 <connections>
-                                                    <outlet property="dataSource" destination="SyV-HG-GGP" id="XvP-2G-J1f"/>
-                                                    <outlet property="delegate" destination="SyV-HG-GGP" id="Jkn-Os-CYY"/>
+                                                    <outlet property="dataSource" destination="SyV-HG-GGP" id="zho-ZP-Tvt"/>
+                                                    <outlet property="delegate" destination="SyV-HG-GGP" id="0dP-hT-7z4"/>
                                                 </connections>
-                                            </tableView>
+                                            </collectionView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hj9-cy-cRz">
+                                                <rect key="frame" x="81.5" y="581" width="657" height="62.5"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitedown.gif" translatesAutoresizingMaskIntoConstraints="NO" id="pn3-do-M9p">
+                                                        <rect key="frame" x="262.5" y="0.0" width="132" height="32"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to see more names." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="90S-Ey-oST">
+                                                        <rect key="frame" x="0.0" y="32" width="657" height="32.5"/>
+                                                        <fontDescription key="fontDescription" name="GothamSSm-Book" family="Gotham SSm" pointSize="19"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="pn3-do-M9p" firstAttribute="top" secondItem="hj9-cy-cRz" secondAttribute="top" id="1dw-6K-Mjx"/>
+                                                    <constraint firstItem="90S-Ey-oST" firstAttribute="height" secondItem="hj9-cy-cRz" secondAttribute="height" multiplier="0.5" constant="1" id="8np-5Z-hUp"/>
+                                                    <constraint firstItem="pn3-do-M9p" firstAttribute="width" secondItem="hj9-cy-cRz" secondAttribute="width" multiplier="0.2" constant="1" id="Gw9-mz-p7S"/>
+                                                    <constraint firstItem="pn3-do-M9p" firstAttribute="centerX" secondItem="hj9-cy-cRz" secondAttribute="centerX" id="HPw-v9-l2z"/>
+                                                    <constraint firstItem="90S-Ey-oST" firstAttribute="top" secondItem="pn3-do-M9p" secondAttribute="bottom" id="Hwd-h5-Rr9"/>
+                                                    <constraint firstItem="90S-Ey-oST" firstAttribute="width" secondItem="hj9-cy-cRz" secondAttribute="width" id="Pcq-r9-1Yk"/>
+                                                    <constraint firstItem="pn3-do-M9p" firstAttribute="height" secondItem="hj9-cy-cRz" secondAttribute="height" multiplier="0.5" constant="1" id="l7A-wc-aGc"/>
+                                                    <constraint firstItem="90S-Ey-oST" firstAttribute="centerX" secondItem="hj9-cy-cRz" secondAttribute="centerX" id="zR5-GX-Du0"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="BvZ-r4-ZJc" firstAttribute="width" secondItem="bWm-jl-MXY" secondAttribute="width" multiplier="0.8" constant="1" id="2hz-lF-Xt5"/>
+                                            <constraint firstItem="hj9-cy-cRz" firstAttribute="height" secondItem="bWm-jl-MXY" secondAttribute="height" multiplier="0.1" constant="1" id="37f-Ql-hRS"/>
                                             <constraint firstItem="BvZ-r4-ZJc" firstAttribute="height" secondItem="bWm-jl-MXY" secondAttribute="height" multiplier="0.1" constant="1" id="4Xt-gT-30S"/>
-                                            <constraint firstItem="7bV-71-jIN" firstAttribute="centerX" secondItem="bWm-jl-MXY" secondAttribute="centerX" id="7OZ-a8-crJ"/>
-                                            <constraint firstItem="5sP-eS-gCF" firstAttribute="width" secondItem="bWm-jl-MXY" secondAttribute="width" multiplier="0.7" constant="1" id="E2x-eR-xGe"/>
-                                            <constraint firstItem="7bV-71-jIN" firstAttribute="width" secondItem="BvZ-r4-ZJc" secondAttribute="width" id="IWP-ks-wvy"/>
-                                            <constraint firstItem="5sP-eS-gCF" firstAttribute="centerX" secondItem="bWm-jl-MXY" secondAttribute="centerX" id="JwQ-Tl-Dbb"/>
-                                            <constraint firstItem="BvZ-r4-ZJc" firstAttribute="top" secondItem="5sP-eS-gCF" secondAttribute="bottom" constant="20" id="Yc4-y8-1s6"/>
-                                            <constraint firstItem="5sP-eS-gCF" firstAttribute="height" secondItem="bWm-jl-MXY" secondAttribute="height" multiplier="0.1" constant="1" id="asP-VK-EQL"/>
+                                            <constraint firstItem="Fnv-lN-Apm" firstAttribute="width" secondItem="bWm-jl-MXY" secondAttribute="width" multiplier="0.8" constant="1" id="9Ap-ON-1H3"/>
+                                            <constraint firstItem="Fnv-lN-Apm" firstAttribute="top" secondItem="BvZ-r4-ZJc" secondAttribute="bottom" id="Al5-fr-Npd"/>
+                                            <constraint firstItem="hj9-cy-cRz" firstAttribute="centerX" secondItem="bWm-jl-MXY" secondAttribute="centerX" id="MwY-cl-a8h"/>
                                             <constraint firstItem="BvZ-r4-ZJc" firstAttribute="centerY" secondItem="bWm-jl-MXY" secondAttribute="centerY" id="c7B-Cf-Jv8"/>
-                                            <constraint firstItem="7bV-71-jIN" firstAttribute="height" secondItem="bWm-jl-MXY" secondAttribute="height" multiplier="0.4" constant="1" id="m1J-JF-bTP"/>
+                                            <constraint firstItem="hj9-cy-cRz" firstAttribute="width" secondItem="bWm-jl-MXY" secondAttribute="width" multiplier="0.8" constant="1" id="hgl-8a-dKB"/>
+                                            <constraint firstItem="Fnv-lN-Apm" firstAttribute="height" secondItem="bWm-jl-MXY" secondAttribute="height" multiplier="0.4" constant="1" id="jOT-Iz-buK"/>
+                                            <constraint firstItem="Fnv-lN-Apm" firstAttribute="centerX" secondItem="bWm-jl-MXY" secondAttribute="centerX" id="qgY-Do-BbK"/>
                                             <constraint firstItem="BvZ-r4-ZJc" firstAttribute="centerX" secondItem="bWm-jl-MXY" secondAttribute="centerX" id="sNe-18-K4X"/>
-                                            <constraint firstItem="7bV-71-jIN" firstAttribute="top" secondItem="BvZ-r4-ZJc" secondAttribute="bottom" id="tHB-JI-l57"/>
+                                            <constraint firstItem="Fnv-lN-Apm" firstAttribute="bottom" secondItem="hj9-cy-cRz" secondAttribute="top" constant="5" id="sa4-Tr-JWv"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZY5-ox-gUr">
@@ -125,7 +162,7 @@
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WQZ-4a-qnM">
                                                 <rect key="frame" x="122.5" y="248" width="575" height="185.5"/>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                                <fontDescription key="fontDescription" name="GothamSSm-Black" family="Gotham SSm" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -138,7 +175,7 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check-in" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LCe-0t-qX6">
                                                         <rect key="frame" x="0.0" y="0.0" width="411" height="62.5"/>
-                                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="GothamSSm-Book" family="Gotham SSm" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -211,11 +248,13 @@
                         <outlet property="checkInButtonView" destination="QIX-xC-Gib" id="vEA-pc-uwC"/>
                         <outlet property="checkInCard" destination="ZY5-ox-gUr" id="Ynb-F9-gBu"/>
                         <outlet property="checkInLabel" destination="WQZ-4a-qnM" id="njJ-KO-3gJ"/>
+                        <outlet property="collectionView" destination="Fnv-lN-Apm" id="iPr-pN-vTs"/>
                         <outlet property="logoImage" destination="OcP-mo-ZtB" id="kor-nA-PjZ"/>
                         <outlet property="mainCard" destination="bWm-jl-MXY" id="5uD-Jh-f8n"/>
+                        <outlet property="scrollDownImage" destination="pn3-do-M9p" id="GEk-q2-M4j"/>
+                        <outlet property="scrollDownText" destination="90S-Ey-oST" id="agb-LA-GLT"/>
                         <outlet property="searchBar" destination="BvZ-r4-ZJc" id="SRy-An-bWh"/>
                         <outlet property="superView" destination="q6c-o6-YEI" id="X4q-iM-lhm"/>
-                        <outlet property="tableView" destination="7bV-71-jIN" id="G5j-rE-sla"/>
                         <segue destination="5iw-DO-9uk" kind="show" identifier="guardianSelection" animates="NO" id="6dN-u0-zZZ"/>
                         <segue destination="uFd-tb-K2j" kind="show" identifier="showSetup" animates="NO" id="KAt-ga-mbe"/>
                         <segue destination="iji-Gi-7PV" kind="show" identifier="showStudentConfirmation" animates="NO" id="PDC-hQ-4vU"/>
@@ -253,5 +292,6 @@
     <resources>
         <image name="LJFF_Patterns-2" width="1898" height="2335"/>
         <image name="ips_varsity_k" width="1847" height="2943"/>
+        <image name="whitedown.gif" width="204" height="170"/>
     </resources>
 </document>
