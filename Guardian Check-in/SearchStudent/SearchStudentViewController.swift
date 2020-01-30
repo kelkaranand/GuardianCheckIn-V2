@@ -190,7 +190,7 @@ class SearchStudentViewController: UIViewController {
     func rad2deg(_ number: Double) -> Double {
         return number * 180 / .pi
     }
-    
+
 }
 
 
@@ -241,8 +241,6 @@ extension SearchStudentViewController: UISearchBarDelegate {
             StudentGuardianSelectionViewController.student = selectedStudent
         }
     }
-
-    
 }
 
 extension SearchStudentViewController: UICollectionViewDataSource {
@@ -261,6 +259,9 @@ extension SearchStudentViewController: UICollectionViewDataSource {
         cell.nameLabel.text = fragFname + " " + fragLname
         cell.backgroundColor = UIColor.clear
         cell.nameLabel.textColor = UIColor.white
+        
+        let cellPress = CustomTapGestureRecognizer()
+        cell.addGestureRecognizer(cellPress)
         
         return cell
     }

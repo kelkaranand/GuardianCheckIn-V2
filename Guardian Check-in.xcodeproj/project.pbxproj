@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140EEA5D23E352C500F3FAE6 /* GothamSSm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 140EEA5A23E352C500F3FAE6 /* GothamSSm-Medium.otf */; };
+		140EEA5E23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 140EEA5B23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf */; };
+		140EEA5F23E352C500F3FAE6 /* GothamSSm-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 140EEA5C23E352C500F3FAE6 /* GothamSSm-BookItalic.otf */; };
+		140EEA6023E3530800F3FAE6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3A4235F4EA0009A3830 /* Info.plist */; };
 		14625B4223DA1C0700017A65 /* whitedown.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14625B4123DA1C0600017A65 /* whitedown.gif */; };
 		14625B4423DA40CB00017A65 /* SearchStudentCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14625B4323DA40CB00017A65 /* SearchStudentCollectionCell.swift */; };
 		14625B4623DFC04700017A65 /* GetLNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14625B4523DFC04700017A65 /* GetLNameViewController.swift */; };
@@ -14,6 +18,7 @@
 		14625B4A23DFC48300017A65 /* GetRelationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14625B4923DFC48300017A65 /* GetRelationViewController.swift */; };
 		14625B4D23DFD65E00017A65 /* GothamSSm-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14625B4C23DFD2EA00017A65 /* GothamSSm-Book.ttf */; };
 		14625B4E23DFD66100017A65 /* GothamSSm-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14625B4B23DFD2EA00017A65 /* GothamSSm-Black.otf */; };
+		14625B5023E0816900017A65 /* CustomTapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14625B4F23E0816900017A65 /* CustomTapGestureRecognizer.swift */; };
 		14B63E00237B3A5600F3EEF4 /* Confirmation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B63DFF237B3A5600F3EEF4 /* Confirmation.storyboard */; };
 		14B63E02237B3A6600F3EEF4 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B63E01237B3A6600F3EEF4 /* ConfirmationViewController.swift */; };
 		14C10E7823C8BEC600D26219 /* LocationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C10E7723C8BEC600D26219 /* LocationRecord.swift */; };
@@ -58,6 +63,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		140EEA5A23E352C500F3FAE6 /* GothamSSm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-Medium.otf"; sourceTree = "<group>"; };
+		140EEA5B23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-MediumItalic.otf"; sourceTree = "<group>"; };
+		140EEA5C23E352C500F3FAE6 /* GothamSSm-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-BookItalic.otf"; sourceTree = "<group>"; };
 		14625B4123DA1C0600017A65 /* whitedown.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = whitedown.gif; sourceTree = "<group>"; };
 		14625B4323DA40CB00017A65 /* SearchStudentCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStudentCollectionCell.swift; sourceTree = "<group>"; };
 		14625B4523DFC04700017A65 /* GetLNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLNameViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +73,7 @@
 		14625B4923DFC48300017A65 /* GetRelationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRelationViewController.swift; sourceTree = "<group>"; };
 		14625B4B23DFD2EA00017A65 /* GothamSSm-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-Black.otf"; sourceTree = "<group>"; };
 		14625B4C23DFD2EA00017A65 /* GothamSSm-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-Book.ttf"; sourceTree = "<group>"; };
+		14625B4F23E0816900017A65 /* CustomTapGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapGestureRecognizer.swift; sourceTree = "<group>"; };
 		14B63DFF237B3A5600F3EEF4 /* Confirmation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Confirmation.storyboard; sourceTree = "<group>"; };
 		14B63E01237B3A6600F3EEF4 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		14C10E7723C8BEC600D26219 /* LocationRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRecord.swift; sourceTree = "<group>"; };
@@ -208,6 +217,9 @@
 		14C3A3AD235F4EC3009A3830 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				140EEA5C23E352C500F3FAE6 /* GothamSSm-BookItalic.otf */,
+				140EEA5A23E352C500F3FAE6 /* GothamSSm-Medium.otf */,
+				140EEA5B23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf */,
 				14625B4B23DFD2EA00017A65 /* GothamSSm-Black.otf */,
 				14625B4C23DFD2EA00017A65 /* GothamSSm-Book.ttf */,
 				14C3A3AE235F4EC3009A3830 /* CoreDataHelper.swift */,
@@ -216,6 +228,7 @@
 				14C10E7923CBD13200D26219 /* Alert.storyboard */,
 				14C10E8423CBD64100D26219 /* GifExtensions.swift */,
 				14C10E8623CBDC3100D26219 /* AlertViewController.swift */,
+				14625B4F23E0816900017A65 /* CustomTapGestureRecognizer.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -351,9 +364,11 @@
 				14C3A3DB236507E4009A3830 /* StudentGuardianSelection.storyboard in Resources */,
 				14625B4223DA1C0700017A65 /* whitedown.gif in Resources */,
 				14C3A3CE235F4EC4009A3830 /* Setup.storyboard in Resources */,
+				140EEA5D23E352C500F3FAE6 /* GothamSSm-Medium.otf in Resources */,
 				14C3A3A3235F4EA0009A3830 /* LaunchScreen.storyboard in Resources */,
 				14E059DA23D201B900EE6B4A /* lj3.gif in Resources */,
 				14E059DC23D201B900EE6B4A /* lj2.gif in Resources */,
+				140EEA5F23E352C500F3FAE6 /* GothamSSm-BookItalic.otf in Resources */,
 				14B63E00237B3A5600F3EEF4 /* Confirmation.storyboard in Resources */,
 				14E059DB23D201B900EE6B4A /* lj4.gif in Resources */,
 				14C3A3D4235F4EC4009A3830 /* SearchStudent.storyboard in Resources */,
@@ -367,6 +382,8 @@
 				14C3A39B235F4E9E009A3830 /* Main.storyboard in Resources */,
 				14625B4D23DFD65E00017A65 /* GothamSSm-Book.ttf in Resources */,
 				14C3A3E42367B406009A3830 /* OptionSelection.storyboard in Resources */,
+				140EEA5E23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf in Resources */,
+				140EEA6023E3530800F3FAE6 /* Info.plist in Resources */,
 				14C3A3D2235F4EC4009A3830 /* DeviceRegistration.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +407,7 @@
 				14C10E9023CBED3400D26219 /* StudentConfirmationViewController.swift in Sources */,
 				14C3A3CF235F4EC4009A3830 /* SetupViewController.swift in Sources */,
 				14C3A3DF23675F75009A3830 /* GuardianRecord.swift in Sources */,
+				14625B5023E0816900017A65 /* CustomTapGestureRecognizer.swift in Sources */,
 				14C10E8723CBDC3100D26219 /* AlertViewController.swift in Sources */,
 				14C3A3E62367B7D1009A3830 /* OptionCollectionCell.swift in Sources */,
 				14C3A3E22367B3F5009A3830 /* OptionSelectionViewController.swift in Sources */,

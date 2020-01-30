@@ -189,6 +189,7 @@ extension StudentGuardianSelectionViewController: UICollectionViewDataSource {
         
         cell.nameLabel.text = guardianList[indexPath.row].name
         cell.relationshipLabel.text = guardianList[indexPath.row].relation
+        cell.addGestureRecognizer(CustomTapGestureRecognizer())
         
         return cell
     }

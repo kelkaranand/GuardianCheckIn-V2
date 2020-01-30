@@ -6,6 +6,9 @@
 	<array>
 		<string>GothamSSm-Black.otf</string>
 		<string>GothamSSm-Book.ttf</string>
+		<string>GothamSSm-BookItalic.otf</string>
+		<string>GothamSSm-Medium.otf</string>
+		<string>GothamSSm-MediumItalic.otf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

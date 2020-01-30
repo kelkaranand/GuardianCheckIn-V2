@@ -13,7 +13,7 @@
         <!--Option Selection View Controller-->
         <scene sceneID="PbH-et-FB0">
             <objects>
-                <viewController id="4co-Kc-83V" customClass="OptionSelectionViewController" customModule="Guardian_Check_in" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4co-Kc-83V" customClass="OptionSelectionViewController" customModule="Guardian_Check_inV2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CQc-tC-1lQ">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +49,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-Gr-kni">
-                                        <rect key="frame" x="81.5" y="251" width="657" height="308.5"/>
+                                        <rect key="frame" x="40.5" y="251" width="739" height="247"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gHC-3M-BJh">
                                             <size key="itemSize" width="50" height="50"/>
@@ -58,7 +58,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="option" id="w6a-2c-1hp" customClass="OptionCollectionCell" customModule="Guardian_Check_in" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="option" id="w6a-2c-1hp" customClass="OptionCollectionCell" customModule="Guardian_Check_inV2" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -94,7 +94,7 @@
                                 <constraints>
                                     <constraint firstItem="mHE-OA-gI4" firstAttribute="centerX" secondItem="H7K-2T-nIH" secondAttribute="centerX" id="0WJ-1e-bCq"/>
                                     <constraint firstItem="zES-9w-XeX" firstAttribute="width" secondItem="H7K-2T-nIH" secondAttribute="width" multiplier="0.8" constant="1" id="1Gl-Xt-jPM"/>
-                                    <constraint firstItem="BQo-Gr-kni" firstAttribute="width" secondItem="H7K-2T-nIH" secondAttribute="width" multiplier="0.8" constant="1" id="2ti-hO-xeT"/>
+                                    <constraint firstItem="BQo-Gr-kni" firstAttribute="width" secondItem="H7K-2T-nIH" secondAttribute="width" multiplier="0.9" constant="1" id="2ti-hO-xeT"/>
                                     <constraint firstItem="zVA-O1-tMb" firstAttribute="top" secondItem="zES-9w-XeX" secondAttribute="bottom" id="4cb-8w-ZJo"/>
                                     <constraint firstItem="zES-9w-XeX" firstAttribute="top" secondItem="Qg2-Pl-2cg" secondAttribute="bottom" id="7NN-Oa-HJR"/>
                                     <constraint firstItem="zES-9w-XeX" firstAttribute="height" secondItem="H7K-2T-nIH" secondAttribute="height" multiplier="0.15" constant="1" id="GWy-Lr-s3I"/>
@@ -115,7 +115,7 @@
                                     <constraint firstItem="Isr-3J-a6S" firstAttribute="centerX" secondItem="H7K-2T-nIH" secondAttribute="centerX" id="uwG-a8-TvR"/>
                                     <constraint firstItem="Isr-3J-a6S" firstAttribute="width" secondItem="H7K-2T-nIH" secondAttribute="width" multiplier="0.5" constant="1" id="wFb-cV-Agi"/>
                                     <constraint firstItem="zVA-O1-tMb" firstAttribute="height" secondItem="H7K-2T-nIH" secondAttribute="height" multiplier="0.05" constant="1" id="wYD-2T-bq9"/>
-                                    <constraint firstItem="BQo-Gr-kni" firstAttribute="height" secondItem="H7K-2T-nIH" secondAttribute="height" multiplier="0.5" constant="1" id="wp7-md-Wx7"/>
+                                    <constraint firstItem="BQo-Gr-kni" firstAttribute="height" secondItem="H7K-2T-nIH" secondAttribute="height" multiplier="0.4" constant="1" id="wp7-md-Wx7"/>
                                 </constraints>
                             </view>
                         </subviews>
