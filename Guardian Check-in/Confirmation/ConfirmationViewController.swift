@@ -80,9 +80,9 @@ class ConfirmationViewController : UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.mainCardView.center.x = self.mainCardView.center.x + self.view.bounds.width
         }, completion: { finished in
-            GetFNameViewController.back = true
+            AddGuardianViewController.back = true
             for controller in self.navigationController!.viewControllers as Array {
-                if controller.isKind(of: GetFNameViewController.self) {
+                if controller.isKind(of: AddGuardianViewController.self) {
                     self.navigationController!.popToViewController(controller, animated: false)
                     break
                 }

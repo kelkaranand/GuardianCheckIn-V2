@@ -157,7 +157,7 @@ class StudentGuardianSelectionViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "moveToAddGuardian"){
-            let dest = segue.destination as! GetFNameViewController
+            let dest = segue.destination as! AddGuardianViewController
             dest.student = StudentGuardianSelectionViewController.student
         }
     }

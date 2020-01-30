@@ -10,12 +10,9 @@
 		140EEA5D23E352C500F3FAE6 /* GothamSSm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 140EEA5A23E352C500F3FAE6 /* GothamSSm-Medium.otf */; };
 		140EEA5E23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 140EEA5B23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf */; };
 		140EEA5F23E352C500F3FAE6 /* GothamSSm-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 140EEA5C23E352C500F3FAE6 /* GothamSSm-BookItalic.otf */; };
-		140EEA6023E3530800F3FAE6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3A4235F4EA0009A3830 /* Info.plist */; };
+		140EEA6723E35B4F00F3FAE6 /* AddGuardianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EEA6623E35B4F00F3FAE6 /* AddGuardianViewController.swift */; };
 		14625B4223DA1C0700017A65 /* whitedown.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14625B4123DA1C0600017A65 /* whitedown.gif */; };
 		14625B4423DA40CB00017A65 /* SearchStudentCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14625B4323DA40CB00017A65 /* SearchStudentCollectionCell.swift */; };
-		14625B4623DFC04700017A65 /* GetLNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14625B4523DFC04700017A65 /* GetLNameViewController.swift */; };
-		14625B4823DFC34600017A65 /* GetPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14625B4723DFC34600017A65 /* GetPhoneNumberViewController.swift */; };
-		14625B4A23DFC48300017A65 /* GetRelationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14625B4923DFC48300017A65 /* GetRelationViewController.swift */; };
 		14625B4D23DFD65E00017A65 /* GothamSSm-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14625B4C23DFD2EA00017A65 /* GothamSSm-Book.ttf */; };
 		14625B4E23DFD66100017A65 /* GothamSSm-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14625B4B23DFD2EA00017A65 /* GothamSSm-Black.otf */; };
 		14625B5023E0816900017A65 /* CustomTapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14625B4F23E0816900017A65 /* CustomTapGestureRecognizer.swift */; };
@@ -34,7 +31,6 @@
 		14C3A3A0235F4EA0009A3830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A39F235F4EA0009A3830 /* Assets.xcassets */; };
 		14C3A3A3235F4EA0009A3830 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3A1235F4EA0009A3830 /* LaunchScreen.storyboard */; };
 		14C3A3C6235F4EC4009A3830 /* AddGuardian.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A3AB235F4EC3009A3830 /* AddGuardian.storyboard */; };
-		14C3A3C7235F4EC4009A3830 /* GetFNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3AC235F4EC3009A3830 /* GetFNameViewController.swift */; };
 		14C3A3C8235F4EC4009A3830 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3AE235F4EC3009A3830 /* CoreDataHelper.swift */; };
 		14C3A3C9235F4EC4009A3830 /* InternetConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3AF235F4EC3009A3830 /* InternetConnectionTest.swift */; };
 		14C3A3CA235F4EC4009A3830 /* RestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A3B0235F4EC3009A3830 /* RestHelper.swift */; };
@@ -66,11 +62,9 @@
 		140EEA5A23E352C500F3FAE6 /* GothamSSm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-Medium.otf"; sourceTree = "<group>"; };
 		140EEA5B23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-MediumItalic.otf"; sourceTree = "<group>"; };
 		140EEA5C23E352C500F3FAE6 /* GothamSSm-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-BookItalic.otf"; sourceTree = "<group>"; };
+		140EEA6623E35B4F00F3FAE6 /* AddGuardianViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGuardianViewController.swift; sourceTree = "<group>"; };
 		14625B4123DA1C0600017A65 /* whitedown.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = whitedown.gif; sourceTree = "<group>"; };
 		14625B4323DA40CB00017A65 /* SearchStudentCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStudentCollectionCell.swift; sourceTree = "<group>"; };
-		14625B4523DFC04700017A65 /* GetLNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLNameViewController.swift; sourceTree = "<group>"; };
-		14625B4723DFC34600017A65 /* GetPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhoneNumberViewController.swift; sourceTree = "<group>"; };
-		14625B4923DFC48300017A65 /* GetRelationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRelationViewController.swift; sourceTree = "<group>"; };
 		14625B4B23DFD2EA00017A65 /* GothamSSm-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-Black.otf"; sourceTree = "<group>"; };
 		14625B4C23DFD2EA00017A65 /* GothamSSm-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-Book.ttf"; sourceTree = "<group>"; };
 		14625B4F23E0816900017A65 /* CustomTapGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapGestureRecognizer.swift; sourceTree = "<group>"; };
@@ -91,7 +85,6 @@
 		14C3A3A2235F4EA0009A3830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14C3A3A4235F4EA0009A3830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14C3A3AB235F4EC3009A3830 /* AddGuardian.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddGuardian.storyboard; sourceTree = "<group>"; };
-		14C3A3AC235F4EC3009A3830 /* GetFNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFNameViewController.swift; sourceTree = "<group>"; };
 		14C3A3AE235F4EC3009A3830 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		14C3A3AF235F4EC3009A3830 /* InternetConnectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetConnectionTest.swift; sourceTree = "<group>"; };
 		14C3A3B0235F4EC3009A3830 /* RestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestHelper.swift; sourceTree = "<group>"; };
@@ -206,10 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				14C3A3AB235F4EC3009A3830 /* AddGuardian.storyboard */,
-				14C3A3AC235F4EC3009A3830 /* GetFNameViewController.swift */,
-				14625B4523DFC04700017A65 /* GetLNameViewController.swift */,
-				14625B4723DFC34600017A65 /* GetPhoneNumberViewController.swift */,
-				14625B4923DFC48300017A65 /* GetRelationViewController.swift */,
+				140EEA6623E35B4F00F3FAE6 /* AddGuardianViewController.swift */,
 			);
 			path = AddNewGuardian;
 			sourceTree = "<group>";
@@ -383,7 +373,6 @@
 				14625B4D23DFD65E00017A65 /* GothamSSm-Book.ttf in Resources */,
 				14C3A3E42367B406009A3830 /* OptionSelection.storyboard in Resources */,
 				140EEA5E23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf in Resources */,
-				140EEA6023E3530800F3FAE6 /* Info.plist in Resources */,
 				14C3A3D2235F4EC4009A3830 /* DeviceRegistration.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,8 +389,8 @@
 				14C10E8523CBD64100D26219 /* GifExtensions.swift in Sources */,
 				14C3A39E235F4E9E009A3830 /* Guardian_Check_in.xcdatamodeld in Sources */,
 				14C3A3C9235F4EC4009A3830 /* InternetConnectionTest.swift in Sources */,
+				140EEA6723E35B4F00F3FAE6 /* AddGuardianViewController.swift in Sources */,
 				14C3A3D7235F4EC4009A3830 /* StudentGuardianCollectionCell.swift in Sources */,
-				14625B4A23DFC48300017A65 /* GetRelationViewController.swift in Sources */,
 				14C3A3DD23673056009A3830 /* StudentRecord.swift in Sources */,
 				14C3A3CA235F4EC4009A3830 /* RestHelper.swift in Sources */,
 				14C10E9023CBED3400D26219 /* StudentConfirmationViewController.swift in Sources */,
@@ -413,13 +402,10 @@
 				14C3A3E22367B3F5009A3830 /* OptionSelectionViewController.swift in Sources */,
 				14C3A3E92367C756009A3830 /* EndingViewController.swift in Sources */,
 				14C10E7823C8BEC600D26219 /* LocationRecord.swift in Sources */,
-				14C3A3C7235F4EC4009A3830 /* GetFNameViewController.swift in Sources */,
 				14B63E02237B3A6600F3EEF4 /* ConfirmationViewController.swift in Sources */,
 				14C3A3D6235F4EC4009A3830 /* SearchStudentViewController.swift in Sources */,
 				14C3A3D1235F4EC4009A3830 /* LaunchViewController.swift in Sources */,
 				14C3A398235F4E9E009A3830 /* ViewController.swift in Sources */,
-				14625B4823DFC34600017A65 /* GetPhoneNumberViewController.swift in Sources */,
-				14625B4623DFC04700017A65 /* GetLNameViewController.swift in Sources */,
 				14C3A3D9235F4EC4009A3830 /* StudentGuardianSelectionViewController.swift in Sources */,
 				14C3A396235F4E9E009A3830 /* AppDelegate.swift in Sources */,
 				14625B4423DA40CB00017A65 /* SearchStudentCollectionCell.swift in Sources */,
