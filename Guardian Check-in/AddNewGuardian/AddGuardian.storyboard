@@ -9,6 +9,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GothamSSm-Black.otf">
+            <string>GothamSSm-Black</string>
+        </array>
+        <array key="GothamSSm-Book.ttf">
+            <string>GothamSSm-Book</string>
+        </array>
+        <array key="GothamSSm-Medium.otf">
+            <string>GothamSSm-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Add Guardian View Controller-->
         <scene sceneID="kvi-ri-OpT">
@@ -30,7 +41,7 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please provide the following information:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="aN6-Hp-10r">
                                         <rect key="frame" x="81.5" y="19.5" width="657" height="62.5"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
+                                        <fontDescription key="fontDescription" name="GothamSSm-Black" family="Gotham SSm" pointSize="40"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -41,9 +52,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mz4-P2-0Ll">
                                         <rect key="frame" x="40.5" y="102.5" width="739" height="62.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n86-b1-E4e">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student :" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n86-b1-E4e">
                                                 <rect key="frame" x="0.0" y="0.0" width="259.5" height="62.5"/>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="GothamSSm-Medium" family="Gotham SSm" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -53,7 +64,7 @@
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GHp-je-QYE">
                                                 <rect key="frame" x="334.5" y="0.0" width="333.5" height="62.5"/>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="GothamSSm-Medium" family="Gotham SSm" pointSize="20"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -83,7 +94,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H4U-KY-ask">
                                                 <rect key="frame" x="0.0" y="0.0" width="259.5" height="62.5"/>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="GothamSSm-Medium" family="Gotham SSm" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -93,8 +104,8 @@
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="clO-9Y-HkQ">
                                                 <rect key="frame" x="334.5" y="8.5" width="333.5" height="45"/>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <fontDescription key="fontDescription" name="GothamSSm-Book" family="Gotham SSm" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert" textContentType="name"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -122,7 +133,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jt3-Qu-hjY">
                                                 <rect key="frame" x="0.0" y="0.0" width="259.5" height="62.5"/>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="GothamSSm-Medium" family="Gotham SSm" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -132,8 +143,8 @@
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pjh-1i-sOh">
                                                 <rect key="frame" x="334.5" y="8.5" width="333.5" height="45"/>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <fontDescription key="fontDescription" name="GothamSSm-Book" family="Gotham SSm" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert" textContentType="name"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -161,7 +172,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PVP-Fb-we6">
                                                 <rect key="frame" x="0.0" y="0.0" width="259.5" height="62.5"/>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="GothamSSm-Medium" family="Gotham SSm" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -171,8 +182,8 @@
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9eD-ju-OUO">
                                                 <rect key="frame" x="334.5" y="8.5" width="333.5" height="45"/>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                                                <fontDescription key="fontDescription" name="GothamSSm-Book" family="Gotham SSm" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" keyboardAppearance="alert" textContentType="tel"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -192,24 +203,24 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="weD-5x-YWB">
-                                        <rect key="frame" x="204.5" y="414" width="411" height="20.5"/>
+                                        <rect key="frame" x="204.5" y="414" width="411" height="11"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTd-Fu-kVN">
-                                        <rect key="frame" x="40.5" y="434.5" width="739" height="94.5"/>
+                                        <rect key="frame" x="40.5" y="425" width="739" height="107.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Relation :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xi3-Ga-OUq">
-                                                <rect key="frame" x="0.0" y="0.0" width="259.5" height="94.5"/>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="259.5" height="107.5"/>
+                                                <fontDescription key="fontDescription" name="GothamSSm-Medium" family="Gotham SSm" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXh-4K-9FC">
-                                                <rect key="frame" x="259.5" y="0.0" width="75" height="94.5"/>
+                                                <rect key="frame" x="259.5" y="0.0" width="75" height="107.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mir-dL-Lxq">
-                                                <rect key="frame" x="334.5" y="0.0" width="333.5" height="94.5"/>
+                                                <rect key="frame" x="334.5" y="0.0" width="333.5" height="107.5"/>
                                             </pickerView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -229,15 +240,15 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ntp-CQ-twU">
-                                        <rect key="frame" x="204.5" y="529" width="411" height="25.5"/>
+                                        <rect key="frame" x="204.5" y="532.5" width="411" height="25.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jHU-AI-jVj">
-                                        <rect key="frame" x="204.5" y="554.5" width="411" height="62.5"/>
+                                        <rect key="frame" x="204.5" y="558" width="411" height="62.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tQr-Lv-Win">
                                                 <rect key="frame" x="0.0" y="0.0" width="411" height="62.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="GothamSSm-Medium" family="Gotham SSm" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -261,7 +272,7 @@
                                     <constraint firstItem="weD-5x-YWB" firstAttribute="centerX" secondItem="KDY-cN-KWM" secondAttribute="centerX" id="6j0-6J-9bX"/>
                                     <constraint firstItem="aJU-Br-2ub" firstAttribute="width" secondItem="KDY-cN-KWM" secondAttribute="width" multiplier="0.5" constant="1" id="79Y-tS-15Y"/>
                                     <constraint firstItem="04J-Vy-GGb" firstAttribute="height" secondItem="DiG-kH-gdL" secondAttribute="height" id="932-IR-gAH"/>
-                                    <constraint firstItem="wTd-Fu-kVN" firstAttribute="height" secondItem="lIj-0m-Azt" secondAttribute="height" multiplier="1.5" constant="1" id="9M4-ev-eXb"/>
+                                    <constraint firstItem="wTd-Fu-kVN" firstAttribute="height" secondItem="lIj-0m-Azt" secondAttribute="height" multiplier="1.7" constant="1" id="9M4-ev-eXb"/>
                                     <constraint firstItem="mz4-P2-0Ll" firstAttribute="top" secondItem="DiG-kH-gdL" secondAttribute="bottom" id="AEA-2V-haG"/>
                                     <constraint firstItem="6Gt-q5-G8U" firstAttribute="height" secondItem="mz4-P2-0Ll" secondAttribute="height" id="Afb-7A-3Uu"/>
                                     <constraint firstItem="x1B-6z-Bjg" firstAttribute="top" secondItem="LZS-Cv-6BS" secondAttribute="bottom" id="BIa-EW-0my"/>
@@ -304,7 +315,7 @@
                                     <constraint firstItem="aN6-Hp-10r" firstAttribute="centerX" secondItem="KDY-cN-KWM" secondAttribute="centerX" id="uPL-yw-pRg"/>
                                     <constraint firstItem="LZS-Cv-6BS" firstAttribute="height" secondItem="04J-Vy-GGb" secondAttribute="height" id="uaa-C3-xjg"/>
                                     <constraint firstItem="lIj-0m-Azt" firstAttribute="height" secondItem="x1B-6z-Bjg" secondAttribute="height" id="vD4-tI-b9j"/>
-                                    <constraint firstItem="weD-5x-YWB" firstAttribute="height" secondItem="miW-eB-zIn" secondAttribute="height" id="wN5-bL-zSj"/>
+                                    <constraint firstItem="weD-5x-YWB" firstAttribute="height" secondItem="miW-eB-zIn" secondAttribute="height" multiplier="0.5" constant="1" id="wN5-bL-zSj"/>
                                     <constraint firstItem="mz4-P2-0Ll" firstAttribute="height" secondItem="KDY-cN-KWM" secondAttribute="height" multiplier="0.1" constant="1" id="x3T-V1-r8k"/>
                                     <constraint firstItem="04J-Vy-GGb" firstAttribute="top" secondItem="mz4-P2-0Ll" secondAttribute="bottom" id="x6D-dW-cof"/>
                                     <constraint firstItem="lIj-0m-Azt" firstAttribute="top" secondItem="miW-eB-zIn" secondAttribute="bottom" id="xAQ-mf-2Ai"/>

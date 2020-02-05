@@ -16,6 +16,9 @@
         <array key="GothamSSm-Book.ttf">
             <string>GothamSSm-Book</string>
         </array>
+        <array key="GothamSSm-Medium.otf">
+            <string>GothamSSm-Medium</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Navigation Controller-->
@@ -51,7 +54,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWm-jl-MXY">
                                         <rect key="frame" x="0.0" y="0.0" width="820" height="615"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" placeholder="Enter Student Name" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BvZ-r4-ZJc">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Student Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tV5-IY-hZo">
+                                                <rect key="frame" x="81.5" y="215" width="657" height="51"/>
+                                                <fontDescription key="fontDescription" name="GothamSSm-Medium" family="Gotham SSm" pointSize="25"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <searchBar contentMode="redraw" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BvZ-r4-ZJc">
                                                 <rect key="frame" x="81.5" y="276" width="657" height="63"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -79,7 +88,7 @@
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PSD-9r-GhX">
                                                                     <rect key="frame" x="2" y="9.5" width="46" height="31"/>
-                                                                    <fontDescription key="fontDescription" name="GothamSSm-Book" family="Gotham SSm" pointSize="18"/>
+                                                                    <fontDescription key="fontDescription" name="GothamSSm-Book" family="Gotham SSm" pointSize="20"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -109,7 +118,7 @@
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to see more names." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="90S-Ey-oST">
                                                         <rect key="frame" x="0.0" y="32" width="657" height="32.5"/>
-                                                        <fontDescription key="fontDescription" name="GothamSSm-Book" family="Gotham SSm" pointSize="19"/>
+                                                        <fontDescription key="fontDescription" name="GothamSSm-Book" family="Gotham SSm" pointSize="18"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -133,12 +142,16 @@
                                             <constraint firstItem="hj9-cy-cRz" firstAttribute="height" secondItem="bWm-jl-MXY" secondAttribute="height" multiplier="0.1" constant="1" id="37f-Ql-hRS"/>
                                             <constraint firstItem="BvZ-r4-ZJc" firstAttribute="height" secondItem="bWm-jl-MXY" secondAttribute="height" multiplier="0.1" constant="1" id="4Xt-gT-30S"/>
                                             <constraint firstItem="Fnv-lN-Apm" firstAttribute="width" secondItem="bWm-jl-MXY" secondAttribute="width" multiplier="0.8" constant="1" id="9Ap-ON-1H3"/>
+                                            <constraint firstItem="BvZ-r4-ZJc" firstAttribute="top" secondItem="tV5-IY-hZo" secondAttribute="bottom" constant="10" id="9gg-Yp-8vD"/>
                                             <constraint firstItem="Fnv-lN-Apm" firstAttribute="top" secondItem="BvZ-r4-ZJc" secondAttribute="bottom" id="Al5-fr-Npd"/>
+                                            <constraint firstItem="tV5-IY-hZo" firstAttribute="height" secondItem="BvZ-r4-ZJc" secondAttribute="height" multiplier="0.8" constant="1" id="Hpo-gY-7yE"/>
                                             <constraint firstItem="hj9-cy-cRz" firstAttribute="centerX" secondItem="bWm-jl-MXY" secondAttribute="centerX" id="MwY-cl-a8h"/>
                                             <constraint firstItem="BvZ-r4-ZJc" firstAttribute="centerY" secondItem="bWm-jl-MXY" secondAttribute="centerY" id="c7B-Cf-Jv8"/>
+                                            <constraint firstItem="tV5-IY-hZo" firstAttribute="width" secondItem="BvZ-r4-ZJc" secondAttribute="width" id="dHu-LP-KsQ"/>
                                             <constraint firstItem="hj9-cy-cRz" firstAttribute="width" secondItem="bWm-jl-MXY" secondAttribute="width" multiplier="0.8" constant="1" id="hgl-8a-dKB"/>
                                             <constraint firstItem="Fnv-lN-Apm" firstAttribute="height" secondItem="bWm-jl-MXY" secondAttribute="height" multiplier="0.4" constant="1" id="jOT-Iz-buK"/>
                                             <constraint firstItem="Fnv-lN-Apm" firstAttribute="centerX" secondItem="bWm-jl-MXY" secondAttribute="centerX" id="qgY-Do-BbK"/>
+                                            <constraint firstItem="tV5-IY-hZo" firstAttribute="centerX" secondItem="bWm-jl-MXY" secondAttribute="centerX" id="r88-W6-5Yo"/>
                                             <constraint firstItem="BvZ-r4-ZJc" firstAttribute="centerX" secondItem="bWm-jl-MXY" secondAttribute="centerX" id="sNe-18-K4X"/>
                                             <constraint firstItem="Fnv-lN-Apm" firstAttribute="bottom" secondItem="hj9-cy-cRz" secondAttribute="top" constant="5" id="sa4-Tr-JWv"/>
                                         </constraints>
@@ -161,21 +174,21 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WQZ-4a-qnM">
-                                                <rect key="frame" x="122.5" y="248" width="575" height="185.5"/>
-                                                <fontDescription key="fontDescription" name="GothamSSm-Black" family="Gotham SSm" pointSize="30"/>
+                                                <rect key="frame" x="122.5" y="248" width="575" height="155"/>
+                                                <fontDescription key="fontDescription" name="GothamSSm-Black" family="Gotham SSm" pointSize="40"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPs-nn-w1W">
-                                                <rect key="frame" x="0.0" y="433.5" width="820" height="62.5"/>
+                                                <rect key="frame" x="0.0" y="403" width="820" height="62.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIX-xC-Gib">
-                                                <rect key="frame" x="204.5" y="496" width="411" height="62.5"/>
+                                                <rect key="frame" x="286.5" y="465.5" width="247" height="62.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check-in" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LCe-0t-qX6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="411" height="62.5"/>
-                                                        <fontDescription key="fontDescription" name="GothamSSm-Book" family="Gotham SSm" pointSize="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="247" height="62.5"/>
+                                                        <fontDescription key="fontDescription" name="GothamSSm-Medium" family="Gotham SSm" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -191,7 +204,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="QIX-xC-Gib" firstAttribute="width" secondItem="ZY5-ox-gUr" secondAttribute="width" multiplier="0.5" constant="1" id="0Sa-oE-tAj"/>
+                                            <constraint firstItem="QIX-xC-Gib" firstAttribute="width" secondItem="ZY5-ox-gUr" secondAttribute="width" multiplier="0.3" constant="1" id="0Sa-oE-tAj"/>
                                             <constraint firstItem="EnZ-3a-T0F" firstAttribute="centerX" secondItem="ZY5-ox-gUr" secondAttribute="centerX" id="53E-84-fEy"/>
                                             <constraint firstItem="QIX-xC-Gib" firstAttribute="top" secondItem="sPs-nn-w1W" secondAttribute="bottom" id="6B1-gk-MRZ"/>
                                             <constraint firstItem="sPs-nn-w1W" firstAttribute="height" secondItem="Ui2-mm-z69" secondAttribute="height" id="6EH-Xm-9xG"/>
@@ -200,11 +213,11 @@
                                             <constraint firstItem="WQZ-4a-qnM" firstAttribute="top" secondItem="Ui2-mm-z69" secondAttribute="bottom" id="JNp-aK-GRY"/>
                                             <constraint firstItem="EnZ-3a-T0F" firstAttribute="width" secondItem="ZY5-ox-gUr" secondAttribute="width" multiplier="0.5" constant="1" id="MkT-9G-Roc"/>
                                             <constraint firstItem="OcP-mo-ZtB" firstAttribute="height" secondItem="ZY5-ox-gUr" secondAttribute="height" multiplier="0.2" constant="1" id="NJZ-nC-5Ul"/>
-                                            <constraint firstItem="sPs-nn-w1W" firstAttribute="top" secondItem="WQZ-4a-qnM" secondAttribute="bottom" id="NSI-dz-WUM"/>
                                             <constraint firstItem="OcP-mo-ZtB" firstAttribute="centerX" secondItem="ZY5-ox-gUr" secondAttribute="centerX" id="Oe8-4r-WWr"/>
-                                            <constraint firstItem="WQZ-4a-qnM" firstAttribute="height" secondItem="ZY5-ox-gUr" secondAttribute="height" multiplier="0.3" constant="1" id="QUL-Ho-cEV"/>
+                                            <constraint firstItem="WQZ-4a-qnM" firstAttribute="height" secondItem="ZY5-ox-gUr" secondAttribute="height" multiplier="0.25" constant="1" id="QUL-Ho-cEV"/>
                                             <constraint firstItem="QIX-xC-Gib" firstAttribute="height" secondItem="ZY5-ox-gUr" secondAttribute="height" multiplier="0.1" constant="1" id="T2N-LI-YOF"/>
                                             <constraint firstItem="Ui2-mm-z69" firstAttribute="height" secondItem="ZY5-ox-gUr" secondAttribute="height" multiplier="0.1" constant="1" id="bE9-zU-jNs"/>
+                                            <constraint firstItem="sPs-nn-w1W" firstAttribute="top" secondItem="WQZ-4a-qnM" secondAttribute="bottom" id="cSA-BF-k5f"/>
                                             <constraint firstItem="sPs-nn-w1W" firstAttribute="centerX" secondItem="ZY5-ox-gUr" secondAttribute="centerX" id="eRG-J7-sjj"/>
                                             <constraint firstItem="OcP-mo-ZtB" firstAttribute="bottom" secondItem="Ui2-mm-z69" secondAttribute="top" constant="1" id="flO-sO-PDC"/>
                                             <constraint firstItem="EnZ-3a-T0F" firstAttribute="height" secondItem="ZY5-ox-gUr" secondAttribute="height" multiplier="0.1" constant="1" id="fuZ-eD-ISp"/>

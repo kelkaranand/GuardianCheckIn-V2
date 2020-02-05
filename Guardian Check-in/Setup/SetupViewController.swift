@@ -143,7 +143,7 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
         if let v = view {
             label = v as! UILabel
         }
-        label.font = UIFont (name: "Chalkboard SE", size: 20)
+        label.font = UIFont (name: "GothamSSm-Book", size: 20)
         label.text =  SetupViewController.locations[row].name
         label.textColor = UIColor.white
         label.textAlignment = .center
