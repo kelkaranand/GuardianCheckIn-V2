@@ -15,6 +15,11 @@ class OptionSelectionViewController : UIViewController {
     @IBOutlet weak var heyLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var scrollImage: UIImageView!
+    @IBOutlet weak var scrollText: UILabel!
+    @IBOutlet weak var checkInButton: UIButton!
+    @IBAction func buttonPressed(_ sender: Any) {
+    }
     var options = [String]()
     static var fname:String = ""
     static var comingFromConfirmation = false
@@ -25,13 +30,9 @@ class OptionSelectionViewController : UIViewController {
     
     override func viewDidLayoutSubviews() {
         super .viewDidLayoutSubviews()
-        mainCardView.layer.cornerRadius = 10
-        mainCardView.layer.shouldRasterize = false
-        mainCardView.layer.borderWidth = 1
-        
-        mainCardView.layer.shadowRadius = 10
-        mainCardView.layer.shadowColor = UIColor.black.cgColor
-        mainCardView.layer.shadowOpacity = 1
+        checkInButton.layer.cornerRadius = 10
+        checkInButton.layer.shouldRasterize = false
+        checkInButton.layer.borderWidth = 1
     }
     
     override func viewDidLoad() {
@@ -43,6 +44,8 @@ class OptionSelectionViewController : UIViewController {
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(goBack))
         rightSwipe.direction = .right
         self.view.addGestureRecognizer(rightSwipe)
+        
+        scrollImage.image = UIImage.gifImageWithName("whitedown")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +63,14 @@ class OptionSelectionViewController : UIViewController {
         }
         for temp in CoreDataHelper.locationOptions.split(separator: ",") {
             options.append(String(temp))
+        }
+        if options.count > 4 {
+            scrollImage.isHidden = false
+            scrollText.isHidden = false
+        }
+        else {
+            scrollImage.isHidden = true
+            scrollText.isHidden = true
         }
     }
     
