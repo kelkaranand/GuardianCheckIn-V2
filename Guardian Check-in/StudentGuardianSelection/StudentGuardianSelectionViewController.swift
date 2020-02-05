@@ -81,6 +81,7 @@ class StudentGuardianSelectionViewController: UIViewController {
             scrollDownImage.isHidden = true
             scrollDownText.isHidden = true
             noGuardiansView.isHidden = false
+            addButtonView.pulsate()
         }
         else {
             scrollDownImage.isHidden = true

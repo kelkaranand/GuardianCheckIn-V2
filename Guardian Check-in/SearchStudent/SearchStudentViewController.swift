@@ -61,11 +61,12 @@ class SearchStudentViewController: UIViewController {
         scrollDownImage.isHidden = true
         scrollDownText.isHidden = true
         scrollDownImage.image = UIImage.gifImageWithName("whitedown")
+        checkInButtonView.pulsate()
         if CoreDataHelper.locationName == "" {
             self.performSegue(withIdentifier: "showSetup", sender: self)
         }
         else {
-            checkInLabel.text = "Welcome to the " + CoreDataHelper.locationName + ".\nPress the button below to check-in."
+            checkInLabel.text = "WELCOME TO THE \n" + CoreDataHelper.locationName.capitalized
             self.mainCard.alpha = 0
             self.checkInCard.alpha = 1
             self.view.alpha = 1
@@ -87,9 +88,9 @@ class SearchStudentViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(RegistrationCheckViewController.keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
         
         //Tap on screen to dismiss keyboard
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
-        tap.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(tap)
+//        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+//        tap.cancelsTouchesInView = false
+//        self.view.addGestureRecognizer(tap)
         
         //Setup starting position for card
         mainCard.center.y = mainCard.center.y + self.view.bounds.height
@@ -107,6 +108,18 @@ class SearchStudentViewController: UIViewController {
         longPress.minimumPressDuration = 5
         logoImage.addGestureRecognizer(longPress)
     
+    }
+    
+    func pulsate(view:UIView) {
+        let pulse = CASpringAnimation(keyPath: "transform.scale")
+        pulse.duration = 0.4
+        pulse.fromValue = 0.98
+        pulse.toValue = 1.0
+        pulse.autoreverses = true
+        pulse.repeatCount = .infinity
+        pulse.initialVelocity = 0.5
+        pulse.damping = 1.0
+        view.layer.add(pulse, forKey: nil)
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -299,6 +312,7 @@ extension SearchStudentViewController: UICollectionViewDelegate {
         selectedStudent = filteredStudentrecords[indexPath.row]
         OptionSelectionViewController.studentAPSId = selectedStudent.id
         UIView.animate(withDuration: 0.5, animations: {
+            self.view.endEditing(false)
             self.superView.center.x = self.superView.center.x - self.view.bounds.width
         }, completion: { finished in
             if CoreDataHelper.locationGuardianFlag {
@@ -310,6 +324,28 @@ extension SearchStudentViewController: UICollectionViewDelegate {
                 self.performSegue(withIdentifier: "showStudentConfirmation", sender: self)
             }
         })
+    }
+}
+
+extension UIView {
+    func pulsate() {
+        let pulse = CASpringAnimation(keyPath: "transform.scale")
+        pulse.duration = 0.4
+        pulse.fromValue = 0.98
+        pulse.toValue = 1.0
+        pulse.autoreverses = true
+        pulse.repeatCount = .infinity
+        pulse.initialVelocity = 0.5
+        pulse.damping = 1.0
+        self.layer.add(pulse, forKey: nil)
+    }
+    
+    func shake(duration: TimeInterval = 0.5, xValue: CGFloat = 12, yValue: CGFloat = 0) {
+        self.transform = CGAffineTransform(translationX: xValue, y: yValue)
+        UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
+            self.transform = CGAffineTransform.identity
+        }, completion: nil)
+        
     }
 }
 

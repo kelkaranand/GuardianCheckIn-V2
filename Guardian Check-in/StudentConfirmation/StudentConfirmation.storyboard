@@ -9,11 +9,22 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GothamSSm-Black.otf">
+            <string>GothamSSm-Black</string>
+        </array>
+        <array key="GothamSSm-Book.ttf">
+            <string>GothamSSm-Book</string>
+        </array>
+        <array key="GothamSSm-Medium.otf">
+            <string>GothamSSm-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Student Confirmation View Controller-->
         <scene sceneID="b76-9J-Ffd">
             <objects>
-                <viewController id="rNK-Ot-P5I" customClass="StudentConfirmationViewController" customModule="Guardian_Check_in" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rNK-Ot-P5I" customClass="StudentConfirmationViewController" customModule="Guardian_Check_inV2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QbZ-pO-fZH">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,27 +36,28 @@
                                 <rect key="frame" x="102" y="76.5" width="820" height="615"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wyw-yp-1tg">
-                                        <rect key="frame" x="-0.5" y="0.0" width="821" height="93"/>
+                                        <rect key="frame" x="-0.5" y="81.5" width="821" height="93"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
+                                        <fontDescription key="fontDescription" name="GothamSSm-Black" family="Gotham SSm" pointSize="40"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you are a staff member helping check the student in, please enter your name below. Otherwise, leave the textbox empty." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NFR-0h-f24">
-                                        <rect key="frame" x="122.5" y="123" width="575" height="185.5"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="23"/>
+                                        <rect key="frame" x="122.5" y="204.5" width="575" height="186"/>
+                                        <fontDescription key="fontDescription" name="GothamSSm-Medium" family="Gotham SSm" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Staff Member Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kFq-rR-fKD">
-                                        <rect key="frame" x="122.5" y="318.5" width="575" height="32"/>
+                                        <rect key="frame" x="122.5" y="400.5" width="575" height="31.5"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" name="GothamSSm-Book" family="Gotham SSm" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert" textContentType="name"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvY-Wl-JLw">
-                                        <rect key="frame" x="237" y="390.5" width="346" height="32"/>
+                                        <rect key="frame" x="237" y="472" width="346" height="62.5"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="GothamSSm-Medium" family="Gotham SSm" pointSize="17"/>
                                         <state key="normal" title="Done">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -57,11 +69,12 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="pvY-Wl-JLw" firstAttribute="width" secondItem="kFq-rR-fKD" secondAttribute="width" multiplier="0.6" constant="1" id="5c8-Th-QbK"/>
-                                    <constraint firstItem="pvY-Wl-JLw" firstAttribute="height" secondItem="kFq-rR-fKD" secondAttribute="height" id="7V9-2d-Ybr"/>
+                                    <constraint firstItem="NFR-0h-f24" firstAttribute="top" secondItem="wyw-yp-1tg" secondAttribute="bottom" constant="30" id="631-AA-ply"/>
                                     <constraint firstItem="wyw-yp-1tg" firstAttribute="height" secondItem="lDS-xY-EYc" secondAttribute="height" multiplier="0.15" constant="1" id="AeQ-P5-KQt"/>
                                     <constraint firstItem="pvY-Wl-JLw" firstAttribute="top" secondItem="kFq-rR-fKD" secondAttribute="bottom" constant="40" id="CMJ-YZ-S4d"/>
                                     <constraint firstItem="pvY-Wl-JLw" firstAttribute="centerX" secondItem="lDS-xY-EYc" secondAttribute="centerX" id="DCW-b1-8U3"/>
-                                    <constraint firstItem="wyw-yp-1tg" firstAttribute="top" secondItem="lDS-xY-EYc" secondAttribute="top" id="PPZ-1L-N4J"/>
+                                    <constraint firstItem="NFR-0h-f24" firstAttribute="centerY" secondItem="lDS-xY-EYc" secondAttribute="centerY" constant="-10" id="Pdb-E9-D4e"/>
+                                    <constraint firstItem="pvY-Wl-JLw" firstAttribute="height" secondItem="lDS-xY-EYc" secondAttribute="height" multiplier="0.1" constant="1" id="Vat-pv-b5a"/>
                                     <constraint firstItem="kFq-rR-fKD" firstAttribute="top" secondItem="NFR-0h-f24" secondAttribute="bottom" constant="10" id="XHa-5m-zoC"/>
                                     <constraint firstItem="kFq-rR-fKD" firstAttribute="centerX" secondItem="lDS-xY-EYc" secondAttribute="centerX" id="al6-ez-6og"/>
                                     <constraint firstItem="NFR-0h-f24" firstAttribute="width" secondItem="lDS-xY-EYc" secondAttribute="width" multiplier="0.7" constant="1" id="d9y-id-BO0"/>
@@ -69,7 +82,6 @@
                                     <constraint firstItem="wyw-yp-1tg" firstAttribute="width" secondItem="lDS-xY-EYc" secondAttribute="width" constant="1" id="gHF-ZR-Mga"/>
                                     <constraint firstItem="kFq-rR-fKD" firstAttribute="height" secondItem="lDS-xY-EYc" secondAttribute="height" multiplier="0.05" constant="1" id="jHi-Qq-zQe"/>
                                     <constraint firstItem="NFR-0h-f24" firstAttribute="height" secondItem="lDS-xY-EYc" secondAttribute="height" multiplier="0.3" constant="1" id="m8F-ih-FCg"/>
-                                    <constraint firstItem="NFR-0h-f24" firstAttribute="top" secondItem="wyw-yp-1tg" secondAttribute="bottom" constant="30" id="uP2-fv-mxx"/>
                                     <constraint firstItem="wyw-yp-1tg" firstAttribute="centerX" secondItem="lDS-xY-EYc" secondAttribute="centerX" id="uke-cv-foQ"/>
                                     <constraint firstItem="NFR-0h-f24" firstAttribute="centerX" secondItem="lDS-xY-EYc" secondAttribute="centerX" id="yn2-0d-xjG"/>
                                 </constraints>
@@ -91,6 +103,7 @@
                     <connections>
                         <outlet property="cardView" destination="lDS-xY-EYc" id="DaZ-zB-CNF"/>
                         <outlet property="doneButton" destination="pvY-Wl-JLw" id="7m0-GB-QS8"/>
+                        <outlet property="messageLabel" destination="NFR-0h-f24" id="nbC-dC-YGo"/>
                         <outlet property="staffMemberTextBox" destination="kFq-rR-fKD" id="lhF-wk-FgG"/>
                         <outlet property="studentLabel" destination="wyw-yp-1tg" id="aFw-Tj-D5L"/>
                         <segue destination="JHS-aC-KUy" kind="show" identifier="showOptions" animates="NO" id="5hz-LL-YSM"/>

@@ -9,6 +9,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GothamSSm-Black.otf">
+            <string>GothamSSm-Black</string>
+        </array>
+        <array key="GothamSSm-Book.ttf">
+            <string>GothamSSm-Book</string>
+        </array>
+        <array key="GothamSSm-Medium.otf">
+            <string>GothamSSm-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Option Selection View Controller-->
         <scene sceneID="PbH-et-FB0">
@@ -24,32 +35,28 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7K-2T-nIH">
                                 <rect key="frame" x="102" y="76.5" width="820" height="615"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Isr-3J-a6S">
-                                        <rect key="frame" x="204.5" y="0.0" width="411" height="31.5"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey Label!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mHE-OA-gI4">
-                                        <rect key="frame" x="163.5" y="31.5" width="493" height="62.5"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
+                                        <rect key="frame" x="163.5" y="0.0" width="493" height="62.5"/>
+                                        <fontDescription key="fontDescription" name="GothamSSm-Black" family="Gotham SSm" pointSize="40"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qg2-Pl-2cg">
-                                        <rect key="frame" x="204.5" y="94" width="411" height="32"/>
+                                        <rect key="frame" x="204.5" y="62.5" width="411" height="31.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zES-9w-XeX">
-                                        <rect key="frame" x="81.5" y="126" width="657" height="93"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
+                                        <rect key="frame" x="81.5" y="94" width="657" height="93.5"/>
+                                        <fontDescription key="fontDescription" name="GothamSSm-Medium" family="Gotham SSm" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVA-O1-tMb">
-                                        <rect key="frame" x="204.5" y="219" width="411" height="32"/>
+                                        <rect key="frame" x="204.5" y="187.5" width="411" height="31.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-Gr-kni">
-                                        <rect key="frame" x="40.5" y="251" width="739" height="247"/>
+                                        <rect key="frame" x="40.5" y="219" width="739" height="247.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gHC-3M-BJh">
                                             <size key="itemSize" width="50" height="50"/>
@@ -67,7 +74,7 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mfs-CM-ScL">
                                                             <rect key="frame" x="2" y="2" width="46" height="46"/>
-                                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                            <fontDescription key="fontDescription" name="GothamSSm-Black" family="Gotham SSm" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -89,33 +96,81 @@
                                             <outlet property="delegate" destination="4co-Kc-83V" id="J1i-1o-XmD"/>
                                         </connections>
                                     </collectionView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jte-73-Uu6">
+                                        <rect key="frame" x="0.0" y="466.5" width="820" height="31.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitedown.gif" translatesAutoresizingMaskIntoConstraints="NO" id="A22-Pt-VRr">
+                                                <rect key="frame" x="327.5" y="0.0" width="165" height="31.5"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="A22-Pt-VRr" firstAttribute="height" secondItem="Jte-73-Uu6" secondAttribute="height" multiplier="0.95" constant="1" id="7KI-ts-wj4"/>
+                                            <constraint firstItem="A22-Pt-VRr" firstAttribute="centerX" secondItem="Jte-73-Uu6" secondAttribute="centerX" id="HSX-iY-fYo"/>
+                                            <constraint firstItem="A22-Pt-VRr" firstAttribute="width" secondItem="Jte-73-Uu6" secondAttribute="width" multiplier="0.2" constant="1" id="aiy-O4-aNX"/>
+                                            <constraint firstItem="A22-Pt-VRr" firstAttribute="centerY" secondItem="Jte-73-Uu6" secondAttribute="centerY" id="nCf-93-gbN"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to see more registered family members." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OLR-Fg-8lB">
+                                        <rect key="frame" x="81.5" y="498" width="657" height="32"/>
+                                        <fontDescription key="fontDescription" name="GothamSSm-Book" family="Gotham SSm" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zGG-ck-JFY">
+                                        <rect key="frame" x="0.0" y="530" width="820" height="31.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRv-bD-kQN">
+                                        <rect key="frame" x="286.5" y="561.5" width="247" height="62.5"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="GothamSSm-Medium" family="Gotham SSm" pointSize="17"/>
+                                        <state key="normal" title="Check-In">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="4co-Kc-83V" eventType="touchUpInside" id="HCp-9B-ljP"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="mHE-OA-gI4" firstAttribute="centerX" secondItem="H7K-2T-nIH" secondAttribute="centerX" id="0WJ-1e-bCq"/>
+                                    <constraint firstItem="BQo-Gr-kni" firstAttribute="bottom" secondItem="Jte-73-Uu6" secondAttribute="top" id="13x-vf-DKW"/>
                                     <constraint firstItem="zES-9w-XeX" firstAttribute="width" secondItem="H7K-2T-nIH" secondAttribute="width" multiplier="0.8" constant="1" id="1Gl-Xt-jPM"/>
                                     <constraint firstItem="BQo-Gr-kni" firstAttribute="width" secondItem="H7K-2T-nIH" secondAttribute="width" multiplier="0.9" constant="1" id="2ti-hO-xeT"/>
+                                    <constraint firstItem="Jte-73-Uu6" firstAttribute="bottom" secondItem="OLR-Fg-8lB" secondAttribute="top" id="3wI-7m-kqG"/>
                                     <constraint firstItem="zVA-O1-tMb" firstAttribute="top" secondItem="zES-9w-XeX" secondAttribute="bottom" id="4cb-8w-ZJo"/>
+                                    <constraint firstItem="OLR-Fg-8lB" firstAttribute="width" secondItem="H7K-2T-nIH" secondAttribute="width" multiplier="0.8" constant="1" id="58D-7u-bbG"/>
                                     <constraint firstItem="zES-9w-XeX" firstAttribute="top" secondItem="Qg2-Pl-2cg" secondAttribute="bottom" id="7NN-Oa-HJR"/>
+                                    <constraint firstItem="QRv-bD-kQN" firstAttribute="height" secondItem="H7K-2T-nIH" secondAttribute="height" multiplier="0.1" constant="1" id="ARr-O2-IbK"/>
+                                    <constraint firstItem="zGG-ck-JFY" firstAttribute="centerX" secondItem="H7K-2T-nIH" secondAttribute="centerX" id="DYp-QX-lqm"/>
                                     <constraint firstItem="zES-9w-XeX" firstAttribute="height" secondItem="H7K-2T-nIH" secondAttribute="height" multiplier="0.15" constant="1" id="GWy-Lr-s3I"/>
-                                    <constraint firstItem="Isr-3J-a6S" firstAttribute="top" secondItem="H7K-2T-nIH" secondAttribute="top" id="H2n-7f-fKD"/>
                                     <constraint firstItem="zVA-O1-tMb" firstAttribute="width" secondItem="H7K-2T-nIH" secondAttribute="width" multiplier="0.5" constant="1" id="IhD-4m-91x"/>
+                                    <constraint firstItem="QRv-bD-kQN" firstAttribute="width" secondItem="H7K-2T-nIH" secondAttribute="width" multiplier="0.3" constant="1" id="M2u-nk-5we"/>
+                                    <constraint firstItem="Jte-73-Uu6" firstAttribute="centerX" secondItem="H7K-2T-nIH" secondAttribute="centerX" id="Ovo-Pb-Z2W"/>
                                     <constraint firstItem="Qg2-Pl-2cg" firstAttribute="centerX" secondItem="H7K-2T-nIH" secondAttribute="centerX" id="Ryb-fv-mNJ"/>
                                     <constraint firstItem="BQo-Gr-kni" firstAttribute="top" secondItem="zVA-O1-tMb" secondAttribute="bottom" id="SBy-C4-GKx"/>
-                                    <constraint firstItem="Isr-3J-a6S" firstAttribute="height" secondItem="H7K-2T-nIH" secondAttribute="height" multiplier="0.05" constant="1" id="VF7-ht-wCV"/>
-                                    <constraint firstItem="mHE-OA-gI4" firstAttribute="top" secondItem="Isr-3J-a6S" secondAttribute="bottom" id="Xfx-M2-L1M"/>
+                                    <constraint firstItem="zGG-ck-JFY" firstAttribute="bottom" secondItem="QRv-bD-kQN" secondAttribute="top" id="SiC-ac-xyS"/>
+                                    <constraint firstItem="OLR-Fg-8lB" firstAttribute="height" secondItem="H7K-2T-nIH" secondAttribute="height" multiplier="0.05" constant="1" id="XV5-7t-hW8"/>
                                     <constraint firstItem="mHE-OA-gI4" firstAttribute="height" secondItem="H7K-2T-nIH" secondAttribute="height" multiplier="0.1" constant="1" id="crZ-dQ-FRM"/>
+                                    <constraint firstItem="zGG-ck-JFY" firstAttribute="height" secondItem="Jte-73-Uu6" secondAttribute="height" id="frU-hH-h5n"/>
+                                    <constraint firstItem="OLR-Fg-8lB" firstAttribute="bottom" secondItem="zGG-ck-JFY" secondAttribute="top" id="hW6-5x-IQw"/>
                                     <constraint firstItem="zES-9w-XeX" firstAttribute="centerX" secondItem="H7K-2T-nIH" secondAttribute="centerX" id="hnk-Kb-b1x"/>
+                                    <constraint firstItem="mHE-OA-gI4" firstAttribute="top" secondItem="H7K-2T-nIH" secondAttribute="top" id="iL6-sP-5MY"/>
                                     <constraint firstItem="Qg2-Pl-2cg" firstAttribute="width" secondItem="H7K-2T-nIH" secondAttribute="width" multiplier="0.5" constant="1" id="k6L-7B-1Wy"/>
                                     <constraint firstItem="BQo-Gr-kni" firstAttribute="centerX" secondItem="H7K-2T-nIH" secondAttribute="centerX" id="kO3-We-TMy"/>
                                     <constraint firstItem="Qg2-Pl-2cg" firstAttribute="height" secondItem="H7K-2T-nIH" secondAttribute="height" multiplier="0.05" constant="1" id="p1F-aS-zud"/>
                                     <constraint firstItem="mHE-OA-gI4" firstAttribute="width" secondItem="H7K-2T-nIH" secondAttribute="width" multiplier="0.6" constant="1" id="p42-tk-rVU"/>
+                                    <constraint firstItem="QRv-bD-kQN" firstAttribute="centerX" secondItem="H7K-2T-nIH" secondAttribute="centerX" id="pTn-2W-Tqb"/>
+                                    <constraint firstItem="Jte-73-Uu6" firstAttribute="height" secondItem="H7K-2T-nIH" secondAttribute="height" multiplier="0.05" constant="1" id="pgl-Jz-6mU"/>
+                                    <constraint firstItem="Jte-73-Uu6" firstAttribute="width" secondItem="H7K-2T-nIH" secondAttribute="width" id="rZW-0o-5IL"/>
                                     <constraint firstItem="zVA-O1-tMb" firstAttribute="centerX" secondItem="H7K-2T-nIH" secondAttribute="centerX" id="tHV-aj-0Vh"/>
+                                    <constraint firstItem="zGG-ck-JFY" firstAttribute="width" secondItem="Jte-73-Uu6" secondAttribute="width" id="tiq-Tj-gOF"/>
                                     <constraint firstItem="Qg2-Pl-2cg" firstAttribute="top" secondItem="mHE-OA-gI4" secondAttribute="bottom" id="uu0-0Q-QI3"/>
-                                    <constraint firstItem="Isr-3J-a6S" firstAttribute="centerX" secondItem="H7K-2T-nIH" secondAttribute="centerX" id="uwG-a8-TvR"/>
-                                    <constraint firstItem="Isr-3J-a6S" firstAttribute="width" secondItem="H7K-2T-nIH" secondAttribute="width" multiplier="0.5" constant="1" id="wFb-cV-Agi"/>
                                     <constraint firstItem="zVA-O1-tMb" firstAttribute="height" secondItem="H7K-2T-nIH" secondAttribute="height" multiplier="0.05" constant="1" id="wYD-2T-bq9"/>
                                     <constraint firstItem="BQo-Gr-kni" firstAttribute="height" secondItem="H7K-2T-nIH" secondAttribute="height" multiplier="0.4" constant="1" id="wp7-md-Wx7"/>
+                                    <constraint firstItem="OLR-Fg-8lB" firstAttribute="centerX" secondItem="H7K-2T-nIH" secondAttribute="centerX" id="ype-Bp-bmD"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -133,10 +188,13 @@
                         <viewLayoutGuide key="safeArea" id="t2X-li-DyK"/>
                     </view>
                     <connections>
+                        <outlet property="checkInButton" destination="QRv-bD-kQN" id="c5Y-gf-2gh"/>
                         <outlet property="collectionView" destination="BQo-Gr-kni" id="HAn-R0-T8M"/>
                         <outlet property="heyLabel" destination="mHE-OA-gI4" id="5gC-vb-WmZ"/>
                         <outlet property="locationLabel" destination="zES-9w-XeX" id="DKg-W0-3Lv"/>
                         <outlet property="mainCardView" destination="H7K-2T-nIH" id="ffv-b7-dmt"/>
+                        <outlet property="scrollImage" destination="A22-Pt-VRr" id="QvS-zo-vcA"/>
+                        <outlet property="scrollText" destination="OLR-Fg-8lB" id="Q2T-ey-2hg"/>
                         <segue destination="FmR-r1-0ic" kind="show" identifier="showEnding" animates="NO" id="EPS-qo-j50"/>
                     </connections>
                 </viewController>
@@ -155,5 +213,6 @@
     </scenes>
     <resources>
         <image name="LJFF_Patterns-2" width="1898" height="2335"/>
+        <image name="whitedown.gif" width="204" height="170"/>
     </resources>
 </document>
