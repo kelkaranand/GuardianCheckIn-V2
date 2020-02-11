@@ -34,13 +34,6 @@ class OptionSelectionViewController : UIViewController {
     
     override func viewDidLayoutSubviews() {
         super .viewDidLayoutSubviews()
-        mainCardView.layer.cornerRadius = 10
-        mainCardView.layer.shouldRasterize = false
-        mainCardView.layer.borderWidth = 1
-        
-        mainCardView.layer.shadowRadius = 10
-        mainCardView.layer.shadowColor = UIColor.black.cgColor
-        mainCardView.layer.shadowOpacity = 1
         
         checkInButton.layer.cornerRadius = 10
         checkInButton.layer.shouldRasterize = false
