@@ -26,7 +26,6 @@ class AddGuardianViewController: UIViewController, UIPickerViewDelegate, UIPicke
         super .viewDidLayoutSubviews()
         mainCardView.layer.cornerRadius = 10
         mainCardView.layer.shouldRasterize = false
-        mainCardView.layer.borderWidth = 1
         
         mainCardView.layer.shadowRadius = 10
         mainCardView.layer.shadowColor = UIColor.black.cgColor
@@ -67,6 +66,7 @@ class AddGuardianViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
+        addButtonView.pulsate()
         studentLabel.text = student.fname + " " + student.lname
         if (AddGuardianViewController.back) {
             UIView.animate(withDuration: 0.5) {
@@ -98,7 +98,7 @@ class AddGuardianViewController: UIViewController, UIPickerViewDelegate, UIPicke
         if let v = view {
             label = v as! UILabel
         }
-        label.font = UIFont (name: "Chalkboard SE", size: 20)
+        label.font = UIFont (name: "GothamSSm-Book", size: 20)
         label.text =  relationList[row]
         label.textAlignment = .center
         label.textColor = UIColor.white
@@ -132,7 +132,15 @@ class AddGuardianViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     @objc func addGuardian() {
         if((self.fnameTextbox.text?.isEmpty)! || (self.lnameTextbox.text?.isEmpty)! || (self.phoneTextbox.text?.isEmpty)!) {
-            print("Validation error")
+            if (fnameTextbox.text?.isEmpty)! {
+                fnameTextbox.shake()
+            }
+            if (lnameTextbox.text?.isEmpty)! {
+                lnameTextbox.shake()
+            }
+            if (phoneTextbox.text?.isEmpty)! {
+                phoneTextbox.shake()
+            }
         }
         else {
             UIView.animate(withDuration: 0.5, animations: {

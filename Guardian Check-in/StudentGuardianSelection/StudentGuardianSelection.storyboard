@@ -16,6 +16,12 @@
         <array key="GothamSSm-Book.ttf">
             <string>GothamSSm-Book</string>
         </array>
+        <array key="GothamSSm-Medium.otf">
+            <string>GothamSSm-Medium</string>
+        </array>
+        <array key="GothamSSm-MediumItalic.otf">
+            <string>GothamSSm-MediumItalic</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Student Guardian Selection View Controller-->
@@ -103,7 +109,7 @@
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ehf-cu-gcu">
                                                             <rect key="frame" x="2" y="6" width="46" height="16"/>
-                                                            <fontDescription key="fontDescription" name="GothamSSm-Black" family="Gotham SSm" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="GothamSSm-Black" family="Gotham SSm" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -113,7 +119,7 @@
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oEB-QH-nrd">
                                                             <rect key="frame" x="2" y="28" width="46" height="16"/>
-                                                            <fontDescription key="fontDescription" name="GothamSSm-Book" family="Gotham SSm" pointSize="16"/>
+                                                            <fontDescription key="fontDescription" name="GothamSSm-MediumItalic" family="Gotham SSm" pointSize="18"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -152,18 +158,18 @@
                                         <rect key="frame" x="40.5" y="156.5" width="739" height="247.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no registered family members for this student. Please add a new family member by tapping on the button below." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V5y-Wm-pDr">
-                                                <rect key="frame" x="147" y="49" width="445" height="149.5"/>
-                                                <fontDescription key="fontDescription" name="GothamSSm-Black" family="Gotham SSm" pointSize="18"/>
+                                                <rect key="frame" x="110.5" y="49" width="518" height="149.5"/>
+                                                <fontDescription key="fontDescription" name="GothamSSm-Medium" family="Gotham SSm" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="V5y-Wm-pDr" firstAttribute="centerY" secondItem="s55-zH-cYn" secondAttribute="centerY" id="9Xs-di-4x6"/>
                                             <constraint firstItem="V5y-Wm-pDr" firstAttribute="height" secondItem="s55-zH-cYn" secondAttribute="height" multiplier="0.6" constant="1" id="EPO-dJ-ywU"/>
                                             <constraint firstItem="V5y-Wm-pDr" firstAttribute="centerX" secondItem="s55-zH-cYn" secondAttribute="centerX" id="KUB-Qu-cdF"/>
-                                            <constraint firstItem="V5y-Wm-pDr" firstAttribute="width" secondItem="s55-zH-cYn" secondAttribute="width" multiplier="0.6" constant="1" id="cZw-Cx-J8j"/>
+                                            <constraint firstItem="V5y-Wm-pDr" firstAttribute="width" secondItem="s55-zH-cYn" secondAttribute="width" multiplier="0.7" constant="1" id="cZw-Cx-J8j"/>
+                                            <constraint firstItem="V5y-Wm-pDr" firstAttribute="centerY" secondItem="s55-zH-cYn" secondAttribute="centerY" id="yCL-ow-HtC"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HIV-va-zIK">
@@ -183,7 +189,7 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to see more registered family members." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7lT-WG-nAs">
                                         <rect key="frame" x="81.5" y="435.5" width="657" height="32"/>
-                                        <fontDescription key="fontDescription" name="GothamSSm-Book" family="Gotham SSm" pointSize="19"/>
+                                        <fontDescription key="fontDescription" name="GothamSSm-Book" family="Gotham SSm" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -196,12 +202,12 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new Family Member" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ReC-UM-Fxg">
                                                 <rect key="frame" x="20" y="2.5" width="371" height="57.5"/>
-                                                <fontDescription key="fontDescription" name="GothamSSm-Book" family="Gotham SSm" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="GothamSSm-Medium" family="Gotham SSm" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ReC-UM-Fxg" firstAttribute="height" secondItem="cb6-5H-yyk" secondAttribute="height" multiplier="0.9" constant="1" id="MMh-yL-mKY"/>
                                             <constraint firstItem="ReC-UM-Fxg" firstAttribute="centerY" secondItem="cb6-5H-yyk" secondAttribute="centerY" id="Moz-T1-AE5"/>

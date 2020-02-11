@@ -15,7 +15,12 @@ class OptionSelectionViewController : UIViewController {
     @IBOutlet weak var heyLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    var options = [String]()
+    @IBOutlet weak var scrollImage: UIImageView!
+    @IBOutlet weak var scrollText: UILabel!
+    @IBOutlet weak var checkInButton: UIButton!
+    @IBAction func buttonPressed(_ sender: Any) {
+        checkIn()
+    }
     static var fname:String = ""
     static var comingFromConfirmation = false
     static var staffName: String?
@@ -23,15 +28,17 @@ class OptionSelectionViewController : UIViewController {
     static var studentAPSId = ""
     static var studentCheckIn = false
     
+    var options = [String]() // This is your data array
+    var arrSelectedIndex = [IndexPath]() // This is selected cell Index array
+    var arrSelectedData = [String]() // This is selected cell data array
+    
     override func viewDidLayoutSubviews() {
         super .viewDidLayoutSubviews()
-        mainCardView.layer.cornerRadius = 10
-        mainCardView.layer.shouldRasterize = false
-        mainCardView.layer.borderWidth = 1
         
-        mainCardView.layer.shadowRadius = 10
-        mainCardView.layer.shadowColor = UIColor.black.cgColor
-        mainCardView.layer.shadowOpacity = 1
+        checkInButton.layer.cornerRadius = 10
+        checkInButton.layer.shouldRasterize = false
+        checkInButton.layer.borderWidth = 2
+        checkInButton.backgroundColor = UIColor.lightGray
     }
     
     override func viewDidLoad() {
@@ -43,6 +50,8 @@ class OptionSelectionViewController : UIViewController {
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(goBack))
         rightSwipe.direction = .right
         self.view.addGestureRecognizer(rightSwipe)
+        
+        scrollImage.image = UIImage.gifImageWithName("whitedown")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,6 +70,14 @@ class OptionSelectionViewController : UIViewController {
         for temp in CoreDataHelper.locationOptions.split(separator: ",") {
             options.append(String(temp))
         }
+        if options.count > 4 {
+            scrollImage.isHidden = false
+            scrollText.isHidden = false
+        }
+        else {
+            scrollImage.isHidden = true
+            scrollText.isHidden = true
+        }
     }
     
     @objc func goBack() {
@@ -75,10 +92,61 @@ class OptionSelectionViewController : UIViewController {
         }
     }
     
+    @objc func checkIn(){
+        
+        if arrSelectedIndex.count > 0 {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.mainCardView.center.x = self.mainCardView.center.x - self.view.bounds.width
+            }, completion: { finished in
+                let url = URL(string:RestHelper.urls["CheckIn"]!)!
+                print(url)
+                if OptionSelectionViewController.studentCheckIn {
+                    OptionSelectionViewController.studentCheckIn = false
+                    let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!, "checkinLocation":CoreDataHelper.locationName, "checkinReason":self.arrSelectedData.joined(separator: ", "), "apsStudentId":OptionSelectionViewController.studentAPSId, "staffMemberName":OptionSelectionViewController.staffName!])
+                    if jsonString.localizedStandardContains("successfully") {
+                        self.performSegue(withIdentifier: "showEnding", sender: self)
+                    }
+                    else {
+                        AlertViewController.msg = "There was an error when trying to complete the check-in. Please try again."
+                        AlertViewController.img = "error"
+                        let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+                        let myAlert = storyboard.instantiateViewController(withIdentifier: "alert")
+                        myAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+                        myAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+                        self.present(myAlert, animated: true, completion: nil)
+                    }
+                }
+                else {
+                    let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!, "checkinLocation":CoreDataHelper.locationName, "checkinReason":self.arrSelectedData.joined(separator: ", "), "familyMemberId":OptionSelectionViewController.familyMemberId])
+                    if jsonString.localizedStandardContains("successfully") {
+                        self.performSegue(withIdentifier: "showEnding", sender: self)
+                    }
+                    else {
+                        AlertViewController.msg = "There was an error when trying to complete the check-in. Please try again."
+                        AlertViewController.img = "error"
+                        let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+                        let myAlert = storyboard.instantiateViewController(withIdentifier: "alert")
+                        myAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+                        myAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+                        self.present(myAlert, animated: true, completion: nil)
+                    }
+                }
+            })
+        } else {
+            let optionsAlert = UIAlertController(title: "Error", message: "Please select your reason(s) for visitng us today!", preferredStyle: .alert)
+            optionsAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
+            self.present(optionsAlert, animated: true)
+        }
+        
+    }
+    
 }
 
 extension OptionSelectionViewController: UICollectionViewDataSource {
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return options.count
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "option", for: indexPath) as! OptionCollectionCell
@@ -86,12 +154,20 @@ extension OptionSelectionViewController: UICollectionViewDataSource {
         cell.layer.cornerRadius = 10
         cell.layer.shouldRasterize = false
         cell.layer.borderWidth = 2
-        cell.backgroundColor = UIColor.clear
+//        cell.backgroundColor = UIColor.clear
         cell.layer.borderColor = UIColor.white.cgColor
         
         cell.textLabel.text = options[indexPath.row]
         
-        cell.addGestureRecognizer(CustomTapGestureRecognizer())
+        if arrSelectedIndex.contains(indexPath) { // You need to check wether selected index array contain current index if yes then change the color
+            cell.backgroundColor = #colorLiteral(red: 0.9952836633, green: 0.9879123569, blue: 1, alpha: 0.3509022887)
+            
+        }
+        else {
+            cell.backgroundColor = UIColor.clear
+        }
+
+        cell.layoutSubviews()
         
         return cell
     }
@@ -100,9 +176,6 @@ extension OptionSelectionViewController: UICollectionViewDataSource {
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return options.count
-    }
     
 }
 
@@ -126,44 +199,25 @@ extension OptionSelectionViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension OptionSelectionViewController: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.mainCardView.center.x = self.mainCardView.center.x - self.view.bounds.width
-        }, completion: { finished in
-            let url = URL(string:RestHelper.urls["CheckIn"]!)!
-            print(url)
-            if OptionSelectionViewController.studentCheckIn {
-                OptionSelectionViewController.studentCheckIn = false
-                let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!, "checkinLocation":CoreDataHelper.locationName, "checkinReason":self.options[indexPath.row], "apsStudentId":OptionSelectionViewController.studentAPSId, "staffMemberName":OptionSelectionViewController.staffName!])
-                if jsonString.localizedStandardContains("successfully") {
-                    self.performSegue(withIdentifier: "showEnding", sender: self)
-                }
-                else {
-                    AlertViewController.msg = "There was an error when trying to complete the check-in. Please try again."
-                    AlertViewController.img = "error"
-                    let storyboard = UIStoryboard(name: "Alert", bundle: nil)
-                    let myAlert = storyboard.instantiateViewController(withIdentifier: "alert")
-                    myAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-                    myAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-                    self.present(myAlert, animated: true, completion: nil)
-                }
-            }
-            else {
-                let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!, "checkinLocation":CoreDataHelper.locationName, "checkinReason":self.options[indexPath.row], "familyMemberId":OptionSelectionViewController.familyMemberId])
-                if jsonString.localizedStandardContains("successfully") {
-                    self.performSegue(withIdentifier: "showEnding", sender: self)
-                }
-                else {
-                    AlertViewController.msg = "There was an error when trying to complete the check-in. Please try again."
-                    AlertViewController.img = "error"
-                    let storyboard = UIStoryboard(name: "Alert", bundle: nil)
-                    let myAlert = storyboard.instantiateViewController(withIdentifier: "alert")
-                    myAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-                    myAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-                    self.present(myAlert, animated: true, completion: nil)
-                }
-            }
-        })
-    }
-}
+        
+        print("selected")
+        let strData = options[indexPath.item]
 
+        if arrSelectedIndex.contains(indexPath) {
+            arrSelectedIndex = arrSelectedIndex.filter { $0 != indexPath}
+            arrSelectedData = arrSelectedData.filter { $0 != strData}
+        }
+        else {
+            arrSelectedIndex.append(indexPath)
+            arrSelectedData.append(strData)
+        }
+
+        print(arrSelectedData)
+        collectionView.reloadData()
+        
+
+    }
+ 
+}
