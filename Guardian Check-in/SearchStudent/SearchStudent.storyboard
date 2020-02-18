@@ -270,7 +270,7 @@
                         <outlet property="superView" destination="q6c-o6-YEI" id="X4q-iM-lhm"/>
                         <segue destination="5iw-DO-9uk" kind="show" identifier="guardianSelection" animates="NO" id="6dN-u0-zZZ"/>
                         <segue destination="uFd-tb-K2j" kind="show" identifier="showSetup" animates="NO" id="KAt-ga-mbe"/>
-                        <segue destination="6nv-mV-3vv" kind="show" identifier="showStudentConfirmation" animates="NO" id="AIB-gn-KBR"/>
+                        <segue destination="6nv-mV-3vv" kind="show" identifier="showStudentGuardianFork" animates="NO" id="AIB-gn-KBR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5x-rK-MPn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -433,11 +433,33 @@
                         <outlet property="guardianCheckInButton" destination="PPe-ih-ued" id="XyM-yi-699"/>
                         <outlet property="studentCheckInButton" destination="Oq8-kN-XrC" id="18m-lJ-5BB"/>
                         <outlet property="superView" destination="HmV-LX-CJk" id="j0S-es-ZuQ"/>
+                        <segue destination="fbb-Ah-xI9" kind="show" identifier="checkInGuardian" id="Rgg-Jr-EHw"/>
+                        <segue destination="tbB-1S-OlC" kind="show" identifier="checkInStudent" id="AeK-Dr-e0D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3os-4P-nUR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1894" y="705"/>
+        </scene>
+        <!--StudentGuardianSelection-->
+        <scene sceneID="yRe-fs-neE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StudentGuardianSelection" id="fbb-Ah-xI9" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="g0s-3B-wq5"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UpN-Jw-pEM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2512" y="416"/>
+        </scene>
+        <!--StudentConfirmation-->
+        <scene sceneID="GGu-BI-NSq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StudentConfirmation" id="tbB-1S-OlC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="FP5-0v-0dT"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bhu-Le-2n0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2512" y="913"/>
         </scene>
     </scenes>
     <resources>

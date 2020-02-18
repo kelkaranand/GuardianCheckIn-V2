@@ -17,6 +17,7 @@ class StudentOrGuardianViewController: UIViewController {
     @IBOutlet weak var checkInCard: UIView!
     @IBOutlet weak var checkInLabel: UILabel!
     
+    static var student = StudentRecord()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,22 +58,36 @@ class StudentOrGuardianViewController: UIViewController {
         guardianCheckInButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkInGuardian)))
     }
     
-    //MARK: Navigation
+    //MARK: Actions
 
     @objc func checkInStudent(){
-        print("CheckInStudent")
+        UIView.animate(withDuration: 0.5, animations: {
+            self.checkInCard.center.x = self.checkInCard.center.x - self.view.bounds.width
+        }, completion : { finished in
+            self.performSegue(withIdentifier: "checkInStudent", sender: self)
+        })
         
     }
     
     @objc func checkInGuardian(){
-        print("CheckInGuardian")
+        UIView.animate(withDuration: 0.5, animations: {
+            self.checkInCard.center.x = self.checkInCard.center.x - self.view.bounds.width
+        }, completion : { finished in
+            self.performSegue(withIdentifier: "checkInGuardian", sender: self)
+        })
         
     }
+
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//         
-//        
-//    }
+    //MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        if segue.identifier == "checkInGuardian" {
+            StudentGuardianSelectionViewController.student = StudentOrGuardianViewController.student
+        }
+        
+    }
     
     
 
