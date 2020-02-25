@@ -11,6 +11,7 @@
 		140EEA5E23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 140EEA5B23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf */; };
 		140EEA5F23E352C500F3FAE6 /* GothamSSm-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 140EEA5C23E352C500F3FAE6 /* GothamSSm-BookItalic.otf */; };
 		140EEA6723E35B4F00F3FAE6 /* AddGuardianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EEA6623E35B4F00F3FAE6 /* AddGuardianViewController.swift */; };
+		1417C0F12405C812002B4076 /* StudentOrGuardianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1417C0F02405C812002B4076 /* StudentOrGuardianViewController.swift */; };
 		14625B4223DA1C0700017A65 /* whitedown.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14625B4123DA1C0600017A65 /* whitedown.gif */; };
 		14625B4423DA40CB00017A65 /* SearchStudentCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14625B4323DA40CB00017A65 /* SearchStudentCollectionCell.swift */; };
 		14625B4D23DFD65E00017A65 /* GothamSSm-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14625B4C23DFD2EA00017A65 /* GothamSSm-Book.ttf */; };
@@ -63,6 +64,7 @@
 		140EEA5B23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-MediumItalic.otf"; sourceTree = "<group>"; };
 		140EEA5C23E352C500F3FAE6 /* GothamSSm-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-BookItalic.otf"; sourceTree = "<group>"; };
 		140EEA6623E35B4F00F3FAE6 /* AddGuardianViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGuardianViewController.swift; sourceTree = "<group>"; };
+		1417C0F02405C812002B4076 /* StudentOrGuardianViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentOrGuardianViewController.swift; sourceTree = "<group>"; };
 		14625B4123DA1C0600017A65 /* whitedown.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = whitedown.gif; sourceTree = "<group>"; };
 		14625B4323DA40CB00017A65 /* SearchStudentCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStudentCollectionCell.swift; sourceTree = "<group>"; };
 		14625B4B23DFD2EA00017A65 /* GothamSSm-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-Black.otf"; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		14C3A3BE235F4EC3009A3830 /* SearchStudent */ = {
 			isa = PBXGroup;
 			children = (
+				1417C0F02405C812002B4076 /* StudentOrGuardianViewController.swift */,
 				14C3A3BF235F4EC3009A3830 /* SearchStudent.storyboard */,
 				14C3A3C1235F4EC3009A3830 /* SearchStudentViewController.swift */,
 				14C3A3DC23673056009A3830 /* StudentRecord.swift */,
@@ -406,6 +409,7 @@
 				14C3A3D6235F4EC4009A3830 /* SearchStudentViewController.swift in Sources */,
 				14C3A3D1235F4EC4009A3830 /* LaunchViewController.swift in Sources */,
 				14C3A398235F4E9E009A3830 /* ViewController.swift in Sources */,
+				1417C0F12405C812002B4076 /* StudentOrGuardianViewController.swift in Sources */,
 				14C3A3D9235F4EC4009A3830 /* StudentGuardianSelectionViewController.swift in Sources */,
 				14C3A396235F4E9E009A3830 /* AppDelegate.swift in Sources */,
 				14625B4423DA40CB00017A65 /* SearchStudentCollectionCell.swift in Sources */,
