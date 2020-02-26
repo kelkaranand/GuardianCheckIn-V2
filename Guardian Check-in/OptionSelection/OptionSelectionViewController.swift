@@ -24,7 +24,7 @@ class OptionSelectionViewController : UIViewController {
     static var fname:String = ""
     static var comingFromConfirmation = false
     static var staffName: String?
-    static var familyMemberId = ""
+    static var familyMemberId: String?
     static var studentAPSId = ""
     static var studentCheckIn = false
     
@@ -117,7 +117,7 @@ class OptionSelectionViewController : UIViewController {
                     }
                 }
                 else {
-                    let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!, "checkinLocation":CoreDataHelper.locationName, "checkinReason":self.arrSelectedData.joined(separator: ", "), "familyMemberId":OptionSelectionViewController.familyMemberId])
+                    let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!, "checkinLocation":CoreDataHelper.locationName, "checkinReason":self.arrSelectedData.joined(separator: ", "), "familyMemberId":OptionSelectionViewController.familyMemberId!])
                     if jsonString.localizedStandardContains("successfully") {
                         self.performSegue(withIdentifier: "showEnding", sender: self)
                     }

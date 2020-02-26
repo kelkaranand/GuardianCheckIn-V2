@@ -91,7 +91,11 @@ class ConfirmationViewController : UIViewController {
     }
     
     @objc func done() {
-        let apiResponse = self.addGuardian()
+        var apiResponse = self.addGuardian()
+        //Add guardian api returns a string with " at the front and end.
+        //Remove those "
+        apiResponse.removeFirst()
+        apiResponse.removeLast()
         if(apiResponse.localizedStandardContains("1000")){
             StudentGuardianSelectionViewController.back = true
             for controller in self.navigationController!.viewControllers as Array {
@@ -111,6 +115,7 @@ class ConfirmationViewController : UIViewController {
             self.mainCardView.center.x = self.mainCardView.center.x - self.view.bounds.width
         }, completion: { finished in
             OptionSelectionViewController.fname = self.fnameLabel.text! + " " + self.lnameLabel.text!
+            OptionSelectionViewController.familyMemberId = apiResponse
             OptionSelectionViewController.comingFromConfirmation = true
             self.performSegue(withIdentifier: "showOptions", sender: self)
         })

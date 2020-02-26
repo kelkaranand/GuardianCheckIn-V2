@@ -13,22 +13,29 @@ class StudentOrGuardianViewController: UIViewController {
 
     @IBOutlet weak var guardianCheckInButton: UIView!
     @IBOutlet weak var studentCheckInButton: UIView!
-    @IBOutlet weak var superView: UIView!
     @IBOutlet weak var checkInCard: UIView!
     @IBOutlet weak var checkInLabel: UILabel!
     
     static var student = StudentRecord()
+    static var back = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        studentCheckInButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkInStudent)))
         
+        guardianCheckInButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkInGuardian)))
+        
+        //Swipe right to go back
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(goBack))
+        rightSwipe.direction = .right
+        self.view.addGestureRecognizer(rightSwipe)
+        
+        //Setup starting position for card
+        checkInCard.center.x = checkInCard.center.x + self.view.bounds.width
     }
     
     override func viewDidLayoutSubviews() {
-        
-        superView.layer.cornerRadius = 10
-        superView.layer.shouldRasterize = false
         
         checkInCard.layer.cornerRadius = 10
         checkInCard.layer.shouldRasterize = false
@@ -52,10 +59,25 @@ class StudentOrGuardianViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
-        
-        studentCheckInButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkInStudent)))
-        
-        guardianCheckInButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkInGuardian)))
+        if (StudentOrGuardianViewController.back) {
+            UIView.animate(withDuration: 0.5) {
+                self.checkInCard.center.x = self.checkInCard.center.x + self.view.bounds.width
+            }
+            StudentOrGuardianViewController.back = false
+        }
+        else {
+            UIView.animate(withDuration: 0.5) {
+                self.checkInCard.center.x = self.checkInCard.center.x - self.view.bounds.width
+            }
+        }
+    }
+    
+    @objc func goBack() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.checkInCard.center.x = self.checkInCard.center.x + self.view.bounds.width
+        }, completion: { finished in
+            self.navigationController?.popViewController(animated: false)
+        })
     }
     
     //MARK: Actions
@@ -81,10 +103,12 @@ class StudentOrGuardianViewController: UIViewController {
     
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        
+        StudentOrGuardianViewController.back = true
         if segue.identifier == "checkInGuardian" {
             StudentGuardianSelectionViewController.student = StudentOrGuardianViewController.student
+        }
+        else if segue.identifier == "checkInStudent" {
+            OptionSelectionViewController.fname = StudentOrGuardianViewController.student.fname + " " + StudentOrGuardianViewController.student.lname
         }
         
     }

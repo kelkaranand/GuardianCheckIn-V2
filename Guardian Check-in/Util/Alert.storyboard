@@ -13,7 +13,7 @@
         <!--Alert View Controller-->
         <scene sceneID="BEw-1I-W3w">
             <objects>
-                <viewController storyboardIdentifier="alert" id="7zw-Ct-Uxl" customClass="AlertViewController" customModule="Guardian_Check_in" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="alert" id="7zw-Ct-Uxl" customClass="AlertViewController" customModule="Guardian_Check_inV2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qeC-lb-4aw">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,40 +33,40 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHT-yK-NKt">
-                                        <rect key="frame" x="34.5" y="277" width="278" height="62.5"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <state key="normal" title="OK">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonPressed:" destination="7zw-Ct-Uxl" eventType="touchUpInside" id="Jyp-kn-wt4"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="PGg-6F-0Iv" firstAttribute="centerX" secondItem="AmX-cG-oDq" secondAttribute="centerX" id="2kY-an-3aa"/>
                                     <constraint firstItem="cQR-ca-jHv" firstAttribute="top" secondItem="AmX-cG-oDq" secondAttribute="top" constant="15" id="63N-ru-6lz"/>
-                                    <constraint firstItem="ZHT-yK-NKt" firstAttribute="centerX" secondItem="AmX-cG-oDq" secondAttribute="centerX" id="70g-2j-9dY"/>
                                     <constraint firstItem="cQR-ca-jHv" firstAttribute="centerX" secondItem="AmX-cG-oDq" secondAttribute="centerX" id="75K-to-6gN"/>
-                                    <constraint firstItem="ZHT-yK-NKt" firstAttribute="height" secondItem="AmX-cG-oDq" secondAttribute="height" multiplier="0.2" constant="1" id="KMo-46-Wz1"/>
                                     <constraint firstItem="PGg-6F-0Iv" firstAttribute="width" secondItem="AmX-cG-oDq" secondAttribute="width" multiplier="0.8" constant="1" id="NLI-Bw-6jg"/>
-                                    <constraint firstAttribute="bottom" secondItem="ZHT-yK-NKt" secondAttribute="centerY" id="OCT-P8-JFa"/>
                                     <constraint firstItem="cQR-ca-jHv" firstAttribute="height" secondItem="AmX-cG-oDq" secondAttribute="height" multiplier="0.3" constant="1" id="QfL-5v-AbD"/>
-                                    <constraint firstItem="ZHT-yK-NKt" firstAttribute="width" secondItem="AmX-cG-oDq" secondAttribute="width" multiplier="0.8" constant="1" id="RRM-vZ-Pg3"/>
                                     <constraint firstItem="PGg-6F-0Iv" firstAttribute="top" secondItem="cQR-ca-jHv" secondAttribute="bottom" constant="20" id="dCW-2v-ODG"/>
                                     <constraint firstItem="PGg-6F-0Iv" firstAttribute="height" secondItem="AmX-cG-oDq" secondAttribute="height" multiplier="0.3" constant="1" id="rBm-hG-Ncq"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHT-yK-NKt">
+                                <rect key="frame" x="245" y="645" width="278" height="62.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="7zw-Ct-Uxl" eventType="touchUpInside" id="Jyp-kn-wt4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="AmX-cG-oDq" firstAttribute="bottom" secondItem="ZHT-yK-NKt" secondAttribute="centerY" id="9Sb-wg-QKq"/>
+                            <constraint firstItem="ZHT-yK-NKt" firstAttribute="centerX" secondItem="AmX-cG-oDq" secondAttribute="centerX" id="VFo-e9-Qat"/>
                             <constraint firstItem="AmX-cG-oDq" firstAttribute="centerX" secondItem="E0H-fE-tgo" secondAttribute="centerX" id="W9G-sY-6rj"/>
                             <constraint firstItem="AmX-cG-oDq" firstAttribute="height" secondItem="qeC-lb-4aw" secondAttribute="height" multiplier="0.3" constant="1" id="bTg-RA-ESl"/>
                             <constraint firstItem="AmX-cG-oDq" firstAttribute="centerY" secondItem="E0H-fE-tgo" secondAttribute="centerY" id="bqB-xO-bOv"/>
                             <constraint firstItem="AmX-cG-oDq" firstAttribute="width" secondItem="qeC-lb-4aw" secondAttribute="width" multiplier="0.45" constant="1" id="gNh-wC-8Mh"/>
+                            <constraint firstItem="ZHT-yK-NKt" firstAttribute="height" secondItem="AmX-cG-oDq" secondAttribute="height" multiplier="0.2" constant="1" id="nTt-bN-g5I"/>
+                            <constraint firstItem="ZHT-yK-NKt" firstAttribute="width" secondItem="AmX-cG-oDq" secondAttribute="width" multiplier="0.8" constant="1" id="qlo-Ce-9Ia"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="E0H-fE-tgo"/>
                     </view>

@@ -250,8 +250,9 @@ extension SearchStudentViewController: UISearchBarDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "guardianSelection" {
-            StudentGuardianSelectionViewController.student = selectedStudent
+        if segue.identifier == "studentConfirmation" {
+            OptionSelectionViewController.fname = selectedStudent.fname + " " + selectedStudent.lname
+            StudentConfirmationViewController.back = false
         } else if segue.identifier == "showStudentGuardianFork" {
             StudentOrGuardianViewController.student = selectedStudent
         }
@@ -319,12 +320,13 @@ extension SearchStudentViewController: UICollectionViewDelegate {
             self.superView.center.x = self.superView.center.x - self.view.bounds.width
         }, completion: { finished in
             if CoreDataHelper.locationGuardianFlag {
-                self.performSegue(withIdentifier: "guardianSelection", sender: self)
+                StudentOrGuardianViewController.back = false
+                self.performSegue(withIdentifier: "showStudentGuardianFork", sender: self)
             }
             else {
                 StudentConfirmationViewController.back = false
                 OptionSelectionViewController.fname = self.selectedStudent.fname + " " + self.selectedStudent.lname
-                self.performSegue(withIdentifier: "showStudentGuardianFork", sender: self)
+                self.performSegue(withIdentifier: "studentConfirmation", sender: self)
             }
         })
     }

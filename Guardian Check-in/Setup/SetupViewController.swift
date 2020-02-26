@@ -205,6 +205,7 @@ class SetupViewController : UIViewController, UIPickerViewDelegate, UIPickerView
             print(error)
         }
         
+        locationPicker.reloadAllComponents()
         self.view.layoutIfNeeded()
         
         AlertViewController.msg = "Student and Location data downloaded successfully."
