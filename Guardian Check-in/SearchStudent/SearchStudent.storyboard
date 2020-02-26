@@ -403,8 +403,8 @@
                         <outlet property="checkInLabel" destination="CqL-u7-NdJ" id="uiY-Mz-9fI"/>
                         <outlet property="guardianCheckInButton" destination="PPe-ih-ued" id="XyM-yi-699"/>
                         <outlet property="studentCheckInButton" destination="Oq8-kN-XrC" id="18m-lJ-5BB"/>
-                        <segue destination="fbb-Ah-xI9" kind="show" identifier="checkInGuardian" id="Rgg-Jr-EHw"/>
-                        <segue destination="tbB-1S-OlC" kind="show" identifier="checkInStudent" id="AeK-Dr-e0D"/>
+                        <segue destination="fbb-Ah-xI9" kind="show" identifier="checkInGuardian" animates="NO" id="Rgg-Jr-EHw"/>
+                        <segue destination="tbB-1S-OlC" kind="show" identifier="checkInStudent" animates="NO" id="AeK-Dr-e0D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3os-4P-nUR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
