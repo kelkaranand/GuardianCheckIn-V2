@@ -12,11 +12,15 @@
 		140EEA5F23E352C500F3FAE6 /* GothamSSm-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 140EEA5C23E352C500F3FAE6 /* GothamSSm-BookItalic.otf */; };
 		140EEA6723E35B4F00F3FAE6 /* AddGuardianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EEA6623E35B4F00F3FAE6 /* AddGuardianViewController.swift */; };
 		1417C0F12405C812002B4076 /* StudentOrGuardianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1417C0F02405C812002B4076 /* StudentOrGuardianViewController.swift */; };
+		1417C0F424084505002B4076 /* MultiStudentSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1417C0F324084505002B4076 /* MultiStudentSelection.storyboard */; };
+		1417C0F624084846002B4076 /* MultiStudentSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1417C0F524084846002B4076 /* MultiStudentSelection.swift */; };
 		14625B4223DA1C0700017A65 /* whitedown.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14625B4123DA1C0600017A65 /* whitedown.gif */; };
 		14625B4423DA40CB00017A65 /* SearchStudentCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14625B4323DA40CB00017A65 /* SearchStudentCollectionCell.swift */; };
 		14625B4D23DFD65E00017A65 /* GothamSSm-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14625B4C23DFD2EA00017A65 /* GothamSSm-Book.ttf */; };
 		14625B4E23DFD66100017A65 /* GothamSSm-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14625B4B23DFD2EA00017A65 /* GothamSSm-Black.otf */; };
 		14625B5023E0816900017A65 /* CustomTapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14625B4F23E0816900017A65 /* CustomTapGestureRecognizer.swift */; };
+		14AADD7C2409B5830009D4E8 /* MultiSelectCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AADD7B2409B5830009D4E8 /* MultiSelectCollectionCell.swift */; };
+		14AADD7E2411A4090009D4E8 /* MultiSelectionBucketCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AADD7D2411A4090009D4E8 /* MultiSelectionBucketCollectionCell.swift */; };
 		14B63E00237B3A5600F3EEF4 /* Confirmation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B63DFF237B3A5600F3EEF4 /* Confirmation.storyboard */; };
 		14B63E02237B3A6600F3EEF4 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B63E01237B3A6600F3EEF4 /* ConfirmationViewController.swift */; };
 		14C10E7823C8BEC600D26219 /* LocationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C10E7723C8BEC600D26219 /* LocationRecord.swift */; };
@@ -65,11 +69,15 @@
 		140EEA5C23E352C500F3FAE6 /* GothamSSm-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-BookItalic.otf"; sourceTree = "<group>"; };
 		140EEA6623E35B4F00F3FAE6 /* AddGuardianViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGuardianViewController.swift; sourceTree = "<group>"; };
 		1417C0F02405C812002B4076 /* StudentOrGuardianViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentOrGuardianViewController.swift; sourceTree = "<group>"; };
+		1417C0F324084505002B4076 /* MultiStudentSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MultiStudentSelection.storyboard; sourceTree = "<group>"; };
+		1417C0F524084846002B4076 /* MultiStudentSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiStudentSelection.swift; sourceTree = "<group>"; };
 		14625B4123DA1C0600017A65 /* whitedown.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = whitedown.gif; sourceTree = "<group>"; };
 		14625B4323DA40CB00017A65 /* SearchStudentCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStudentCollectionCell.swift; sourceTree = "<group>"; };
 		14625B4B23DFD2EA00017A65 /* GothamSSm-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-Black.otf"; sourceTree = "<group>"; };
 		14625B4C23DFD2EA00017A65 /* GothamSSm-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-Book.ttf"; sourceTree = "<group>"; };
 		14625B4F23E0816900017A65 /* CustomTapGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapGestureRecognizer.swift; sourceTree = "<group>"; };
+		14AADD7B2409B5830009D4E8 /* MultiSelectCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectCollectionCell.swift; sourceTree = "<group>"; };
+		14AADD7D2411A4090009D4E8 /* MultiSelectionBucketCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectionBucketCollectionCell.swift; sourceTree = "<group>"; };
 		14B63DFF237B3A5600F3EEF4 /* Confirmation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Confirmation.storyboard; sourceTree = "<group>"; };
 		14B63E01237B3A6600F3EEF4 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		14C10E7723C8BEC600D26219 /* LocationRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRecord.swift; sourceTree = "<group>"; };
@@ -125,6 +133,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1417C0F2240844E1002B4076 /* MultiStudentSelection */ = {
+			isa = PBXGroup;
+			children = (
+				1417C0F324084505002B4076 /* MultiStudentSelection.storyboard */,
+				1417C0F524084846002B4076 /* MultiStudentSelection.swift */,
+				14AADD7B2409B5830009D4E8 /* MultiSelectCollectionCell.swift */,
+				14AADD7D2411A4090009D4E8 /* MultiSelectionBucketCollectionCell.swift */,
+			);
+			path = MultiStudentSelection;
+			sourceTree = "<group>";
+		};
 		14B63DFE237B3A4300F3EEF4 /* Confirmation */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +193,7 @@
 		14C3A394235F4E9E009A3830 /* Guardian Check-in */ = {
 			isa = PBXGroup;
 			children = (
+				1417C0F2240844E1002B4076 /* MultiStudentSelection */,
 				14C10E8C23CBEB0F00D26219 /* StudentConfirmation */,
 				14C10E7B23CBD4E000D26219 /* Gifs */,
 				14B63DFE237B3A4300F3EEF4 /* Confirmation */,
@@ -353,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1417C0F424084505002B4076 /* MultiStudentSelection.storyboard in Resources */,
 				14E059DD23D201B900EE6B4A /* lj1.gif in Resources */,
 				14C3A3DB236507E4009A3830 /* StudentGuardianSelection.storyboard in Resources */,
 				14625B4223DA1C0700017A65 /* whitedown.gif in Resources */,
@@ -392,15 +413,18 @@
 				14C10E8523CBD64100D26219 /* GifExtensions.swift in Sources */,
 				14C3A39E235F4E9E009A3830 /* Guardian_Check_in.xcdatamodeld in Sources */,
 				14C3A3C9235F4EC4009A3830 /* InternetConnectionTest.swift in Sources */,
+				1417C0F624084846002B4076 /* MultiStudentSelection.swift in Sources */,
 				140EEA6723E35B4F00F3FAE6 /* AddGuardianViewController.swift in Sources */,
 				14C3A3D7235F4EC4009A3830 /* StudentGuardianCollectionCell.swift in Sources */,
 				14C3A3DD23673056009A3830 /* StudentRecord.swift in Sources */,
+				14AADD7C2409B5830009D4E8 /* MultiSelectCollectionCell.swift in Sources */,
 				14C3A3CA235F4EC4009A3830 /* RestHelper.swift in Sources */,
 				14C10E9023CBED3400D26219 /* StudentConfirmationViewController.swift in Sources */,
 				14C3A3CF235F4EC4009A3830 /* SetupViewController.swift in Sources */,
 				14C3A3DF23675F75009A3830 /* GuardianRecord.swift in Sources */,
 				14625B5023E0816900017A65 /* CustomTapGestureRecognizer.swift in Sources */,
 				14C10E8723CBDC3100D26219 /* AlertViewController.swift in Sources */,
+				14AADD7E2411A4090009D4E8 /* MultiSelectionBucketCollectionCell.swift in Sources */,
 				14C3A3E62367B7D1009A3830 /* OptionCollectionCell.swift in Sources */,
 				14C3A3E22367B3F5009A3830 /* OptionSelectionViewController.swift in Sources */,
 				14C3A3E92367C756009A3830 /* EndingViewController.swift in Sources */,
