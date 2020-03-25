@@ -16,6 +16,7 @@ class StudentConfirmationViewController : UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var staffMemberTextBox: UITextField!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     @IBAction func buttonPressed(_ sender: UIButton) {
         OptionSelectionViewController.studentCheckIn = true
         OptionSelectionViewController.staffName = staffMemberTextBox.text!
@@ -26,6 +27,20 @@ class StudentConfirmationViewController : UIViewController {
         })
     }
     
+    @IBAction func addStudentsButtonPressed(_ sender: UIButton) {
+        let staffName = staffMemberTextBox.text!
+        if (staffName == "") {
+            staffMemberTextBox.shake();
+        }
+        else {
+            self.view.endEditing(false)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.cardView.center.x = self.cardView.center.x - self.view.bounds.width
+            }, completion: { finished in
+                self.performSegue(withIdentifier: "multiSelection", sender: self)
+            })
+        }
+    }
     static var back = false;
     
     override func viewDidLayoutSubviews() {
@@ -41,6 +56,10 @@ class StudentConfirmationViewController : UIViewController {
         doneButton.layer.cornerRadius = 10
         doneButton.layer.shouldRasterize = false
         doneButton.layer.borderWidth = 1
+        
+        addButton.layer.cornerRadius = 10
+        addButton.layer.shouldRasterize = false
+        addButton.layer.borderWidth = 1
     }
     
     override func viewDidLoad() {

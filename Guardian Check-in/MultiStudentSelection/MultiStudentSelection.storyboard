@@ -18,10 +18,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Multi Student Selection-->
+        <!--Multi Student Selection View Controller-->
         <scene sceneID="Rz1-jj-RoU">
             <objects>
-                <viewController id="dtf-yR-ttM" customClass="MultiStudentSelection" customModule="Guardian_Check_inV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dtf-yR-ttM" customClass="MultiStudentSelectionViewController" customModule="Guardian_Check_inV2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8vP-hn-iES">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,7 +117,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="V2q-hF-9Fk">
-                                                <rect key="frame" x="18" y="73" width="334" height="599"/>
+                                                <rect key="frame" x="18" y="73" width="334" height="511"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Yx-jl-gN4">
                                                     <size key="itemSize" width="171" height="50"/>
@@ -167,17 +167,29 @@
                                                     <outlet property="delegate" destination="dtf-yR-ttM" id="efo-7T-ZnC"/>
                                                 </connections>
                                             </collectionView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLw-xV-qUP">
+                                                <rect key="frame" x="73.5" y="594" width="223" height="68"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="GothamSSm-Medium" family="Gotham SSm" pointSize="17"/>
+                                                <state key="normal" title="Done">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="2DT-Uq-OV3" firstAttribute="top" secondItem="26I-2M-osO" secondAttribute="top" id="6U2-a2-RuM"/>
                                             <constraint firstItem="2DT-Uq-OV3" firstAttribute="height" secondItem="26I-2M-osO" secondAttribute="height" multiplier="0.1" constant="1" id="AlH-Lr-dXq"/>
                                             <constraint firstItem="V2q-hF-9Fk" firstAttribute="width" secondItem="26I-2M-osO" secondAttribute="width" multiplier="0.9" constant="1" id="HHg-ql-fN2"/>
-                                            <constraint firstAttribute="bottom" secondItem="V2q-hF-9Fk" secondAttribute="bottom" id="R1D-iX-PzU"/>
+                                            <constraint firstAttribute="bottom" secondItem="TLw-xV-qUP" secondAttribute="bottom" constant="10" id="OHD-tR-LdE"/>
                                             <constraint firstItem="V2q-hF-9Fk" firstAttribute="top" secondItem="2DT-Uq-OV3" secondAttribute="bottom" constant="5" id="SAw-Km-yFF"/>
+                                            <constraint firstItem="TLw-xV-qUP" firstAttribute="centerX" secondItem="26I-2M-osO" secondAttribute="centerX" id="UaJ-Y6-YIz"/>
                                             <constraint firstItem="V2q-hF-9Fk" firstAttribute="centerX" secondItem="26I-2M-osO" secondAttribute="centerX" id="W9R-cW-o1m"/>
+                                            <constraint firstItem="TLw-xV-qUP" firstAttribute="top" secondItem="V2q-hF-9Fk" secondAttribute="bottom" constant="10" id="Xhn-ss-xDW"/>
                                             <constraint firstItem="2DT-Uq-OV3" firstAttribute="centerX" secondItem="26I-2M-osO" secondAttribute="centerX" id="Yeg-Zb-GOG"/>
                                             <constraint firstItem="2DT-Uq-OV3" firstAttribute="width" secondItem="26I-2M-osO" secondAttribute="width" id="jHm-Hm-ijq"/>
+                                            <constraint firstItem="TLw-xV-qUP" firstAttribute="width" secondItem="26I-2M-osO" secondAttribute="width" multiplier="0.6" constant="1" id="mP1-kJ-aAA"/>
+                                            <constraint firstItem="TLw-xV-qUP" firstAttribute="height" secondItem="26I-2M-osO" secondAttribute="height" multiplier="0.1" constant="1" id="xDR-LG-A67"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -193,15 +205,6 @@
                                     <constraint firstAttribute="bottom" secondItem="EIE-b6-Pwu" secondAttribute="bottom" constant="10" id="vXi-GT-cMZ"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLw-xV-qUP">
-                                <rect key="frame" x="930" y="48" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="Animate:" destination="dtf-yR-ttM" eventType="touchUpInside" id="yR6-HS-fed"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -218,7 +221,9 @@
                     </view>
                     <connections>
                         <outlet property="bucketCollectionView" destination="V2q-hF-9Fk" id="mxA-ep-Jk6"/>
+                        <outlet property="cardView" destination="Fgr-tb-ObU" id="KrT-V1-4QC"/>
                         <outlet property="contentView" destination="26I-2M-osO" id="Z0o-57-xgN"/>
+                        <outlet property="doneButton" destination="TLw-xV-qUP" id="Z56-1N-bz1"/>
                         <outlet property="searchBar" destination="uAX-vv-23g" id="um1-0Q-Ten"/>
                         <outlet property="searchCollectionView" destination="uOt-Uy-qC9" id="RhR-qS-IhX"/>
                         <outlet property="searchLabel" destination="ShE-yn-w1a" id="G3c-hU-C6W"/>
