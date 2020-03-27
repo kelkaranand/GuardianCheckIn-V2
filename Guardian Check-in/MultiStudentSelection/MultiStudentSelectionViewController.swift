@@ -70,6 +70,8 @@ class MultiStudentSelectionViewController : UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.cardView.center.x = self.cardView.center.x - self.view.bounds.width
         }
+        
+        doneButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToMultiOptions)))
     }
     
     override func viewDidLayoutSubviews() {
@@ -113,6 +115,10 @@ class MultiStudentSelectionViewController : UIViewController {
                 self.searchView.frame.origin.y = searchViewPositionY
             }
         }
+    }
+    
+    @objc func goToMultiOptions(){
+        self.performSegue(withIdentifier: "multiStudentOptions", sender: self)
     }
     
     

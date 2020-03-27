@@ -61,6 +61,9 @@
 		14E059DB23D201B900EE6B4A /* lj4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14E059D723D201B900EE6B4A /* lj4.gif */; };
 		14E059DC23D201B900EE6B4A /* lj2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14E059D823D201B900EE6B4A /* lj2.gif */; };
 		14E059DD23D201B900EE6B4A /* lj1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14E059D923D201B900EE6B4A /* lj1.gif */; };
+		BE310FF9242C028B009128DF /* MultiOptionSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE310FF6242C028A009128DF /* MultiOptionSelection.storyboard */; };
+		BE310FFA242C028B009128DF /* MultiOptionSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE310FF7242C028A009128DF /* MultiOptionSelectionViewController.swift */; };
+		BE310FFB242C028B009128DF /* MultiOptionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE310FF8242C028B009128DF /* MultiOptionCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +123,9 @@
 		14E059D723D201B900EE6B4A /* lj4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lj4.gif; sourceTree = "<group>"; };
 		14E059D823D201B900EE6B4A /* lj2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lj2.gif; sourceTree = "<group>"; };
 		14E059D923D201B900EE6B4A /* lj1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lj1.gif; sourceTree = "<group>"; };
+		BE310FF6242C028A009128DF /* MultiOptionSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MultiOptionSelection.storyboard; sourceTree = "<group>"; };
+		BE310FF7242C028A009128DF /* MultiOptionSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiOptionSelectionViewController.swift; sourceTree = "<group>"; };
+		BE310FF8242C028B009128DF /* MultiOptionCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiOptionCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,9 @@
 		1417C0F2240844E1002B4076 /* MultiStudentSelection */ = {
 			isa = PBXGroup;
 			children = (
+				BE310FF8242C028B009128DF /* MultiOptionCollectionCell.swift */,
+				BE310FF6242C028A009128DF /* MultiOptionSelection.storyboard */,
+				BE310FF7242C028A009128DF /* MultiOptionSelectionViewController.swift */,
 				1417C0F324084505002B4076 /* MultiStudentSelection.storyboard */,
 				1417C0F524084846002B4076 /* MultiStudentSelectionViewController.swift */,
 				14AADD7B2409B5830009D4E8 /* MultiSelectCollectionCell.swift */,
@@ -387,6 +396,7 @@
 				14E059DB23D201B900EE6B4A /* lj4.gif in Resources */,
 				14C3A3D4235F4EC4009A3830 /* SearchStudent.storyboard in Resources */,
 				14C10E7A23CBD13200D26219 /* Alert.storyboard in Resources */,
+				BE310FF9242C028B009128DF /* MultiOptionSelection.storyboard in Resources */,
 				14C10E8E23CBEB2700D26219 /* StudentConfirmation.storyboard in Resources */,
 				14C3A3C6235F4EC4009A3830 /* AddGuardian.storyboard in Resources */,
 				14625B4E23DFD66100017A65 /* GothamSSm-Black.otf in Resources */,
@@ -409,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14C3A3D3235F4EC4009A3830 /* RegistrationCheckViewController.swift in Sources */,
+				BE310FFB242C028B009128DF /* MultiOptionCollectionCell.swift in Sources */,
 				14C3A3C8235F4EC4009A3830 /* CoreDataHelper.swift in Sources */,
 				14C10E8523CBD64100D26219 /* GifExtensions.swift in Sources */,
 				14C3A39E235F4E9E009A3830 /* Guardian_Check_in.xcdatamodeld in Sources */,
@@ -434,6 +445,7 @@
 				14C3A3D1235F4EC4009A3830 /* LaunchViewController.swift in Sources */,
 				14C3A398235F4E9E009A3830 /* ViewController.swift in Sources */,
 				1417C0F12405C812002B4076 /* StudentOrGuardianViewController.swift in Sources */,
+				BE310FFA242C028B009128DF /* MultiOptionSelectionViewController.swift in Sources */,
 				14C3A3D9235F4EC4009A3830 /* StudentGuardianSelectionViewController.swift in Sources */,
 				14C3A396235F4E9E009A3830 /* AppDelegate.swift in Sources */,
 				14625B4423DA40CB00017A65 /* SearchStudentCollectionCell.swift in Sources */,

@@ -228,11 +228,22 @@
                         <outlet property="searchCollectionView" destination="uOt-Uy-qC9" id="RhR-qS-IhX"/>
                         <outlet property="searchLabel" destination="ShE-yn-w1a" id="G3c-hU-C6W"/>
                         <outlet property="searchView" destination="EIE-b6-Pwu" id="dt0-C8-f8R"/>
+                        <segue destination="yG8-Gw-f8O" kind="show" identifier="multiStudentOptions" id="zHe-Qq-7AG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6zc-de-zqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="37.5" y="6.25"/>
+        </scene>
+        <!--MultiOptionSelection-->
+        <scene sceneID="wsq-Gb-hGJ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MultiOptionSelection" storyboardName="MultiOptionSelection" id="yG8-Gw-f8O" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4Km-hg-71I"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ma0-HW-JQo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="698" y="-13"/>
         </scene>
     </scenes>
     <resources>
