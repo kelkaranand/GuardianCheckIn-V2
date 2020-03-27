@@ -81,7 +81,7 @@ class MultiOptionSelectionViewController : UIViewController {
             heyLabel.text = "Hey " + MultiOptionSelectionViewController.staffName! + "!"
         }
         
-        locationLabel.text = "Welcome to the " + MultiOptionSelectionViewController.self.locationName + ". Please select your reason for visiting."
+        locationLabel.text = "Welcome to the " + MultiOptionSelectionViewController.self.locationName + ". Please select " + MultiOptionSelectionViewController.fname + "'s reason for visiting."
 //        UIView.animate(withDuration: 0.5) {
 //            self.mainCardView.center.x = self.mainCardView.center.x - self.view.bounds.width
 //        }
