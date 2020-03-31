@@ -66,8 +66,8 @@ class MultiOptionSelectionViewController : UIViewController {
         arrSelectedData.removeAll()
         collectionView.reloadData()
         
-        MultiOptionSelectionViewController.self.fname = bucket[0][0]
-        MultiOptionSelectionViewController.self.studentAPSId = bucket[0][2]
+        MultiOptionSelectionViewController.self.fname = studentBucket[0].fname
+        MultiOptionSelectionViewController.self.studentAPSId = studentBucket[0].id
         print(MultiOptionSelectionViewController.self.fname)
         
         if (MultiOptionSelectionViewController.staffName == "" || MultiOptionSelectionViewController.staffName == nil) {
@@ -106,11 +106,10 @@ class MultiOptionSelectionViewController : UIViewController {
                 MultiOptionSelectionViewController.studentCheckIn = false
                 let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!, "checkinLocation":MultiOptionSelectionViewController.self.locationName, "checkinReason":self.arrSelectedData.joined(separator: ", "), "apsStudentId":MultiOptionSelectionViewController.studentAPSId, "staffMemberName":MultiOptionSelectionViewController.staffName!])
                 if jsonString.localizedStandardContains("successfully") {
-                    if self.bucket.count > 1 {
+                    if self.studentBucket.count > 1 {
                         print("more students left")
 //                        self.viewDidLoad()
-                        bucket.removeFirst(1)
-                        print("bucket")
+                        studentBucket.removeFirst(1)
                         self.viewWillAppear(true)
 
                     } else {

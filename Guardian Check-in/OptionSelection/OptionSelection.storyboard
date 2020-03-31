@@ -109,7 +109,7 @@
                                             <constraint firstItem="A22-Pt-VRr" firstAttribute="centerY" secondItem="Jte-73-Uu6" secondAttribute="centerY" id="nCf-93-gbN"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to see more registered family members." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OLR-Fg-8lB">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to see more options." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OLR-Fg-8lB">
                                         <rect key="frame" x="81.5" y="498" width="657" height="32"/>
                                         <fontDescription key="fontDescription" name="GothamSSm-Book" family="Gotham SSm" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
