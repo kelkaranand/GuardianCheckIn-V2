@@ -121,6 +121,11 @@ class MultiStudentSelectionViewController : UIViewController {
         self.performSegue(withIdentifier: "multiStudentOptions", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! MultiOptionSelectionViewController
+        dest.studentBucket = MultiStudentSelectionViewController.bucket
+    }
+    
     
 }
 

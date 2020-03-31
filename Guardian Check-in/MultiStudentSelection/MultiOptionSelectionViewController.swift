@@ -36,6 +36,7 @@ class MultiOptionSelectionViewController : UIViewController {
     var arrSelectedData = [String]() // This is selected cell data array
     
     var bucket = [["Harry", "Potter", "12345"], ["Hermione", "Granger", "000300019"]]
+    var studentBucket = [StudentRecord]()
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -50,11 +51,6 @@ class MultiOptionSelectionViewController : UIViewController {
         super.viewDidLoad()
         //Setup starting position for card
         mainCardView.center.x = mainCardView.center.x + self.view.bounds.width
-        
-        //Swipe right to go back
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(goBack))
-        rightSwipe.direction = .right
-        self.view.addGestureRecognizer(rightSwipe)
         
         scrollImage.image = UIImage.gifImageWithName("whitedown")
         
@@ -82,9 +78,9 @@ class MultiOptionSelectionViewController : UIViewController {
         }
         
         locationLabel.text = "Welcome to the " + MultiOptionSelectionViewController.self.locationName + ". Please select " + MultiOptionSelectionViewController.fname + "'s reason for visiting."
-//        UIView.animate(withDuration: 0.5) {
-//            self.mainCardView.center.x = self.mainCardView.center.x - self.view.bounds.width
-//        }
+        UIView.animate(withDuration: 0.5) {
+            self.mainCardView.center.x = self.mainCardView.center.x - self.view.bounds.width
+        }
         for temp in MultiOptionSelectionViewController.self.locationOptions.split(separator: ",") {
             options.append(String(temp))
         }
@@ -95,18 +91,6 @@ class MultiOptionSelectionViewController : UIViewController {
         else {
             scrollImage.isHidden = true
             scrollText.isHidden = true
-        }
-    }
-    
-    @objc func goBack() {
-        if !MultiOptionSelectionViewController.comingFromConfirmation {
-            UIView.animate(withDuration: 0.5, animations: {
-                self.mainCardView.center.x = self.mainCardView.center.x + self.view.bounds.width
-            }, completion: { finished in
-                StudentGuardianSelectionViewController.back = true
-                StudentConfirmationViewController.back = true
-                self.navigationController?.popViewController(animated: false)
-            })
         }
     }
     
