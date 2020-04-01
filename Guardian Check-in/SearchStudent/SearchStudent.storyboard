@@ -345,7 +345,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oq8-kN-XrC">
                                                 <rect key="frame" x="378.5" y="0.0" width="278.5" height="62.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FRF-gP-O6g">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staff" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FRF-gP-O6g">
                                                         <rect key="frame" x="0.0" y="0.0" width="278.5" height="62.5"/>
                                                         <fontDescription key="fontDescription" name="GothamSSm-Medium" family="Gotham SSm" pointSize="17"/>
                                                         <nil key="textColor"/>

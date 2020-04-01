@@ -35,22 +35,6 @@ class MultiStudentSelectionViewController : UIViewController {
     static var bucket = [StudentRecord]()
     
     override func viewDidLoad() {
-//        contentView.isHidden = true
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//        //Student data from coredata
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
-//        
-//        do {
-//            let results = try context.fetch(fetchRequest)
-//            let students = results as! [Student]
-//            
-//            for student in students {
-//                SearchStudentViewController.studentRecords.append(StudentRecord(student.fname!, student.lname!, student.id!))
-//            }
-//        }catch let err as NSError {
-//            print(err.debugDescription)
-//        }
-//        searchViewPositionY = searchView.frame.origin.y
         
         //Setup starting position for card
         cardView.center.x = cardView.center.x + self.view.bounds.width
@@ -118,7 +102,13 @@ class MultiStudentSelectionViewController : UIViewController {
     }
     
     @objc func goToMultiOptions(){
-        self.performSegue(withIdentifier: "multiStudentOptions", sender: self)
+        if (MultiStudentSelectionViewController.bucket.count>0){
+            UIView.animate(withDuration: 0.5, animations: {
+                self.cardView.center.x = self.cardView.center.x - self.view.bounds.width
+            }, completion: { finished in
+                self.performSegue(withIdentifier: "multiStudentOptions", sender: self)
+            })
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

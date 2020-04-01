@@ -12,7 +12,6 @@ import UIKit
 class StudentConfirmationViewController : UIViewController {
     
     @IBOutlet weak var cardView: UIView!
-    @IBOutlet weak var studentLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var staffMemberTextBox: UITextField!
     @IBOutlet weak var doneButton: UIButton!
@@ -37,6 +36,7 @@ class StudentConfirmationViewController : UIViewController {
             UIView.animate(withDuration: 0.5, animations: {
                 self.cardView.center.x = self.cardView.center.x - self.view.bounds.width
             }, completion: { finished in
+                MultiOptionSelectionViewController.staffName=staffName
                 self.performSegue(withIdentifier: "multiSelection", sender: self)
             })
         }
@@ -96,7 +96,6 @@ class StudentConfirmationViewController : UIViewController {
             }
             StudentConfirmationViewController.back = false
         }
-        studentLabel.text = OptionSelectionViewController.fname
     }
     
     @objc func goBack() {
@@ -113,7 +112,6 @@ class StudentConfirmationViewController : UIViewController {
                 if self.view.frame.origin.y == 0{
                     self.view.frame.origin.y -= self.view.frame.height/2 - 30
                 }
-                self.studentLabel.frame.origin.y += self.messageLabel.frame.height
                 self.messageLabel.isHidden = true
             }
         }
@@ -125,7 +123,6 @@ class StudentConfirmationViewController : UIViewController {
                 if self.view.frame.origin.y != 0{
                     self.view.frame.origin.y = 0
                 }
-                self.studentLabel.frame.origin.y -= self.messageLabel.frame.height
                 self.messageLabel.isHidden = false
             }
         }

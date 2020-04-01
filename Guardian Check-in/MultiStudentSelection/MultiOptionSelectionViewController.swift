@@ -21,21 +21,16 @@ class MultiOptionSelectionViewController : UIViewController {
     @IBAction func buttonPressed(_ sender: Any) {
         checkIn()
     }
-    static var fname:String = ""
+    var fname:String = ""
     static var comingFromConfirmation = false
     static var staffName:String? = "Noah"
-    static var familyMemberId: String?
-    static var studentAPSId = ""
-    static var studentCheckIn = false
+    var studentAPSId = ""
     
-    static var locationName = "Loads of Love"
-    static var locationOptions = "Laundry, Detergent, Softener, Option 4, Option 5"
     
     var options = [String]() // This is your data array
     var arrSelectedIndex = [IndexPath]() // This is selected cell Index array
     var arrSelectedData = [String]() // This is selected cell data array
     
-    var bucket = [["Harry", "Potter", "12345"], ["Hermione", "Granger", "000300019"]]
     var studentBucket = [StudentRecord]()
     
     override func viewDidLayoutSubviews() {
@@ -54,8 +49,6 @@ class MultiOptionSelectionViewController : UIViewController {
         
         scrollImage.image = UIImage.gifImageWithName("whitedown")
         
-        print(bucket)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,22 +59,18 @@ class MultiOptionSelectionViewController : UIViewController {
         arrSelectedData.removeAll()
         collectionView.reloadData()
         
-        MultiOptionSelectionViewController.self.fname = studentBucket[0].fname
-        MultiOptionSelectionViewController.self.studentAPSId = studentBucket[0].id
-        print(MultiOptionSelectionViewController.self.fname)
+        fname = studentBucket[0].fname
+        studentAPSId = studentBucket[0].id
+        print(fname)
         
-        if (MultiOptionSelectionViewController.staffName == "" || MultiOptionSelectionViewController.staffName == nil) {
-            heyLabel.text = "Hey " + MultiOptionSelectionViewController.fname + "!"
-        }
-        else {
-            heyLabel.text = "Hey " + MultiOptionSelectionViewController.staffName! + "!"
-        }
+        heyLabel.text = "Hey " + MultiOptionSelectionViewController.staffName! + "!"
         
-        locationLabel.text = "Welcome to the " + MultiOptionSelectionViewController.self.locationName + ". Please select " + MultiOptionSelectionViewController.fname + "'s reason for visiting."
+        
+        locationLabel.text = "Welcome to the " + CoreDataHelper.locationName + ". Please select " + fname + "'s reason for visiting."
         UIView.animate(withDuration: 0.5) {
             self.mainCardView.center.x = self.mainCardView.center.x - self.view.bounds.width
         }
-        for temp in MultiOptionSelectionViewController.self.locationOptions.split(separator: ",") {
+        for temp in CoreDataHelper.locationOptions.split(separator: ",") {
             options.append(String(temp))
         }
         if options.count > 4 {
@@ -103,8 +92,7 @@ class MultiOptionSelectionViewController : UIViewController {
 //            }, completion: { finished in
                 let url = URL(string:RestHelper.urls["CheckIn"]!)!
                 print(url)
-                MultiOptionSelectionViewController.studentCheckIn = false
-                let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!, "checkinLocation":MultiOptionSelectionViewController.self.locationName, "checkinReason":self.arrSelectedData.joined(separator: ", "), "apsStudentId":MultiOptionSelectionViewController.studentAPSId, "staffMemberName":MultiOptionSelectionViewController.staffName!])
+            let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!, "checkinLocation":CoreDataHelper.locationName, "checkinReason":self.arrSelectedData.joined(separator: ", "), "apsStudentId":studentAPSId, "staffMemberName":MultiOptionSelectionViewController.staffName!])
                 if jsonString.localizedStandardContains("successfully") {
                     if self.studentBucket.count > 1 {
                         print("more students left")
