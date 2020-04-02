@@ -314,6 +314,8 @@ extension SearchStudentViewController: UICollectionViewDelegateFlowLayout {
 extension SearchStudentViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedStudent = filteredStudentrecords[indexPath.row]
+        MultiStudentSelectionViewController.bucket.removeAll()
+        MultiStudentSelectionViewController.bucket.append(selectedStudent)
         OptionSelectionViewController.studentAPSId = selectedStudent.id
         UIView.animate(withDuration: 0.5, animations: {
             self.view.endEditing(false)
