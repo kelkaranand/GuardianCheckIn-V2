@@ -17,13 +17,19 @@ class StudentConfirmationViewController : UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     @IBAction func buttonPressed(_ sender: UIButton) {
-        OptionSelectionViewController.studentCheckIn = true
-        OptionSelectionViewController.staffName = staffMemberTextBox.text!
-        UIView.animate(withDuration: 0.5, animations: {
-            self.cardView.center.x = self.cardView.center.x - self.view.bounds.width
-        }, completion: { finished in
-            self.performSegue(withIdentifier: "showOptions", sender: self)
-        })
+        let staffName = staffMemberTextBox.text!
+        if (staffName == "") {
+            staffMemberTextBox.shake();
+        }
+        else{
+            OptionSelectionViewController.studentCheckIn = true
+            OptionSelectionViewController.staffName = staffMemberTextBox.text!
+            UIView.animate(withDuration: 0.5, animations: {
+                self.cardView.center.x = self.cardView.center.x - self.view.bounds.width
+            }, completion: { finished in
+                self.performSegue(withIdentifier: "showOptions", sender: self)
+            })
+        }
     }
     
     @IBAction func addStudentsButtonPressed(_ sender: UIButton) {
