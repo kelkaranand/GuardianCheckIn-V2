@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+    Collection view cell for use in StudentGuardianSelectionViewController
+ **/
 class StudentGuardianCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!

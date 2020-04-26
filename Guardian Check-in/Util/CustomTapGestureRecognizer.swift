@@ -8,6 +8,9 @@
 
 import UIKit.UITapGestureRecognizer
 
+/**
+    Custom tapGestureRecognizer created for use in collection views in the app
+ **/
 class CustomTapGestureRecognizer : UITapGestureRecognizer {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
         self.view?.backgroundColor = UIColor.lightGray
