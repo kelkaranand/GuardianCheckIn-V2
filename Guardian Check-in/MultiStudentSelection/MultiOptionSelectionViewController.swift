@@ -69,10 +69,10 @@ class MultiOptionSelectionViewController : UIViewController {
         print(fname)
         
         //Change label on top of page for staff who is checking student in
-        heyLabel.text = "Hey " + MultiOptionSelectionViewController.staffName! + "!"
+        heyLabel.text = "Hey " + fname + "!"
         
         //Adjust welcome message for student and location
-        locationLabel.text = "Welcome to the " + CoreDataHelper.locationName + ". Please select " + fname + "'s reason for visiting."
+        locationLabel.text = "Welcome to the " + CoreDataHelper.locationName + ". Please select your reason(s) for visiting."
         UIView.animate(withDuration: 0.5) {
             self.mainCardView.center.x = self.mainCardView.center.x - self.view.bounds.width
         }
