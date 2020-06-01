@@ -30,7 +30,6 @@
 		14C10E8E23CBEB2700D26219 /* StudentConfirmation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C10E8D23CBEB2700D26219 /* StudentConfirmation.storyboard */; };
 		14C10E9023CBED3400D26219 /* StudentConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C10E8F23CBED3400D26219 /* StudentConfirmationViewController.swift */; };
 		14C3A396235F4E9E009A3830 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A395235F4E9E009A3830 /* AppDelegate.swift */; };
-		14C3A398235F4E9E009A3830 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A397235F4E9E009A3830 /* ViewController.swift */; };
 		14C3A39B235F4E9E009A3830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A399235F4E9E009A3830 /* Main.storyboard */; };
 		14C3A39E235F4E9E009A3830 /* Guardian_Check_in.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14C3A39C235F4E9E009A3830 /* Guardian_Check_in.xcdatamodeld */; };
 		14C3A3A0235F4EA0009A3830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C3A39F235F4EA0009A3830 /* Assets.xcassets */; };
@@ -91,7 +90,6 @@
 		14C10E8F23CBED3400D26219 /* StudentConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentConfirmationViewController.swift; sourceTree = "<group>"; };
 		14C3A392235F4E9E009A3830 /* Guardian Check-inV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guardian Check-inV2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C3A395235F4E9E009A3830 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		14C3A397235F4E9E009A3830 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		14C3A39A235F4E9E009A3830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14C3A39D235F4E9E009A3830 /* Guardian_Check_in.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Guardian_Check_in.xcdatamodel; sourceTree = "<group>"; };
 		14C3A39F235F4EA0009A3830 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -216,7 +214,6 @@
 				14C3A3C2235F4EC4009A3830 /* StudentGuardianSelection */,
 				14C3A3AD235F4EC3009A3830 /* Util */,
 				14C3A395235F4E9E009A3830 /* AppDelegate.swift */,
-				14C3A397235F4E9E009A3830 /* ViewController.swift */,
 				14C3A399235F4E9E009A3830 /* Main.storyboard */,
 				14C3A39F235F4EA0009A3830 /* Assets.xcassets */,
 				14C3A3A1235F4EA0009A3830 /* LaunchScreen.storyboard */,
@@ -443,7 +440,6 @@
 				14B63E02237B3A6600F3EEF4 /* ConfirmationViewController.swift in Sources */,
 				14C3A3D6235F4EC4009A3830 /* SearchStudentViewController.swift in Sources */,
 				14C3A3D1235F4EC4009A3830 /* LaunchViewController.swift in Sources */,
-				14C3A398235F4E9E009A3830 /* ViewController.swift in Sources */,
 				1417C0F12405C812002B4076 /* StudentOrGuardianViewController.swift in Sources */,
 				BE310FFA242C028B009128DF /* MultiOptionSelectionViewController.swift in Sources */,
 				14C3A3D9235F4EC4009A3830 /* StudentGuardianSelectionViewController.swift in Sources */,

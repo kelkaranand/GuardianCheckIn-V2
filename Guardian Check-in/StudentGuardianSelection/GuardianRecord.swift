@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+    Class for GuardianRecord. Objects of this class can be used to store FamilyMember information
+ **/
 class GuardianRecord {
     
     var name:String

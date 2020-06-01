@@ -20,6 +20,9 @@ fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     }
 }
 
+/**
+    UIImage extension to display gifs in the app
+ **/
 extension UIImage {
     
     public class func gifImageWithData(_ data: Data) -> UIImage? {

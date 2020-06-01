@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/**
+    Custom AlertViewController class
+ **/
 class AlertViewController : UIViewController {
     
     @IBOutlet weak var image: UIImageView!
@@ -19,7 +22,9 @@ class AlertViewController : UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    //static variable to store the alert message
     static var msg = ""
+    //static variable to store the icon image in the alert window
     static var img = ""
     
     override func viewDidLayoutSubviews() {

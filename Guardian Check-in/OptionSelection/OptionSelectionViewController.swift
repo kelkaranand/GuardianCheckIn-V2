@@ -56,14 +56,9 @@ class OptionSelectionViewController : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
-        if (OptionSelectionViewController.staffName == "" || OptionSelectionViewController.staffName == nil) {
-            heyLabel.text = "Hey " + OptionSelectionViewController.fname + "!"
-        }
-        else {
-            heyLabel.text = "Hey " + OptionSelectionViewController.staffName! + "!"
-        }
+        heyLabel.text = "Hey " + OptionSelectionViewController.fname + "!"
         
-        locationLabel.text = "Welcome to the " + CoreDataHelper.locationName + ". Please select your reason for visiting."
+        locationLabel.text = "Welcome to the " + CoreDataHelper.locationName + ". Please select your reason(s) for visiting."
         UIView.animate(withDuration: 0.5) {
             self.mainCardView.center.x = self.mainCardView.center.x - self.view.bounds.width
         }
