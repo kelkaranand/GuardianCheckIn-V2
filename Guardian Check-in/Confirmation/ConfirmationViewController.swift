@@ -117,12 +117,12 @@ class ConfirmationViewController : UIViewController {
             OptionSelectionViewController.fname = self.fnameLabel.text! + " " + self.lnameLabel.text!
             OptionSelectionViewController.familyMemberId = apiResponse
             OptionSelectionViewController.comingFromConfirmation = true
+            print("New family member created with id " + apiResponse)
             self.performSegue(withIdentifier: "showOptions", sender: self)
         })
     }
     
     private func addGuardian() -> String {
-        print("In add guardian")
         let url = URL(string:RestHelper.urls["Add_Family_Member"]!)!
         print(url)
         let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!, "firstName":fnameLabel.text!, "lastName":lnameLabel.text!, "phoneNum":phoneLabel.text!, "relation":relationLabel.text!, "apsID":ConfirmationViewController.id!])

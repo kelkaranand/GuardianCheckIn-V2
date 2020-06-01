@@ -175,7 +175,7 @@ class SearchStudentViewController: UIViewController {
         }, completion: { finished in
             
         })
-        print("Check")
+        print("Check-in button pressed.")
     }
     
     @objc func flipBack() {

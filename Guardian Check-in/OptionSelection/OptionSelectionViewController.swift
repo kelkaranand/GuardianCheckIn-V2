@@ -97,11 +97,13 @@ class OptionSelectionViewController : UIViewController {
                 print(url)
                 if OptionSelectionViewController.studentCheckIn {
                     OptionSelectionViewController.studentCheckIn = false
+                    print("Completing check-in for studentId: " + OptionSelectionViewController.studentAPSId + "at location " + CoreDataHelper.locationName + " for " + self.arrSelectedData.joined(separator: ", "))
                     let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!, "checkinLocation":CoreDataHelper.locationName, "checkinReason":self.arrSelectedData.joined(separator: ", "), "apsStudentId":OptionSelectionViewController.studentAPSId, "staffMemberName":OptionSelectionViewController.staffName!])
                     if jsonString.localizedStandardContains("successfully") {
                         self.performSegue(withIdentifier: "showEnding", sender: self)
                     }
                     else {
+                        print("Error occurred when trying to complete check-in : " + jsonString)
                         AlertViewController.msg = "There was an error when trying to complete the check-in. Please try again."
                         AlertViewController.img = "error"
                         let storyboard = UIStoryboard(name: "Alert", bundle: nil)
@@ -112,11 +114,13 @@ class OptionSelectionViewController : UIViewController {
                     }
                 }
                 else {
+                    print("Completing check-in for famMemId: " + OptionSelectionViewController.familyMemberId! + "at location " + CoreDataHelper.locationName + " for " + self.arrSelectedData.joined(separator: ", "))
                     let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!, "checkinLocation":CoreDataHelper.locationName, "checkinReason":self.arrSelectedData.joined(separator: ", "), "familyMemberId":OptionSelectionViewController.familyMemberId!])
                     if jsonString.localizedStandardContains("successfully") {
                         self.performSegue(withIdentifier: "showEnding", sender: self)
                     }
                     else {
+                        print("Error occurred when trying to complete check-in : " + jsonString)
                         AlertViewController.msg = "There was an error when trying to complete the check-in. Please try again."
                         AlertViewController.img = "error"
                         let storyboard = UIStoryboard(name: "Alert", bundle: nil)

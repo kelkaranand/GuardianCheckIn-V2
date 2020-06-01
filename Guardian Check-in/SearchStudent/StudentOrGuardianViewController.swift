@@ -86,6 +86,7 @@ class StudentOrGuardianViewController: UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.checkInCard.center.x = self.checkInCard.center.x - self.view.bounds.width
         }, completion : { finished in
+            print("Staff check-in selected")
             self.performSegue(withIdentifier: "checkInStudent", sender: self)
         })
         
@@ -95,6 +96,7 @@ class StudentOrGuardianViewController: UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.checkInCard.center.x = self.checkInCard.center.x - self.view.bounds.width
         }, completion : { finished in
+            print("Family member check-in selected")
             self.performSegue(withIdentifier: "checkInGuardian", sender: self)
         })
         

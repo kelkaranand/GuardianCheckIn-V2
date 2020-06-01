@@ -128,6 +128,7 @@ class StudentGuardianSelectionViewController: UIViewController {
             self.cardView.center.x = self.cardView.center.x - self.view.bounds.width
             self.shadowView.center.x = self.shadowView.center.x - self.view.bounds.width
         }, completion : { finished in
+            print("Add guardian button pressed")
             self.performSegue(withIdentifier: "moveToAddGuardian", sender: self)
         })
     }
