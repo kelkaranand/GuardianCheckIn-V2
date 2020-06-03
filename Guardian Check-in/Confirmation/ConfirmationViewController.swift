@@ -125,6 +125,7 @@ class ConfirmationViewController : UIViewController {
     private func addGuardian() -> String {
         let url = URL(string:RestHelper.urls["Add_Family_Member"]!)!
         print(url)
+        print("Creating a new family member with "+" firstName " + fnameLabel.text! + " lastName " + lnameLabel.text! + " phoneNum " + phoneLabel.text! + " relation "+relationLabel.text!)
         let jsonString = RestHelper.makePost(url, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!, "firstName":fnameLabel.text!, "lastName":lnameLabel.text!, "phoneNum":phoneLabel.text!, "relation":relationLabel.text!, "apsID":ConfirmationViewController.id!])
         return jsonString
     }
