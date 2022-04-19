@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1409D3BF25B105E400B2C65C /* StudentConfirmationx.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1409D3BD25B105E400B2C65C /* StudentConfirmationx.storyboard */; };
+		1409D3C025B105E400B2C65C /* StudentConfirmationxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1409D3BE25B105E400B2C65C /* StudentConfirmationxViewController.swift */; };
 		140EEA5D23E352C500F3FAE6 /* GothamSSm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 140EEA5A23E352C500F3FAE6 /* GothamSSm-Medium.otf */; };
 		140EEA5E23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 140EEA5B23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf */; };
 		140EEA5F23E352C500F3FAE6 /* GothamSSm-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 140EEA5C23E352C500F3FAE6 /* GothamSSm-BookItalic.otf */; };
@@ -66,6 +68,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1409D3BD25B105E400B2C65C /* StudentConfirmationx.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StudentConfirmationx.storyboard; sourceTree = "<group>"; };
+		1409D3BE25B105E400B2C65C /* StudentConfirmationxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentConfirmationxViewController.swift; sourceTree = "<group>"; };
 		140EEA5A23E352C500F3FAE6 /* GothamSSm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-Medium.otf"; sourceTree = "<group>"; };
 		140EEA5B23E352C500F3FAE6 /* GothamSSm-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-MediumItalic.otf"; sourceTree = "<group>"; };
 		140EEA5C23E352C500F3FAE6 /* GothamSSm-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamSSm-BookItalic.otf"; sourceTree = "<group>"; };
@@ -137,6 +141,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1409D3BC25B105C800B2C65C /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				1409D3BD25B105E400B2C65C /* StudentConfirmationx.storyboard */,
+				1409D3BE25B105E400B2C65C /* StudentConfirmationxViewController.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		1417C0F2240844E1002B4076 /* MultiStudentSelection */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +213,7 @@
 		14C3A394235F4E9E009A3830 /* Guardian Check-in */ = {
 			isa = PBXGroup;
 			children = (
+				1409D3BC25B105C800B2C65C /* Test */,
 				1417C0F2240844E1002B4076 /* MultiStudentSelection */,
 				14C10E8C23CBEB0F00D26219 /* StudentConfirmation */,
 				14C10E7B23CBD4E000D26219 /* Gifs */,
@@ -388,6 +402,7 @@
 				14C3A3A3235F4EA0009A3830 /* LaunchScreen.storyboard in Resources */,
 				14E059DA23D201B900EE6B4A /* lj3.gif in Resources */,
 				14E059DC23D201B900EE6B4A /* lj2.gif in Resources */,
+				1409D3BF25B105E400B2C65C /* StudentConfirmationx.storyboard in Resources */,
 				140EEA5F23E352C500F3FAE6 /* GothamSSm-BookItalic.otf in Resources */,
 				14B63E00237B3A5600F3EEF4 /* Confirmation.storyboard in Resources */,
 				14E059DB23D201B900EE6B4A /* lj4.gif in Resources */,
@@ -437,6 +452,7 @@
 				14C3A3E22367B3F5009A3830 /* OptionSelectionViewController.swift in Sources */,
 				14C3A3E92367C756009A3830 /* EndingViewController.swift in Sources */,
 				14C10E7823C8BEC600D26219 /* LocationRecord.swift in Sources */,
+				1409D3C025B105E400B2C65C /* StudentConfirmationxViewController.swift in Sources */,
 				14B63E02237B3A6600F3EEF4 /* ConfirmationViewController.swift in Sources */,
 				14C3A3D6235F4EC4009A3830 /* SearchStudentViewController.swift in Sources */,
 				14C3A3D1235F4EC4009A3830 /* LaunchViewController.swift in Sources */,
@@ -599,7 +615,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "AnandKelkar.Guardian-Check-in-v2";
+				PRODUCT_BUNDLE_IDENTIFIER = "AnandKelkar.Guardian-Check-in-v3";
 				PRODUCT_NAME = "Guardian Check-inV2";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -620,7 +636,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "AnandKelkar.Guardian-Check-in-v2";
+				PRODUCT_BUNDLE_IDENTIFIER = "AnandKelkar.Guardian-Check-in-v3";
 				PRODUCT_NAME = "Guardian Check-inV2";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;

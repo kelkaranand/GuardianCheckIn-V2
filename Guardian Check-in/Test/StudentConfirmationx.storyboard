@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Student Confirmation View Controller-->
+        <!--Student Confirmationx View Controller-->
         <scene sceneID="b76-9J-Ffd">
             <objects>
-                <viewController id="rNK-Ot-P5I" customClass="StudentConfirmationViewController" customModule="Guardian_Check_inV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rNK-Ot-P5I" customClass="StudentConfirmationxViewController" customModule="Guardian_Check_inV2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QbZ-pO-fZH">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

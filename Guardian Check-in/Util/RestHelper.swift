@@ -16,7 +16,7 @@ public class RestHelper {
     //Static variable to store the school name used for some apis
     static var schoolName = ""
     //Static variable to store the host
-    static let host = "https://dev1-ljff.cs65.force.com/test/services/apexrest"
+    static let host = "https://ljff.secure.force.com/services/apexrest"
     //Static variable to store all the urls
     static let urls = [
         "Register_Device":host+"/device/register",

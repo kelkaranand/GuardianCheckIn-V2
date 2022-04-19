@@ -55,7 +55,11 @@ class SearchStudentViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
+        print("appear")
         searchBar.text = ""
+        (searchBar.value(forKey: "searchField") as? UITextField)?.textColor = .white
+        (searchBar.value(forKey: "searchField") as? UITextField)?.backgroundColor = .gray
+        searchBar.tintColor = .blue
         filteredStudentrecords = []
         collectionView.reloadData()
         scrollDownImage.isHidden = true

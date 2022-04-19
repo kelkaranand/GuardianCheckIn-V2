@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JH2-wY-tJ8">
-    <device id="ipad9_7" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JH2-wY-tJ8">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,9 +22,9 @@
         <!--Navigation Controller-->
         <scene sceneID="VZe-jt-lTA">
             <objects>
-                <navigationController id="JH2-wY-tJ8" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="JH2-wY-tJ8" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E60-f9-gt8">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -46,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LJFF_Patterns-2" translatesAutoresizingMaskIntoConstraints="NO" id="fGi-Yz-gjH">
-                                <rect key="frame" x="0.0" y="35" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="25" width="1024" height="768"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q6c-o6-YEI">
                                 <rect key="frame" x="102" y="76.5" width="820" height="615"/>
@@ -243,6 +241,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="5f5-dx-TgG"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="q6c-o6-YEI" firstAttribute="width" secondItem="j9X-Q8-wfQ" secondAttribute="width" multiplier="0.8" constant="1" id="1uu-l4-DuV"/>
@@ -254,7 +253,6 @@
                             <constraint firstItem="q6c-o6-YEI" firstAttribute="centerY" secondItem="j9X-Q8-wfQ" secondAttribute="centerY" id="c3v-DJ-Ulp"/>
                             <constraint firstItem="q6c-o6-YEI" firstAttribute="centerX" secondItem="j9X-Q8-wfQ" secondAttribute="centerX" id="xKk-uB-pbP"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="5f5-dx-TgG"/>
                     </view>
                     <navigationItem key="navigationItem" id="p7x-fU-XPa"/>
                     <connections>
@@ -302,10 +300,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LJFF_Patterns-2" translatesAutoresizingMaskIntoConstraints="NO" id="Y1u-hB-idP">
-                                <rect key="frame" x="0.0" y="35" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="25" width="1024" height="768"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOH-EQ-i4m">
-                                <rect key="frame" x="102" y="111.5" width="820" height="615"/>
+                                <rect key="frame" x="102" y="101.5" width="820" height="615"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4o-FT-pIy">
                                         <rect key="frame" x="0.0" y="0.0" width="820" height="185.5"/>
@@ -384,6 +382,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="GoV-wP-ihY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Y1u-hB-idP" firstAttribute="width" secondItem="oJd-oX-PQ7" secondAttribute="width" id="31Z-2e-bl6"/>
@@ -395,7 +394,6 @@
                             <constraint firstItem="dOH-EQ-i4m" firstAttribute="centerX" secondItem="GoV-wP-ihY" secondAttribute="centerX" id="Tmb-c0-MYT"/>
                             <constraint firstItem="dOH-EQ-i4m" firstAttribute="width" secondItem="oJd-oX-PQ7" secondAttribute="width" multiplier="0.8" constant="1" id="lzn-4O-Len"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="GoV-wP-ihY"/>
                     </view>
                     <navigationItem key="navigationItem" id="2T7-AP-9qA"/>
                     <connections>
